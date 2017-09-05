@@ -10,12 +10,12 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileNam
   myFileName <- gsub(":","_",myFileName)
   jpeg(paste(myPath,"/",myFileName,sep=""))
 
-  arrayOfXAplphaHats <- matrix(0, nrow = length(nonCoverageProbabilities),
+  arrayOfXAplphaHats <- matrix(0, nrow =length(alphaHats[,1]),
                                ncol = length(alphaHats[1,]))
 
   for(i in 1:length(nonCoverageProbabilities))
   {
-   arrayOfXAplphaHats[i,] <- array(nonCoverageProbabilities[i],dim = length(alphaHats[1,]))
+   arrayOfXAplphaHats[,i] <- array(nonCoverageProbabilities[i], dim = length(alphaHats[,1]))
   }
 
   plot(x=c(0,1),y=c(0,1),type ="n",main="Alphas and AlphaHats")
@@ -24,7 +24,7 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileNam
   for(i in 1:length(nonCoverageProbabilities))
   {
     points(x=nonCoverageProbabilities[i], y=0,col="blue")
-    points(x=arrayOfXAplphaHats[i,],y=alphaHats[i,],col="red")
+    points(x=arrayOfXAplphaHats[,i],y=alphaHats[,i],col="red")
   }
   dev.off()
   }
