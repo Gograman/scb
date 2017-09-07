@@ -6,11 +6,11 @@ if(!dir.exists(myPath))
 }
 
 
-myTParCount  <-2
-myTParArray  <- createTParArray(tParCount = myTParCount)
-mySuperReplicationCount <- 4
-myReplicationCount <- 4
-mySampleSize <- 50
+myTParCountArray  <- 2:20
+
+mySuperReplicationCount <- 5
+myReplicationCount <- 5
+mySampleSize <- 60
 myLag <- 1
 myLagCount <- 4
 myKernel <- normalDifferenceKernel
@@ -18,8 +18,9 @@ myBandwidth <- 0.5
 myNonCoverageProbability <- 0.05
 
 
-fileName <- paste( "Benchmark_Samplesize","l", myLag, "bandW", myBandwidth, "alpha"
-                  , myNonCoverageProbability, sep = "_")
+fileName <- paste( "Benchmark_TParCount","l", myLag, "bandW", myBandwidth,
+                   "sampleS", mySampleSize,
+                   "alpha", myNonCoverageProbability, sep = "_")
 
 fileName <- gsub("\\.","", fileName)
 myFileName <- gsub(" ","_",paste(fileName ,Sys.time(),".jpg",sep = ""))
@@ -27,18 +28,18 @@ myFileName <- gsub(":","_", myFileName)
 jpeg(paste(myPath,"/",myFileName,sep=""))
 
 
-sampleSizeArray <- c(10,20,30,40,50,60)
+duration <- numeric(length = length(myTParCountArray))
 
-duration <- numeric(length = length(sampleSizeArray))
-
-for(i in 1: length(sampleSizeArray))
+for(i in 1: length(myTParCountArray))
 {
-  Start=Sys.time()
+  myTParArray  <- createTParArray(tParCount = myTParCountArray[i])
 
+  Start=Sys.time()
+  cat("TParCount = ",myTParCountArray[i],"\n")
   nonCoverageFreqArray = computeNonCoverageFreqArray(
     superReplicationCount = mySuperReplicationCount,
     replicationCount = myReplicationCount,
-    sampleSize = sampleSizeArray[i],
+    sampleSize = mySampleSize,
     lag = myLag,
     lagCount = myLagCount,
     tParArray = myTParArray,
@@ -50,14 +51,13 @@ for(i in 1: length(sampleSizeArray))
   duration[i]=End-Start
 }
 
-plot(x=sampleSizeArray,y=duration,main = "Benchmark for sampleSize")
+plot(x=myTParCountArray,y=duration,main = "Benchmark for TParCount")
 
-myDF <- data.frame(sampleSizeArray,duration)
+myDF <- data.frame(myTParCountArray,duration)
 
 myFileName <- gsub(" ","_",paste(fileName, Sys.time(),".csv",sep = ""))
 myFileName <- gsub(":","_",myFileName)
 write.csv(myDF, paste(myPath,"/",myFileName,sep=""))
 
 dev.off()
-
 
