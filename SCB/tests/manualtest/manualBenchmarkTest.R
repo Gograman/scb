@@ -6,8 +6,6 @@ if(!dir.exists(myPath))
 }
 
 
-
-
 myTParCount  <-2
 myTParArray  <- createTParArray(tParCount = myTParCount)
 mySuperReplicationCount <- 4
