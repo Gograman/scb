@@ -18,7 +18,25 @@
 #' @returns A scalar value of non-coverage frequency, zero count over replication count.
 #'
 #' @examples
-#' computeNonCoverageFreqByCorBands(bandsArray, corArray)
+#'myTParCount  <-2
+#'mockTParArray  <- createTParArray(tParCount = myTParCount)
+#'myReplicationCount <- 20
+#'mySampleSize <-50
+#'myLag <- 2
+#'myLagCount <- 4
+#'trueCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
+#'myKernel <- normalDifferenceKernel
+#'myBandwidth <- 0.5
+#'myNonCoverageProbability <- 0.05
+#'bandsBrick = createBandsBrick(sampleSize = mySampleSize,
+#'                                tParArray  = mockTParArray,
+#'                                lag        = myLag,
+#'                                lagCount   = myLagCount,
+#'                                bandwidth  = myBandwidth,
+#'                               kernel     = normalDifferenceKernel,
+#'                               nonCoverageProbability = myNonCoverageProbability,
+#'                               replicationCount       = myReplicationCount)
+
 
 
 

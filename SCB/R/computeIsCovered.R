@@ -2,12 +2,13 @@
 #'
 #' @name computeIsCovered
 #'
-#' @aliases
+#' @aliases For a given band it checks whether for all t or sleeper values true rho is between upper and lower values. If it is true for all t, it returns 1 or true. If it is not true for at least one t, it returns false or 0.
 #'
 #' @description
 #'
 #' @param band band
 #' @param corArray corArray
+#' @param fileName fileName
 #'
 #' @return Vector of {0, 1 values}.
 #'
@@ -20,7 +21,7 @@
 #' corArray <- computeCor(lag = lag, tvMa1CoefArray = tvMA1CoefArray)
 #' lag  <- 2
 #' band <- createBand(X = rnorm(n = 10, mean = 0, sd = 1), alpha = 0.05)
-#' isCovered <- computeIsCovered(band = band, corArray = corArray)
+#' isCovered <- computeIsCovered(band = band, corArray = corArray,fileName=fileName)
 
 
 computeIsCovered <- function(band,
@@ -33,17 +34,15 @@ computeIsCovered <- function(band,
   # saveBand(band = band, corArray = corArray, fileName)
   tParCount <- length (corArray)
   isCoveredArrayByT <- array (0, dim = tParCount)
-  ZeroCount=0
+  ZeroCount = 0
   #saveBand(corArray = corArray,band = band,fileName = fileName )
   upper <- band[, 2]
   lower <- band[, 1]
-  for (tParIndex in 1 : tParCount)
+  for (tParIndex in 1:tParCount)
   {
-
-
-    if(corArray[tParIndex] <= upper[tParIndex])
+    if (corArray[tParIndex] <= upper[tParIndex])
     {
-      if(corArray[tParIndex] >= lower[tParIndex])
+      if (corArray[tParIndex] >= lower[tParIndex])
       {
         isCoveredArrayByT[tParIndex] <- 1
       }
@@ -57,15 +56,15 @@ computeIsCovered <- function(band,
     #   isCoveredArrayByT[tParIndex] <- 0
     # }
   }
-  for(tParIndex in 1:tParCount)
+  for (tParIndex in 1:tParCount)
   {
-   if(isCoveredArrayByT[tParIndex]==1)
-   {
-    return(1)
-     break()
+    if (isCoveredArrayByT[tParIndex] == 1)
+    {
+      return(1)
+      break()
 
 
-   }
+    }
     else
     {
       return(0)
@@ -78,4 +77,3 @@ computeIsCovered <- function(band,
 
 
 }
-
