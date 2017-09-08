@@ -16,15 +16,61 @@ createBandFunction <- function()
   myBandwidth = 0.5
   myNonCoverageProbability = 0.05
 Start=Sys.time()
-  band <- createBand(
-    tParArray = mockTParArray,
-    lag = myLag,
-    lagCount = myLagCount,
-    bandwidth = myBandwidth,
-    kernel = myKernel,
-    sampleSize = mySampleSize,
-    nonCoverageProbability = myNonCoverageProbability
-  )
+mySample <- createSample(sampleSize = mySampleSize)
+
+mockallCorHat = computeAllCorHats(
+  tParArray = mockTParArray,
+  lagCount = myLagCount,
+  sample = mySample,
+  kernel = myKernel,
+  bandwidth = myBandwidth
+
+)
+
+meByCovHat <- computeMEbyCovHat(
+  tParArray = mockTParArray,
+  lag = myLag,
+  lagCount = myLagCount,
+  sample = mySample,
+  bandwidth = 0.5,
+  nonCoverageProbability = myNonCoverageProbability,
+  allCorHats = mockallCorHat,
+  C_K = -1.978325,
+  PHI_K_NORMAL_DIFF = 0.4065)
+
+corHat = computeCorHat(
+  tParArray = tParArray,
+  lag = myLag,
+  sample = mySample,
+  kernel = myKernel,
+  bandwidth = myBandwidth
+)
+
+# myfileName <-
+#   paste(
+#     "ss",
+#     sampleSize,
+#     "l",
+#     lag,
+#     "bandW",
+#     bandwidth,
+#     "alpha"
+#     ,
+#     nonCoverageProbability,
+#     sep = "_"
+#   )
+lowerBound <- corHat - meByCovHat
+upperBound <- corHat + meByCovHat
+band <- cbind(lowerBound, upperBound)
+  # band <- createBand(
+  #   tParArray = mockTParArray,
+  #   lag = myLag,
+  #   lagCount = myLagCount,
+  #   bandwidth = myBandwidth,
+  #   kernel = myKernel,
+  #   sampleSize = mySampleSize,
+  #   nonCoverageProbability = myNonCoverageProbability
+  # )
 
 End=Sys.time()
 Duration=End-Start
@@ -41,3 +87,4 @@ test_that("Testing \'createBand\'", {
   cat("\nEnd of test createBand", "\n")
   cat("=====================")
 })
+

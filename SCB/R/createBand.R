@@ -61,15 +61,24 @@ createBand <- function(tParArray,
   )
 
 
+  myfileName <-
+    paste(
+      "ss",
+      sampleSize,
+      "l",
+      lag,
+      "bandW",
+      bandwidth,
+      "alpha"
+      ,
+      nonCoverageProbability,
+      sep = "_"
+  )
   lowerBound <- corHat - meByCovHat
   upperBound <- corHat + meByCovHat
-
-
-
   band <- cbind(lowerBound, upperBound)
-
-
-
+  # saveBand(corArray = corArray,band =band,fileName = myfileName )
+  return(band)
 
 
 

@@ -2,7 +2,7 @@ computeCorHatFunction = function () {
   cat("\n Testing \'computeCorHat\' \n")
 
   tParCount = 10
-  mySampleSize=40
+  mySampleSize=100
   mockTParArray <- createTParArray(tParCount = tParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
 
