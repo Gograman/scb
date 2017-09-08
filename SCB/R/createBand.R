@@ -74,6 +74,7 @@ createBand <- function(tParArray,
     bandwidth = bandwidth
   )
 
+
   myfileName <-
     paste(
       "ss",
@@ -92,6 +93,7 @@ createBand <- function(tParArray,
   band <- cbind(lowerBound, upperBound)
   # saveBand(corArray = corArray,band =band,fileName = myfileName )
   return(band)
+
 
 
 }

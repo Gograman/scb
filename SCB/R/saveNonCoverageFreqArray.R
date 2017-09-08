@@ -19,7 +19,7 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
   points(x=nonCoverageProbability, y=0,col="blue")
   points(x=arrayOfXAplphaHat,y=alphaHatArray,col="red")
 
-  legend("topleft",c("Non Coverage Probability","AplhaHat"),fill = c("blue","red"))
+  legend("topleft",c("Non Coverage Probability","Non Coverage Frequency"),fill = c("blue","red"))
 
   dev.off()
 

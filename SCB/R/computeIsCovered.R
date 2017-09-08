@@ -35,8 +35,8 @@ computeIsCovered <- function(band,
   # saveBand(band = band, corArray = corArray, fileName)
   tParCount <- length (corArray)
   isCoveredArrayByT <- array (0, dim = tParCount)
-  ZeroCount = 0
-  #saveBand(corArray = corArray,band = band,fileName = fileName )
+  ZeroCount=0
+  saveBand(corArray = corArray,band = band,fileName = fileName )
   upper <- band[, 2]
   lower <- band[, 1]
   for (tParIndex in 1:tParCount)
