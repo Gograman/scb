@@ -40,7 +40,7 @@ saveBand <- function(band, corArray, fileName)
   myFileName <- gsub(" ","_",paste(fileName, Sys.time(),".csv",sep = ""))
   myFileName <- gsub(":","_",myFileName)
   write.csv(saveData, paste(myPath,"/",myFileName,sep=""))
-  tParCount=10
+  tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
   plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),main= "Band and Correlation")
   lines(x=mockTParArray,y = band[,1], type = "l", col="green")
