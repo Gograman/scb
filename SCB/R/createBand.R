@@ -15,7 +15,21 @@
 #' @return A two dimensional vector representing the lower and the upper bound of CI.
 #'
 #' @examples
-#'
+#'  myLag = 1
+#'myLagCount = 4
+#'myKernel = normalDifferenceKernel
+#'myBandwidth = 0.5
+#'myNonCoverageProbability = 0.05
+#'Start=Sys.time()
+#'mySample <- createSample(sampleSize = mySampleSize)
+#'  band <- createBand(
+tParArray = mockTParArray,
+lag = myLag,
+lagCount = myLagCount,
+bandwidth = myBandwidth,
+kernel = myKernel,
+sampleSize = mySampleSize,
+nonCoverageProbability = myNonCoverageProbability)
 
 createBand <- function(tParArray,
                        lag,

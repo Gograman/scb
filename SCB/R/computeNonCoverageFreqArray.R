@@ -4,7 +4,8 @@
 #'
 #' @aliases
 #'
-#' @description
+#' @description in a cycle for each alpha in array call NonCoverageFreqArray
+#'
 #'
 #' @param superReplicationCount superReplicationCount
 #' @param replicationCount a replication count.
@@ -15,10 +16,30 @@
 #' @param bandwidth a bandwidth value.
 #' @param nonCoverageProbability probability of non-coverage.
 #'
-#' @return
+#' @return array of alpha hat
 #'
 #' @examples
-#'
+#' myTParCount  <-2
+#' myTParArray  <- createTParArray(tParCount = myTParCount)
+#'mySuperReplicationCount <- 4
+#'myReplicationCount <- 4
+#'mySampleSize <- 50
+#'myLag <- 1
+#'myLagCount <- 4
+#'myKernel <- normalDifferenceKernel
+#'myBandwidth <- 0.5
+#'myNonCoverageProbability <- 0.05
+#'nonCoverageFreqArray <- computeNonCoverageFreqArray(
+#'superReplicationCount = mySuperReplicationCount,
+#' replicationCount = myReplicationCount,
+#'  sampleSize = mySampleSize,
+#' lag = myLag,
+#'lagCount = myLagCount,
+#'  tParArray = myTParArray,
+#' kernel = myKernel,
+#' bandwidth = myBandwidth,
+#' nonCoverageProbability = myNonCoverageProbability)
+
 
 
 computeNonCoverageFreqArray  <- function(superReplicationCount,
