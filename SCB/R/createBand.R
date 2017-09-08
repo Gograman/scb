@@ -23,13 +23,13 @@
 #'Start=Sys.time()
 #'mySample <- createSample(sampleSize = mySampleSize)
 #'  band <- createBand(
-tParArray = mockTParArray,
-lag = myLag,
-lagCount = myLagCount,
-bandwidth = myBandwidth,
-kernel = myKernel,
-sampleSize = mySampleSize,
-nonCoverageProbability = myNonCoverageProbability)
+#'tParArray = mockTParArray,
+#'lag = myLag,
+#'lagCount = myLagCount,
+#'bandwidth = myBandwidth,
+#'kernel = myKernel,
+#'sampleSize = mySampleSize,
+#'nonCoverageProbability = myNonCoverageProbability)
 
 createBand <- function(tParArray,
                        lag,
