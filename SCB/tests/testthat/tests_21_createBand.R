@@ -1,7 +1,7 @@
 createBandFunction <- function()
 {
   cat("\n Testing \'createBand\' \n ")
-  mySampleSize = 62
+  mySampleSize = 61
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -39,39 +39,16 @@ meByCovHat <- computeMEbyCovHat(
   PHI_K_NORMAL_DIFF = 0.4065)
 
 corHat = computeCorHat(
-  tParArray = tParArray,
+  tParArray = mockTParArray,
   lag = myLag,
   sample = mySample,
   kernel = myKernel,
   bandwidth = myBandwidth
 )
 
-# myfileName <-
-#   paste(
-#     "ss",
-#     sampleSize,
-#     "l",
-#     lag,
-#     "bandW",
-#     bandwidth,
-#     "alpha"
-#     ,
-#     nonCoverageProbability,
-#     sep = "_"
-#   )
 lowerBound <- corHat - meByCovHat
 upperBound <- corHat + meByCovHat
 band <- cbind(lowerBound, upperBound)
-  # band <- createBand(
-  #   tParArray = mockTParArray,
-  #   lag = myLag,
-  #   lagCount = myLagCount,
-  #   bandwidth = myBandwidth,
-  #   kernel = myKernel,
-  #   sampleSize = mySampleSize,
-  #   nonCoverageProbability = myNonCoverageProbability
-  # )
-
 End=Sys.time()
 Duration=End-Start
 
