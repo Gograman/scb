@@ -1,3 +1,23 @@
+#' @title createDoubleAlphaArray
+
+#' @name createDoubleAlphaArray
+#'
+#' @aliases createDoubleAlphaArray
+#'
+#' @description Create double alpha hat array for every alpha in input array
+#'
+#' @param superReplicationCount how many times we produced alpha hat.
+#' @param replicationCount how many bands we need to generate to form a single alphaHat
+#' @param sampleSize size of the sample
+#' @param lag lag value.
+#' @param lagCount how many lags we consider.
+#' @param alphaArray a alpha parametr array
+#' @param tParArray a T parameter array
+#' @param kernel the Epanechnikov kernel.
+#' @param bandwidth a bandwidth value.
+#' @return A two dimensional array representing the alpha and many alpha hat for it.
+#'
+#' @examples
 createDoubleAlphaArray = function(superReplicationCount,
                                   replicationCount,
                                   sampleSize,

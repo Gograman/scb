@@ -2,9 +2,10 @@
 #'
 #' @name computeIsCovered
 #'
-#' @aliases For a given band it checks whether for all t or sleeper values true rho is between upper and lower values. If it is true for all t, it returns 1 or true. If it is not true for at least one t, it returns false or 0.
+#' @aliases
 #'
-#' @description
+#' @description For a given band it checks whether for all t or sleeper values true rho is between upper and lower values. If it is true for all t, it returns 1 or true.
+#' If it is not true for at least one t, it returns false or 0.
 #'
 #' @param band band
 #' @param corArray corArray

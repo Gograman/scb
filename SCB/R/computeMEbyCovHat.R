@@ -4,12 +4,12 @@
 #'
 #' @aliases
 #'
-#' @description
+#' @descriptionHeart Heart of the whole thesis.Call GammaHatCompute CK.Compute psiK
 #'
 #' @param sample sample.
 #' @param bootstrapReplicationCount bootstrapReplicationCount.
 #'
-#' @return
+#' @return Margin of error
 #'
 #' @examples
 #' tParCount = 10
