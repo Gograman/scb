@@ -1,12 +1,12 @@
 computeBetaLRVHatFunction = function () {
   cat("\n Testing \'computeBetaLRVHat\' \n")
-  mySampleSize = 100
+  mySampleSize = 200
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
 
-  mockSample <- createSample(sampleSize = myTParCount)
+  mockSample <- createSample(sampleSize = mySampleSize)
 
   myLag = 2
   myLagCount = myTParCount - 1

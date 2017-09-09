@@ -1,6 +1,6 @@
 computeAllCorHatsTestFunction = function () {
   cat("\n Testing \'computeAllCorHats\' \n")
-  mySampleSize=61
+  mySampleSize <- 62
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -9,7 +9,7 @@ computeAllCorHatsTestFunction = function () {
   mockSample <- createSample(sampleSize = mySampleSize)
 
   myLag = 1
-  myLagCount = 4
+  myLagCount <- 5
   myKernel = normalDifferenceKernel
   myBandwidth = 1
   # form all rho hats
