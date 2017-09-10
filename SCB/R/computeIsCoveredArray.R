@@ -58,8 +58,7 @@ computeIsCoveredArray <- function(bandsBrick,
 
     isCoveredArray[replicationIndex] <-
       computeIsCovered(band, corArray, fileName)
-    # isCoveredBrick[, , replicationIndex] <-
-    #   isCoveredArray[replicationIndex]
+
   }
 
 
