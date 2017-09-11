@@ -3,9 +3,11 @@ saveDoubleAplhaHatArrayFunction <- function()
   cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
   myTParCount  <- 10
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 10
-  myReplicationCount <- 20
-  mySampleSize <- 100
+
+  mySuperReplicationCount <- 6
+  myReplicationCount <- 7
+  mySampleSize <- 60
+
   myLag <- 1
   myLagCount <- 10
   myKernel <- normalDifferenceKernel
@@ -21,13 +23,13 @@ saveDoubleAplhaHatArrayFunction <- function()
                          kernel = myKernel,
                          bandwidth = myBandwidth)
 
-
-  fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                    , nonCoverageProbabilities, sep = "_")
-  fileName <- paste(fileName, "repC", myReplicationCount,"SrepC",mySuperReplicationCount, sep = "_")
-  saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
-                          alphaHats = alphaHats,fileName = fileName)
-}
+cat ("alphatsArray = ",alphaHats)
+#   fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
+#                     , nonCoverageProbabilities, sep = "_")
+#   fileName <- paste(fileName, "repC", myReplicationCount,"SrepC",mySuperReplicationCount, sep = "_")
+#   saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
+#                           alphaHats = alphaHats,fileName = fileName)
+ }
 test_that("Testing \'saveNonCoverageFreqArray\'", {
   saveDoubleAplhaHatArrayFunction()
   cat("\nEnd of test saveNonCoverageFreqArray", "\n")

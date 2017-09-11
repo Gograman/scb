@@ -7,7 +7,7 @@ computeIsCoveredArrayFunction <- function()
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
-  myReplicationCount=2
+  myReplicationCount=8
   myLag = 1
   myLagCount = 3
   myKernel = normalDifferenceKernel
