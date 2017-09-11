@@ -1,13 +1,15 @@
 saveDoubleAplhaHatArrayFunction <- function()
 {
   cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
-  myTParCount  <- 2
+  myTParCount  <- 10
   myTParArray  <- createTParArray(tParCount = myTParCount)
+
   mySuperReplicationCount <- 6
   myReplicationCount <- 7
   mySampleSize <- 60
+
   myLag <- 1
-  myLagCount <- 3
+  myLagCount <- 10
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)

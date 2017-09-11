@@ -6,10 +6,10 @@ if(!dir.exists(myPath))
 }
 
 
-myTParCountArray  <- 2:20
+myTParCountArray  <- 2:40
 
-mySuperReplicationCount <- 5
-myReplicationCount <- 5
+mySuperReplicationCount <- 20
+myReplicationCount <- 20
 mySampleSize <- 60
 myLag <- 1
 myLagCount <- 4

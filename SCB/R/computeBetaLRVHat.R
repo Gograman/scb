@@ -34,8 +34,9 @@ computeBetaLRVHat  <- function(tParArray,
                                allCorHats) {
   tParCount = length(tParArray)
   sampleSize = length(sample)
+  #cat("\nSampleSize",sampleSize)
   termCount = floor(2 * sampleSize ^ (4/15)) # aka L
-
+  #cat("\ntermCount",termCount)
   # check sizes
   if (lag > sampleSize - 1 - termCount) {
     cat ("after if with stop \n")
@@ -53,21 +54,23 @@ computeBetaLRVHat  <- function(tParArray,
 
   betaLRVHat = array(0, dim = tParCount)
   # array of size tParCount
-
+  #xTest <- termCount - lag -1
+  #cat("\n termCount - lag - 1: ",xTest)
   for (tParIndex in 1 : tParCount)
   {
     for (termIndex in 1 : (termCount - lag-1))
     {
-     # term = (2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1] -
-     #                                          allCorHats[tParIndex, abs(lag - termIndex)+1] -
-     #                                          allCorHats[tParIndex, lag + termIndex+1]) ^ 2
 
-     minuend = 2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1]
-     subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
-     lagIndex = lag + termIndex+1
+     term = (2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1] -
+                                              allCorHats[tParIndex, abs(lag - termIndex)+1] -
+                                              allCorHats[tParIndex, lag + termIndex+1]) ^ 2
+
+     #minuend = 2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1]
+     #subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
+     #lagIndex = lag + termIndex+1
      #cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
-     subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
-    term = minuend - subtrahend1 - subtrahend2
+     #subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
+    #term = minuend - subtrahend1 - subtrahend2
 
      betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
     }
