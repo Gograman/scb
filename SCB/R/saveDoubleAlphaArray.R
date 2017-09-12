@@ -1,24 +1,8 @@
 saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileName)
 {
-  workingDirectory<-getwd()
-  splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
-  tailDirectory <- tail(splitDirectory,1)
+  path <- doPath()
 
-  myPath <- "../../out"
-
-  if(tailDirectory=="SCB")
-  {
-    myPath <-"out"
-  }
-
-  if(!dir.exists(myPath))
-  {
-    dir.create(myPath)
-  }
-  fileName <- gsub("\\.","", fileName)
-  myFileName <- gsub(" ","_",paste(fileName,Sys.time(),".jpg", sep = ""))
-  myFileName <- gsub(":","_",myFileName)
-  jpeg(paste(myPath,"/",myFileName,sep=""))
+  saveJpg(fileName = fileName, path = path)
 
   arrayOfXAplphaHats <- matrix(0, nrow =length(alphaHats[,1]),
                                ncol = length(alphaHats[1,]))
@@ -31,6 +15,10 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileNam
   plot(x=c(0,1),y=c(0,1),type ="n",main="Alphas and AlphaHats",
        xlab = "Non Coverage Probability", ylab = "Non coverage Frequency")
   abline(a = 0 ,b =1)
+
+  saveData <- rbind(nonCoverageProbabilities,alphaHats)
+
+  saveCVS(fileName = fileName, path = path, dataToSave = saveData)
 
   for(i in 1:length(nonCoverageProbabilities))
   {

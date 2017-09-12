@@ -1,25 +1,8 @@
 saveBand <- function(band, corArray, fileName)
 {
-  workingDirectory<-getwd()
-  splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
-  tailDirectory <- tail(splitDirectory,1)
+  path <- doPath()
 
-  myPath <- "../../out"
-
-  if(tailDirectory=="SCB")
-  {
-    myPath <-"out"
-  }
-  if(!dir.exists(myPath))
-  {
-    dir.create(myPath)
-  }
-  fileName <- gsub("\\.","", fileName)
-  myFileName <- gsub(" ","_",paste(fileName ,Sys.time(),".jpg",sep = ""))
-  myFileName <- gsub(":","_", myFileName)
-
-  jpeg(paste(myPath,"/",myFileName,sep=""))
-
+  saveJpg(fileName = fileName, path = path)
 
   minBand <- min(band)
   maxBand <- max(band)
@@ -46,9 +29,9 @@ saveBand <- function(band, corArray, fileName)
   middle = (band[,1] + band[,2])/2
 
   saveData <- data.frame(band,middle,corArray)
-  myFileName <- gsub(" ","_",paste(fileName, Sys.time(),".csv",sep = ""))
-  myFileName <- gsub(":","_",myFileName)
-  write.csv(saveData, paste(myPath,"/",myFileName,sep=""))
+
+  saveCVS(fileName = fileName, path = path, dataToSave = saveData)
+
   tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
   plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),main= "Band and Correlation",

@@ -35,6 +35,7 @@ createDoubleAlphaArray = function(superReplicationCount,
 
   for (alphaIndex in 1: alphaCount)
 {
+    cat("\nNon Coverage Probability:  ",alphaArray[alphaIndex])
     doubleAlphaArray[, alphaIndex] = computeNonCoverageFreqArray(
       superReplicationCount = superReplicationCount,
       replicationCount = replicationCount,
