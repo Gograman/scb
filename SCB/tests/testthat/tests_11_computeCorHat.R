@@ -4,7 +4,7 @@ computeCorHatFunction = function () {
   tParCount = 10
   mySampleSize=100
   mockTParArray <- createTParArray(tParCount = tParCount)
-  mockTVMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
+  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
 

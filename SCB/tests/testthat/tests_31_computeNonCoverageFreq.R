@@ -10,7 +10,7 @@
     myLag <- 1
     myLagCount <- 10
 
-    trueCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
+    trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
 
     myKernel <- normalDifferenceKernel

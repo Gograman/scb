@@ -6,7 +6,7 @@ createBandFunction <- function()
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <-
-    createTVMA1CoefArray(coefFunction = sin, sampleSize = mySampleSize)
+    createTVMA1CoefArray(sampleSize = mySampleSize)
 
 
 

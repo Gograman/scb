@@ -17,7 +17,7 @@ createSample <- function(sampleSize)
   {
 tParCount=10
   mockTParArray <- createTParArray(tParCount = tParCount)
-  mockTVMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin,sampleSize = sampleSize)
+  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = sampleSize)
   noise <- createNoise(sampleSize = sampleSize,
                        mean = 0,
                        sd = 1)

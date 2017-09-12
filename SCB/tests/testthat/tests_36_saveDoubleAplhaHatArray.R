@@ -6,9 +6,9 @@ saveDoubleAplhaHatArrayFunction <- function()
 
   mySuperReplicationCount <- 10
   myReplicationCount <- 20
-  mySampleSize <- 200
+  mySampleSize <- 20
   myLag <- 1
-  myLagCount <- 10
+  myLagCount <- 4
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
