@@ -1,6 +1,16 @@
 saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileName)
 {
-  myPath <- "out"
+  workingDirectory<-getwd()
+  splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
+  tailDirectory <- tail(splitDirectory,1)
+
+  myPath <- "../../out"
+
+  if(tailDirectory=="SCB")
+  {
+    myPath <-"out"
+  }
+
   if(!dir.exists(myPath))
   {
     dir.create(myPath)
@@ -18,13 +28,14 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileNam
    arrayOfXAplphaHats[,i] <- array(nonCoverageProbabilities[i], dim = length(alphaHats[,1]))
   }
 
-  plot(x=c(0,1),y=c(0,1),type ="n",main="Alphas and AlphaHats")
+  plot(x=c(0,1),y=c(0,1),type ="n",main="Alphas and AlphaHats",
+       xlab = "Non Coverage Probability", ylab = "Non coverage Frequency")
   abline(a = 0 ,b =1)
 
   for(i in 1:length(nonCoverageProbabilities))
   {
     points(x=nonCoverageProbabilities[i], y=0,col="blue")
-    points(x=arrayOfXAplphaHats[,i],y=alphaHats[,i],col="red")
+    points(x=arrayOfXAplphaHats[,i],y=jitter(alphaHats[,i]),col="red")
   }
   dev.off()
   }

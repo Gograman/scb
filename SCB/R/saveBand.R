@@ -1,6 +1,15 @@
 saveBand <- function(band, corArray, fileName)
 {
-  myPath <- "out"
+  workingDirectory<-getwd()
+  splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
+  tailDirectory <- tail(splitDirectory,1)
+
+  myPath <- "../../out"
+
+  if(tailDirectory=="SCB")
+  {
+    myPath <-"out"
+  }
   if(!dir.exists(myPath))
   {
     dir.create(myPath)
@@ -42,7 +51,8 @@ saveBand <- function(band, corArray, fileName)
   write.csv(saveData, paste(myPath,"/",myFileName,sep=""))
   tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
-  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),main= "Band and Correlation")
+  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),main= "Band and Correlation",
+       xlab = "TPar Array", ylab = "Correlation")
   lines(x=mockTParArray,y = band[,1], type = "l", col="green")
   lines(x=mockTParArray,y = band[,2], type = "l", col="blue")
   lines(x=mockTParArray,y = middle, type = "l", col = "brown")
