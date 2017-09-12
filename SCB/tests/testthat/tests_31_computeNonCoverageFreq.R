@@ -6,11 +6,11 @@
     myTParCount  <-2
     mockTParArray  <- createTParArray(tParCount = myTParCount)
     myReplicationCount <- 20
-    mySampleSize <-50
-    myLag <- 2
-    myLagCount <- 4
+    mySampleSize <-100
+    myLag <- 1
+    myLagCount <- 10
 
-    trueCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
+    trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
 
     myKernel <- normalDifferenceKernel

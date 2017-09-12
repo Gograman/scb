@@ -6,7 +6,7 @@ computeIsCoveredArrayFunction <- function()
   myTParCount = 5
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
-  mockTVMA1Array <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
+  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=8
   myLag = 1
   myLagCount = 3
@@ -24,7 +24,7 @@ computeIsCoveredArrayFunction <- function()
                               sampleSize=mySampleSize,
                               nonCoverageProbability = myNonCoverageProbability,
                               replicationCount=myReplicationCount)
-  mockCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
+  mockCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
 
 Start=Sys.time()

@@ -4,7 +4,7 @@ createTVMA1CoefArrayFunction <- function() {
 
   sampleSize = 40
   Start=Sys.time()
- mockTVMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin,sampleSize = sampleSize)
+ mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = sampleSize)
 End=Sys.time()
 Duration=End-Start
   cat ("mockTVMA1CoefArray =", mockTVMA1CoefArray[1:sampleSize], "\n",

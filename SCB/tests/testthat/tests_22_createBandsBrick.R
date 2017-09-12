@@ -5,7 +5,7 @@ createBandsBrickFunction <- function()
   myTParCount = 2
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
-  mockTVMA1Array <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
+  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=5
   myLag = 1
   myLagCount = 4
