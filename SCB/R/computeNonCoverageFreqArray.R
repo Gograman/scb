@@ -58,7 +58,9 @@ computeNonCoverageFreqArray  <- function(superReplicationCount,
                     , nonCoverageProbability, sep = "_")
 
   for (superIndex in 1:superReplicationCount) {
-    cat("\n    superReplicationCount: ", superIndex)
+
+    cat("\n Now super index =",superIndex)
+
     alphaHatArray[superIndex] <- computeNonCoverageFreq(replicationCount=replicationCount,
                                                         sampleSize = sampleSize,
                                                         lag = lag,

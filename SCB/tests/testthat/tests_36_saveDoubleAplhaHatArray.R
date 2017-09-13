@@ -3,12 +3,12 @@ saveDoubleAplhaHatArrayFunction <- function()
   cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
   myTParCount  <- 15
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 20
-  myReplicationCount <- 30
-  mySampleSize <- 100
-
+  mySuperReplicationCount <- 6
+  myReplicationCount <- 7
+  mySampleSize <- 60
   myLag <- 1
-  myLagCount <- 15
+  myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
+
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
@@ -22,7 +22,6 @@ saveDoubleAplhaHatArrayFunction <- function()
                          kernel = myKernel,
                          bandwidth = myBandwidth)
 
-cat ("alphatsArray = ",alphaHats)
    fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
                      , nonCoverageProbabilities, sep = "_")
    fileName <- paste(fileName, "repC", myReplicationCount,"SrepC",mySuperReplicationCount, sep = "_")

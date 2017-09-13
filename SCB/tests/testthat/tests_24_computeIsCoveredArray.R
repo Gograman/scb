@@ -9,7 +9,7 @@ computeIsCoveredArrayFunction <- function()
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=8
   myLag = 1
-  myLagCount = 3
+  myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
   myNonCoverageProbability=0.05

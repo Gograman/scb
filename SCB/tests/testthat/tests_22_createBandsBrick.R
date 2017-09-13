@@ -8,7 +8,7 @@ createBandsBrickFunction <- function()
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=5
   myLag = 1
-  myLagCount = 4
+  myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
   myNonCoverageProbability=0.05

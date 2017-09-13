@@ -8,7 +8,7 @@
     myReplicationCount <- 20
     mySampleSize <-100
     myLag <- 1
-    myLagCount <- 10
+    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
     trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
