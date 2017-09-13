@@ -6,11 +6,11 @@ if(!dir.exists(myPath))
 }
 
 
-myTParCountArray  <- 2:40
-
+myTParCount  <-2
+myTParArray  <- createTParArray(tParCount = myTParCount)
 mySuperReplicationCount <- 20
 myReplicationCount <- 20
-mySampleSize <- 60
+mySampleSize <- 50
 myLag <- 1
 myLagCount <- 4
 myKernel <- normalDifferenceKernel
@@ -18,9 +18,8 @@ myBandwidth <- 0.5
 myNonCoverageProbability <- 0.05
 
 
-fileName <- paste( "Benchmark_TParCount","l", myLag, "bandW", myBandwidth,
-                   "sampleS", mySampleSize,
-                   "alpha", myNonCoverageProbability, sep = "_")
+fileName <- paste( "Benchmark_Samplesize","l", myLag, "bandW", myBandwidth, "alpha"
+                   , myNonCoverageProbability, sep = "_")
 
 fileName <- gsub("\\.","", fileName)
 myFileName <- gsub(" ","_",paste(fileName ,Sys.time(),".jpg",sep = ""))
@@ -28,16 +27,16 @@ myFileName <- gsub(":","_", myFileName)
 jpeg(paste(myPath,"/",myFileName,sep=""))
 
 
-duration <- numeric(length = length(myTParCountArray))
+mySuperReplicationCount <- 4:20
 
-for(i in 1: length(myTParCountArray))
+duration <- numeric(length = length(mySuperReplicationCount))
+
+for(i in 1: length(mySuperReplicationCount))
 {
-  myTParArray  <- createTParArray(tParCount = myTParCountArray[i])
-
   Start=Sys.time()
-  cat("TParCount = ",myTParCountArray[i],"\n")
+  cat("Super Replication count = ",mySuperReplicationCount[i],"\n")
   nonCoverageFreqArray = computeNonCoverageFreqArray(
-    superReplicationCount = mySuperReplicationCount,
+    superReplicationCount = mySuperReplicationCount[i],
     replicationCount = myReplicationCount,
     sampleSize = mySampleSize,
     lag = myLag,
@@ -48,12 +47,12 @@ for(i in 1: length(myTParCountArray))
     nonCoverageProbability = myNonCoverageProbability)
 
   End=Sys.time()
-  duration[i]=difftime(End,Start,units = "secs")
+  duration[i]=End-Start
 }
 
-plot(x=myTParCountArray,y=duration,main = "Benchmark for TParCount")
+plot(x=mySuperReplicationCount,y=duration,main = "Benchmark for Super Replication Count")
 
-myDF <- data.frame(myTParCountArray,duration)
+myDF <- data.frame(mySuperReplicationCount,duration)
 
 myFileName <- gsub(" ","_",paste(fileName, Sys.time(),".csv",sep = ""))
 myFileName <- gsub(":","_",myFileName)

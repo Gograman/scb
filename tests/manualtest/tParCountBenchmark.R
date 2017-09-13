@@ -48,7 +48,7 @@ for(i in 1: length(myTParCountArray))
     nonCoverageProbability = myNonCoverageProbability)
 
   End=Sys.time()
-  duration[i]=difftime(End,Start,units = "secs")
+  duration[i]=End-Start
 }
 
 plot(x=myTParCountArray,y=duration,main = "Benchmark for TParCount")
