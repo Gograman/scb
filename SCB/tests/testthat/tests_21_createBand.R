@@ -11,7 +11,7 @@ createBandFunction <- function()
 
 
   myLag = 1
-  myLagCount = 4
+  myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
   myNonCoverageProbability = 0.05

@@ -5,9 +5,9 @@
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
-    mySampleSize <- 100
+    mySampleSize <- 10
     myLag <- 1
-    myLagCount <- 4
+    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
     myAlphaArray <- seq(from = 0.05,
                       to   = 1 - 1 / myAlphaCount,
@@ -28,7 +28,8 @@
       bandwidth = myBandwidth)
     End=Sys.time()
     duration=End-Start
-    cat("DoubleAlphaHatArray= ",doubleAlphaArray)
+    cat("\nDoubleAlphaHatArray= ",doubleAlphaArray)
+    cat("\nAlphaArray: ",nonCoverageProbabilities)
     cat("\n size of double array= ",length(doubleAlphaArray))
     cat("\n Duration= ",duration)
     # expect_that(mockBand, is_a("matrix"))
