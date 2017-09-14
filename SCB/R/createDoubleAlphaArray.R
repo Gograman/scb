@@ -18,6 +18,32 @@
 #' @return A two dimensional array representing the alpha and many alpha hat for it.
 #'
 #' @examples
+#' myAlphaCount = 4
+#'myTParCount  <- 2
+#'myTParArray  <- createTParArray(tParCount = myTParCount)
+#'mySuperReplicationCount <- 3
+#'myReplicationCount <- 6
+#'mySampleSize <- 10
+#'myLag <- 1
+#'myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
+#'myKernel <- normalDifferenceKernel
+#'myAlphaArray <- seq(from = 0.05,
+#'                  to   = 1 - 1 / myAlphaCount,
+#'                   by   = 1 / myAlphaCount)
+
+#'nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
+#'myBandwidth <- 0.5
+#'doubleAlphaArray = createDoubleAlphaArray(
+#' superReplicationCount = mySuperReplicationCount,
+#'  replicationCount = myReplicationCount,
+#' sampleSize = mySampleSize,
+#'  alphaArray =myAlphaArray,
+#' lag = myLag,
+#' lagCount = myLagCount,
+#' tParArray = myTParArray,
+#' kernel = myKernel,
+#'bandwidth = myBandwidth)
+#'
 createDoubleAlphaArray = function(superReplicationCount,
                                   replicationCount,
                                   sampleSize,
