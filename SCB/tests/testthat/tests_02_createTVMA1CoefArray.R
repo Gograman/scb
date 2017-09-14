@@ -2,7 +2,7 @@ createTVMA1CoefArrayFunction <- function() {
   cat("\n Testing \'createTVMA1CoefArray\' for length and being numeric \n")
 
 
-  sampleSize = 40
+  sampleSize = 5
   Start=Sys.time()
  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = sampleSize)
 End=Sys.time()
