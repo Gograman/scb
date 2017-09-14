@@ -23,7 +23,7 @@ saveDoubleAplhaHatArrayFunction <- function()
                          bandwidth = myBandwidth)
 
    fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                     , nonCoverageProbabilities, sep = "_")
+                     , sep = "_")
    fileName <- paste(fileName, "repC", myReplicationCount,"SrepC",mySuperReplicationCount, sep = "_")
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
                           alphaHats = alphaHats,fileName = fileName)
