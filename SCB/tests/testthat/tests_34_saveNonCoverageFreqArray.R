@@ -28,12 +28,10 @@ Start=Sys.time()
   nonCoverageProbability <- myNonCoverageProbability
   alphaHatArray <- nonCoverageFreqArray
 
-  myfileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                    , myNonCoverageProbability, sep = "_")
-
-  fileName1 <- paste(myfileName, "repC", myReplicationCount, sep = "_")
   saveNonCoverageFreqArray(nonCoverageProbability = nonCoverageProbability,
-                                   alphaHatArray = alphaHatArray, fileName = fileName1)
+                                   alphaHatArray = alphaHatArray, sampleSize = mySampleSize,
+                           replicationCount = myReplicationCount, bandwidth = myBandwidth,
+                           lag = myLag, superReplicationCount = mySuperReplicationCount)
 
 
   End=Sys.time()

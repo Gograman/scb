@@ -22,11 +22,11 @@ saveDoubleAplhaHatArrayFunction <- function()
                          kernel = myKernel,
                          bandwidth = myBandwidth)
 
-   fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                     , sep = "_")
-   fileName <- paste(fileName, "repC", myReplicationCount,"SrepC",mySuperReplicationCount, sep = "_")
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
-                          alphaHats = alphaHats,fileName = fileName)
+                          alphaHats = alphaHats, sampleSize = mySampleSize,
+                          lag = myLag, replicationCount = myReplicationCount,
+                          superReplicationCount = mySuperReplicationCount,
+                          bandwidth = myBandwidth)
  }
 test_that("Testing \'saveNonCoverageFreqArray\'", {
   saveDoubleAplhaHatArrayFunction()

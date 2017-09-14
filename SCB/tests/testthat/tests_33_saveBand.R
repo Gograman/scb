@@ -10,6 +10,8 @@ saveBandFuction <- function()
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
   myNonCoverageProbability = 0.05
+  mySuperReplicationCount <- 3
+  myReplicationCount <- 6
 
   corArray <-
     computeCor(lag = myLag,
@@ -24,26 +26,14 @@ saveBandFuction <- function()
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
   )
-  myfileName <-
-    paste(
-      "ss",
-      mySampleSize,
-      "l",
-      myLag,
-      "bandW",
-      myBandwidth,
-      "alpha"
-      ,
-      myNonCoverageProbability,
-      sep = "_"
-    )
 
 
-  cat("\nFileName= ", myfileName)
+
   Start = Sys.time()
   saveBand(band = band,
-           corArray = corArray,
-           fileName = myfileName)
+           corArray = corArray, sampleSize = mySampleSize, lag = myLag,
+           replicationCount = myReplicationCount, bandwidth = myBandwidth,
+           superReplicationCount = mySuperReplicationCount)
   End = Sys.time()
   Duration = End - Start
   cat("\nDuration= ",Duration, "\n")

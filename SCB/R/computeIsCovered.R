@@ -27,7 +27,9 @@
 
 computeIsCovered <- function(band,
                              corArray,
-                             fileName)
+                             sampleSize, bandwidth,
+                             replicationCount,
+                             lag, superReplicationCount)
 {
   # Array rho_h(i),
   # counter i corresponds to t_i = 0, 1/n, …., 1 - 1/n,
@@ -36,7 +38,9 @@ computeIsCovered <- function(band,
   tParCount <- length (corArray)
   isCoveredArrayByT <- array (0, dim = tParCount)
   ZeroCount=0
-  saveBand(corArray = corArray,band = band,fileName = fileName )
+  saveBand(corArray = corArray,band = band, sampleSize = sampleSize,
+           replicationCount = replicationCount, bandwidth = bandwidth, lag = lag,
+           superReplicationCount = superReplicationCount)
   upper <- band[, 2]
   lower <- band[, 1]
   for (tParIndex in 1:tParCount)

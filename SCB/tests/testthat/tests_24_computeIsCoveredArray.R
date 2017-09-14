@@ -9,10 +9,12 @@ computeIsCoveredArrayFunction <- function()
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=8
   myLag = 1
+
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
-  myNonCoverageProbability=0.05
+  mySuperReplicationCount <- 3
+  myNonCoverageProbability <- 0.05
 
   fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
                     , myNonCoverageProbability, sep = "_")
@@ -31,7 +33,11 @@ Start=Sys.time()
       isCoveredArray <-
         computeIsCoveredArray(bandsBrick = bandsBrick,
                               corArray = mockCorArray,
-                              fileName = fileName)
+                              sampleSize = mySampleSize,
+                              bandwidth = myBandwidth,
+                              lag = myLag,
+                              replicationCount = myReplicationCount,
+                              superReplicationCount = mySuperReplicationCount)
 End=Sys.time()
 Duration=End-Start
 

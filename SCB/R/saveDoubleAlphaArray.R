@@ -1,5 +1,14 @@
-saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileName)
+saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
+                                    sampleSize, replicationCount, lag,
+                                    superReplicationCount, bandwidth)
 {
+  fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
+
+  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ", bandwidth,
+                    ", replicationCount= ", replicationCount, ", SuperRep = ",
+                    superReplicationCount,sep = "")
+
   path <- doPath()
 
   saveJpg(fileName = fileName, path = path)
@@ -12,8 +21,11 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats, fileNam
    arrayOfXAplphaHats[,i] <- array(nonCoverageProbabilities[i], dim = length(alphaHats[,1]))
   }
 
-  plot(x=c(0,1),y=c(0,1),type ="n",main="Alphas and AlphaHats",
+  plot(x=c(0,1),y=c(0,1),type ="n",
        xlab = "Non Coverage Probability", ylab = "Non coverage Frequency")
+
+  title(main="Alphas and AlphaHats", sub = subTitle)
+
   abline(a = 0 ,b =1)
 
   saveData <- rbind(nonCoverageProbabilities,alphaHats)

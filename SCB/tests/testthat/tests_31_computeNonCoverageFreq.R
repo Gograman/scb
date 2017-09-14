@@ -7,6 +7,7 @@
     mockTParArray  <- createTParArray(tParCount = myTParCount)
     myReplicationCount <- 20
     mySampleSize <-100
+    mySuperReplicationCount <- 20
     myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
@@ -50,7 +51,7 @@
                                             kernel = myKernel,
                                             bandwidth = myBandwidth,
                                             nonCoverageProbability = myNonCoverageProbability,
-                                            fileName = fileName)
+                                            superReplicationCount = mySuperReplicationCount)
 End=Sys.time()
 Duration=End-Start
 

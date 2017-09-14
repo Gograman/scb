@@ -1,5 +1,15 @@
-saveBand <- function(band, corArray, fileName)
+saveBand <- function(band, corArray,
+                     sampleSize, bandwidth,
+                     replicationCount,
+                     lag, superReplicationCount)
 {
+  fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
+
+  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ", bandwidth,
+                    ", replicationCount= ", replicationCount, ", SuperRep = ",
+                    superReplicationCount,sep = "")
+
   path <- doPath()
 
   saveJpg(fileName = fileName, path = path)
@@ -34,8 +44,11 @@ saveBand <- function(band, corArray, fileName)
 
   tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
-  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),main= "Band and Correlation",
+  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),
        xlab = "TPar Array", ylab = "Correlation")
+
+  title(main="Non Coverage Freq Array",sub =subTitle)
+
   lines(x=mockTParArray,y = band[,1], type = "l", col="green")
   lines(x=mockTParArray,y = band[,2], type = "l", col="blue")
   lines(x=mockTParArray,y = middle, type = "l", col = "brown")

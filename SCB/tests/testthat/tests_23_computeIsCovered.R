@@ -8,7 +8,8 @@ computeIsCoveredFunction = function()
   # may be different
   mockTVMA1Array <-
     createTVMA1CoefArray(sampleSize = mySampleSize)
-
+  myReplicationCount=8
+  mySuperReplicationCount <- 3
 myCoefFunction=sin
 
   myLag = 2
@@ -36,7 +37,11 @@ myCoefFunction=sin
 Start=Sys.time()
   isCovered <- computeIsCovered(mockBand,
                                 mockCor,
-                                fileName = fileName)
+                                sampleSize = mySampleSize,
+                                bandwidth = myBandwidth,
+                                lag = myLag,
+                                replicationCount = myReplicationCount,
+                                superReplicationCount = mySuperReplicationCount)
   End=Sys.time()
   Duration=End-Start
 
