@@ -4,11 +4,11 @@ doPath <- function()
   splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
   tailDirectory <- tail(splitDirectory,1)
 
-  myPath <- "../../out"
+  myPath <- "../../../output"
 
   if(tailDirectory=="SCB")
   {
-    myPath <-"out"
+    myPath <-"../output"
   }
 
   return(myPath)
