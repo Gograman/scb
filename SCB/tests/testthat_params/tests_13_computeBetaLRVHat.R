@@ -1,0 +1,48 @@
+computeBetaLRVHatFunction = function (sampleSize=5,lag=1,tParCount=10,bandwidth=0.5) {
+  cat("\n Testing \'computeBetaLRVHat\' \n")
+  mySampleSize = sampleSize
+  myTParCount = tParCount
+  mockTParArray <- createTParArray(tParCount = myTParCount)
+  # may be different
+  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
+
+  mockSample <- createSample(sampleSize = mySampleSize)
+
+  myLag = lag
+  myLagCount = computeLagCount(sampleSize = mySampleSize,lag=myLag)
+  myKernel = normalDifferenceKernel
+  myBandwidth = bandwidth
+ # form all rho hats
+  # first try fakes
+  mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
+                                    lagCount = myLagCount,
+                                    sample = mockSample,
+                                    kernel = myKernel,
+                                    bandwidth = myBandwidth)
+Start=Sys.time()
+  mockBetaLRVHat <- computeBetaLRVHat(tParArray = mockTParArray,
+                                      lag = myLag,
+                                      sample = mockSample,
+                                      kernel = myKernel,
+                                      bandwidth = myBandwidth,
+                                      allCorHats = mockAllCorHats)
+End=Sys.time()
+Duration=End-Start
+
+  cat("mockBetaLRVHat[1:5] =", mockBetaLRVHat[1:5], "\n")
+  cat("Duration= ",Duration,"\n")
+  # expect_that(betaLRVHat, is_a("matrix"))
+  # expect_that(dim(betaLRVHat)[1], equals(2))  # the number of rows
+  # expect_that(dim(betaLRVHat)[2], equals(10)) # the number of cols
+
+}
+
+test_that("Testing \'computeBetaLRVHat\'", {
+  computeBetaLRVHatFunction()
+  cat(" End of test computeBetaLRVHat","\n")
+  cat("=====================")
+  }
+)
+
+
+
