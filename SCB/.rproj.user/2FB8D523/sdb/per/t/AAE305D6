@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\nif (! require (\"testthat\"))\n  install.packages (\"testthat\")\nlibrary (\"testthat\")\n\"C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB\"\ngetwd()\nsource(\"../util/sourceDir.R\")\nsourceDir(path = \"./R/\")\nsource (\"tests/testthat/tests_12_computeAllCorHats.R\")\n\n",
+    "created" : 1505396068136.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1104696755",
+    "id" : "AAE305D6",
+    "lastKnownWriteTime" : 1505134071,
+    "last_content_update" : 1505134071,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/manualtest/manualTestComputeAllCorHats.R",
+    "project_path" : "tests/manualtest/manualTestComputeAllCorHats.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

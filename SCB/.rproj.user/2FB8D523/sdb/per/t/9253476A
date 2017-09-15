@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "createNoiseFunction <- function () {\n  cat(\"\\n Testing \\'createNoise\\' for length and being numeric \\n\")\n  set.seed(100)\n  mySampleSize = scbParams$sampleSize\n  Start=Sys.time()\n  mockNoise <- createNoise(sampleSize = mySampleSize,\n                           mean = 0,\n                           sd = 1)\n  End=Sys.time()\n  Duration=End-Start\n\n  set.seed(100)\n  mockRnorm <- rnorm(n = mySampleSize,\n                     mean = 0,\n                     sd = 1)\n\n\n  cat (\"mockNoise[1:5] =\", mockRnorm[1:5], \"\\n\")\n  cat (\"length(mockNoise) =\", length(mockNoise), \"\\n\")\n  cat(\"Duration =\",Duration,\"\\n\")\n\n\n  expect_that(mockRnorm, is_a(\"numeric\"))\n}\n\ntest_that(\"Testing \\'createNoise\\' for length and being numeric\\'\", {\n  mockRnorm <- createNoiseFunction()\n  cat(\" End of test createNoise \",\"\\n\")\n  cat(\"=====================\")\n\n}\n)\n\n\n\n\n",
+    "created" : 1505395345078.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2408034514",
+    "id" : "9253476A",
+    "lastKnownWriteTime" : 1505391574,
+    "last_content_update" : 1505391574,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat_params/tests_04_createNoise.R",
+    "project_path" : "tests/testthat_params/tests_04_createNoise.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

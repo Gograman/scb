@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "getwd()\n\nsource(\"../util/custom_testing/doAll.R\")\n\ndevtools::load_all(\".\")\n\nscbParams <- list(tParCount = 10,\n                  sampleSize = 10,\n                  mean = 0,\n                  sd = 1,\n                  kernel = normalDifferenceKernel,\n                  u = seq(-10, 10, 0.1),\n                  lag = 2,\n                  nonCoverageProbability = 0.05,\n                  c_k = -1.978325,\n                  phi_k_norm_diff = 0.4065,\n                  alphaCount = 10,\n                  replicationCount = 10,\n                  superReplicationCount = 10,\n                  bwidth = 1)\n\nscbList <- doAll(scbParams = scbParams)\n\n\n\n",
+    "created" : 1505477690980.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2232890543",
+    "id" : "B842A917",
+    "lastKnownWriteTime" : 1505478974,
+    "last_content_update" : 1505478974732,
+    "path" : "C:/Dropbox/Github/SCB-stat101/util/custom_testing/testing_with_custom_params.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
