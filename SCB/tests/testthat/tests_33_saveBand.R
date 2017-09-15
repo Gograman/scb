@@ -9,7 +9,7 @@ saveBandFuction <- function()
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
-  myNonCoverageProbability = 0.05
+  myNonCoverageProbability = 0.01
   mySuperReplicationCount <- 3
   myReplicationCount <- 6
 

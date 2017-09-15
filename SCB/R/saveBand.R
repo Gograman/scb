@@ -44,7 +44,7 @@ saveBand <- function(band, corArray,
 
   tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
-  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:1),
+  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:yMax),
        xlab = "TPar Array", ylab = "Correlation")
 
   title(main="Non Coverage Freq Array",sub =subTitle)

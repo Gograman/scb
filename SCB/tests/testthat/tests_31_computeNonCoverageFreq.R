@@ -3,7 +3,7 @@
   {
     cat ("\n Testing \'computeNonCoverageFreq\' \n")
 
-    myTParCount  <-2
+    myTParCount  <- 2
     mockTParArray  <- createTParArray(tParCount = myTParCount)
     myReplicationCount <- 20
     mySampleSize <-100
