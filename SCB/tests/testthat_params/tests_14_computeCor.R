@@ -1,9 +1,9 @@
-computeCorTestFunction = function () {
+computeCorTestFunction = function (sampleSize=5,lag=1,tParCount=10) {
   cat("\n Testing \'computeCor\' \n")
 
-  myTParCount = scbParams$tParCount
-  myLag = scbParams$lag
-  mySampleSize = scbParams$sampleSize
+  myTParCount = tParCount
+  myLag = lag
+  mySampleSize = sampleSize
 
   mockTParArray <- createTParArray(tParCount = myTParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)

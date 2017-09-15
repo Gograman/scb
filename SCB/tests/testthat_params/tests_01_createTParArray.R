@@ -1,4 +1,4 @@
-createTParArrayFunction <- function () {
+createTParArrayFunction <- function (tParCount=10) {
   cat ("\n Testing \'createTParArray\' for for length and being numeric \n")
   tParCount = scbParams$tParCount
   start=Sys.time()

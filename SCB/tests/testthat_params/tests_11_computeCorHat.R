@@ -1,16 +1,16 @@
-computeCorHatFunction = function () {
+computeCorHatFunction = function (sampleSize=5,lag=1,tParCount=10,bandwidth=0.5) {
   cat("\n Testing \'computeCorHat\' \n")
 
-  tParCount = scbParams$tParCount
-  mySampleSize = scbParams$sampleSize
+  tParCount = tParCount
+  mySampleSize = sampleSize
   mockTParArray <- createTParArray(tParCount = tParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = scbParams$lag
+  myLag = lag
   myKernel = normalDifferenceKernel
-  myBandwidth = scbParams$bwidth
+  myBandwidth = bandwidth
   Start=Sys.time()
   mockCorHat <- computeCorHat(tParArray = mockTParArray,
                               lag = myLag,

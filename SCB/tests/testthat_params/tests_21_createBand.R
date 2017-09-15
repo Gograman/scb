@@ -1,8 +1,8 @@
-createBandFunction <- function()
+createBandFunction <- function(sampleSize=5,lag=1,tParCount=10,bandwidth=0.5,nonCoverageProbability=0.05)
 {
   cat("\n Testing \'createBand\' \n ")
-  mySampleSize = 61
-  myTParCount = 10
+  mySampleSize = sampleSize
+  myTParCount = tParCount
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <-
@@ -10,11 +10,11 @@ createBandFunction <- function()
 
 
 
-  myLag = 1
+  myLag = lag
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
-  myBandwidth = 0.5
-  myNonCoverageProbability = 0.05
+  myBandwidth = bandwidth
+  myNonCoverageProbability = nonCoverageProbability
 Start=Sys.time()
 mySample <- createSample(sampleSize = mySampleSize)
 

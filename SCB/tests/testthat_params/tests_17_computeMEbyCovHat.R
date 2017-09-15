@@ -1,18 +1,18 @@
-computeMEbyCovHatFunction <- function () {
+computeMEbyCovHatFunction <- function (sampleSize=5,lag=1,tParCount=10,bandwidth=0.5) {
   cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
-  mySampleSize=62
-  myTParCount = 10
+  mySampleSize=sampleSize
+  myTParCount = tParCount
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = myTParCount)
 
-  myLag = 1
-  myLagCount = 4
+  myLag = lag
+  myLagCount = computeLagCount(myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
-  myBandwidth = 1
+  myBandwidth = bandwidth
   # form all rho hats
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
