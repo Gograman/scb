@@ -1,7 +1,7 @@
-createNoiseFunction <- function () {
+createNoiseFunction <- function (samplesize=5) {
   cat("\n Testing \'createNoise\' for length and being numeric \n")
   set.seed(100)
-  mySampleSize = scbParams$sampleSize
+  mySampleSize = samplesize
   Start=Sys.time()
   mockNoise <- createNoise(sampleSize = mySampleSize,
                            mean = 0,

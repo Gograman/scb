@@ -1,17 +1,17 @@
-computeAllCorHatsTestFunction = function () {
+computeAllCorHatsTestFunction = function (sampleSize=5,lag=1,tParCount=10,bandwidth=0.5) {
   cat("\n Testing \'computeAllCorHats\' \n")
-  mySampleSize <- scbParams$sampleSize
-  myTParCount = scbParams$tParCount
+  mySampleSize <- sampleSize
+  myTParCount = tParCount
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = scbParams$lag
-  myLagCount <- 5
+  myLag = lag
+  myLagCount <- computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
-  myBandwidth = scbParams$bwidth
+  myBandwidth = bandwidth
   # form all rho hats
   # first try fakes
   Start=Sys.time()
