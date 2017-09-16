@@ -1,9 +1,8 @@
-computeCovHatFunction = function () {
+computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
   cat("\n Testing \'computeCovHat\' \n")
-  tParCount=10
+  tParCount=tParCount
   tParArray=createTParArray(tParCount = tParCount)
-  mySampleSize=40
-
+  mySampleSize=sampleSize
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
   mockSample <- createSample(sampleSize = mySampleSize)
 
