@@ -4,9 +4,9 @@ saveNonCoverageFreqArrayFunction <- function()
 
   myTParCount  <-10
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 4
-  myReplicationCount <- 10
-  mySampleSize <- 170
+  mySuperReplicationCount <- 2
+  myReplicationCount <- 4
+  mySampleSize <- 10
   myLag <- 1
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel <- normalDifferenceKernel
