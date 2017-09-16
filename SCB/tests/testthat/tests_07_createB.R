@@ -1,7 +1,7 @@
-createBFunction<-function()
+createBFunction<-function(sampleSize=5)
 {
   cat("\n Testing \'createB\' \n")
-  mySampleSize = 10
+  mySampleSize = sampleSize
   Start=Sys.time()
   b <- computeB(mySampleSize)
   End=Sys.time()
