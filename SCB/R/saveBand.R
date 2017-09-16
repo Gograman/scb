@@ -3,10 +3,11 @@ saveBand <- function(band, corArray,
                      replicationCount,
                      lag, superReplicationCount)
 {
-  fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste("ss", sampleSize, "l", lag, "bandW", round(bandwidth,digits = 1 ), sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ", bandwidth,
+  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+                    round(bandwidth,digits = 1 ),
                     ", replicationCount= ", replicationCount, ", SuperRep = ",
                     superReplicationCount,sep = "")
 
@@ -16,26 +17,28 @@ saveBand <- function(band, corArray,
 
   minBand <- min(band)
   maxBand <- max(band)
-  yMin = -1
-  yMax = 1
-  while(T)
+  yMin = 0
+  yMax = 0
+  repeat
   {
-    if(yMin < minBand)
+    if(yMin <= minBand)
     {
-      if(yMax > maxBand)
+      if(yMax >= maxBand)
       {
          break();
       }
       else
       {
-        yMax = yMax + 0.01
+        yMax = yMax + 0.5
       }
     }
     else
     {
-     yMin = yMin - 0.01
+     yMin = yMin - 0.5
     }
   }
+  xMinMargin <- 0
+  xMaxMargin <- 1
   middle = (band[,1] + band[,2])/2
 
   saveData <- data.frame(band,middle,corArray)
@@ -44,10 +47,13 @@ saveBand <- function(band, corArray,
 
   tParCount=length(corArray)
   mockTParArray=createTParArray(tParCount)
-  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(0:yMax),
+
+
+  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(xMinMargin:xMaxMargin),
        xlab = "TPar Array", ylab = "Correlation")
 
-  title(main="Non Coverage Freq Array",sub =subTitle)
+  title(main = "Non Coverage Freq Array",sub = subTitle)
+
 
   lines(x=mockTParArray,y = band[,1], type = "l", col="green")
   lines(x=mockTParArray,y = band[,2], type = "l", col="blue")

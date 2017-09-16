@@ -16,8 +16,7 @@ computeIsCoveredArrayFunction <- function()
   mySuperReplicationCount <- 3
   myNonCoverageProbability <- 0.05
 
-  fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                    , myNonCoverageProbability, sep = "_")
+
   bandsBrick=createBandsBrick(tParArray=mockTParArray,
                               lag=myLag,
                               lagCount=myLagCount,
