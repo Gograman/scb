@@ -5,7 +5,7 @@ createNoiseFunction <- function (sampleSize=5) {
   Start=Sys.time()
   mockNoise <- createNoise(sampleSize = mySampleSize,
                            mean = 0,
-                           sd = 1)
+                              sd = 1)
   End=Sys.time()
   Duration=End-Start
 
@@ -15,10 +15,10 @@ createNoiseFunction <- function (sampleSize=5) {
                      sd = 1)
 
 
+
   cat ("mockNoise[1:5] =", mockRnorm[1:5], "\n")
   cat ("length(mockNoise) =", length(mockNoise), "\n")
   cat("Duration =",Duration,"\n")
-
 
   expect_that(mockRnorm, is_a("numeric"))
 }

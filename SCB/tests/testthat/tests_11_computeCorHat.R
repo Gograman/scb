@@ -7,7 +7,6 @@ computeCorHatFunction = function () {
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
-
   myLag = 1
   myKernel = normalDifferenceKernel
   myBandwidth = 1

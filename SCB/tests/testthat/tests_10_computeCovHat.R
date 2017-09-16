@@ -5,7 +5,7 @@ computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
   mySampleSize=sampleSize
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
   mockSample <- createSample(sampleSize = mySampleSize)
-
+createNoiseFunction(sampleSize = )
   myLag = 1
   myKernel = normalDifferenceKernel
   myBandwidth = 1
