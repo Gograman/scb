@@ -5,8 +5,9 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
   fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ", bandwidth,
-                    ", replicationCount= ", replicationCount, ", SuperRep = ",
+  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+                    round(bandwidth,digits = 1 ),
+                    ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")
 
   path <- doPath()
@@ -22,7 +23,7 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
   }
 
   plot(x=c(0,1),y=c(0,1),type ="n",
-       xlab = "Non Coverage Probability", ylab = "Non coverage Frequency")
+       xlab = "", ylab = "Non coverage Frequency")
 
   title(main="Alphas and AlphaHats", sub = subTitle)
 

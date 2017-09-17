@@ -8,15 +8,15 @@ saveBand <- function(band, corArray,
 
   subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
                     round(bandwidth,digits = 1 ),
-                    ", replicationCount= ", replicationCount, ", SuperRep = ",
+                    ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")
 
   path <- doPath()
 
   saveJpg(fileName = fileName, path = path)
-
-  minBand <- min(band)
-  maxBand <- max(band)
+  df <- cbind(band,corArray)
+  minBand <- min(df)
+  maxBand <- max(df)
   yMin = 0
   yMax = 0
   repeat
@@ -37,6 +37,15 @@ saveBand <- function(band, corArray,
      yMin = yMin - 0.5
     }
   }
+
+  #if(abs(yMin) > yMax)
+  #{
+  #  yMax <- -yMin
+  #}
+  #else
+  ##{
+  #  yMin <- -yMax
+  #}
   xMinMargin <- 0
   xMaxMargin <- 1
   middle = (band[,1] + band[,2])/2
@@ -46,11 +55,11 @@ saveBand <- function(band, corArray,
   saveCVS(fileName = fileName, path = path, dataToSave = saveData)
 
   tParCount=length(corArray)
-  mockTParArray=createTParArray(tParCount)
+  mockTParArray=createTParArray(tParCount-1)
 
 
   plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(xMinMargin:xMaxMargin),
-       xlab = "TPar Array", ylab = "Correlation")
+       xlab = "", ylab = "Correlation")
 
   title(main = "Non Coverage Freq Array",sub = subTitle)
 

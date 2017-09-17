@@ -1,10 +1,6 @@
 rm (list = ls())
-myPath <- "out"
-if(!dir.exists(myPath))
-{
-  dir.create(myPath)
-}
 
+myPath <- doPath()
 
 myTParCountArray  <- 2:40
 

@@ -19,4 +19,5 @@ createTParArray <- function(tParCount)
   tParArray <- seq(from = 0,
                    to   = 1 - 1 / tParCount,
                    by   = 1 / tParCount)
+  tParArray <- c(tParArray,1)
 }
