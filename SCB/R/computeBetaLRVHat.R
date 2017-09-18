@@ -51,7 +51,7 @@ computeBetaLRVHat  <- function(tParArray,
   #   cat ("\n after if with stop \n")
   #   stop("wrong relation between sampleSize, termCount, lag!")
   # }
-term=0
+  term=0
   betaLRVHat = array(0, dim = tParCount)
   # array of size tParCount
   #xTest <- termCount - lag -1
@@ -61,19 +61,28 @@ term=0
     for (termIndex in 1 : (termCount - lag-1))
     {
 
-     term = (2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1] -
-                                              allCorHats[tParIndex, abs(lag - termIndex)+1] -
-                                              allCorHats[tParIndex, lag + termIndex+1]) ^ 2
+      term = (2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1] -
+                allCorHats[tParIndex, abs(lag - termIndex)+1] -
+                allCorHats[tParIndex, lag + termIndex+1]) ^ 2
+      minuendFactor1 = 2 * allCorHats[tParIndex, lag+1]
+      minuendFactor2 = allCorHats[tParIndex, termIndex+1]
+      minuend = minuendFactor1 * minuendFactor2
+      subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
+      lagIndex = lag + termIndex+1
+      cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
+      subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
+      term = minuend - subtrahend1 - subtrahend2
+      cat("\n minuendFactor1 = ", minuendFactor1)
+      cat("\n minuendFactor2 = ", minuendFactor2)
+      cat("\n minuend= ",minuend)
+      cat("\n tParIndex= ",tParIndex)
+      cat("\n termIndex+1= ",termIndex+1)
+      cat("\n subtrahend1= ",subtrahend1)
+      cat("\n subtrahend2= ",subtrahend2)
+      cat("\n term= ",term)
 
-     #minuend = 2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1]
-     #subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
-     #lagIndex = lag + termIndex+1
-     #cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
-     #subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
-    #term = minuend - subtrahend1 - subtrahend2
+      # betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
 
-     # betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
-     cat("\nTerm= ",term)
     }
   }
 

@@ -6,7 +6,7 @@
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
     mySampleSize <- 10
-    myLag <- 1
+    myLag <- 3
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
     myAlphaArray <- seq(from = 0.05,
