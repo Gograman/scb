@@ -51,7 +51,7 @@ computeBetaLRVHat  <- function(tParArray,
   #   cat ("\n after if with stop \n")
   #   stop("wrong relation between sampleSize, termCount, lag!")
   # }
-
+term=0
   betaLRVHat = array(0, dim = tParCount)
   # array of size tParCount
   #xTest <- termCount - lag -1
@@ -72,7 +72,8 @@ computeBetaLRVHat  <- function(tParArray,
      #subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
     #term = minuend - subtrahend1 - subtrahend2
 
-     betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
+     # betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
+     cat("\nTerm= ",term)
     }
   }
 

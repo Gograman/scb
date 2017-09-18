@@ -1,17 +1,17 @@
 computeBetaLRVHatFunction = function () {
   cat("\n Testing \'computeBetaLRVHat\' \n")
-  mySampleSize = 200
-  myTParCount = 10
+  mySampleSize =10
+  myTParCount = 5
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 2
-  myLagCount = myTParCount - 1
+  myLag = 3
+  myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
-  myBandwidth = 1
+  myBandwidth = 0.5
  # form all rho hats
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,

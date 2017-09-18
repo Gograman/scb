@@ -10,7 +10,7 @@ createBandFunction <- function()
 
 
 
-  myLag = 1
+  myLag = 2
   myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
@@ -28,7 +28,6 @@ createBandFunction <- function()
   )
   End = Sys.time()
   Duration = End - Start
-
 
 
   cat("\nband1", band)
