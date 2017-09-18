@@ -6,7 +6,7 @@ saveBand <- function(band, corArray,
   fileName <- paste("ss", sampleSize, "l", lag, "bandW", round(bandwidth,digits = 1 ), sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+  subTitle <- paste("TparArray","\nsample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
                     round(bandwidth,digits = 1 ),
                     ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")
