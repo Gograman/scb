@@ -4,11 +4,14 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
                                      replicationCount,
                                      lag, superReplicationCount)
 {
+  fileName <- "NonCoverageFreqArray"
 
-  fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+  xLab <- "NonCoverageProbability"
+
+  subTitle <- paste(xLab,"\nsampleSize = ",sampleSize,", lag= ",lag,", bandwidth = ",
                     round(bandwidth,digits = 1 ),
                     ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")

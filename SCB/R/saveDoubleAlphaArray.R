@@ -2,10 +2,14 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
                                     sampleSize, replicationCount, lag,
                                     superReplicationCount, bandwidth)
 {
-  fileName <- paste("ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste("AlphasAndAlphaHats")
+
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("sample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+  xLab <- "NonCoverageProbabilities"
+
+  subTitle <- paste(xLab,"\nsampleSize = ",sampleSize,", lag= ",lag,", bandwidth = ",
                     round(bandwidth,digits = 1 ),
                     ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")

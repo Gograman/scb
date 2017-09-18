@@ -3,10 +3,14 @@ saveBand <- function(band, corArray,
                      replicationCount,
                      lag, superReplicationCount)
 {
-  fileName <- paste("ss", sampleSize, "l", lag, "bandW", round(bandwidth,digits = 1 ), sep = "_")
+  fileName <- "BandAndCorrelation"
+
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", round(bandwidth,digits = 1 ), sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
 
-  subTitle <- paste("TparArray","\nsample Size = ",sampleSize,", lag= ",lag,", bandwidth = ",
+  xLab <- "TparArray"
+
+  subTitle <- paste(xLab,"\nsampleSize = ",sampleSize,", lag= ",lag,", bandwidth = ",
                     round(bandwidth,digits = 1 ),
                     ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
                     superReplicationCount,sep = "")
@@ -38,14 +42,14 @@ saveBand <- function(band, corArray,
     }
   }
 
-  #if(abs(yMin) > yMax)
-  #{
-  #  yMax <- -yMin
-  #}
-  #else
-  ##{
-  #  yMin <- -yMax
-  #}
+  if(abs(yMin) > yMax)
+  {
+    yMax <- -yMin
+  }
+  else
+  {
+    yMin <- -yMax
+  }
   xMinMargin <- 0
   xMaxMargin <- 1
   middle = (band[,1] + band[,2])/2
@@ -61,7 +65,7 @@ saveBand <- function(band, corArray,
   plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(xMinMargin:xMaxMargin),
        xlab = "", ylab = "Correlation")
 
-  title(main = "Non Coverage Freq Array",sub = subTitle)
+  title(main = "Band and Correlation",sub = subTitle)
 
 
   lines(x=mockTParArray,y = band[,1], type = "l", col="green")
