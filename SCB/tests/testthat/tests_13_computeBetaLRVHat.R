@@ -1,6 +1,6 @@
 computeBetaLRVHatFunction = function () {
   cat("\n Testing \'computeBetaLRVHat\' \n")
-  mySampleSize =10
+  mySampleSize =8
   myTParCount = 5
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different

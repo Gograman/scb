@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/MKS/scb/SCB/R/computeAllCorHats.R="869C59DB"
 C:/Users/MKS/scb/SCB/R/computeBetaLRVHat.R="7C25A7A7"
 C:/Users/MKS/scb/SCB/R/computeCor.R="CD103A1E"
@@ -31,3 +32,16 @@ C:/Users/MKS/scb/SCB/tests/testthat/tests_24_computeIsCoveredArray.R="7815D699"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_33_saveBand.R="AE1758F0"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_34_saveNonCoverageFreqArray.R="1D027818"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_36_saveDoubleAplhaHatArray.R="758C28C4"
+=======
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/computeBetaLRVHat.R="4FAB32D5"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/computeLagCount.R="B14E571A"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/computeTermCount.R="D2DF5CF7"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/isInputCompatible.R="DD0DCF41"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/saveBand.R="3D7753AC"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/saveJPG.R="626B48DE"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/tests/testthat/tests_13_computeBetaLRVHat.R="609D588D"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/tests/testthat/tests_36_saveDoubleAplhaHatArray.R="C08BE147"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/tests/testthat/tests_37_computeTermCount.R="A7DD81A5"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/tests/testthat/tests_38_computeLagCount.R="DDF3CDCB"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/tests/testthat/tests_39_isInputCompatible.R="CAE385EA"
+>>>>>>> 7fd8ef3763d67528622e2553c0fc1d9bb82884a9
