@@ -42,6 +42,17 @@ saveBand <- function(band, corArray,
     }
   }
 
+  # Try this way.
+  # maxUpper = max (upper) over all tPar
+  # maxCor = max (correlation) over all tPar
+  # minLower = min (lower) over all tPar
+  # minCor = min (correlation) over all tPar
+  # maxmax = max (maxUpper , maxCor)
+  # minmin= min (minLower, minCor)
+  # Set y max = maxmax + something
+  # Set y min = minmin - something
+
+
   #if(abs(yMin) > yMax)
   #{
   #  yMax <- -yMin

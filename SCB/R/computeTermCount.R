@@ -1,5 +1,5 @@
 computeTermCount=function(sampleSize)
 {
 
-  return (2 * sampleSize^(4/15) )
+  return (floor (2 * sampleSize^(4/15)))
 }
