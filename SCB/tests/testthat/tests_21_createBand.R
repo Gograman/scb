@@ -1,7 +1,7 @@
 createBandFunction <- function()
 {
   cat("\n Testing \'createBand\' \n ")
-  mySampleSize = 61
+  mySampleSize = 10
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -10,7 +10,7 @@ createBandFunction <- function()
 
 
 
-  myLag = 2
+  myLag = 5
   myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5

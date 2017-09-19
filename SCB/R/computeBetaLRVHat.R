@@ -58,30 +58,31 @@ computeBetaLRVHat  <- function(tParArray,
   #cat("\n termCount - lag - 1: ",xTest)
   for (tParIndex in 1 : tParCount)
   {
-    for (termIndex in 1 : (termCount - lag-1))
+    for (termIndex in 1 : (termCount))
     {
 
       term = (2 * allCorHats[tParIndex, lag+1] * allCorHats[tParIndex, termIndex+1] -
                 allCorHats[tParIndex, abs(lag - termIndex)+1] -
                 allCorHats[tParIndex, lag + termIndex+1]) ^ 2
-      minuendFactor1 = 2 * allCorHats[tParIndex, lag+1]
-      minuendFactor2 = allCorHats[tParIndex, termIndex+1]
-      minuend = minuendFactor1 * minuendFactor2
-      subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
-      lagIndex = lag + termIndex+1
-      cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
-      subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
-      term = minuend - subtrahend1 - subtrahend2
-      cat("\n minuendFactor1 = ", minuendFactor1)
-      cat("\n minuendFactor2 = ", minuendFactor2)
-      cat("\n minuend= ",minuend)
-      cat("\n tParIndex= ",tParIndex)
-      cat("\n termIndex+1= ",termIndex+1)
-      cat("\n subtrahend1= ",subtrahend1)
-      cat("\n subtrahend2= ",subtrahend2)
-      cat("\n term= ",term)
+      # minuendFactor1 = 2 * allCorHats[tParIndex, lag+1]
+      # minuendFactor2 = allCorHats[tParIndex, termIndex+1]
+      # minuend = minuendFactor1 * minuendFactor2
+      # subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
+      # lagIndex = lag + termIndex+1
+      # cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
+      # subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
+      # term = minuend - subtrahend1 - subtrahend2
+      # cat("\n minuendFactor1 = ", minuendFactor1)
+      # cat("\n minuendFactor2 = ", minuendFactor2)
+      # cat("\n minuend= ",minuend)
+      # cat("\n tParIndex= ",tParIndex)
+      # cat("\n termIndex+1= ",termIndex)
+      # cat("\n subtrahend1= ",subtrahend1)
+      # cat("\n subtrahend2= ",subtrahend2)
+      # cat("\n term= ",term)
+      # cat("\n termCount= ",termCount)
 
-      # betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
+      betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
 
     }
   }
