@@ -42,14 +42,14 @@ saveBand <- function(band, corArray,
     }
   }
 
-  if(abs(yMin) > yMax)
-  {
-    yMax <- -yMin
-  }
-  else
-  {
-    yMin <- -yMax
-  }
+  #if(abs(yMin) > yMax)
+  #{
+  #  yMax <- -yMin
+  #}
+  #else
+  #{
+  #  yMin <- -yMax
+  #}
   xMinMargin <- 0
   xMaxMargin <- 1
   middle = (band[,1] + band[,2])/2
@@ -62,8 +62,9 @@ saveBand <- function(band, corArray,
   mockTParArray=createTParArray(tParCount-1)
 
 
-  plot(x=c(yMax:yMin),y=c(yMax:yMin),type = "n", xlim=c(xMinMargin:xMaxMargin),
-       xlab = "", ylab = "Correlation")
+  plot(x=c(yMin:yMax),y=c(yMin:yMax), type = "n", xlim=c(xMinMargin:xMaxMargin),
+       xlab = "", ylab = "Correlation",yaxs="i")
+
 
   title(main = "Band and Correlation",sub = subTitle)
 
