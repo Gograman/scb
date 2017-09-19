@@ -6,7 +6,7 @@ saveDoubleAplhaHatArrayFunction <- function()
   mySuperReplicationCount <- 6
   myReplicationCount <- 7
   mySampleSize <- 10
-  myLag <- 1
+  myLag <- 5
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
   myKernel <- normalDifferenceKernel

@@ -5,7 +5,7 @@ saveBandFuction <- function()
   mySampleSize = 10
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
-  myLag = 1
+  myLag = 5
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
