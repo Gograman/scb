@@ -3,10 +3,10 @@ saveDoubleAplhaHatArrayFunction <- function()
   cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
   myTParCount  <- 15
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 6
-  myReplicationCount <- 7
+  mySuperReplicationCount <- 3
+  myReplicationCount <- 4
   mySampleSize <- 10
-  myLag <- 5
+  myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
   myKernel <- normalDifferenceKernel

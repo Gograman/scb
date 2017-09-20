@@ -7,7 +7,7 @@ saveNonCoverageFreqArrayFunction <- function()
   mySuperReplicationCount <- 2
   myReplicationCount <- 4
   mySampleSize <- 10
-  myLag <- 5
+  myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
