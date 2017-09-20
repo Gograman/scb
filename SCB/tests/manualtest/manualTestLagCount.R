@@ -1,6 +1,5 @@
-doPath()
-sampleSizes <- 1:100
-lags <- 1:100
+sampleSizes <- 1:10
+lags <- 1:10
 
 lagCounts <- matrix(nrow = length(sampleSizes),ncol = length(lags))
 
@@ -12,7 +11,14 @@ for(i in sampleSizes)
   }
 }
 
+fileName <- "LagCount"
+
+df <- data.frame(lagCounts)
+
+saveCVS(fileName = fileName, doPath(), df)
+
+saveJpg(fileName = fileName, doPath())
 
 wireframe(lagCounts,row.values = sampleSizes,column.values = lags)
 
-
+dev.off()
