@@ -1,90 +1,71 @@
-saveBand <- function(band, corArray,
-                     sampleSize, bandwidth,
+saveBand <- function(band,
+                     corArray,
+                     sampleSize,
+                     bandwidth,
                      replicationCount,
-                     lag, superReplicationCount)
+                     lag,
+                     superReplicationCount)
 {
+  # forming arrays to draw
+  middle  <- (band[ , 1] + band[ , 2]) / 2
+  consolidatedBands <- data.frame(lower  = band[, 1],
+                                  middle = middle,
+                                  upper  = band[, 2],
+                                  corArray = corArray)
+  globMin <- min(apply(consolidatedBands, 2, min))
+  globMax <- max(apply(consolidatedBands, 2, max))
+  globSd <- max(apply(consolidatedBands, 2, sd))
+  yMinMargin <- globMin - 2 * globSd
+  yMaxMargin <- globMax + 4 * globSd
+
+  # forming filenames
   fileName <- "BandAndCorrelation"
+  fileName <- paste(fileName,
+                    "ss", sampleSize,
+                    "l", lag,
+                    "bandW", round(bandwidth, digits = 1 ), sep = "_")
+  fileName <- paste(fileName,
+                    "repC", replicationCount,
+                    "SrepC", superReplicationCount, sep = "_")
 
-  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", round(bandwidth,digits = 1 ), sep = "_")
-  fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
+  xLab <- "tParArray"
 
-  xLab <- "TparArray"
-
-  subTitle <- paste(xLab,"\nsampleSize = ",sampleSize,", lag= ",lag,", bandwidth = ",
-                    round(bandwidth,digits = 1 ),
-                    ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
-                    superReplicationCount,sep = "")
+  subTitle <- paste(xLab,
+                    "\n sampleSize = ", sampleSize,
+                    ", lag = ", lag,
+                    ", bandwidth = ", round(bandwidth, digits = 1),
+                    ",\n replicationCount = ", replicationCount,
+                    ", superRep = ", superReplicationCount, sep = "")
+  xMinMargin <- 0
+  xMaxMargin <- 1
 
   path <- doPath()
 
+  # saving data to CSV
+  saveCVS(fileName = fileName, path = path, dataToSave = consolidatedBands)
+
+  tParCount <- length(corArray)
+  tParArray <- createTParArray(tParCount - 1)
+
+  # opening a graphical device and saving the drawing to it
   saveJpg(fileName = fileName, path = path)
-  df <- cbind(band,corArray)
-  minBand <- min(df)
-  maxBand <- max(df)
-  yMin = 0
-  yMax = 0
-  repeat
-  {
-    if(yMin <= minBand)
-    {
-      if(yMax >= maxBand)
-      {
-         break();
-      }
-      else
-      {
-        yMax = yMax + 0.5
-      }
-    }
-    else
-    {
-     yMin = yMin - 0.5
-    }
-  }
-
-  # Try this way.
-  # maxUpper = max (upper) over all tPar
-  # maxCor = max (correlation) over all tPar
-  # minLower = min (lower) over all tPar
-  # minCor = min (correlation) over all tPar
-  # maxmax = max (maxUpper , maxCor)
-  # minmin= min (minLower, minCor)
-  # Set y max = maxmax + something
-  # Set y min = minmin - something
-
-
-  #if(abs(yMin) > yMax)
-  #{
-  #  yMax <- -yMin
-  #}
-  #else
-  #{
-  #  yMin <- -yMax
-  #}
-  xMinMargin <- 0
-  xMaxMargin <- 1
-  middle = (band[,1] + band[,2])/2
-
-  saveData <- data.frame(band,middle,corArray)
-
-  saveCVS(fileName = fileName, path = path, dataToSave = saveData)
-
-  tParCount=length(corArray)
-  mockTParArray=createTParArray(tParCount-1)
-
-
-  plot(x=c(yMin:yMax),y=c(yMin:yMax), type = "n", xlim=c(xMinMargin:xMaxMargin),
-       xlab = "", ylab = "Correlation",yaxs="i")
-
-
-  title(main = "Band and Correlation",sub = subTitle)
-
-
-  lines(x=mockTParArray,y = band[,1], type = "l", col="green")
-  lines(x=mockTParArray,y = band[,2], type = "l", col="blue")
-  lines(x=mockTParArray,y = middle, type = "l", col = "brown")
-  lines(x=mockTParArray,y = corArray, type = "l", col="red")
+  plot(x = tParArray,
+       y = consolidatedBands$lower,
+       type = "l",
+       col = "blue",
+       xlim = c(xMinMargin, xMaxMargin),
+       ylim = c(yMinMargin, yMaxMargin),
+       xlab = "",
+       ylab = "Correlation",
+       yaxs = "i")
+  title(main = "Band and Correlation", sub = subTitle)
+  lines(x = tParArray, y = consolidatedBands$middle, type = "l", col = "brown")
+  lines(x = tParArray, y = consolidatedBands$upper, type = "l", col = "green")
+  lines(x = tParArray, y = consolidatedBands$corArray, type = "l", col = "red")
   lineArray <- c("Upper", "Middle", "Lower", "Correlation")
-  legend("bottom", title ="Correlation", lineArray, fill =c("blue", "brown", "green", "red"))
-  dev.off()
+  legend("topright",
+         title = "Correlation",
+         lineArray,
+         fill = c("green", "brown", "blue", "red"))
+  graphics.off()
 }
