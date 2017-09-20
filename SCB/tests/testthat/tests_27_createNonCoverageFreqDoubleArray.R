@@ -5,13 +5,13 @@
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
-    mySampleSize <- 10
-    myLag <- 3
+    mySampleSize <- 100
+    myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
-    myAlphaArray <- seq(from = 0.05,
-                      to   = 1 - 1 / myAlphaCount,
-                      by   = 1 / myAlphaCount)
+    # myAlphaArray <- seq(from = 0.05,
+    #                   to   = 1 - 1 / myAlphaCount,
+    #                   by   = 1 / myAlphaCount)
 
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
     myBandwidth <- 0.5
@@ -20,7 +20,7 @@
       superReplicationCount = mySuperReplicationCount,
       replicationCount = myReplicationCount,
       sampleSize = mySampleSize,
-      alphaArray =myAlphaArray,
+      alphaArray =nonCoverageProbabilities,
       lag = myLag,
       lagCount = myLagCount,
       tParArray = myTParArray,
