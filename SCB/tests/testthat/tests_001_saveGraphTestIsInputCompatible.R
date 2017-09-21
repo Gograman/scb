@@ -1,7 +1,5 @@
-
-maxGraph <- 100
-
-step <- 10
+saveGraphTestIsInputCompatibleFunction <- function(maxGraph = 100,step = 10)
+{
 
 sampleSizes <- seq(0,maxGraph,by=step)
 lags <- seq(0,maxGraph,by = step)
@@ -31,12 +29,17 @@ yMaxLim <- max(cocoses)
 saveJpg(fileName = fileName, doPath())
 saveCVS(fileName = fileName, doPath(), compatibles)
 
-plot(cocoses ~ lags,type = "l",xlim=c(5,xMaxLim),ylim=c(5,yMaxLim),
+plot(cocoses ~ lags,type = "l",xlim=c(0,xMaxLim),ylim=c(0,yMaxLim),
      col="red",ylab = "sampleSizes")
 title("Is input Compatible")
 legend("bottomright",c("compatibles"),fill = c("red"))
 #lines(cocoses,lags,col="red")
 
 dev.off()
-
+}
+test_that("Testing \'saveGraphTestisInputCompatibleFunction\'", {
+  saveGraphTestIsInputCompatibleFunction()
+  cat("\n End of test saveGraphTesisInputCompatibleFunction", "\n")
+  cat("=====================")
+})
 

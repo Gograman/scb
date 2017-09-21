@@ -1,9 +1,12 @@
+maxGraph <- 1000
 
-sampleSizes <- 1:1000
+step <- 1
+
+sampleSizes <- seq(0,maxGraph,by=step)
 
 termCounts <-numeric(length = length(sampleSizes))
 
-for(i in sampleSizes)
+for(i in 1:length(sampleSizes))
 {
   termCounts[i] <- computeTermCount(i)
 }
