@@ -10,5 +10,6 @@ License: BSD
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 6.0.1
-Imports: testthat, roxygen2, devtools
+Imports: testthat, roxygen2, devtools, lattice
+
 

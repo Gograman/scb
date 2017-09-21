@@ -3,10 +3,10 @@ computeNonCoverageFreqArrayFunction <- function() {
 
   myTParCount  <-5
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 4
-  myReplicationCount <- 8
-  mySampleSize <- 100
-  myLag <- 0
+  mySuperReplicationCount <- 7
+  myReplicationCount <- 6
+  mySampleSize <- 13
+  myLag <- 5
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
