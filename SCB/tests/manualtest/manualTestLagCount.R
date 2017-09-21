@@ -1,11 +1,15 @@
-sampleSizes <- 1:10
-lags <- 1:10
+maxGraph <- 1000
+
+step <- 100
+
+sampleSizes <- seq(1,maxGraph,by=step)
+lags <- seq(1,maxGraph,by = step)
 
 lagCounts <- matrix(nrow = length(sampleSizes),ncol = length(lags))
 
-for(i in sampleSizes)
+for(i in 1:length(sampleSizes))
 {
-  for(j in lags)
+  for(j in 1:length(sampleSizes))
   {
     lagCounts[i,j]<- computeLagCount(sampleSize = sampleSizes[i],lag = lags[j])
   }
@@ -19,6 +23,7 @@ saveCVS(fileName = fileName, doPath(), df)
 
 saveJpg(fileName = fileName, doPath())
 
-wireframe(lagCounts,row.values = sampleSizes,column.values = lags)
+wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
+          xlab="sampleSizes",ylab="Lags")
 
 dev.off()

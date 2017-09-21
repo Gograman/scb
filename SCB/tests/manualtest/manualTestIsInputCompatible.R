@@ -1,11 +1,17 @@
-sampleSizes <- 1:100
-lags <- 1:100
+
+maxGraph <- 10000
+
+step <- 10
+
+sampleSizes <- seq(0,maxGraph,by=step)
+lags <- seq(0,maxGraph,by = step)
 
 compatibles <- matrix(nrow = length(sampleSizes),ncol = length(lags))
 cocoses <- numeric(length = length(sampleSizes))
-for(i in sampleSizes)
+
+for(i in 1:length(lags))
 {
-  for(j in lags)
+  for(j in 1:length(sampleSizes))
   {
     compatibles[i,j] <- isInputCompatible(sampleSize = sampleSizes[j], lag = lags[i])
 
@@ -16,23 +22,21 @@ for(i in sampleSizes)
     }
   }
 }
+
 fileName <- "IsinPutCompatible"
 
-
+xMaxLim <- floor(maxGraph * 0.8)
+yMaxLim <- max(cocoses)
 
 saveJpg(fileName = fileName, doPath())
-
 saveCVS(fileName = fileName, doPath(), compatibles)
 
-plot(sampleSizes ~ lags,type = "n",xlim=c(5,80),ylim=c(5,80))
-
+plot(cocoses ~ lags,type = "l",xlim=c(1,xMaxLim),ylim=c(1,yMaxLim),
+     col="red",ylab = "sampleSizes")
 title("Is input Compatible")
-
 legend("bottomright",c("compatibles"),fill = c("red"))
+#lines(cocoses,lags,col="red")
 
-lines(cocoses,col="red")
+dev.off()
 
-dev.off(
-
-)
 
