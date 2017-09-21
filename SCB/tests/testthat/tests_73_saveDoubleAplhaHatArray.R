@@ -1,11 +1,11 @@
 saveDoubleAplhaHatArrayFunction <- function()
 {
   cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
-  myTParCount  <- 15
+  myTParCount  <- 10
   myTParArray  <- createTParArray(tParCount = myTParCount)
-  mySuperReplicationCount <- 3
-  myReplicationCount <- 4
-  mySampleSize <- 10
+  mySuperReplicationCount <- 6
+  myReplicationCount <- 7
+  mySampleSize <- 100
   myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 

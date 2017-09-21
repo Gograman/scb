@@ -1,17 +1,13 @@
   createNonCoverageFreqDoubleArrayFunction <- function () {
     cat("\n Testing \'createNonCoverageFreqDoubleArray\' \n")
-    myAlphaCount = 4
-    myTParCount  <- 2
+    myTParCount  <- 10
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
     mySampleSize <- 100
-    myLag <- 1
+    myLag <- 2
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
-    # myAlphaArray <- seq(from = 0.05,
-    #                   to   = 1 - 1 / myAlphaCount,
-    #                   by   = 1 / myAlphaCount)
 
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
     myBandwidth <- 0.5

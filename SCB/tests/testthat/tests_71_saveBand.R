@@ -2,16 +2,16 @@ saveBandFuction <- function()
 {
   cat ("\n Testing \'SaveBand\'\n")
 
-  mySampleSize = 10
+  mySampleSize = 100
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   myLag = 2
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myBandwidth = 0.5
-  myNonCoverageProbability = 0.025
-  mySuperReplicationCount <- 3
-  myReplicationCount <- 2
+  myNonCoverageProbability = 0.05
+  mySuperReplicationCount <- 7
+  myReplicationCount <- 6
 
   corArray <-
     computeCor(lag = myLag,
