@@ -27,9 +27,11 @@
 
 computeIsCovered <- function(band,
                              corArray,
-                             sampleSize, bandwidth,
+                             sampleSize,
+                             bandwidth,
                              replicationCount,
-                             lag, superReplicationCount,
+                             lag,
+                             superReplicationCount,
                              nonCoverageProbability,
                              fileName = "")
 {
@@ -45,6 +47,7 @@ computeIsCovered <- function(band,
            superReplicationCount = superReplicationCount,
            nonCoverageProbability = nonCoverageProbability,
            fileName = fileName)
+
   upper <- band[, 2]
   lower <- band[, 1]
   for (tParIndex in 1:tParCount)

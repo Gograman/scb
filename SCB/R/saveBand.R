@@ -8,6 +8,7 @@ saveBand <- function(band,
                      nonCoverageProbability,
                      fileName="")
 {
+  cat ("\n saveBand is called")
   # forming arrays to draw
   middle  <- (band[ , 1] + band[ , 2]) / 2
   consolidatedBands <- data.frame(lower  = band[, 1],

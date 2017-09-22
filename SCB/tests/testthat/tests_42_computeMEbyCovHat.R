@@ -32,6 +32,7 @@ computeMEbyCovHatFunction <- function () {
                           C_K = -1.978325,
                           # int_sq_der = 0.306951,
                           PHI_K_NORMAL_DIFF = 0.4065)
+
   End=Sys.time()
   Duration=End-Start
 
