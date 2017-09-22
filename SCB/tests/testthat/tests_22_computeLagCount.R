@@ -28,7 +28,7 @@ computeLagCountFunction <- function()
   wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
             xlab="sampleSizes",ylab="Lags")
 
-  dev.off()
+  graphics.off()
 
 }
 
