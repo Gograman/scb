@@ -4,7 +4,9 @@ saveBand <- function(band,
                      bandwidth,
                      replicationCount,
                      lag,
-                     superReplicationCount)
+                     superReplicationCount,
+                     nonCoverageProbability,
+                     fileName="")
 {
   # forming arrays to draw
   middle  <- (band[ , 1] + band[ , 2]) / 2
@@ -19,7 +21,7 @@ saveBand <- function(band,
   yMaxMargin <- globMax + 4 * globSd
 
   # forming filenames
-  fileName <- "BandAndCorrelation"
+  fileName <- paste(fileName,"BandAndCorrelation",sep = "_")
   fileName <- paste(fileName,
                     "ss", sampleSize,
                     "l", lag,
@@ -35,7 +37,9 @@ saveBand <- function(band,
                     ", lag = ", lag,
                     ", bandwidth = ", round(bandwidth, digits = 1),
                     ",\n replicationCount = ", replicationCount,
-                    ", superRep = ", superReplicationCount, sep = "")
+                    ", superRep = ", superReplicationCount,
+                    ", Alpha = ", nonCoverageProbability,
+                    sep = "")
   xMinMargin <- 0
   xMaxMargin <- 1
 

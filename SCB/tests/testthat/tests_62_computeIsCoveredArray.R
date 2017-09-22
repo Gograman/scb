@@ -36,7 +36,9 @@ Start=Sys.time()
                               bandwidth = myBandwidth,
                               lag = myLag,
                               replicationCount = myReplicationCount,
-                              superReplicationCount = mySuperReplicationCount)
+                              superReplicationCount = mySuperReplicationCount,
+                              nonCoverageProbability = myNonCoverageProbability,
+                              fileName = "tests_62_computeIsCoveredArray")
 End=Sys.time()
 Duration=End-Start
 

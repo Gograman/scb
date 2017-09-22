@@ -20,13 +20,15 @@ saveDoubleAplhaHatArrayFunction <- function()
                          alphaArray = nonCoverageProbabilities,
                          tParArray = myTParArray,
                          kernel = myKernel,
-                         bandwidth = myBandwidth)
+                         bandwidth = myBandwidth,
+                         fileName = "tests_73_SaveDoubleAlphaHatArray")
 
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
                           alphaHats = alphaHats, sampleSize = mySampleSize,
                           lag = myLag, replicationCount = myReplicationCount,
                           superReplicationCount = mySuperReplicationCount,
-                          bandwidth = myBandwidth)
+                          bandwidth = myBandwidth,
+                          fileName = "tests_73_SaveDoubleAlphaHatArray")
  }
 test_that("Testing \'saveNonCoverageFreqArray\'", {
   saveDoubleAplhaHatArrayFunction()

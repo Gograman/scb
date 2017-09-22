@@ -3,7 +3,7 @@ computeLagCountFunction <- function()
   maxGraph=1000
   step=100
   sampleSizes <- seq(1,maxGraph,by=step)
-  lags <- seq(1,maxGraph,by = step)
+  lags <- seq(1,10,by = 1)
 
   lagCounts <- matrix(nrow = length(sampleSizes),ncol = length(lags))
 
@@ -23,6 +23,8 @@ computeLagCountFunction <- function()
 
   saveJpg(fileName = fileName, doPath())
 
+
+
   wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
             xlab="sampleSizes",ylab="Lags")
 
@@ -31,6 +33,7 @@ computeLagCountFunction <- function()
 }
 
 test_that("Testing \'computeLagCount\'", {
+  library(lattice)
   computeLagCountFunction
   cat("\n End of test computeLagCount", "\n")
   cat("=====================")

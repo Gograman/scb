@@ -51,7 +51,8 @@
                                             kernel = myKernel,
                                             bandwidth = myBandwidth,
                                             nonCoverageProbability = myNonCoverageProbability,
-                                            superReplicationCount = mySuperReplicationCount)
+                                            superReplicationCount = mySuperReplicationCount,
+                                            fileName = "tests_63_computeNonCoverageFreq")
 End=Sys.time()
 Duration=End-Start
 

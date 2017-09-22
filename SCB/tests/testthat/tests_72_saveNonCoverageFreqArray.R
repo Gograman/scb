@@ -22,7 +22,8 @@ Start=Sys.time()
     tParArray = myTParArray,
     kernel = myKernel,
     bandwidth = myBandwidth,
-    nonCoverageProbability = myNonCoverageProbability
+    nonCoverageProbability = myNonCoverageProbability,
+    fileName = "tests_72_saveNonCoverageFreqArray"
   )
 
   nonCoverageProbability <- myNonCoverageProbability
@@ -31,7 +32,8 @@ Start=Sys.time()
   saveNonCoverageFreqArray(nonCoverageProbability = nonCoverageProbability,
                                    alphaHatArray = alphaHatArray, sampleSize = mySampleSize,
                            replicationCount = myReplicationCount, bandwidth = myBandwidth,
-                           lag = myLag, superReplicationCount = mySuperReplicationCount)
+                           lag = myLag, superReplicationCount = mySuperReplicationCount,
+                           fileName = "tests_72_saveNonCoverageFreqArray")
 
 
   End=Sys.time()

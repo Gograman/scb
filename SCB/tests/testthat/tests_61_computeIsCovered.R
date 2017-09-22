@@ -10,7 +10,7 @@ computeIsCoveredFunction = function()
     createTVMA1CoefArray(sampleSize = mySampleSize)
   myReplicationCount=8
   mySuperReplicationCount <- 3
-myCoefFunction=sin
+  myCoefFunction=sin
 
   myLag = 2
 
@@ -41,7 +41,9 @@ Start=Sys.time()
                                 bandwidth = myBandwidth,
                                 lag = myLag,
                                 replicationCount = myReplicationCount,
-                                superReplicationCount = mySuperReplicationCount)
+                                superReplicationCount = mySuperReplicationCount,
+                                nonCoverageProbability = myNonCoverageProbability,
+                                fileName = "test_61_computeIsCovered")
   End=Sys.time()
   Duration=End-Start
 

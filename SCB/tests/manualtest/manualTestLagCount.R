@@ -3,7 +3,7 @@ maxGraph <- 1000
 step <- 100
 
 sampleSizes <- seq(1,maxGraph,by=step)
-lags <- seq(1,maxGraph,by = step)
+lags <- seq(1,10,by = 1)
 
 lagCounts <- matrix(nrow = length(sampleSizes),ncol = length(lags))
 

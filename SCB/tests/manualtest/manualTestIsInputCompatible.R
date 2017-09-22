@@ -1,9 +1,9 @@
 
-maxGraph <- 10000
+maxGraph <- 1000
 
-step <- 10
+step <- 1
 
-sampleSizes <- seq(0,maxGraph,by=step)
+sampleSizes <- seq(0,maxGraph*10,by=step*10)
 lags <- seq(0,maxGraph,by = step)
 
 compatibles <- matrix(nrow = length(sampleSizes),ncol = length(lags))
@@ -31,10 +31,10 @@ yMaxLim <- max(cocoses)
 saveJpg(fileName = fileName, doPath())
 saveCVS(fileName = fileName, doPath(), compatibles)
 
-plot(cocoses ~ lags,type = "l",xlim=c(1,xMaxLim),ylim=c(1,yMaxLim),
+plot(cocoses ~ lags,type = "l",xlim=c(1,xMaxLim),ylim=c(1,10000),
      col="red",ylab = "sampleSizes")
 title("Is input Compatible")
-legend("bottomright",c("compatibles"),fill = c("red"))
+#legend("bottomright",c("compatibles"),fill = c("red"))
 #lines(cocoses,lags,col="red")
 
 dev.off()

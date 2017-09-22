@@ -21,7 +21,8 @@ Start=Sys.time()
     tParArray = myTParArray,
     kernel = myKernel,
     bandwidth = myBandwidth,
-    nonCoverageProbability = myNonCoverageProbability
+    nonCoverageProbability = myNonCoverageProbability,
+    fileName = "tests_64_computeNonCoverageFreqArray"
   )
   End=Sys.time()
   Duration=End-Start

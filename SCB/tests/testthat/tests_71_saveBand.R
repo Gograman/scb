@@ -33,7 +33,9 @@ saveBandFuction <- function()
   saveBand(band = band,
            corArray = corArray, sampleSize = mySampleSize, lag = myLag,
            replicationCount = myReplicationCount, bandwidth = myBandwidth,
-           superReplicationCount = mySuperReplicationCount)
+           superReplicationCount = mySuperReplicationCount,
+           nonCoverageProbability = myNonCoverageProbability,
+           fileName="test_71_saveBand")
   End = Sys.time()
   Duration = End - Start
   cat("\nDuration= ",Duration, "\n")

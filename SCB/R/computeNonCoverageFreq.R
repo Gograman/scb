@@ -49,7 +49,8 @@ computeNonCoverageFreq  <- function(replicationCount,
                                     kernel = normalDifferenceKernel,
                                     bandwidth = 0.5,
                                     nonCoverageProbability = 0.05,
-                                    superReplicationCount) {
+                                    superReplicationCount,
+                                    fileName = "") {
 
   bandsBrick = createBandsBrick(sampleSize = sampleSize,
                                 tParArray  = tParArray,
@@ -65,7 +66,9 @@ computeNonCoverageFreq  <- function(replicationCount,
                                           sampleSize = sampleSize,
                                           replicationCount = replicationCount,
                                           bandwidth = bandwidth, lag = lag,
-                                          superReplicationCount = superReplicationCount)
+                                          superReplicationCount = superReplicationCount,
+                                          nonCoverageProbability = nonCoverageProbability,
+                                          fileName = fileName)
 
   zeroCount = 0
   replicationCount = dim(bandsBrick)[1]

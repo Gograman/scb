@@ -21,7 +21,8 @@
       lagCount = myLagCount,
       tParArray = myTParArray,
       kernel = myKernel,
-      bandwidth = myBandwidth)
+      bandwidth = myBandwidth,
+      fileName = "tests_65_createNonCoverageFreqDoubleArray")
     End=Sys.time()
     duration=End-Start
     cat("\nDoubleAlphaHatArray= ",doubleAlphaArray)

@@ -30,7 +30,7 @@ isInputCompatibleFunction <- function(maxGraph = 100,step = 10)
   saveCVS(fileName = fileName, doPath(), compatibles)
 
   plot(cocoses ~ lags,type = "l",xlim=c(0,xMaxLim),ylim=c(0,yMaxLim),
-       col="red",ylab = "sampleSizes")
+       col="red",ylab = "sampleSize",xlab = "lag")
   title("Is input Compatible")
   legend("bottomright",c("compatibles"),fill = c("red"))
   #lines(cocoses,lags,col="red")
