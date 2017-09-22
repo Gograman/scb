@@ -7,8 +7,6 @@
 #' @descriptionHeart Heart of the whole thesis.Call GammaHatCompute CK.Compute psiK
 #'
 #' @param sample sample.
-#' @param bootstrapReplicationCount bootstrapReplicationCount.
-#'
 #' @return Margin of error
 #'
 #' @examples
@@ -49,9 +47,15 @@ computeMEbyCovHat <- function(tParArray,
                                  sample = sample,
                                  kernel = kernel,
                                  allCorHats = allCorHats)
+  # cat ("\n betaLRVHat = ", betaLRVHat)
+
   logSqrt <-  sqrt(-2 * log (bandwidth))
+  # cat ("\n bandwidth = ", bandwidth)
+  # cat ("\n logSqrt = ", logSqrt)
+
   cFactor <- logSqrt + (C_K - log (log (1 / sqrt (1 - nonCoverageProbability)))) / logSqrt
-sampleSize=length(sample)
+  # cat ("\n cFactor = ", cFactor)
+  sampleSize=length(sample)
   meByCovHat <- cFactor *
                 betaLRVHat *
                 sqrt(PHI_K_NORMAL_DIFF / (sampleSize * bandwidth))

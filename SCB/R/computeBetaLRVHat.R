@@ -38,14 +38,14 @@ computeBetaLRVHat  <- function(tParArray,
   termCount = floor(2 * sampleSize ^ (4/15)) # aka L
   #cat("\ntermCount",termCount)
   # check sizes
-  if (lag > sampleSize - 1 - termCount) {
-    cat ("after if with stop \n")
-    cat ("sampleSize = ",sampleSize, "\n")
-    cat ("termCount = ",termCount, "\n")
-    cat ("lag = ",lag, "\n")
-    cat("wrong relation between sampleSize, termCount, lag! \n")
-    # stop("wrong relation between sampleSize, termCount, lag!")
-  }
+  # if (lag > sampleSize - 1 - termCount) {
+  #   cat ("after if with stop \n")
+  #   cat ("sampleSize = ",sampleSize, "\n")
+  #   cat ("termCount = ",termCount, "\n")
+  #   cat ("lag = ",lag, "\n")
+  #   cat("wrong relation between sampleSize, termCount, lag! \n")
+  #   # stop("wrong relation between sampleSize, termCount, lag!")
+  # }
 
   # if (! lag > termCount) {
   #   cat ("\n after if with stop \n")
@@ -70,8 +70,8 @@ computeBetaLRVHat  <- function(tParArray,
       subtrahend1 = allCorHats[tParIndex, abs(lag - termIndex)+1]
       lagIndex = lag + termIndex+1
       # cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
-      subtrahend2 = (allCorHats[tParIndex, lagIndex]) ^ 2
-      term = minuend - subtrahend1 - subtrahend2
+      subtrahend2 = allCorHats[tParIndex, lagIndex]
+      term = (minuend - subtrahend1 - subtrahend2)^2
       # cat("\n minuendFactor1 = ", minuendFactor1)
       # cat("\n minuendFactor2 = ", minuendFactor2)
       # cat("\n minuend= ",minuend)

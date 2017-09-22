@@ -1,18 +1,34 @@
-computeMEbyCovHatFunction <- function () {
-  cat("\n Testing \'computeMEbyCovHatFunction\' \n")
+computeMEbyCovHatFunction = function ()
+{
 
-  mySampleSize=5
-  myTParCount = 10
+cat("\n Testing \'computeMEbyCovHatFunction\' \n")
+
+  myBandwidth = 0.5
+  myNonCoverageProbability = 0.5
+  mySampleSize = 10
+  myTParCount = 3
+  cat ("\n mySampleSize = ", mySampleSize)
+  cat ("\n myTParCount = ", myTParCount)
+  cat ("\n myBandwidth = ", myBandwidth)
+  cat ("\n myNonCoverageProbability = ", myNonCoverageProbability)
+
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
-  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
-  mockSample <- createSample(sampleSize = myTParCount)
+  mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 4
+  myLag = 2
+  cat ("\n myLag = ", myLag)
+
+  isCompatible = isInputCompatible (sampleSize = mySampleSize, lag = myLag)
+  cat ("\n isCompatible = ", isCompatible)
+  if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")
+
   myLagCount = computeLagCount(lag=myLag,sampleSize = mySampleSize)
+  cat ("\n myLagCount = ", myLagCount)
+
   myKernel = normalDifferenceKernel
-  myBandwidth = 1
+
   # form all rho hats
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
@@ -26,8 +42,8 @@ computeMEbyCovHatFunction <- function () {
                           lagCount = myLagCount,
                           sample = mockSample,
                           kernel = normalDifferenceKernel,
-                          bandwidth = 0.5,
-                          nonCoverageProbability = 0.05,
+                          bandwidth = myBandwidth,
+                          nonCoverageProbability = myNonCoverageProbability,
                           allCorHats = mockAllCorHats,
                           C_K = -1.978325,
                           # int_sq_der = 0.306951,
