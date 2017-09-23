@@ -68,6 +68,7 @@ computeIsCovered <- function(band,
     #   isCoveredArrayByT[tParIndex] <- 0
     # }
   }
+
   for (tParIndex in 1:tParCount)
   {
     if (isCoveredArrayByT[tParIndex] == 1)

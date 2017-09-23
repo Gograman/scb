@@ -4,9 +4,9 @@ computeMEbyCovHatFunction = function ()
 cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
   myBandwidth = 0.5
-  myNonCoverageProbability = 0.5
+  myNonCoverageProbability = 0.05
   mySampleSize = 10
-  myTParCount = 3
+  myTParCount = 10
   cat ("\n mySampleSize = ", mySampleSize)
   cat ("\n myTParCount = ", myTParCount)
   cat ("\n myBandwidth = ", myBandwidth)
@@ -17,7 +17,7 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 2
+  myLag = 4
   cat ("\n myLag = ", myLag)
 
   isCompatible = isInputCompatible (sampleSize = mySampleSize, lag = myLag)

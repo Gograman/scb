@@ -3,11 +3,11 @@
   {
     cat ("\n Testing \'computeNonCoverageFreq\' \n")
 
-    myTParCount  <- 2
+    myTParCount  <- 10
     mockTParArray  <- createTParArray(tParCount = myTParCount)
-    myReplicationCount <- 20
+    myReplicationCount <- 5
     mySampleSize <-100
-    mySuperReplicationCount <- 20
+    mySuperReplicationCount <- 10
     myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
@@ -62,7 +62,7 @@ Duration=End-Start
      cat("=====================")
   }
 
-  test_that("computeNonCoverageFreqDist", {
+  test_that("computeNonCoverageFreq", {
     computeNonCoverageFreqFunction()
   })
 

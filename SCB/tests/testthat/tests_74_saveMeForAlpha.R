@@ -62,8 +62,13 @@ saveMeForAlphaFunction <- function()
   dev.off()
 }
 
+<<<<<<< HEAD
 test_that("testing saveMeForAlpha",
 {
+=======
+test_that("testing saveMeForAlpha",{
+
+>>>>>>> 0d7936b801354799dfe208c46e51a5c5b58622f4
   saveMeForAlphaFunction()
   cat(" End of test saveMeForAlphaFunction", "\n")
   cat("=========================================")

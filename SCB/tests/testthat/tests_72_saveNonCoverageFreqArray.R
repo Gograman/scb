@@ -12,6 +12,10 @@ saveNonCoverageFreqArrayFunction <- function()
   myKernel <- normalDifferenceKernel
   myBandwidth <- 0.5
   myNonCoverageProbability <- 0.05
+
+  isCompatible = isInputCompatible (sampleSize = mySampleSize, lag = myLag)
+  cat ("\n isCompatible = ", isCompatible)
+  if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")
 Start=Sys.time()
   nonCoverageFreqArray = computeNonCoverageFreqArray(
     superReplicationCount = mySuperReplicationCount,
