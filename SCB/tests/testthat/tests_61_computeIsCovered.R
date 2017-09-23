@@ -2,13 +2,13 @@ computeIsCoveredFunction = function()
 {
   cat ("\n Testing \'computeIsCovered\'\n")
 
-  mySampleSize = 10
+  mySampleSize = 100
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
   mockTVMA1Array <-
     createTVMA1CoefArray(sampleSize = mySampleSize)
-  myReplicationCount=8
+  myReplicationCount=5
   mySuperReplicationCount <- 3
   myCoefFunction=sin
 
