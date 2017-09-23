@@ -6,7 +6,17 @@
 #'
 #' @descriptionHeart Heart of the whole thesis.Call GammaHatCompute CK.Compute psiK
 #'
-#' @param sample sample.
+#' @param
+#' tParArray,
+#' lag,
+#' lagCount,
+#' sample,
+#' kernel = normalDifferenceKernel,
+#' bandwidth,
+#' nonCoverageProbability,
+#' allCorHats,
+#' C_K = -1.978325,
+#' PHI_K_NORMAL_DIFF = 0.4065
 #' @return Margin of error
 #'
 #' @examples

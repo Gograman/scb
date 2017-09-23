@@ -62,7 +62,7 @@ Duration=End-Start
      cat("=====================")
   }
 
-  test_that("computeNonCoverageFreqDist", {
+  test_that("computeNonCoverageFreq", {
     computeNonCoverageFreqFunction()
   })
 

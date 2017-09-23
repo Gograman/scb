@@ -62,9 +62,9 @@ saveMeForAlphaFunction <- function()
   graphics.off()
 }
 
-test_that("testing saveMeForAlpha")
-{
+test_that("testing saveMeForAlpha",{
+
   saveMeForAlphaFunction()
   cat(" End of test saveMeForAlphaFunction", "\n")
   cat("=========================================")
-}
+})
