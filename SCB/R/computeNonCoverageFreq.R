@@ -62,7 +62,7 @@ computeNonCoverageFreq  <- function(replicationCount,
                                 replicationCount       = replicationCount)
 
   isCoveredArray <- computeIsCoveredArray(bandsBrick,
-                                          corArray,
+                                          corArray,tParCount = length(tParArray),
                                           sampleSize = sampleSize,
                                           replicationCount = replicationCount,
                                           bandwidth = bandwidth, lag = lag,
