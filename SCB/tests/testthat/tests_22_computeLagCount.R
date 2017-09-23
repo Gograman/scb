@@ -26,14 +26,14 @@ computeLagCountFunction <- function()
 
 
   wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
-            xlab="sampleSizes",ylab="Lags")
+            xlab="sampleSizes",ylab="Lags",
+            screen = list(z=-200,x=-75))
 
   graphics.off()
 
 }
 
 test_that("Testing \'computeLagCount\'", {
-  library(lattice)
   computeLagCountFunction
   cat("\n End of test computeLagCount", "\n")
   cat("=====================")

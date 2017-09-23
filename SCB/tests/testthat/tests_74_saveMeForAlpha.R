@@ -5,7 +5,7 @@ saveMeForAlphaFunction <- function()
 
   nMe <- 5
 
-  nonCoverageProbability <- 0.5
+  nonCoverageProbability <- 0.9
 
   lag <- 1
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
@@ -59,12 +59,12 @@ saveMeForAlphaFunction <- function()
   saveJpg(fileName = fileName,path = path)
   matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = "jittered Me",xlab = "Tpar")
   title(main = "Me of Alpha",sub = subTitle)
-  graphics.off()
+  dev.off()
 }
 
-test_that("testing saveMeForAlpha")
+test_that("testing saveMeForAlpha",
 {
   saveMeForAlphaFunction()
   cat(" End of test saveMeForAlphaFunction", "\n")
   cat("=========================================")
-}
+})
