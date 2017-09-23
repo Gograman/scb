@@ -56,6 +56,9 @@ createDoubleAlphaArray = function(superReplicationCount,
                                   fileName = "")
 
 {
+  isCompatible = isInputCompatible(sampleSize = sampleSize, lag = lag)
+
+
   alphaCount=length(alphaArray)
   doubleAlphaArray = array(0, dim = c(superReplicationCount, alphaCount))
 

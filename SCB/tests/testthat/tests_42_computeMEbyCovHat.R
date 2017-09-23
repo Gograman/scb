@@ -4,7 +4,7 @@ computeMEbyCovHatFunction = function ()
 cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
   myBandwidth = 0.5
-  myNonCoverageProbability = 0.05
+  myNonCoverageProbability = 0.9
   mySampleSize = 10
   myTParCount = 10
   cat ("\n mySampleSize = ", mySampleSize)
@@ -20,9 +20,7 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
   myLag = 4
   cat ("\n myLag = ", myLag)
 
-  isCompatible = isInputCompatible (sampleSize = mySampleSize, lag = myLag)
-  cat ("\n isCompatible = ", isCompatible)
-  if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")
+  errorIfNotInputCompatible(sampleSize = mySampleSize,lag = myLag)
 
   myLagCount = computeLagCount(lag=myLag,sampleSize = mySampleSize)
   cat ("\n myLagCount = ", myLagCount)
