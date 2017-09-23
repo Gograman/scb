@@ -47,6 +47,11 @@ saveBand <- function(band,
   path <- doPath()
 
   # saving data to CSV
+  consolidatedBands <- data.frame(consolidatedBands,corArray,sampleSize,bandwidth,
+                                  replicationCount,
+                                  lag,
+                                  superReplicationCount,
+                                  nonCoverageProbability)
   saveCVS(fileName = fileName, path = path, dataToSave = consolidatedBands)
 
   tParCount <- length(corArray)

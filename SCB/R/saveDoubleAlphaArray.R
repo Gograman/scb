@@ -34,10 +34,11 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
 
   abline(a = 0 ,b =1)
 
-  saveData <- rbind(nonCoverageProbabilities,alphaHats)
-
-  saveCVS(fileName = fileName, path = path, dataToSave = saveData)
-
+  saveData <- rbind(nonCoverageProbabilities,alphaHats,sampleSize, bandwidth,
+                         replicationCount,
+                         lag,
+                         superReplicationCount)
+  saveCVS(fileName,path,dataToSave = saveData)
   for(i in 1:length(nonCoverageProbabilities))
   {
     points(x=nonCoverageProbabilities[i], y=0,col="blue")
