@@ -12,6 +12,6 @@
 #'
 #' @examples bandwidthValue <- computeB(n = 8)
 
-computeB <- function(n) {
-  b <- n ^ (-0.2)
+computeB <- function (sampleSize) {
+  b <- sampleSize ^ (-0.2)
 }
