@@ -3,11 +3,12 @@ computeMEbyCovHatFunction = function ()
 
 cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
-  myBandwidth = 0.5
-  myNonCoverageProbability = 0.9
-  mySampleSize = 10
-  myTParCount = 10
 
+  myNonCoverageProbability = 0.8
+  mySampleSize = 300
+  myTParCount = 10
+  myBandwidth =computeB(n=mySampleSize)
+cat("\n Bandwidth: ",myBandwidth)
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
 
@@ -50,7 +51,7 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
   # expect_that(dim(mockBand)[1], equals(2))  # the number of rows
   # expect_that(dim(mockBand)[2], equals(10)) # the number of cols
 
-  cat(" me = ", me, "\n")
+  cat("\nme = ", me, "\n")
   cat("Duration= ",Duration,"\n")
   cat("=====================")
   cat("\nTest parameters :","\n")
