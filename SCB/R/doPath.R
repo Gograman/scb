@@ -1,4 +1,4 @@
-doPath <- function()
+doPath <- function(directory = "")
 {
   workingDirectory<-getwd()
   splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
@@ -10,6 +10,9 @@ doPath <- function()
   {
     myPath <-"../output"
   }
-
+  if(directory != "")
+  {
+    myPath<-paste(myPath,directory,sep = "/")
+  }
   return(myPath)
 }
