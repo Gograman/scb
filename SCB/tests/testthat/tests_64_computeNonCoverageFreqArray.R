@@ -28,7 +28,17 @@ Start=Sys.time()
   Duration=End-Start
 cat("\n NonCoverageFreqArray= ",nonCoverageFreqArray)
 
-  cat("\nDuration= ",Duration)
+  cat("\nDuration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("LagCount= ",myLagCount,"\n")
+  cat("ReplicationCount= ",myReplicationCount,"\n")
+  cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+  cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
 
 }
 

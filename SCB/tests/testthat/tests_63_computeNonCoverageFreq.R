@@ -57,7 +57,17 @@ End=Sys.time()
 Duration=End-Start
 
    cat("NonCoverageFreq:", nonCoverageFreq)
-   cat("\nDuration= ",Duration)
+   cat("\nDuration= ",Duration,"\n")
+   cat("=====================")
+   cat("\nTest parameters :","\n")
+   cat("SampleSize= ",mySampleSize,"\n")
+   cat("TParCount= ",myTParCount,"\n")
+   cat("Lag= ",myLag,"\n")
+   cat("LagCount= ",myLagCount,"\n")
+   cat("ReplicationCount= ",myReplicationCount,"\n")
+   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+   cat("Bandwidth= ",myBandwidth,"\n")
      cat("\nEnd of test of computeNonCoverageFreq","\n")
      cat("=====================")
   }

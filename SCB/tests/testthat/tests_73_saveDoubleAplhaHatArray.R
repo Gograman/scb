@@ -29,6 +29,17 @@ saveDoubleAplhaHatArrayFunction <- function()
                           superReplicationCount = mySuperReplicationCount,
                           bandwidth = myBandwidth,
                           fileName = "tests_73_SaveDoubleAlphaHatArray")
+   cat("=====================")
+   cat("\nTest parameters :","\n")
+   cat("SampleSize= ",mySampleSize,"\n")
+   cat("TParCount= ",myTParCount,"\n")
+   cat("Lag= ",myLag,"\n")
+   cat("LagCount= ",myLagCount,"\n")
+   cat("NonCoverageProbabilities= ",nonCoverageProbabilities,"\n")
+   cat("ReplicationCount= ",myReplicationCount,"\n")
+   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+   cat("Bandwidth= ",myBandwidth,"\n")
+
  }
 test_that("Testing \'saveNonCoverageFreqArray\'", {
   saveDoubleAplhaHatArrayFunction()

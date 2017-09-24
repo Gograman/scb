@@ -21,6 +21,12 @@ Start=Sys.time()
 End=Sys.time()
 Duration=End-Start
 cat("Duration= ",Duration,"\n")
+cat("=====================")
+cat("\nTest parameters :","\n")
+cat("SampleSize= ",mySampleSize,"\n")
+cat("TParCount= ",myTParCount,"\n")
+cat("Lag= ",myLag,"\n")
+
   cat ("length(mockComputeCor) =", length(mockComputeCor), "\n")
 
   # expect_that(mockComputeCor, is_a("numeric"))

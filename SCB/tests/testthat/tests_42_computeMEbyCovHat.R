@@ -7,10 +7,6 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
   myNonCoverageProbability = 0.9
   mySampleSize = 10
   myTParCount = 10
-  cat ("\n mySampleSize = ", mySampleSize)
-  cat ("\n myTParCount = ", myTParCount)
-  cat ("\n myBandwidth = ", myBandwidth)
-  cat ("\n myNonCoverageProbability = ", myNonCoverageProbability)
 
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -18,12 +14,12 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
   mockSample <- createSample(sampleSize = mySampleSize)
 
   myLag = 4
-  cat ("\n myLag = ", myLag)
+
 
   errorIfNotInputCompatible(sampleSize = mySampleSize,lag = myLag)
 
   myLagCount = computeLagCount(lag=myLag,sampleSize = mySampleSize)
-  cat ("\n myLagCount = ", myLagCount)
+
 
   myKernel = normalDifferenceKernel
 
@@ -56,6 +52,13 @@ cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
   cat(" me = ", me, "\n")
   cat("Duration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
 }
 
 test_that("Testing \'computeMEbyCovHat\'", {
