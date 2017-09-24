@@ -62,7 +62,7 @@ errorIfNotInputCompatible(sampleSize=sampleSize,lag=lag)
                                 replicationCount       = replicationCount)
 
   isCoveredArray <- computeIsCoveredArray(bandsBrick,
-                                          corArray,tParCount = length(tParArray),
+                                          corArray = corArray,tParCount = length(tParArray),
                                           sampleSize = sampleSize,
                                           replicationCount = replicationCount,
                                           bandwidth = bandwidth, lag = lag,

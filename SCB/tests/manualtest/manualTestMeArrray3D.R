@@ -12,7 +12,7 @@ saveMe3DForAlphaFunction <- function()
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
   kernel <- normalDifferenceKernel
-  bandwidth <- 0.5
+  bandwidth <- seq(0.1,0.9,by = 0.1)
 
   meArray <- matrix(nrow = length(tParArray),ncol = length(alphas))
 

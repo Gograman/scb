@@ -8,7 +8,7 @@ saveBand <- function(band,
                      nonCoverageProbability,
                      fileName="")
 {
-  cat ("\n saveBand is called")
+  #cat ("\n saveBand is called")
   # forming arrays to draw
   middle  <- (band[ , 1] + band[ , 2]) / 2
   consolidatedBands <- data.frame(lower  = band[, 1],
@@ -44,7 +44,9 @@ saveBand <- function(band,
   xMinMargin <- 0
   xMaxMargin <- 1
 
-  path <- doPath()
+  directory <- "bands"
+
+  path <- doPath(directory = directory)
 
   # saving data to CSV
   consolidatedBands <- data.frame(consolidatedBands,corArray,sampleSize,bandwidth,
