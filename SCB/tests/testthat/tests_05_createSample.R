@@ -9,6 +9,9 @@ createSampleFunction <- function (sampleSize=5)
 
   cat ("mockSample[1:5] =", mockSample[1:5], "\n")
   cat("Duration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
   expect_that(mockSample, is_a("array"))
 }
 

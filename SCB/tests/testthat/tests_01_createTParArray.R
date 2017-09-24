@@ -5,10 +5,13 @@ createTParArrayFunction <- function (tParCount=10) {
   mockTParArray <- createTParArray(tParCount = tParCount)
   end=Sys.time()
   duration=end-start
-
   cat ("mockTParArray[1:5] =", mockTParArray[1:5], "\n",
        "length(mockTParArray) =", length(mockTParArray), "\n")
   cat("Duration= ",duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("TparCount= ",tParCount,"\n")
+
   # The actual testing
   expect_that(mockTParArray, is_a("numeric"))
 }
@@ -18,7 +21,7 @@ createTParArrayFunction <- function (tParCount=10) {
 test_that("Testing \'createTParArray\' for being an array", {
   mockTParArray <- createTParArrayFunction()
 
-cat(" End of test createTParArray","\n")
+cat("End of test createTParArray","\n")
 cat("=====================")
   }
 )

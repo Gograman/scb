@@ -24,6 +24,13 @@ computeAllCorHatsTestFunction = function () {
   Duration=End-Start
 cat("\nAllCorHats",mockAllCorHats)
 cat("\nDuration",Duration,"\n")
+cat("=====================")
+cat("\nTest parameters :","\n")
+cat("SampleSize= ",mySampleSize,"\n")
+cat("TParCount= ",myTParCount,"\n")
+cat("Lag= ",myLag,"\n")
+cat("LagCount= ",myLagCount,"\n")
+cat("Bandwidth= ",myBandwidth,"\n")
   # # print the first 9 elements. Hope, sizes are greater than 3.
   # lag = 1 # actual or real lag = 0
   # # mockCorHatsSecCol <- eval(parse(text = paste0("mockAllCorHats$`", lag, "`")))

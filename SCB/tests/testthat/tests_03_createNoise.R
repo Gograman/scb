@@ -19,6 +19,9 @@ createNoiseFunction <- function (sampleSize=5) {
   cat ("mockNoise[1:5] =", mockRnorm[1:5], "\n")
   cat ("length(mockNoise) =", length(mockNoise), "\n")
   cat("Duration =",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
 
   expect_that(mockRnorm, is_a("numeric"))
 }

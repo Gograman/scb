@@ -28,7 +28,16 @@
     cat("\nDoubleAlphaHatArray= ",doubleAlphaArray)
     cat("\nAlphaArray: ",nonCoverageProbabilities)
     cat("\n size of double array= ",length(doubleAlphaArray))
-    cat("\n Duration= ",duration)
+    cat("\n Duration= ",duration,"\n")
+    cat("=====================")
+    cat("\nTest parameters :","\n")
+    cat("SampleSize= ",mySampleSize,"\n")
+    cat("TParCount= ",myTParCount,"\n")
+    cat("Lag= ",myLag,"\n")
+    cat("LagCount= ",myLagCount,"\n")
+    cat("ReplicationCount= ",myReplicationCount,"\n")
+    cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+    cat("Bandwidth= ",myBandwidth,"\n")
     # expect_that(mockBand, is_a("matrix"))
     # expect_that(dim(mockBand)[1], equals(2))  # the number of rows
     # expect_that(dim(mockBand)[2], equals(10)) # the number of cols

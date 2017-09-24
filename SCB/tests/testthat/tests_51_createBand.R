@@ -31,12 +31,20 @@ createBandFunction <- function()
 
 
   cat("\nband1", band)
-  cat("\nDuration= ", Duration)
+  cat("\nDuration= ", Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("LagCount= ",myLagCount,"\n")
+  cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
 
 }
 
 test_that("Testing \'createBand\'", {
   createBandFunction()
-  cat("\nEnd of test createBand", "\n")
+  cat("End of test createBand", "\n")
   cat("=====================")
 })

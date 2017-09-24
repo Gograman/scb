@@ -43,8 +43,17 @@ End=Sys.time()
 Duration=End-Start
 
       # expect(5 == 5)
-      cat("isCoveredArray: ", isCoveredArray)
+      cat("\nisCoveredArray: ", isCoveredArray)
       cat("\nDuration= ",Duration,"\n")
+      cat("\nTest parameters :","\n")
+      cat("SampleSize= ",mySampleSize,"\n")
+      cat("TParCount= ",myTParCount,"\n")
+      cat("Lag= ",myLag,"\n")
+      cat("LagCount= ",myLagCount,"\n")
+      cat("ReplicationCount= ",myReplicationCount,"\n")
+      cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+      cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+      cat("Bandwidth= ",myBandwidth,"\n")
 
 
 

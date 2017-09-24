@@ -10,6 +10,9 @@ Duration=End-Start
   cat ("mockTVMA1CoefArray =", mockTVMA1CoefArray[1:sampleSize], "\n",
        "length(mockTVMA1CoefArray) =", length(mockTVMA1CoefArray), "\n")
   cat("Duration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
  #expect_that(mockTVMA1CoefArray, is_a("numeric"))
 
 }
