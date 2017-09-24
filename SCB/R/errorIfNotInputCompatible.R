@@ -1,10 +1,19 @@
-errorIfNotInputCompatible = function (sampleSize, lag)
+errorIfNotInputCompatible = function (alpha, lag, sampleSize)
 {
+  isAlphaCompatible = isAlphaCompatibleWithSampleSize (
+    alpha = alpha, sampleSize = sampleSize)
+  isLagCompatible = isLagCompatibleWithSampleSize (
+    lag = lag, sampleSize = sampleSize)
+  isCompatible = isAlphaCompatible || isLagCompatible
 
-  isCompatible = isInputCompatible (sampleSize, lag)
+
   if (! isCompatible)
   {
+    alphaErrorMessage = ""
+    if(!isAlphaCompatible)
+    {
 
+    }
     stop ("\n Stop execution. SampleSize is not compatible with lag: \n sampleSize = ",
           sampleSize, "\n lag = ", lag)
   }
