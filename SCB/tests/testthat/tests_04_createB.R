@@ -9,6 +9,9 @@ createBFunction<-function(sampleSize=5)
 
   cat("bandwidth =", b, "\n")
   cat("Duration =",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
 }
   test_that("Testing  \'createB\'", {
     createBFunction()

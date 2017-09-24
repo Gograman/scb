@@ -22,6 +22,12 @@ Duration=End-Start
   cat("mockCorHat[1:5] = ", mockCorHat[1:5], "\n")
   cat ("length(mockCorHat) = ", length(mockCorHat), "\n")
   cat("Duration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
   expect_that(mockCorHat, is_a("numeric"))
 
   # expect_that(mockBand, is_a("matrix"))

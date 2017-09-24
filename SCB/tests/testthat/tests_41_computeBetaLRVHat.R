@@ -31,6 +31,13 @@ Duration=End-Start
 
   cat("mockBetaLRVHat[1:5] =", mockBetaLRVHat[1:5], "\n")
   cat("Duration= ",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("LagCount= ",myLagCount,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
   # expect_that(betaLRVHat, is_a("matrix"))
   # expect_that(dim(betaLRVHat)[1], equals(2))  # the number of rows
   # expect_that(dim(betaLRVHat)[2], equals(10)) # the number of cols
@@ -39,7 +46,7 @@ Duration=End-Start
 
 test_that("Testing \'computeBetaLRVHat\'", {
   computeBetaLRVHatFunction()
-  cat(" End of test computeBetaLRVHat","\n")
+  cat("End of test computeBetaLRVHat","\n")
   cat("=====================")
   }
 )

@@ -43,6 +43,17 @@ Start=Sys.time()
   End=Sys.time()
   Duration=End-Start
   cat("\nDuration",Duration,"\n")
+  cat("=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("LagCount= ",myLagCount,"\n")
+  cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
+  cat("ReplicationCount= ",myReplicationCount,"\n")
+  cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
+  cat("Bandwidth= ",myBandwidth,"\n")
+
 }
 
 test_that("Testing \'saveNonCoverageFreqArray\'", {
