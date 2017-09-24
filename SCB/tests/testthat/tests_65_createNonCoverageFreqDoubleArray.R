@@ -8,7 +8,7 @@
     myLag <- 2
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
-
+    errorIfNotInputCompatible(sampleSize = mySampleSize,lag = myLag)
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
     myBandwidth <- 0.5
     Start=Sys.time()

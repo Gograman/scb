@@ -57,7 +57,7 @@ computeMEbyCovHat <- function(tParArray,
                                  sample = sample,
                                  kernel = kernel,
                                  allCorHats = allCorHats)
-  # cat ("\n betaLRVHat = ", betaLRVHat)
+  cat ("\n betaLRVHat = ", betaLRVHat)
 
   logSqrt <-  sqrt(-2 * log (bandwidth))
   cat ("\n bandwidth = ", bandwidth)
