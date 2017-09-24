@@ -8,4 +8,9 @@ errorIfNotInputCompatible = function (sampleSize, lag)
     stop ("\n Stop execution. SampleSize is not compatible with lag: \n sampleSize = ",
           sampleSize, "\n lag = ", lag)
   }
+  else
+  {
+    cat("\n Sample size and lag is compatible")
+
+  }
 }
