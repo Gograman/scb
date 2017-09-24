@@ -28,6 +28,7 @@ saveBand <- function(band,
                     "l", lag,
                     "bandW", round(bandwidth, digits = 1 ), sep = "_")
   fileName <- paste(fileName,
+                    "alpha",nonCoverageProbability,
                     "repC", replicationCount,
                     "SrepC", superReplicationCount, sep = "_")
 

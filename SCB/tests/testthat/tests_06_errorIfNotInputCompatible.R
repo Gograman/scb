@@ -2,10 +2,11 @@ errorIfNotInputCompatibleFunction=function()
 {
   mySampleSize=40
   myLag=4
-  errorIfNotInputCompatible(sampleSize = mySampleSize,lag=myLag)
+  myAlpha <- 0.2
+  errorIfNotInputCompatible(alpha = myAlpha,sampleSize = mySampleSize,lag=myLag)
 
 }
-test_that("Testing \'createBand\'", {
+test_that("Testing \'errorIfNotInputCompatibleFunction\'", {
   errorIfNotInputCompatibleFunction()
   cat("\n End of test errorIfNotInputCompatible", "\n")
   cat("=====================")

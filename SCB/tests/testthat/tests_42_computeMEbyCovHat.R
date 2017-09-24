@@ -4,7 +4,7 @@ computeMEbyCovHatFunction = function ()
 cat("\n Testing \'computeMEbyCovHatFunction\' \n")
 
 
-  myNonCoverageProbability = 0.8
+  myNonCoverageProbability = 0.05
   mySampleSize = 300
   myTParCount = 10
   myBandwidth =computeB(n=mySampleSize)
@@ -17,7 +17,7 @@ cat("\n Bandwidth: ",myBandwidth)
   myLag = 4
 
 
-  errorIfNotInputCompatible(sampleSize = mySampleSize,lag = myLag)
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,sampleSize = mySampleSize,lag = myLag)
 
   myLagCount = computeLagCount(lag=myLag,sampleSize = mySampleSize)
 

@@ -1,4 +1,4 @@
-isInputCompatible = function (sampleSize, lag)
+isLagCompatibleWithSampleSize <- function (sampleSize, lag)
 {
 
   isCompatible = sampleSize - computeTermCount (sampleSize)  >= lag + 1

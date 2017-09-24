@@ -1,4 +1,4 @@
-errorIfNotInputCompatible = function (alpha, lag, sampleSize)
+errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
 {
   isAlphaCompatible = isAlphaCompatibleWithSampleSize (
     alpha = alpha, sampleSize = sampleSize)
@@ -12,14 +12,17 @@ errorIfNotInputCompatible = function (alpha, lag, sampleSize)
     alphaErrorMessage = ""
     if(!isAlphaCompatible)
     {
-
+      alphaErrorMessage <- "\nsampleSize is not compatible with alpha: \n"
+      alphaErrorMessage<- paste(alphaErrorMessage, "alpha = " ,alpha,sep = " ")
     }
-    stop ("\n Stop execution. SampleSize is not compatible with lag: \n sampleSize = ",
-          sampleSize, "\n lag = ", lag)
+    lagErrorMessage <- ""
+    if(!isLagCompatible)
+    {
+      lagErrorMessage <- "\nSampleSize is not compatible with lag: \n"
+      lagErrorMessage <- paste(lagErrorMessage, "lag =",lag,sep = " ")
+    }
+    stop ("\n Stop execution", lagErrorMessage,"\n",alphaErrorMessage,"\n",
+          "sampleSize = ",sampleSize)
   }
-  else
-  {
-    cat("\n Sample size and lag is compatible")
 
-  }
 }

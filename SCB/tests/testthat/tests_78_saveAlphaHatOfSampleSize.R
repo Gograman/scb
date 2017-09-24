@@ -1,13 +1,13 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
-  sampleSize <- seq(10,110,by=50)
+  sampleSize <- seq(10,500,by=50)
 
   nonCoverageProbability <- 0.2
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
-  lag <- 2
+  lag <- 0
 
   kernel <- normalDifferenceKernel
 
@@ -29,7 +29,8 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            tParArray = tParArray,
                            kernel = kernel,
                            bandwidth = bandwidth,
-                           nonCoverageProbability = nonCoverageProbability)
+                           nonCoverageProbability = nonCoverageProbability,
+                           fileName = "tests_78_saveAlphaHatOfSampleSize")
   }
   fileName <- "AlphaOfSampleSize"
   fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
@@ -42,9 +43,9 @@ saveAlphaHatOfSampleSizeFunction <- function()
                     mySuperReplicationCount,sep = "")
 
   path <- doPath()
-  #saveJpg(fileName,path)
+  saveJpg(fileName,path)
   #df <- data.frame(alphaHat)
-  saveCVS(fileName,path,df)
+  #saveCVS(fileName,path,df)
   alpha <- rep(nonCoverageProbability,times = length(sampleSize))
 
   plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")

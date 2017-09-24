@@ -51,7 +51,7 @@ computeNonCoverageFreq  <- function(replicationCount,
                                     nonCoverageProbability = 0.05,
                                     superReplicationCount,
                                     fileName = "") {
-errorIfNotInputCompatible(sampleSize=sampleSize,lag=lag)
+  errorIfNotInputCompatible(alpha = nonCoverageProbability,sampleSize=sampleSize,lag=lag)
   bandsBrick = createBandsBrick(sampleSize = sampleSize,
                                 tParArray  = tParArray,
                                 lag        = lag,
