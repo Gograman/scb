@@ -4,7 +4,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
     alpha = alpha, sampleSize = sampleSize)
   isLagCompatible = isLagCompatibleWithSampleSize (
     lag = lag, sampleSize = sampleSize)
-  isCompatible = isAlphaCompatible || isLagCompatible
+  isCompatible = isAlphaCompatible & isLagCompatible
 
 
   if (! isCompatible)

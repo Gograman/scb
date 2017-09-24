@@ -1,6 +1,6 @@
 isLagCompatibleWithSampleSize <- function (sampleSize, lag)
 {
-
-  isCompatible = sampleSize - computeTermCount (sampleSize)  >= lag + 1
+  maxLag = computeMaxLagForSampleSize(sampleSize = sampleSize)
+  isCompatible = lag <= maxLag
   return (isCompatible)
 }

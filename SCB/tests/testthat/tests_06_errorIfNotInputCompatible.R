@@ -2,7 +2,7 @@ errorIfNotInputCompatibleFunction=function()
 {
   mySampleSize=40
   myLag=4
-  myAlpha <- 0.2
+  myAlpha <- 0.8
   errorIfNotInputCompatible(alpha = myAlpha,sampleSize = mySampleSize,lag=myLag)
 
 }
