@@ -30,8 +30,10 @@ computeBetaLRVHat  <- function(tParArray,
                                lag,
                                sample,
                                kernel,
-                               bandwidth,
                                allCorHats) {
+
+  mySampleSize=length(sample)
+  bandwidth = computeB(sampleSize = mySampleSize)
   tParCount = length(tParArray)
   sampleSize = length(sample)
   #cat("\nSampleSize",sampleSize)

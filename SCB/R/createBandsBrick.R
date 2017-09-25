@@ -56,7 +56,6 @@ createBandsBrick <- function(tParArray,
         tParArray = tParArray,
         lag = lag,
         lagCount = lagCount,
-        bandwidth = bandwidth,
         kernel = kernel,
         sampleSize = sampleSize,
         nonCoverageProbability = nonCoverageProbability

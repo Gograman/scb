@@ -5,6 +5,7 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
                                      lag, superReplicationCount,
                                      fileName ="")
 {
+  bandwidth=computeB(sampleSize = sampleSize)
   fileName <- paste(fileName,"NonCoverageFreqArray",sep = "_")
 
   fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")

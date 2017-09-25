@@ -15,7 +15,7 @@ saveMeForAlphaFunction <- function()
   tParArray <- createTParArray(tParCount = tParCount)
 
   kernel <- normalDifferenceKernel
-  bandwidth <- 0.5
+
 
   sampleArray <- matrix(nrow = sampleSize,ncol = nMe)
   meArray <- matrix(nrow = length(tParArray),ncol = nMe)
@@ -33,15 +33,13 @@ saveMeForAlphaFunction <- function()
     allCorHats <- computeAllCorHats(tParArray = tParArray,
                                   lagCount = lagCount,
                                   sample = sampleArray[,indexCol],
-                                  kernel = kernel,
-                                  bandwidth = bandwidth)
+                                  kernel = kernel)
 
     meArray[,indexCol] <- computeMEbyCovHat(tParArray = tParArray,
                             lag = lag,
                             lagCount = myLagCount,
                             sample = sampleArray[,indexCol],
                             kernel = normalDifferenceKernel,
-                            bandwidth = bandwidth,
                             nonCoverageProbability = nonCoverageProbability,
                             allCorHats = allCorHats,
                             C_K = -1.978325,

@@ -34,7 +34,6 @@
 createBand <- function(tParArray,
                        lag,
                        lagCount,
-                       bandwidth,
                        kernel = normalDifferenceKernel,
                        sampleSize,
                        nonCoverageProbability)
@@ -44,14 +43,14 @@ createBand <- function(tParArray,
   # upper = corArray + ME
   # upper = corArray + ME
 
-  mySample <- createSample(sampleSize = sampleSize)
-
+  mySample=createSample(sampleSize = sampleSize)
+  mySampleSize=length(mySample)
+  bandwidth = computeB(sampleSize = mySampleSize)
   mockallCorHat = computeAllCorHats(
     tParArray = tParArray,
     lagCount = lagCount,
     sample = mySample,
-    kernel = kernel,
-    bandwidth = bandwidth
+    kernel = kernel
 
   )
 
@@ -60,7 +59,6 @@ createBand <- function(tParArray,
     lag = lag,
     lagCount = lagCount,
     sample = mySample,
-    bandwidth = 0.5,
     nonCoverageProbability = nonCoverageProbability,
     allCorHats = mockallCorHat,
     C_K = -1.978325,
@@ -70,8 +68,7 @@ createBand <- function(tParArray,
     tParArray = tParArray,
     lag = lag,
     sample = mySample,
-    kernel = kernel,
-    bandwidth = bandwidth
+    kernel = kernel
   )
 
 

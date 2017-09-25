@@ -1,5 +1,6 @@
 computeLagCountFunction <- function()
 {
+  cat("\n Testing \'tests_22_computeLagCount\' \n")
   maxGraph=1000
   step=100
   sampleSizes <- seq(1,maxGraph,by=step)
@@ -34,7 +35,7 @@ computeLagCountFunction <- function()
 }
 
 test_that("Testing computeLagCount", {
-  computeLagCountFunction
+  computeLagCountFunction()
   cat("\n End of test computeLagCount", "\n")
   cat("=====================")
 })

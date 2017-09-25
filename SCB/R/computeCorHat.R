@@ -31,6 +31,8 @@ computeCorHat <- function(tParArray,
                           kernel,
                           bandwidth)
 {
+  mySampleSize=length(sample)
+  bandwidth = computeB(sampleSize = mySampleSize)
   myCovariance = computeCovHat(tParArray,
                             lag = lag,
                             sample,

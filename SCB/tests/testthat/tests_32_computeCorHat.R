@@ -9,13 +9,12 @@ computeCorHatFunction = function () {
   mockSample <- createSample(sampleSize = mySampleSize)
   myLag = 1
   myKernel = normalDifferenceKernel
-  myBandwidth = 1
+
 Start=Sys.time()
   mockCorHat <- computeCorHat(tParArray = mockTParArray,
                               lag = myLag,
                               sample = mockSample,
-                              kernel = myKernel,
-                              bandwidth = myBandwidth)
+                              kernel = myKernel)
 End=Sys.time()
 Duration=End-Start
 
@@ -27,7 +26,6 @@ Duration=End-Start
   cat("SampleSize= ",mySampleSize,"\n")
   cat("TParCount= ",tParCount,"\n")
   cat("Lag= ",myLag,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
   expect_that(mockCorHat, is_a("numeric"))
 
   # expect_that(mockBand, is_a("matrix"))

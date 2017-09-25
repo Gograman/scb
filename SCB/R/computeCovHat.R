@@ -26,7 +26,9 @@ computeCovHat <- function(tParArray,
                           sample,
                           kernel,
                           bandwidth) {
+
   sampleSize <- length(sample)
+  bandwidth=computeB(sampleSize = sampleSize)
   partialSum <- 0
   termCountSequence =seq_len(sampleSize-lag)
 

@@ -52,11 +52,10 @@ createDoubleAlphaArray = function(superReplicationCount,
                                   alphaArray,
                                   tParArray,
                                   kernel = normalDifferenceKernel,
-                                  bandwidth,
                                   fileName = "")
 
 {
-
+  isCompatible = isLagCompatibleWithSampleSize(sampleSize = sampleSize, lag = lag)
 
 
   alphaCount=length(alphaArray)
@@ -75,7 +74,6 @@ createDoubleAlphaArray = function(superReplicationCount,
       lagCount = lagCount,
       tParArray = tParArray,
       kernel = kernel,
-      bandwidth = bandwidth,
       nonCoverageProbability = alphaArray[alphaIndex],
       fileName = fileName)
   }
@@ -83,7 +81,7 @@ createDoubleAlphaArray = function(superReplicationCount,
 
   saveDoubleAplhaHatArray(nonCoverageProbabilities = alphaArray,
                          alphaHats = doubleAlphaArray, sampleSize = sampleSize,
-                         bandwidth = bandwidth, lag = lag, replicationCount = replicationCount,
+                         lag = lag, replicationCount = replicationCount,
                          superReplicationCount = superReplicationCount,
                          fileName = fileName)
 

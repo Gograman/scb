@@ -15,7 +15,6 @@
 
 
     myKernel <- normalDifferenceKernel
-    myBandwidth <- 0.5
     myNonCoverageProbability <- 0.05
   #   bandsBrick = createBandsBrick(sampleSize = mySampleSize,
   #                                 tParArray  = mockTParArray,
@@ -38,8 +37,7 @@
   #   }
   # cat("\nzeroCount",zeroCount)
   #   nonCoverageFreq <- zeroCount / replicationCount
-    fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
-                      , myNonCoverageProbability, sep = "_")
+
     Start=Sys.time()
 
    nonCoverageFreq <- computeNonCoverageFreq(replicationCount = myReplicationCount,
@@ -49,7 +47,6 @@
                                             tParArray = mockTParArray,
                                             corArray = trueCorArray,
                                             kernel = myKernel,
-                                            bandwidth = myBandwidth,
                                             nonCoverageProbability = myNonCoverageProbability,
                                             superReplicationCount = mySuperReplicationCount,
                                             fileName = "tests_63_computeNonCoverageFreq")
@@ -67,7 +64,6 @@ Duration=End-Start
    cat("ReplicationCount= ",myReplicationCount,"\n")
    cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
    cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
-   cat("Bandwidth= ",myBandwidth,"\n")
      cat("\nEnd of test of computeNonCoverageFreq","\n")
      cat("=====================")
   }

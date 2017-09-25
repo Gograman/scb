@@ -16,15 +16,13 @@ computeIsCoveredFunction = function()
 
   myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
-  myBandwidth = 0.5
   myNonCoverageProbability = 0.05
-  fileName <- paste("ss", mySampleSize, "l", myLag, "bandW", myBandwidth, "alpha"
+  fileName <- paste("ss", mySampleSize, "l", myLag, "alpha"
                     , myNonCoverageProbability, sep = "_")
   mockBand = createBand(
     tParArray = mockTParArray,
     lag = myLag,
     lagCount = myLagCount,
-    bandwidth = myBandwidth,
     kernel = myKernel,
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
@@ -38,7 +36,6 @@ Start=Sys.time()
   isCovered <- computeIsCovered(mockBand,
                                 mockCor,
                                 sampleSize = mySampleSize,
-                                bandwidth = myBandwidth,
                                 lag = myLag,
                                 replicationCount = myReplicationCount,
                                 superReplicationCount = mySuperReplicationCount,
@@ -59,7 +56,7 @@ Start=Sys.time()
   cat("ReplicationCount= ",myReplicationCount,"\n")
   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
+
 }
 
 test_that("Testing computeIsCovered", {

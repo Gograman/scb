@@ -5,40 +5,37 @@ saveDoubleAplhaHatArrayFunction <- function()
   myTParArray  <- createTParArray(tParCount = myTParCount)
   mySuperReplicationCount <- 6
   myReplicationCount <- 7
-  mySampleSize <- 100
+  sampleSize <- 100
   myLag <- 2
-  myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
+  myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)
 
   myKernel <- normalDifferenceKernel
-  myBandwidth <- 0.5
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
 
   alphaHats<-createDoubleAlphaArray(superReplicationCount = mySuperReplicationCount,
                          replicationCount = myReplicationCount,
-                         sampleSize = mySampleSize,
+                         sampleSize = sampleSize,
                          lag = myLag, lagCount = myLagCount,
                          alphaArray = nonCoverageProbabilities,
                          tParArray = myTParArray,
                          kernel = myKernel,
-                         bandwidth = myBandwidth,
                          fileName = "tests_73_SaveDoubleAlphaHatArray")
 
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
-                          alphaHats = alphaHats, sampleSize = mySampleSize,
+                          alphaHats = alphaHats, sampleSize = sampleSize,
                           lag = myLag, replicationCount = myReplicationCount,
                           superReplicationCount = mySuperReplicationCount,
-                          bandwidth = myBandwidth,
                           fileName = "tests_73_SaveDoubleAlphaHatArray")
-   cat("=====================")
+   cat("\n=====================")
    cat("\nTest parameters :","\n")
-   cat("SampleSize= ",mySampleSize,"\n")
+   cat("SampleSize= ",sampleSize,"\n")
    cat("TParCount= ",myTParCount,"\n")
    cat("Lag= ",myLag,"\n")
    cat("LagCount= ",myLagCount,"\n")
    cat("NonCoverageProbabilities= ",nonCoverageProbabilities,"\n")
    cat("ReplicationCount= ",myReplicationCount,"\n")
    cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
-   cat("Bandwidth= ",myBandwidth,"\n")
+
 
  }
 test_that("Testing \'saveNonCoverageFreqArray\'", {

@@ -11,20 +11,17 @@ computeBetaLRVHatFunction = function () {
   myLag = 4
   myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
-  myBandwidth = 0.5
  # form all rho hats
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
                                     lagCount = myLagCount,
                                     sample = mockSample,
-                                    kernel = myKernel,
-                                    bandwidth = myBandwidth)
+                                    kernel = myKernel)
 Start=Sys.time()
   mockBetaLRVHat <- computeBetaLRVHat(tParArray = mockTParArray,
                                       lag = myLag,
                                       sample = mockSample,
                                       kernel = myKernel,
-                                      bandwidth = myBandwidth,
                                       allCorHats = mockAllCorHats)
 End=Sys.time()
 Duration=End-Start
@@ -37,7 +34,7 @@ Duration=End-Start
   cat("TParCount= ",myTParCount,"\n")
   cat("Lag= ",myLag,"\n")
   cat("LagCount= ",myLagCount,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
+
   # expect_that(betaLRVHat, is_a("matrix"))
   # expect_that(dim(betaLRVHat)[1], equals(2))  # the number of rows
   # expect_that(dim(betaLRVHat)[2], equals(10)) # the number of cols

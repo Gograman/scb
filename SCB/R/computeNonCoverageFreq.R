@@ -47,10 +47,10 @@ computeNonCoverageFreq  <- function(replicationCount,
                                     corArray,
                                     lagCount,
                                     kernel = normalDifferenceKernel,
-                                    bandwidth = 0.5,
                                     nonCoverageProbability = 0.05,
                                     superReplicationCount,
                                     fileName = "") {
+  bandwidth = computeB(sampleSize = sampleSize)
   errorIfNotInputCompatible(alpha = nonCoverageProbability,sampleSize=sampleSize,lag=lag)
   bandsBrick = createBandsBrick(sampleSize = sampleSize,
                                 tParArray  = tParArray,
@@ -65,7 +65,7 @@ computeNonCoverageFreq  <- function(replicationCount,
                                           corArray = corArray,tParCount = length(tParArray),
                                           sampleSize = sampleSize,
                                           replicationCount = replicationCount,
-                                          bandwidth = bandwidth, lag = lag,
+                                          lag = lag,
                                           superReplicationCount = superReplicationCount,
                                           nonCoverageProbability = nonCoverageProbability,
                                           fileName = fileName)

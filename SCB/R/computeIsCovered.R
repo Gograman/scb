@@ -28,7 +28,6 @@
 computeIsCovered <- function(band,
                              corArray,
                              sampleSize,
-                             bandwidth,
                              replicationCount,
                              lag,
                              superReplicationCount,
@@ -39,11 +38,13 @@ computeIsCovered <- function(band,
   # counter i corresponds to t_i = 0, 1/n, …., 1 - 1/n,
   # horizontal ACF of a sleepers process
   # saveBand(band = band, corArray = corArray, fileName)
+
+  bandwidth = computeB(sampleSize = sampleSize)
   tParCount <- length (corArray)
   isCoveredArrayByT <- array (0, dim = tParCount)
   ZeroCount=0
   saveBand(corArray = corArray,band = band, sampleSize = sampleSize,
-           replicationCount = replicationCount, bandwidth = bandwidth, lag = lag,
+           replicationCount = replicationCount, lag = lag,
            superReplicationCount = superReplicationCount,
            nonCoverageProbability = nonCoverageProbability,
            fileName = fileName)

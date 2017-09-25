@@ -8,7 +8,6 @@ saveBandFuction <- function()
   myLag = 2
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
-  myBandwidth = 0.5
   myNonCoverageProbability = 0.05
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
@@ -21,7 +20,6 @@ saveBandFuction <- function()
     tParArray = mockTParArray,
     lag = myLag,
     lagCount = myLagCount,
-    bandwidth = myBandwidth,
     kernel = myKernel,
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
@@ -32,7 +30,7 @@ saveBandFuction <- function()
   Start = Sys.time()
   saveBand(band = band,
            corArray = corArray, sampleSize = mySampleSize, lag = myLag,
-           replicationCount = myReplicationCount, bandwidth = myBandwidth,
+           replicationCount = myReplicationCount,
            superReplicationCount = mySuperReplicationCount,
            nonCoverageProbability = myNonCoverageProbability,
            fileName="test_71_saveBand")
@@ -48,7 +46,6 @@ saveBandFuction <- function()
   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
   cat("ReplicationCount= ",myReplicationCount,"\n")
   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
 
 
 }

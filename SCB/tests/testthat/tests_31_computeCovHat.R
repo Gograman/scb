@@ -10,13 +10,12 @@ computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
   myLag = 3
 
   myKernel = normalDifferenceKernel
-  myBandwidth = 0.5
+
   Start=Sys.time()
   mockCovHat <- computeCovHat(tParArray = tParArray,
                               lag = myLag,
                               sample = mockSample,
-                              kernel = myKernel,
-                              bandwidth = myBandwidth)
+                              kernel = myKernel)
   End=Sys.time()
   Duration=End-Start
 

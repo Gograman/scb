@@ -1,8 +1,10 @@
 saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
                                     sampleSize, replicationCount, lag,
-                                    superReplicationCount, bandwidth,
+                                    superReplicationCount,
                                     fileName = "")
 {
+
+  bandwidth = computeB(sampleSize = sampleSize)
   fileName <- paste(fileName,"AlphasAndAlphaHats",sep = "_")
 
   fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")

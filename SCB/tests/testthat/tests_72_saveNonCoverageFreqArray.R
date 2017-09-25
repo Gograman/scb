@@ -10,11 +10,12 @@ saveNonCoverageFreqArrayFunction <- function()
   myLag <- 0
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel <- normalDifferenceKernel
-  myBandwidth <- 0.5
   myNonCoverageProbability <- 0.05
-  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag, sampleSize = mySampleSize)
 
-  Start=Sys.time()
+  isCompatible = isLagCompatibleWithSampleSize (sampleSize = mySampleSize, lag = myLag)
+  cat ("\n isCompatible = ", isCompatible)
+  if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")
+Start=Sys.time()
   nonCoverageFreqArray = computeNonCoverageFreqArray(
     superReplicationCount = mySuperReplicationCount,
     replicationCount = myReplicationCount,
@@ -23,7 +24,6 @@ saveNonCoverageFreqArrayFunction <- function()
     lagCount = myLagCount,
     tParArray = myTParArray,
     kernel = myKernel,
-    bandwidth = myBandwidth,
     nonCoverageProbability = myNonCoverageProbability,
     fileName = "tests_72_saveNonCoverageFreqArray"
   )
@@ -33,7 +33,7 @@ saveNonCoverageFreqArrayFunction <- function()
 
   saveNonCoverageFreqArray(nonCoverageProbability = nonCoverageProbability,
                                    alphaHatArray = alphaHatArray, sampleSize = mySampleSize,
-                           replicationCount = myReplicationCount, bandwidth = myBandwidth,
+                           replicationCount = myReplicationCount,
                            lag = myLag, superReplicationCount = mySuperReplicationCount,
                            fileName = "tests_72_saveNonCoverageFreqArray")
 
@@ -50,7 +50,6 @@ saveNonCoverageFreqArrayFunction <- function()
   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
   cat("ReplicationCount= ",myReplicationCount,"\n")
   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
 
 }
 

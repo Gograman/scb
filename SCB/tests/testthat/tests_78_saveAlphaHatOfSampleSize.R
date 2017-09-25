@@ -1,7 +1,7 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,200,by=50)
+  sampleSize <- seq(10,500,by=50)
 
   nonCoverageProbability <- 0.2
 
@@ -29,7 +29,6 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            lagCount = lagCount,
                            tParArray = tParArray,
                            kernel = kernel,
-                           bandwidth = bandwidth,
                            nonCoverageProbability = nonCoverageProbability,
                            fileName = "tests_78_saveAlphaHatOfSampleSize")
   }

@@ -51,7 +51,8 @@ computeMEbyCovHat <- function(tParArray,
   # mylag=2
   # int_sq_der = 0.306951 is now hidden in C_K
 
-
+  mySampleSize=length(sample)
+  bandwidth = computeB(sampleSize = mySampleSize)
   betaLRVHat = computeBetaLRVHat(tParArray = tParArray,
                                  lag = lag,
                                  sample = sample,

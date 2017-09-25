@@ -28,14 +28,14 @@
 computeAllCorHats <- function(tParArray,
                               lagCount,
                               sample,
-                              kernel,
-                              bandwidth)
+                              kernel)
 
 {
   # Double array of sizes sleeperCount and lagCount
   # Inner counter -  tPar
   # Outer counter - lag
-
+  mySampleSize=length(sample)
+  bandwidth = computeB(sampleSize = mySampleSize)
   tParCount <- length(tParArray)
   allCorHats <- array(0, dim = c(tParCount, lagCount + 1))
   # colNamesForAllCorHats <- as.character(c(0, seq_len(lagCount)))

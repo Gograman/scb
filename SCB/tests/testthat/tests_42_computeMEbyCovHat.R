@@ -1,14 +1,13 @@
 computeMEbyCovHatFunction = function ()
 {
 
-  cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
+cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
 
 
   myNonCoverageProbability = 0.05
   mySampleSize = 300
   myTParCount = 10
-  myBandwidth =computeB(mySampleSize)
-  cat("\n Bandwidth: ",myBandwidth)
+
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
 
@@ -29,15 +28,13 @@ computeMEbyCovHatFunction = function ()
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
                                       lagCount = myLagCount,
                                       sample = mockSample,
-                                      kernel = myKernel,
-                                      bandwidth = myBandwidth)
+                                      kernel = myKernel)
   Start=Sys.time()
   me <- computeMEbyCovHat(tParArray = mockTParArray,
                           lag = myLag,
                           lagCount = myLagCount,
                           sample = mockSample,
                           kernel = normalDifferenceKernel,
-                          bandwidth = myBandwidth,
                           nonCoverageProbability = myNonCoverageProbability,
                           allCorHats = mockAllCorHats,
                           C_K = -1.978325,
@@ -59,7 +56,7 @@ computeMEbyCovHatFunction = function ()
   cat("TParCount= ",myTParCount,"\n")
   cat("Lag= ",myLag,"\n")
   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
-  cat("Bandwidth= ",myBandwidth,"\n")
+
 }
 
 test_that("Testing \'computeMEbyCovHat\'", {

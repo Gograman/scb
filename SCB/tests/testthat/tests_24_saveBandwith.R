@@ -1,5 +1,6 @@
 saveBandwithFunction <- function()
 {
+  cat("\n Testing \'tests_24_saveBandwith\' \n")
   sampleSize <- 1:500
 
   bandwidth <- numeric(length = length(sampleSize))
