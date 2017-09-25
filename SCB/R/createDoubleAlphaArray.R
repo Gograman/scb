@@ -56,7 +56,7 @@ createDoubleAlphaArray = function(superReplicationCount,
                                   fileName = "")
 
 {
-  isCompatible = isInputCompatible(sampleSize = sampleSize, lag = lag)
+
 
 
   alphaCount=length(alphaArray)
@@ -66,7 +66,7 @@ createDoubleAlphaArray = function(superReplicationCount,
   for (alphaIndex in 1: alphaCount)
 {
     cat("\n Now alpha index =",alphaIndex)
-    errorIfNotInputCompatible(alpha = alphaArray[alphaIndex],sampleSize = mySampleSize,lag = myLag)
+    errorIfNotInputCompatible(alpha = alphaArray[alphaIndex],sampleSize = sampleSize,lag = lag)
     doubleAlphaArray[, alphaIndex] = computeNonCoverageFreqArray(
       superReplicationCount = superReplicationCount,
       replicationCount = replicationCount,

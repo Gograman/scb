@@ -9,7 +9,7 @@
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
 
-  nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
+    nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
     myBandwidth <- 0.5
     Start=Sys.time()
     doubleAlphaArray = createDoubleAlphaArray(

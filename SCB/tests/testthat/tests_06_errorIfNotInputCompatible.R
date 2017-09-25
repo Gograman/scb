@@ -2,8 +2,8 @@ errorIfNotInputCompatibleFunction=function()
 {
   cat("\n Testing \'tests_06_errorIfNotInputCompatible\'")
   mySampleSize=40
-  myLag=4
-  myAlpha <- 0.8
+  myLag=1
+  myAlpha <- 0.2
   errorIfNotInputCompatible(alpha = myAlpha,sampleSize = mySampleSize,lag=myLag)
 
 }
