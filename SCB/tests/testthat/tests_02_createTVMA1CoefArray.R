@@ -1,5 +1,5 @@
 createTVMA1CoefArrayFunction <- function(samplesize=5) {
-  cat("\n Testing \'createTVMA1CoefArray\' for length and being numeric \n")
+  cat("\n Testing \'tests_02_createTVMA1CoefArray\' for length and being numeric \n")
 
 
   sampleSize = samplesize

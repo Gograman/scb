@@ -1,6 +1,6 @@
 createSampleFunction <- function (sampleSize=5)
 {
-  cat("\n Testing \'createSample\' for length and being numeric \n")
+  cat("\n Testing \'tests_05_createSample\' for length and being numeric \n")
   mySampleSize =sampleSize
   Start=Sys.time()
   mockSample <- createSample(sampleSize = mySampleSize)

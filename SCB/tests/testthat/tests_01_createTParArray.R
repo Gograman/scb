@@ -1,5 +1,5 @@
 createTParArrayFunction <- function (tParCount=10) {
-  cat ("\n Testing \'createTParArray\' for for length and being numeric \n")
+  cat ("\n Testing \'tests_01_createTParArray\' for for length and being numeric \n")
   tParCount = tParCount
   start=Sys.time()
   mockTParArray <- createTParArray(tParCount = tParCount)

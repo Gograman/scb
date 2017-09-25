@@ -1,6 +1,6 @@
 saveBandFuction <- function()
 {
-  cat ("\n Testing \'SaveBand\'\n")
+  cat ("\n Testing \'tests_71_saveBand\'\n")
 
   mySampleSize = 100
   myTParCount = 10

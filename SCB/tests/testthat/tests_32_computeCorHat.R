@@ -1,5 +1,5 @@
 computeCorHatFunction = function () {
-  cat("\n Testing \'computeCorHat\' \n")
+  cat("\n tests_32_Testing \'computeCorHat\' \n")
 
   tParCount = 10
   mySampleSize=100

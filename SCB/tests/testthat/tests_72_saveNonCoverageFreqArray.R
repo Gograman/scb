@@ -1,6 +1,6 @@
 saveNonCoverageFreqArrayFunction <- function()
 {
-  cat ("\n Testing \'saveNonCoverageFreqArray\'\n")
+  cat ("\n Testing \'tests_72_saveNonCoverageFreqArray\'\n")
 
   myTParCount  <-10
   myTParArray  <- createTParArray(tParCount = myTParCount)

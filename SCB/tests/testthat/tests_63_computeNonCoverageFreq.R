@@ -1,7 +1,7 @@
   computeNonCoverageFreqFunction <- function()
 
   {
-    cat ("\n Testing \'computeNonCoverageFreq\' \n")
+    cat ("\n Testing \'tests_63_computeNonCoverageFreq\' \n")
 
     myTParCount  <- 10
     mockTParArray  <- createTParArray(tParCount = myTParCount)

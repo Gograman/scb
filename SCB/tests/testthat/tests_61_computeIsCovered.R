@@ -1,6 +1,6 @@
 computeIsCoveredFunction = function()
 {
-  cat ("\n Testing \'computeIsCovered\'\n")
+  cat ("\n Testing \'tests_61_computeIsCovered\'\n")
 
   mySampleSize = 100
   myTParCount = 10

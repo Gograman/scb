@@ -1,5 +1,5 @@
 computeCorTestFunction = function () {
-  cat("\n Testing \'computeCor\' \n")
+  cat("\n Testing \'tests_34_computeCor\' \n")
 
   myTParCount = 10
   myLag = 0
