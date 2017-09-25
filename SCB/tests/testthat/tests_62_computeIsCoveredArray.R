@@ -1,6 +1,6 @@
 computeIsCoveredArrayFunction <- function()
 {
-  cat("\n Testing \'computeIsCoveredArray\'\n")
+  cat("\n Testing \'tests_62_computeIsCoveredArray\'\n")
 
   mySampleSize=10
   myTParCount = 10

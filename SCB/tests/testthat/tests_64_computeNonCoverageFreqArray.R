@@ -1,5 +1,5 @@
 computeNonCoverageFreqArrayFunction <- function() {
-  cat("\n Testing \'computeNonCoverageFreqArray\' \n")
+  cat("\n Testing \'tests_64_computeNonCoverageFreqArray\' \n")
 
   myTParCount  <-5
   myTParArray  <- createTParArray(tParCount = myTParCount)

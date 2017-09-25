@@ -1,5 +1,5 @@
 computeBetaLRVHatFunction = function () {
-  cat("\n Testing \'computeBetaLRVHat\' \n")
+  cat("\n Testing \'tests_41_computeBetaLRVHat\' \n")
   mySampleSize =8
   myTParCount = 5
   mockTParArray <- createTParArray(tParCount = myTParCount)

@@ -1,5 +1,5 @@
 computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
-  cat("\n Testing \'computeCovHat\' \n")
+  cat("\n Testing \'tests_31_computeCovHat\' \n")
   tParCount=tParCount
   tParArray=createTParArray(tParCount = tParCount)
   mySampleSize=sampleSize

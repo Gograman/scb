@@ -1,5 +1,5 @@
 createNoiseFunction <- function (sampleSize=5) {
-  cat("\n Testing \'createNoise\' for length and being numeric \n")
+  cat("\n Testing \'tests_03_createNoise\' for length and being numeric \n")
   set.seed(100)
   mySampleSize = sampleSize
   Start=Sys.time()

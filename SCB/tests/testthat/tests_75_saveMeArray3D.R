@@ -1,5 +1,6 @@
 saveMe3DForAlphaFunction <- function()
 {
+  cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
   sampleSize <- 100
   sample <- createSample(sampleSize = sampleSize)
 

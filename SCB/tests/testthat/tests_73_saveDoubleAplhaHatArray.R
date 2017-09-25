@@ -1,6 +1,6 @@
 saveDoubleAplhaHatArrayFunction <- function()
 {
-  cat ("\n Testing \'saveDoubleAplhaHatArray\'\n")
+  cat ("\n Testing \'tests_73_saveDoubleAplhaHatArray\'\n")
   myTParCount  <- 10
   myTParArray  <- createTParArray(tParCount = myTParCount)
   mySuperReplicationCount <- 6

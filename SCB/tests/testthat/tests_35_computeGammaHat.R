@@ -1,5 +1,5 @@
 computeGammaHat = function () {
-  cat("\n Testing \'computeGammaHat\' \n")
+  cat("\n Testing \'tests_35_computeGammaHat\' \n")
   # sampleSize = 3
   # tParCount = 5
   # lag = 0

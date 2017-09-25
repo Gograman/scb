@@ -1,5 +1,5 @@
   createNonCoverageFreqDoubleArrayFunction <- function () {
-    cat("\n Testing \'createNonCoverageFreqDoubleArray\' \n")
+    cat("\n Testing \'tests_65_createNonCoverageFreqDoubleArray\' \n")
     myTParCount  <- 10
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3

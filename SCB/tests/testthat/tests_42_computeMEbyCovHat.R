@@ -1,7 +1,7 @@
 computeMEbyCovHatFunction = function ()
 {
 
-cat("\n Testing \'computeMEbyCovHatFunction\' \n")
+cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
 
 
   myNonCoverageProbability = 0.05
