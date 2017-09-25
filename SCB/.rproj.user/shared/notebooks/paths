@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/MKS/scb/SCB/R/computeB.R="A5A0B752"
 C:/Users/MKS/scb/SCB/R/computeNonCoverageFreqArray.R="D753189D"
 C:/Users/MKS/scb/SCB/R/createDoubleAlphaArray.R="2D07A164"
@@ -15,3 +16,22 @@ C:/Users/MKS/scb/SCB/tests/testthat/tests_73_saveDoubleAplhaHatArray.R="6C1FAB57
 C:/Users/MKS/scb/SCB/tests/testthat/tests_76_saveMeArray3DForBandwith.R="E85A49B3"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_77_saveMeArray3DForSampleSize.R="AE6868B7"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_78_saveAlphaHatOfSampleSize.R="415D38B6"
+=======
+C:/Dropbox/Github/SCB-stat101/SCB/R/computeMaxLagForSampleSize.R="1C8660DA"
+C:/Dropbox/Github/SCB-stat101/SCB/R/computeMinSampleSizeForAlpha.R="3FF11A03"
+C:/Dropbox/Github/SCB-stat101/SCB/R/createDoubleAlphaArray.R="7C496A53"
+C:/Dropbox/Github/SCB-stat101/SCB/R/createMultiplierCovarianceByKernel.R="D014C9DD"
+C:/Dropbox/Github/SCB-stat101/SCB/R/errorIfNotInputCompatible.R="EAFD30C0"
+C:/Dropbox/Github/SCB-stat101/SCB/R/exp.R="9A4A6F4B"
+C:/Dropbox/Github/SCB-stat101/SCB/R/getC_K.R="61C1DE8"
+C:/Dropbox/Github/SCB-stat101/SCB/R/isAlphaCompatibleWithSampleSize.R="F3C17B86"
+C:/Dropbox/Github/SCB-stat101/SCB/R/isLagCompatibleWithSampleSize.R="E4416892"
+C:/Dropbox/Github/SCB-stat101/SCB/R/normalDifferenceKernel.R="36DF1EA8"
+C:/Dropbox/Github/SCB-stat101/SCB/R/saveBand.R="434C96AD"
+C:/Dropbox/Github/SCB-stat101/SCB/R/saveCVS.R="AFAD5F52"
+C:/Dropbox/Github/SCB-stat101/SCB/R/saveDoubleAlphaArray.R="22F93066"
+C:/Dropbox/Github/SCB-stat101/SCB/R/saveJPG.R="6585EBF4"
+C:/Dropbox/Github/SCB-stat101/SCB/R/saveNonCoverageFreqArray.R="F42DD38D"
+C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_71_saveBand.R="915469FF"
+C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_72_saveNonCoverageFreqArray.R="70140B30"
+>>>>>>> b342d45b6334b13c0a3c7d7b09c350f8f3e578af
