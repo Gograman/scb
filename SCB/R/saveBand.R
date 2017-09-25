@@ -62,19 +62,28 @@ saveBand <- function(band,
 
   # opening a graphical device and saving the drawing to it
   saveJpg(fileName = fileName, path = path)
-  plot(x = tParArray,
-       y = consolidatedBands$lower,
-       type = "l",
-       col = "blue",
-       xlim = c(xMinMargin, xMaxMargin),
-       ylim = c(yMinMargin, yMaxMargin),
-       xlab = "",
-       ylab = "Correlation",
-       yaxs = "i")
+  matplot(x = tParArray,
+          y = consolidatedBands,
+          type = "l",
+          xlim = c(xMinMargin, xMaxMargin),
+          ylim = c(yMinMargin, yMaxMargin),
+          xlab = "",
+          ylab = "Correlation"
+  )
+
+  # plot(x = tParArray,
+  #      y = consolidatedBands$lower,
+  #      type = "l",
+  #      col = "blue",
+  #      xlim = c(xMinMargin, xMaxMargin),
+  #      ylim = c(yMinMargin, yMaxMargin),
+  #      xlab = "",
+  #      ylab = "Correlation",
+  #      yaxs = "i")
   title(main = "Band and Correlation", sub = subTitle)
-  lines(x = tParArray, y = consolidatedBands$middle, type = "l", col = "brown")
-  lines(x = tParArray, y = consolidatedBands$upper, type = "l", col = "green")
-  lines(x = tParArray, y = consolidatedBands$corArray, type = "l", col = "red")
+  # lines(x = tParArray, y = consolidatedBands$middle, type = "l", col = "brown")
+  # lines(x = tParArray, y = consolidatedBands$upper, type = "l", col = "green")
+  # lines(x = tParArray, y = consolidatedBands$corArray, type = "l", col = "red")
   lineArray <- c("Upper", "Middle", "Lower", "Correlation")
   legend("topright",
          title = "Correlation",
