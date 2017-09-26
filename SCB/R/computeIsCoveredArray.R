@@ -61,14 +61,16 @@ computeIsCoveredArray <- function(bandsBrick,
     band <- bandsBrick[replicationIndex, , ]
 
     isCoveredArray[replicationIndex] <-
-      computeIsCovered(band, corArray = corArray, sampleSize = sampleSize,
-                       replicationCount = replicationCount,lag = lag,
+      computeIsCovered(band,
+                       corArray = corArray,
+                       sampleSize = sampleSize,
+                       replicationCount = replicationCount,
+                       lag = lag,
                        superReplicationCount = superReplicationCount,
                        nonCoverageProbability = nonCoverageProbability,
                        fileName = fileName)
 
   }
 
-
-  return(isCoveredArray)
+  isCoveredArray
 }

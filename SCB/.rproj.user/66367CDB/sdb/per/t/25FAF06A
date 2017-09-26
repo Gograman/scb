@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveBandFuction <- function()\n{\n  cat (\"\\n Testing \\'tests_71_saveBand\\'\\n\")\n\n  mySampleSize = 100\n  myTParCount = 10\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  myLag = 2\n  myLagCount = computeLagCount(lag = myLag,\n                               sampleSize = mySampleSize)\n  myKernel = normalDifferenceKernel\n  myNonCoverageProbability = 0.05\n  mySuperReplicationCount <- 7\n  myReplicationCount <- 6\n\n  errorIfNotInputCompatible(alpha = myNonCoverageProbability,\n                            lag = myLag,\n                            sampleSize = mySampleSize)\n\n  corArray <-\n    computeCor(lag = myLag,\n               tParArray = mockTParArray,\n               kernel = myKernel)\n  #samplesize,lag,bandwitdth,nonCoverageProbability - params for file name\n  band <- createBand(\n    tParArray = mockTParArray,\n    lag = myLag,\n    lagCount = myLagCount,\n    kernel = myKernel,\n    sampleSize = mySampleSize,\n    nonCoverageProbability = myNonCoverageProbability\n  )\n\n\n\n  Start = Sys.time()\n  saveBand(band = band,\n           corArray = corArray,\n           sampleSize = mySampleSize,\n           lag = myLag,\n           replicationCount = myReplicationCount,\n           superReplicationCount = mySuperReplicationCount,\n           nonCoverageProbability = myNonCoverageProbability,\n           fileName=\"test_71_saveBand\")\n  End = Sys.time()\n  Duration = End - Start\n  cat(\"\\nDuration= \",Duration, \"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",myTParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  cat(\"LagCount= \",myLagCount,\"\\n\")\n  cat(\"NonCoverageProbability= \",myNonCoverageProbability,\"\\n\")\n  cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n  cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n\n\n}\n\ntest_that(\"Testing saveBand\",\n          {\n            saveBandFuction()\n            cat(\" End of test saveBand\", \"\\n\")\n            cat(\"=====================\")\n          })\n",
+    "created" : 1506426713529.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4086481072",
+    "id" : "25FAF06A",
+    "lastKnownWriteTime" : 1506428567,
+    "last_content_update" : 1506428567878,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_71_saveBand.R",
+    "project_path" : "tests/testthat/tests_71_saveBand.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

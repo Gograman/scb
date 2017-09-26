@@ -42,52 +42,26 @@ computeIsCovered <- function(band,
   bandwidth = computeB(sampleSize = sampleSize)
   tParCount <- length (corArray)
   isCoveredArrayByT <- array (0, dim = tParCount)
-  ZeroCount=0
-  saveBand(corArray = corArray,band = band, sampleSize = sampleSize,
-           replicationCount = replicationCount, lag = lag,
+  saveBand(corArray = corArray,
+           band = band,
+           sampleSize = sampleSize,
+           replicationCount = replicationCount,
+           lag = lag,
            superReplicationCount = superReplicationCount,
            nonCoverageProbability = nonCoverageProbability,
            fileName = fileName)
 
-  upper <- band[, 2]
-  lower <- band[, 1]
+  upperBound <- band[, 2]
+  lowerBound <- band[, 1]
+
   for (tParIndex in 1:tParCount)
   {
-    if (corArray[tParIndex] <= upper[tParIndex])
-    {
-      if (corArray[tParIndex] >= lower[tParIndex])
+    if (corArray[tParIndex] <= upperBound[tParIndex] &
+        corArray[tParIndex] >= lowerBound[tParIndex])
       {
         isCoveredArrayByT[tParIndex] <- 1
       }
-      else
-      {
-        isCoveredArrayByT[tParIndex] <- 0
-      }
-    }
-    # else
-    # {
-    #   isCoveredArrayByT[tParIndex] <- 0
-    # }
   }
 
-  for (tParIndex in 1:tParCount)
-  {
-    if (isCoveredArrayByT[tParIndex] == 1)
-    {
-      return(1)
-      break()
-
-
-    }
-    else
-    {
-      return(0)
-      break()
-    }
-  }
-
-
-
-
-
+  isCoveredArrayByT <- prod(isCoveredArrayByT)
 }

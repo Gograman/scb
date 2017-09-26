@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveJpg <- function(fileName, path)\n{\n  if(!dir.exists(path))\n  {\n    dir.create(path)\n  }\n\n  fileName <- gsub(\"\\\\.\",\"\", fileName)\n  myFileName <- gsub(\" \",\"_\",paste(fileName, \"_\", Sys.time(),\".jpg\", sep = \"\"))\n  myFileName <- gsub(\":\",\"_\",myFileName)\n  jpeg(paste(path,\"/\",myFileName,sep=\"\"))\n}\n",
+    "created" : 1506427893585.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1430276779",
+    "id" : "7A7A8512",
+    "lastKnownWriteTime" : 1506425958,
+    "last_content_update" : 1506425958,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/saveJPG.R",
+    "project_path" : "R/saveJPG.R",
+    "properties" : {
+    },
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,3 +1,9 @@
+if(!require("lattice")) {
+  install.packages("lattice")
+  library(lattice)
+}
+
+
 saveMe3DForBandwidthFunction <- function()
 {
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")

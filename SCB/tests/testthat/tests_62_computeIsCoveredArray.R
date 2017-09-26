@@ -20,11 +20,13 @@ computeIsCoveredArrayFunction <- function()
   bandsBrick=createBandsBrick(tParArray=mockTParArray,
                               lag=myLag,
                               lagCount=myLagCount,
-                              kernel = normalDifferenceKernel,
-                              sampleSize=mySampleSize,
+                              kernel = myKernel,
+                              sampleSize = mySampleSize,
                               nonCoverageProbability = myNonCoverageProbability,
                               replicationCount=myReplicationCount)
-  mockCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
+  mockCorArray <- computeCor(lag = myLag,
+                             tParArray = mockTParArray,
+                             kernel = myKernel)
 
 
 Start=Sys.time()
@@ -32,7 +34,8 @@ Start=Sys.time()
         computeIsCoveredArray(bandsBrick = bandsBrick,
                               corArray = mockCorArray,
                               sampleSize = mySampleSize,
-                              lag = myLag,tParCount = myTParCount,
+                              lag = myLag,
+                              tParCount = myTParCount,
                               replicationCount = myReplicationCount,
                               superReplicationCount = mySuperReplicationCount,
                               nonCoverageProbability = myNonCoverageProbability,
