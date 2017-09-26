@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveDoubleAplhaHatArrayFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_73_saveDoubleAplhaHatArray\\'\\n\")\n  myTParCount  <- 10\n  myTParArray  <- createTParArray(tParCount = myTParCount)\n  mySuperReplicationCount <- 6\n  myReplicationCount <- 7\n  sampleSize <- 100\n  myLag <- 2\n  myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)\n\n  myKernel <- normalDifferenceKernel\n  nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)\n\n  alphaHats<-createDoubleAlphaArray(superReplicationCount = mySuperReplicationCount,\n                         replicationCount = myReplicationCount,\n                         sampleSize = sampleSize,\n                         lag = myLag, lagCount = myLagCount,\n                         alphaArray = nonCoverageProbabilities,\n                         tParArray = myTParArray,\n                         kernel = myKernel,\n                         fileName = \"tests_73_SaveDoubleAlphaHatArray\")\n\n   saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,\n                          alphaHats = alphaHats, sampleSize = sampleSize,\n                          lag = myLag, replicationCount = myReplicationCount,\n                          superReplicationCount = mySuperReplicationCount,\n                          fileName = \"tests_73_SaveDoubleAlphaHatArray\")\n   cat(\"\\n=====================\")\n   cat(\"\\nTest parameters :\",\"\\n\")\n   cat(\"SampleSize= \",sampleSize,\"\\n\")\n   cat(\"TParCount= \",myTParCount,\"\\n\")\n   cat(\"Lag= \",myLag,\"\\n\")\n   cat(\"LagCount= \",myLagCount,\"\\n\")\n   cat(\"NonCoverageProbabilities= \",nonCoverageProbabilities,\"\\n\")\n   cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n   cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n\n\n }\ntest_that(\"Testing \\'saveNonCoverageFreqArray\\'\", {\n  saveDoubleAplhaHatArrayFunction()\n  cat(\"\\nEnd of test saveNonCoverageFreqArray\", \"\\n\")\n  cat(\"=====================\")\n})\n\n",
+    "created" : 1506426521674.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "484732945",
+    "id" : "B70DF82F",
+    "lastKnownWriteTime" : 1506425958,
+    "last_content_update" : 1506425958,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_73_saveDoubleAplhaHatArray.R",
+    "project_path" : "tests/testthat/tests_73_saveDoubleAplhaHatArray.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

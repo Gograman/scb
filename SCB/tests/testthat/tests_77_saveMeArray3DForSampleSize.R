@@ -1,8 +1,13 @@
+if(!require("lattice")) {
+  install.packages("lattice")
+  library(lattice)
+}
+
 saveMe3DForSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_77_saveMe3DForSampleSize\'\n")
   alphas <- seq(0.1,0.9,by = 0.2)
-  sampleSize <- seq(20, 100,by = 20)
+  sampleSize <- seq(20, 200,by = 20)
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
@@ -23,11 +28,11 @@ saveMe3DForSampleSizeFunction <- function()
 
       sample <- createSample(sampleSize = sampleSize[indexRow])
 
+
       allCorHats <- computeAllCorHats(tParArray = tParArray,
                                       lagCount = lagCount,
                                       sample = sample,
-                                      kernel = kernel,
-                                      bandwidth = bandwidth)
+                                      kernel = kernel)
 
       me <- computeMEbyCovHat(tParArray = tParArray,
                               lag = lag,

@@ -9,14 +9,14 @@ computeCorHatFunction = function () {
   mockSample <- createSample(sampleSize = mySampleSize)
   myLag = 1
   myKernel = normalDifferenceKernel
-
-Start=Sys.time()
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  Start=Sys.time()
   mockCorHat <- computeCorHat(tParArray = mockTParArray,
                               lag = myLag,
                               sample = mockSample,
-                              kernel = myKernel)
-End=Sys.time()
-Duration=End-Start
+                              kernel = kernel)
+  End=Sys.time()
+  Duration=End-Start
 
   cat("mockCorHat[1:5] = ", mockCorHat[1:5], "\n")
   cat ("length(mockCorHat) = ", length(mockCorHat), "\n")

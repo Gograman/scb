@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "if(!require(\"lattice\")) {\n  install.packages(\"lattice\")\n  library(lattice)\n}\n\nsaveMe3DForSampleSizeFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_77_saveMe3DForSampleSize\\'\\n\")\n  alphas <- seq(0.1,0.9,by = 0.2)\n  sampleSize <- seq(20, 200,by = 20)\n\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount = tParCount)\n  tParArrayCenter <- round(length(tParArray)/2,0)\n\n  lag <- 1\n\n  kernel <- normalDifferenceKernel\n\n  meArray <- matrix(nrow = length(sampleSize),ncol = length(alphas))\n  for(indexRow in 1:length(sampleSize))\n  {\n    for(indexCol in 1:length(alphas))\n    {\n      lagCount <- computeLagCount(sampleSize = sampleSize[indexRow],lag = lag)\n\n      bandwidth <- computeB(sampleSize[indexRow])\n\n      sample <- createSample(sampleSize = sampleSize[indexRow])\n\n\n      allCorHats <- computeAllCorHats(tParArray = tParArray,\n                                      lagCount = lagCount,\n                                      sample = sample,\n                                      kernel = kernel)\n\n      me <- computeMEbyCovHat(tParArray = tParArray,\n                              lag = lag,\n                              lagCount = myLagCount,\n                              sample = sample,\n                              kernel = normalDifferenceKernel,\n                              bandwidth = bandwidth,\n                              nonCoverageProbability = alphas[indexCol],\n                              allCorHats = allCorHats,\n                              C_K = -1.978325,\n                              # int_sq_der = 0.306951,\n                              PHI_K_NORMAL_DIFF = 0.4065)\n      meArray[indexRow,indexCol] <- me[tParArrayCenter]\n\n    }\n  }\n  fileName <- paste(\"meArray3DOfSampleSize\",sep = \"_\")\n\n  path <- doPath()\n  saveCVS(fileName = fileName,path = path,dataToSave = meArray)\n  saveJpg(fileName = fileName,path = path)\n  wireframe(meArray,row.values=sampleSize,column.values=alphas,\n            xlab=\"sampleSize\",ylab = \"NonCoverageProbability\",\n            screen = list(z=250,x=-75))\n  graphics.off()\n}\ntest_that(\"testing saveMe3DForSampleSize\",\n          {\n            saveMe3DForSampleSizeFunction()\n            cat(\" End of test saveMe3DForSampleSize\", \"\\n\")\n            cat(\"=========================================\")\n          })\n",
+    "created" : 1506426609447.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3167220727",
+    "id" : "496BA38C",
+    "lastKnownWriteTime" : 1506427727,
+    "last_content_update" : 1506427727351,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_77_saveMeArray3DForSampleSize.R",
+    "project_path" : "tests/testthat/tests_77_saveMeArray3DForSampleSize.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

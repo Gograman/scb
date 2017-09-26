@@ -4,19 +4,27 @@ computeCorTestFunction = function () {
   myTParCount = 10
   myLag = 0
   mySampleSize=40
+  myKernel = normalDifferenceKernel
+
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
 
   mockTParArray <- createTParArray(tParCount = myTParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
-  mockComputeCor <- computeCor(lag = myLag,tParArray = mockTParArray)
+  mockComputeCor <- computeCor(lag = myLag,
+                               tParArray = mockTParArray)
 
   cat ("lag = 0; mockComputeCor[1:5] =", mockComputeCor[1:5], "\n")
-Start=Sys.time()
+  Start=Sys.time()
   myLag = 1
-  mockComputeCor <- computeCor(lag = myLag,tParArray = mockTParArray)
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  mockComputeCor <- computeCor(lag = myLag,
+                               tParArray = mockTParArray)
   cat ("lag = 1; mockComputeCor[1:5] =", mockComputeCor[1:5], "\n")
 
   myLag = 2
-  mockComputeCor <- computeCor(lag = myLag,tParArray = mockTParArray)
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  mockComputeCor <- computeCor(lag = myLag,
+                               tParArray = mockTParArray)
   cat ("lag = 2; mockComputeCor[1:5] =", mockComputeCor[1:5], "\n")
 End=Sys.time()
 Duration=End-Start

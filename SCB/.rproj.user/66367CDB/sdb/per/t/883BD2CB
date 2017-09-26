@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveBand <- function(band,\n                     corArray,\n                     sampleSize,\n                     replicationCount,\n                     lag,\n                     superReplicationCount,\n                     nonCoverageProbability,\n                     fileName=\"\")\n{\n  bandwidth=computeB(sampleSize=sampleSize)\n  #cat (\"\\n saveBand is called\")\n  # forming arrays to draw\n  middle  <- (band[ , 1] + band[ , 2]) / 2\n  consolidatedBands <- data.frame(lower  = band[, 1],\n                                  middle = middle,\n                                  upper  = band[, 2],\n                                  corArray = corArray)\n  globMin <- min(apply(consolidatedBands, 2, min))\n  globMax <- max(apply(consolidatedBands, 2, max))\n  globSd <- max(apply(consolidatedBands, 2, sd))\n  yMinMargin <- globMin - 2 * globSd\n  yMaxMargin <- globMax + 4 * globSd\n  # forming filenames\n  fileName <- paste(fileName,\"BandAndCorrelation\",sep = \"_\")\n  fileName <- paste(fileName,\n                    \"ss\", sampleSize,\n                    \"l\", lag,\n                    \"bandW\", round(bandwidth, digits = 1 ), sep = \"_\")\n  fileName <- paste(fileName,\n                    \"alpha\",nonCoverageProbability,\n                    \"repC\", replicationCount,\n                    \"SrepC\", superReplicationCount, sep = \"_\")\n\n  xLab <- \"tParArray\"\n\n  subTitle <- paste(xLab,\n                    \"\\n sampleSize = \", sampleSize,\n                    \", lag = \", lag,\n                    \", bandwidth = \", round(bandwidth, digits = 1),\n                    \",\\n replicationCount = \", replicationCount,\n                    \", superRep = \", superReplicationCount,\n                    \", Alpha = \", nonCoverageProbability,\n                    sep = \"\")\n  xMinMargin <- 0\n  xMaxMargin <- 1\n\n  directory <- \"bands\"\n\n  path <- doPath(directory = directory)\n\n  # saving data to CSV\n  consolidatedBands <- data.frame(consolidatedBands,corArray,sampleSize,bandwidth,\n                                  replicationCount,\n                                  lag,\n                                  superReplicationCount,\n                                  nonCoverageProbability)\n  saveCVS(fileName = fileName, path = path, dataToSave = consolidatedBands)\n\n  tParCount <- length(corArray)\n  tParArray <- createTParArray(tParCount - 1)\n\n  # opening a graphical device and saving the drawing to it\n  saveJpg(fileName = fileName, path = path)\n  plot(x = tParArray,\n       y = consolidatedBands$lower,\n       type = \"l\",\n       col = \"blue\",\n       xlim = c(xMinMargin, xMaxMargin),\n       ylim = c(yMinMargin, yMaxMargin),\n       xlab = \"\",\n       ylab = \"Correlation\",\n       yaxs = \"i\")\n  title(main = \"Band and Correlation\", sub = subTitle)\n  lines(x = tParArray, y = consolidatedBands$middle, type = \"l\", col = \"brown\")\n  lines(x = tParArray, y = consolidatedBands$upper, type = \"l\", col = \"green\")\n  lines(x = tParArray, y = consolidatedBands$corArray, type = \"l\", col = \"red\")\n  lineArray <- c(\"Upper\", \"Middle\", \"Lower\", \"Correlation\")\n  legend(\"topright\",\n         title = \"Correlation\",\n         lineArray,\n         fill = c(\"green\", \"brown\", \"blue\", \"red\"))\n  graphics.off()\n}\n",
+    "created" : 1506428422949.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2366872901",
+    "id" : "883BD2CB",
+    "lastKnownWriteTime" : 1506425958,
+    "last_content_update" : 1506425958,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/saveBand.R",
+    "project_path" : "R/saveBand.R",
+    "properties" : {
+    },
+    "relative_order" : 14,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

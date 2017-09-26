@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeIsCoveredFunction = function()\n{\n  cat (\"\\n Testing \\'tests_61_computeIsCovered\\'\\n\")\n\n  mySampleSize = 100\n  myTParCount = 10\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  # may be different\n  mockTVMA1Array <-\n    createTVMA1CoefArray(sampleSize = mySampleSize)\n  myReplicationCount=5\n  mySuperReplicationCount <- 3\n  myCoefFunction=sin\n\n  myLag = 2\n\n  myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)\n  myKernel = normalDifferenceKernel\n  myNonCoverageProbability = 0.05\n  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)\n  fileName <- paste(\"ss\", mySampleSize, \"l\", myLag, \"alpha\"\n                    , myNonCoverageProbability, sep = \"_\")\n  mockBand = createBand(\n    tParArray = mockTParArray,\n    lag = myLag,\n    lagCount = myLagCount,\n    kernel = myKernel,\n    sampleSize = mySampleSize,\n    nonCoverageProbability = myNonCoverageProbability\n  )\n\n  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)\n\n  mockCor <- computeCor(lag = myLag,\n                        tParArray = mockTParArray,\n                        kernel = myKernel)\n\n  Start=Sys.time()\n  isCovered <- computeIsCovered(mockBand,\n                                mockCor,\n                                sampleSize = mySampleSize,\n                                lag = myLag,\n                                kernel = myKernel,\n                                replicationCount = myReplicationCount,\n                                superReplicationCount = mySuperReplicationCount,\n                                nonCoverageProbability = myNonCoverageProbability,\n                                fileName = \"test_61_computeIsCovered\")\n  End=Sys.time()\n  Duration=End-Start\n\n\n  cat(\"\\nIsCovered:\",isCovered, \"\\n\")\n  cat(\"Duration\",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",myTParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  cat(\"LagCount= \",myLagCount,\"\\n\")\n  cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n  cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n  cat(\"NonCoverageProbability= \",myNonCoverageProbability,\"\\n\")\n\n}\n\ntest_that(\"Testing computeIsCovered\", {\n  computeIsCoveredFunction()\n  cat(\"End of test computeIsCovered\",\"\\n\")\n  cat(\"=====================\")\n})\n",
+    "created" : 1506427206763.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4224130267",
+    "id" : "10EEB188",
+    "lastKnownWriteTime" : 1506427608,
+    "last_content_update" : 1506427608892,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_61_computeIsCovered.R",
+    "project_path" : "tests/testthat/tests_61_computeIsCovered.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

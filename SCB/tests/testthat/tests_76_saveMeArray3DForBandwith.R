@@ -1,7 +1,13 @@
+if(!require("lattice")) {
+  install.packages("lattice")
+  library(lattice)
+}
+
+
 saveMe3DForBandwidthFunction <- function()
 {
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")
-  sampleSize <- 100
+  sampleSize <- 200
   sample <- createSample(sampleSize = sampleSize)
 
   tParCount <- 10
@@ -21,19 +27,18 @@ saveMe3DForBandwidthFunction <- function()
   {
     for(indexCol in 1:length(alphas))
     {
-
+      errorIfNotInputCompatible(alpha = alphas[indexCol],
+                                lag = lag,sampleSize = sampleSize)
       allCorHats <- computeAllCorHats(tParArray = tParArray,
                                       lagCount = lagCount,
                                       sample = sample,
-                                      kernel = kernel,
-                                      bandwidth = bandwidth[indexRow])
+                                      kernel = kernel)
 
       me <- computeMEbyCovHat(tParArray = tParArray,
                                               lag = lag,
                                               lagCount = myLagCount,
                                               sample = sample,
                                               kernel = normalDifferenceKernel,
-                                              bandwidth = bandwidth[indexRow],
                                               nonCoverageProbability = alphas[indexCol],
                                               allCorHats = allCorHats,
                                               C_K = -1.978325,

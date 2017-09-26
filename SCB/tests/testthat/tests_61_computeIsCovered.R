@@ -17,6 +17,7 @@ computeIsCoveredFunction = function()
   myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myNonCoverageProbability = 0.05
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   fileName <- paste("ss", mySampleSize, "l", myLag, "alpha"
                     , myNonCoverageProbability, sep = "_")
   mockBand = createBand(
@@ -30,9 +31,10 @@ computeIsCoveredFunction = function()
 
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
-  mockCor <- computeCor(lag = myLag,tParArray = mockTParArray)
+  mockCor <- computeCor(lag = myLag,
+                        tParArray = mockTParArray)
 
-Start=Sys.time()
+  Start=Sys.time()
   isCovered <- computeIsCovered(mockBand,
                                 mockCor,
                                 sampleSize = mySampleSize,
