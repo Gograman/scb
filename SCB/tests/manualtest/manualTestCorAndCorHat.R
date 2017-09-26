@@ -4,7 +4,7 @@ tParArray <- createTParArray(tParCount = tParCount)
 
 
 kernel <- normalDifferenceKernel
-lag <- 2
+lag <- 1
 
 nCorHat <- 5
 corArray <- computeCor(lag,tParArray = tParArray)
