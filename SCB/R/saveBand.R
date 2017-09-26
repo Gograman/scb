@@ -20,7 +20,6 @@ saveBand <- function(band,
   globSd <- max(apply(consolidatedBands, 2, sd))
   yMinMargin <- globMin - 2 * globSd
   yMaxMargin <- globMax + 4 * globSd
-
   # forming filenames
   fileName <- paste(fileName,"BandAndCorrelation",sep = "_")
   fileName <- paste(fileName,

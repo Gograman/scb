@@ -1,7 +1,7 @@
 saveMe3DForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
-  sampleSize <- 100
+  sampleSize <- 200
   sample <- createSample(sampleSize = sampleSize)
 
   tParCount <- 8
@@ -19,6 +19,9 @@ saveMe3DForAlphaFunction <- function()
 
   for(indexCol in 1:length(alphas))
   {
+
+    errorIfNotInputCompatible(alpha = alphas[indexCol],
+                              lag = lag,sampleSize = sampleSize)
 
     allCorHats <- computeAllCorHats(tParArray = tParArray,
                                     lagCount = lagCount,

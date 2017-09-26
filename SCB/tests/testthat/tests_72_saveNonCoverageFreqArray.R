@@ -12,6 +12,9 @@ saveNonCoverageFreqArrayFunction <- function()
   myKernel <- normalDifferenceKernel
   myNonCoverageProbability <- 0.05
 
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,
+                            lag = myLag,sampleSize = mySampleSize)
+
   isCompatible = isLagCompatibleWithSampleSize (sampleSize = mySampleSize, lag = myLag)
   cat ("\n isCompatible = ", isCompatible)
   if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")

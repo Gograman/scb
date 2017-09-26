@@ -12,6 +12,9 @@ saveBandFuction <- function()
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
 
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,
+                            lag = myLag,sampleSize = mySampleSize)
+
   corArray <-
     computeCor(lag = myLag,
                tParArray = mockTParArray)

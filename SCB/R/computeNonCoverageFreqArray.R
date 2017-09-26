@@ -56,7 +56,7 @@ computeNonCoverageFreqArray  <- function(superReplicationCount,
   cat("super",superReplicationCount)
   alphaHatArray <- array(0, dim = superReplicationCount)
 
-  corArray <- computeCor(lag = lag,tParArray = tParArray)
+  corArray <- computeCor(lag = lag,tParArray = tParArray,kernel = kernel)
 
   for (superIndex in 1:superReplicationCount) {
 

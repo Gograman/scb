@@ -17,6 +17,7 @@ computeIsCoveredFunction = function()
   myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myNonCoverageProbability = 0.05
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   fileName <- paste("ss", mySampleSize, "l", myLag, "alpha"
                     , myNonCoverageProbability, sep = "_")
   mockBand = createBand(

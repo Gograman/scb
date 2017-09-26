@@ -8,7 +8,8 @@ computeBetaLRVHatFunction = function () {
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 4
+  myLag = 0
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
   myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
  # form all rho hats

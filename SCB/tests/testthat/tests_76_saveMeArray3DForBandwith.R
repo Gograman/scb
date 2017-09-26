@@ -1,7 +1,7 @@
 saveMe3DForBandwidthFunction <- function()
 {
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")
-  sampleSize <- 100
+  sampleSize <- 200
   sample <- createSample(sampleSize = sampleSize)
 
   tParCount <- 10
@@ -21,7 +21,8 @@ saveMe3DForBandwidthFunction <- function()
   {
     for(indexCol in 1:length(alphas))
     {
-
+      errorIfNotInputCompatible(alpha = alphas[indexCol],
+                                lag = lag,sampleSize = sampleSize)
       allCorHats <- computeAllCorHats(tParArray = tParArray,
                                       lagCount = lagCount,
                                       sample = sample,

@@ -1,7 +1,7 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,500,by=50)
+  sampleSize <- seq(10,100,by=50)
 
   nonCoverageProbability <- 0.2
 
@@ -20,6 +20,9 @@ saveAlphaHatOfSampleSizeFunction <- function()
   {
     bandwidth <- computeB(sampleSize[index])
     lagCount <- computeLagCount(sampleSize[index],lag)
+
+    errorIfNotInputCompatible(alpha = nonCoverageProbability,
+                              lag = lag,sampleSize = sampleSize[index])
 
     alphaHat[,index] <- computeNonCoverageFreqArray(
                            superReplicationCount = mySuperReplicationCount,
@@ -48,14 +51,14 @@ saveAlphaHatOfSampleSizeFunction <- function()
   #saveCVS(fileName,path,df)
   alpha <- rep(nonCoverageProbability,times = length(sampleSize))
 
-  plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
+  plot(jitter(alpha)~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
 
   title(main = "AlphaHat Of SampleSize", sub = subTitle)
 
   for(index in 1:length(sampleSize))
   {
     x <- rep(sampleSize[index],times = mySuperReplicationCount)
-    points(jitter(alphaHat[,index])~x,pch=20)
+    points(alphaHat[,index]~x,pch=20)
   }
   graphics.off()
 }

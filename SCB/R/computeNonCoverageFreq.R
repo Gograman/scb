@@ -57,7 +57,7 @@ computeNonCoverageFreq  <- function(replicationCount,
                                 lag        = lag,
                                 lagCount   = lagCount,
                                 bandwidth  = bandwidth,
-                                kernel     = normalDifferenceKernel,
+                                kernel     = kernel,
                                 nonCoverageProbability = nonCoverageProbability,
                                 replicationCount       = replicationCount)
 
