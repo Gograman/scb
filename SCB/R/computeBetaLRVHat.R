@@ -74,15 +74,15 @@ computeBetaLRVHat  <- function(tParArray,
       # cat ("\n lagIndex = ", lagIndex, ", while max = ", dim (allCorHats)[2])
       subtrahend2 = allCorHats[tParIndex, lagIndex]
       term = (minuend - subtrahend1 - subtrahend2)^2
-      # cat("\n minuendFactor1 = ", minuendFactor1)
-      # cat("\n minuendFactor2 = ", minuendFactor2)
-      # cat("\n minuend= ",minuend)
-      # cat("\n tParIndex= ",tParIndex)
-      # cat("\n termIndex+1= ",termIndex)
-      # cat("\n subtrahend1= ",subtrahend1)
-      # cat("\n subtrahend2= ",subtrahend2)
-      # cat("\n term= ",term)
-      # cat("\n termCount= ",termCount)
+      cat("\n minuendFactor1 = ", minuendFactor1)
+      cat("\n minuendFactor2 = ", minuendFactor2)
+      cat("\n minuend= ",minuend)
+      cat("\n tParIndex= ",tParIndex)
+      cat("\n termIndex+1= ",termIndex)
+      cat("\n subtrahend1= ",subtrahend1)
+      cat("\n subtrahend2= ",subtrahend2)
+      cat("\n term= ",term)
+      cat("\n termCount= ",termCount)
 
       betaLRVHat[tParIndex] = betaLRVHat[tParIndex] + term
 
