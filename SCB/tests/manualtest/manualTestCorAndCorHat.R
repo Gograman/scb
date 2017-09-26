@@ -1,10 +1,12 @@
-sampleSize <- 1000
+
+rm (list = ls())
+sampleSize <- 10000
 tParCount <- 10
 tParArray <- createTParArray(tParCount = tParCount)
 
 
 kernel <- normalDifferenceKernel
-lag <- 2
+lag <- 1
 
 nCorHat <- 5
 corArray <- computeCor(lag,tParArray = tParArray)
@@ -16,8 +18,8 @@ for(index in 1:nCorHat)
   corHatArray[,index] <- computeCorHat(tParArray = tParArray,
                                        lag = lag,
                                        sample = sample,
-                                       kernel = kernel,
-                                       bandwidth = bandWidth)
+                                       kernel = kernel
+                                       )
 }
 subTitle <- paste("sampleSize = ", sampleSize,
                   ", tParCount= ", tParCount,

@@ -36,16 +36,16 @@ computeCorHat <- function(tParArray,
   myCovariance = computeCovHat(tParArray,
                             lag = lag,
                             sample,
-                            kernel,
-                            bandwidth)
+                            kernel
+                            )
   # myCovlen=length(myCovariance)
   # cat("\n len myCov= ",myCovlen)
   # cat("\n myCovar= ",myCovariance)
   myVariance = computeCovHat(tParArray,
                               lag = 0,
                               sample,
-                              kernel,
-                              bandwidth)
+                              kernel
+                              )
   # myVarlen=length(myVariance)
   # cat("\n len myVar= ",myVarlen)
   # cat("\n myVar= ",myVariance)
