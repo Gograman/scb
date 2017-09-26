@@ -24,8 +24,9 @@
 computeCovHat <- function(tParArray,
                           lag,
                           sample,
-                          kernel,
-                          bandwidth) {
+                          kernel
+                          )
+{
 
   sampleSize <- length(sample)
   bandwidth=computeB(sampleSize = sampleSize)
@@ -37,7 +38,7 @@ computeCovHat <- function(tParArray,
 
       term <- sample[termIndex] *
                 sample[termIndex + lag] *
-                kernel((termIndex/sampleSize) - tParArray) / bandwidth
+                kernel((termIndex/sampleSize - tParArray) / bandwidth)
 
       partialSum <- partialSum + term
     }
