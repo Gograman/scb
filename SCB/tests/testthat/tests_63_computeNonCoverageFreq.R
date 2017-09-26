@@ -11,7 +11,7 @@
     myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     myKernel <- normalDifferenceKernel
-    trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray,kernel = myKernel)
+    trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
     myKernel <- normalDifferenceKernel
     myNonCoverageProbability <- 0.05

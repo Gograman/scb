@@ -9,7 +9,7 @@ computeLagCountFunction <- function()
   cat("\n Testing \'tests_22_computeLagCount\' \n")
   maxGraph=1000
   step=100
-  sampleSizes <- seq
+  sampleSizes <- seq(1,10,by=1)
   lags <- seq(1,10,by = 1)
   alpha <- 0.1
 

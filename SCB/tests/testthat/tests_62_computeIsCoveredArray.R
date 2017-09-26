@@ -25,8 +25,7 @@ computeIsCoveredArrayFunction <- function()
                               nonCoverageProbability = myNonCoverageProbability,
                               replicationCount=myReplicationCount)
   mockCorArray <- computeCor(lag = myLag,
-                             tParArray = mockTParArray,
-                             kernel = myKernel)
+                             tParArray = mockTParArray)
 
 
 Start=Sys.time()

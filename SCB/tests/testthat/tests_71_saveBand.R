@@ -19,8 +19,7 @@ saveBandFuction <- function()
 
   corArray <-
     computeCor(lag = myLag,
-               tParArray = mockTParArray,
-               kernel = myKernel)
+               tParArray = mockTParArray)
   #samplesize,lag,bandwitdth,nonCoverageProbability - params for file name
   band <- createBand(
     tParArray = mockTParArray,

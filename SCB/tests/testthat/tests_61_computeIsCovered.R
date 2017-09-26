@@ -32,15 +32,13 @@ computeIsCoveredFunction = function()
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockCor <- computeCor(lag = myLag,
-                        tParArray = mockTParArray,
-                        kernel = myKernel)
+                        tParArray = mockTParArray)
 
   Start=Sys.time()
   isCovered <- computeIsCovered(mockBand,
                                 mockCor,
                                 sampleSize = mySampleSize,
                                 lag = myLag,
-                                kernel = myKernel,
                                 replicationCount = myReplicationCount,
                                 superReplicationCount = mySuperReplicationCount,
                                 nonCoverageProbability = myNonCoverageProbability,
