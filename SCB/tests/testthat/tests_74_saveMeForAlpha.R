@@ -8,7 +8,7 @@ saveMeForAlphaFunction <- function()
 
   nonCoverageProbability <- 0.1
 
-  lag <- 0
+  lag <- 2
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
   tParCount <- 10

@@ -2,7 +2,7 @@ saveBettaLRVFunction <- function()
 {
   tParCount <- 10
   tParArray <- createTParArray(tParCount)
-  sampleSize <- 1000
+  sampleSize <- 500
   psi <- myCoefFunction(tParArray)
   bettaLrv <-1 + psi^2 / (1 + psi^2)^2
   sample <- createSample(sampleSize)
@@ -23,9 +23,14 @@ saveBettaLRVFunction <- function()
   saveCVS(fileName = fileName,path = path,dataToSave = df)
   saveJpg(fileName = fileName,path = path)
   plot(bettaLrv ~ tParArray, type = "l",col = "red",ylim = c(min,max))
+  lineArray <- c("BettaLRV","BettaLRVHat")
+  legend("bottomright",
+         title = "Correlation",
+         lineArray,
+         fill = c("red","blue"))
   lines(bettaLrvHat~tParArray,col="blue")
   title("True BettaLRV And BettaLRVHat",sub = subTitle)
-  graphics.off
+  graphics.off()
 }
 test_that("testing saveBettaLRVFunction",
           {

@@ -16,7 +16,7 @@ saveMe3DForBandwidthFunction <- function()
 
   alphas <- seq(0.1,0.9,by = 0.1)
 
-  lag <- 1
+  lag <- 2
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
 
