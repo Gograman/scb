@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveAlphaHatOfSampleSizeFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_78_saveAlphaHatOfSampleSize\\'\\n\")\n  sampleSize <- seq(10,100,by=50)\n\n  nonCoverageProbability <- 0.2\n\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount = tParCount)\n\n  lag <- 0\n\n  kernel <- normalDifferenceKernel\n\n  replicationCount <- 6\n  mySuperReplicationCount <- 7\n\n  alphaHat <- matrix(0,nrow = mySuperReplicationCount,ncol = length(sampleSize))\n  for(index in 1:length(sampleSize))\n  {\n    bandwidth <- computeB(sampleSize[index])\n    lagCount <- computeLagCount(sampleSize[index],lag)\n\n    errorIfNotInputCompatible(alpha = nonCoverageProbability,\n                              lag = lag,sampleSize = sampleSize[index])\n\n    alphaHat[,index] <- computeNonCoverageFreqArray(\n                           superReplicationCount = mySuperReplicationCount,\n                           replicationCount = replicationCount,\n                           sampleSize = sampleSize[index],\n                           lag = lag,\n                           lagCount = lagCount,\n                           tParArray = tParArray,\n                           kernel = kernel,\n                           nonCoverageProbability = nonCoverageProbability,\n                           fileName = \"tests_78_saveAlphaHatOfSampleSize\")\n  }\n  fileName <- \"AlphaOfSampleSize\"\n  fileName <- paste(fileName, \"ss\", sampleSize, \"l\", lag, \"bandW\", bandwidth, sep = \"_\")\n  fileName <- paste(fileName, \"repC\", replicationCount,\"SrepC\", mySuperReplicationCount, sep = \"_\")\n\n  xLab <- \"sampleSize\"\n\n  subTitle <- paste(xLab,\"\\nlag= \",lag, \", tParCount = \" ,tParCount,\n                    \",\\n replicationCount= \", replicationCount, \", 'SuperRep = \",\n                    mySuperReplicationCount,sep = \"\")\n\n  path <- doPath()\n  saveJpg(fileName,path)\n  #df <- data.frame(alphaHat)\n  #saveCVS(fileName,path,df)\n  alpha <- rep(nonCoverageProbability,times = length(sampleSize))\n\n  plot(jitter(alpha)~sampleSize,type=\"c\",ylim = c(0,1),col=\"blue\",xlab=\"\",ylab = \"alphaHat\")\n\n  title(main = \"AlphaHat Of SampleSize\", sub = subTitle)\n\n  for(index in 1:length(sampleSize))\n  {\n    x <- rep(sampleSize[index],times = mySuperReplicationCount)\n    points(alphaHat[,index]~x,pch=20)\n  }\n  graphics.off()\n}\ntest_that(\"testing saveAlphaHatOfSampleSize\",\n          {\n            saveAlphaHatOfSampleSizeFunction()\n            cat(\" End of test saveAlphaHatOfSampleSize\", \"\\n\")\n            cat(\"=========================================\")\n          })\n",
+    "created" : 1506426626013.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1203306687",
+    "id" : "8B1A3A03",
+    "lastKnownWriteTime" : 1506426657,
+    "last_content_update" : 1506426657104,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_78_saveAlphaHatOfSampleSize.R",
+    "project_path" : "tests/testthat/tests_78_saveAlphaHatOfSampleSize.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

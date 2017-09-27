@@ -6,11 +6,16 @@ saveBandFuction <- function()
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   myLag = 2
-  myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
+  myLagCount = computeLagCount(lag = myLag,
+                               sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myNonCoverageProbability = 0.05
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
+
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,
+                            lag = myLag,
+                            sampleSize = mySampleSize)
 
   corArray <-
     computeCor(lag = myLag,
@@ -29,7 +34,9 @@ saveBandFuction <- function()
 
   Start = Sys.time()
   saveBand(band = band,
-           corArray = corArray, sampleSize = mySampleSize, lag = myLag,
+           corArray = corArray,
+           sampleSize = mySampleSize,
+           lag = myLag,
            replicationCount = myReplicationCount,
            superReplicationCount = mySuperReplicationCount,
            nonCoverageProbability = myNonCoverageProbability,

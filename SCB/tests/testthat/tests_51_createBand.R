@@ -11,6 +11,7 @@ createBandFunction <- function()
   myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myNonCoverageProbability = 0.05
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   Start = Sys.time()
   mySample <- createSample(sampleSize = mySampleSize)
   band = createBand(

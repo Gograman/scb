@@ -6,13 +6,16 @@ saveMeForAlphaFunction <- function()
 
   nMe <- 5
 
-  nonCoverageProbability <- 0.9
+  nonCoverageProbability <- 0.1
 
-  lag <- 1
+  lag <- 0
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
+
+  errorIfNotInputCompatible(alpha = nonCoverageProbability,
+                            lag = lag,sampleSize = sampleSize)
 
   kernel <- normalDifferenceKernel
 

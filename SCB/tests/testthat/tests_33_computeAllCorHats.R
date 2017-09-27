@@ -12,6 +12,7 @@ computeAllCorHatsTestFunction = function () {
   myLagCount <- computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
 
+  errorIfNotInputCompatible(alpha = 0.1,lag = myLag, sampleSize = mySampleSize)
   # form all rho hats
   # first try fakes
   Start=Sys.time()

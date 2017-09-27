@@ -10,12 +10,14 @@
     mySuperReplicationCount <- 10
     myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-
+    myKernel <- normalDifferenceKernel
     trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
-
 
     myKernel <- normalDifferenceKernel
     myNonCoverageProbability <- 0.05
+
+    errorIfNotInputCompatible(alpha = myNonCoverageProbability,
+                              lag = myLag,sampleSize = mySampleSize)
   #   bandsBrick = createBandsBrick(sampleSize = mySampleSize,
   #                                 tParArray  = mockTParArray,
   #                                 lag        = myLag,

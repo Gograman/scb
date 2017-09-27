@@ -11,7 +11,7 @@ createBandsBrickFunction <- function()
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
   myNonCoverageProbability=0.05
-
+  errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
 Start=Sys.time()
 bandsBrick=createBandsBrick(tParArray=mockTParArray,
                             lag=myLag,

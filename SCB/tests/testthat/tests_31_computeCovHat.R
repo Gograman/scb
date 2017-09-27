@@ -8,7 +8,7 @@ computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
 
 
   myLag = 3
-
+  errorIfNotInputCompatible(alpha = 0.1,sampleSize = sampleSize,lag = myLag)
   myKernel = normalDifferenceKernel
 
   Start=Sys.time()
