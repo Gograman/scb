@@ -35,7 +35,6 @@ computeMEbyCovHat <- function(tParArray,
                               lag,
                               lagCount,
                               sample,
-                              kernel = normalDifferenceKernel,
                               bandwidth,
                               nonCoverageProbability,
                               allCorHats,
@@ -56,7 +55,6 @@ computeMEbyCovHat <- function(tParArray,
   betaLRVHat = computeBetaLRVHat(tParArray = tParArray,
                                  lag = lag,
                                  sample = sample,
-                                 kernel = kernel,
                                  allCorHats = allCorHats)
 
 

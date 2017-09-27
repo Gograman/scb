@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeCovHatFunction = function ( tParCount=10,sampleSize=10) {\n  cat(\"\\n Testing \\'tests_31_computeCovHat\\' \\n\")\n  tParCount=tParCount\n  tParArray=createTParArray(tParCount = tParCount)\n  mySampleSize = sampleSize\n  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)\n  mockSample <- createSample(sampleSize = mySampleSize)\n\n\n  myLag = 3\n  errorIfNotInputCompatible(alpha = 0.1,\n                            sampleSize = mySampleSize,\n                            lag = myLag)\n  myKernel = normalDifferenceKernel\n\n  Start=Sys.time()\n  mockCovHat <- computeCovHat(tParArray = tParArray,\n                              lag = myLag,\n                              sample = mockSample)\n  End=Sys.time()\n  Duration=End-Start\n\n  cat (\"mockCovHat[1:5] = \", mockCovHat[1:5], \"\\n\")\n  cat (\"length(mockCovHat) = \", length(mockCovHat), \"\\n\")\n  cat(\"Duration= \",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"sampleSize= \",sampleSize,\"\\n\")\n  cat(\"tParCount= \",tParCount,\"\\n\")\n\n  expect_that(mockCovHat, is_a(\"numeric\"))\n  # expect_that(dim(mockBand)[1], equals(2))  # the number of rows\n  # expect_that(dim(mockBand)[2], equals(10)) # the number of cols\n\n}\n\ntest_that(\"Testing \\'computeCovHat\\'\", {\n  computeCovHatFunction()\n  cat(\" End of test computeCovHat\",\"\\n\")\n  cat(\"=====================\")\n\n}\n\n)\n",
+    "created" : 1506511585468.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2568246691",
+    "id" : "A75CE5D",
+    "lastKnownWriteTime" : 1506511836,
+    "last_content_update" : 1506511836037,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_31_computeCovHat.R",
+    "project_path" : "tests/testthat/tests_31_computeCovHat.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

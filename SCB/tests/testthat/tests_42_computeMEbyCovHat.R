@@ -13,7 +13,7 @@ cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 4
+  myLag = 1
 
 
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,sampleSize = mySampleSize,lag = myLag)
@@ -27,14 +27,14 @@ cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
                                       lagCount = myLagCount,
-                                      sample = mockSample,
-                                      kernel = myKernel)
+                                      sample = mockSample
+                                      )
   Start=Sys.time()
   me <- computeMEbyCovHat(tParArray = mockTParArray,
                           lag = myLag,
                           lagCount = myLagCount,
                           sample = mockSample,
-                          kernel = normalDifferenceKernel,
+
                           nonCoverageProbability = myNonCoverageProbability,
                           allCorHats = mockAllCorHats,
                           C_K = -1.978325,

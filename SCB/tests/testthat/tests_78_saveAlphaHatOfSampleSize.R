@@ -22,7 +22,8 @@ saveAlphaHatOfSampleSizeFunction <- function()
     lagCount <- computeLagCount(sampleSize[index],lag)
 
     errorIfNotInputCompatible(alpha = nonCoverageProbability,
-                              lag = lag,sampleSize = sampleSize[index])
+                              lag = lag,
+                              sampleSize = sampleSize[index])
 
     alphaHat[,index] <- computeNonCoverageFreqArray(
                            superReplicationCount = mySuperReplicationCount,
@@ -31,7 +32,6 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            lag = lag,
                            lagCount = lagCount,
                            tParArray = tParArray,
-                           kernel = kernel,
                            nonCoverageProbability = nonCoverageProbability,
                            fileName = "tests_78_saveAlphaHatOfSampleSize")
   }

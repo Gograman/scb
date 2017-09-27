@@ -18,7 +18,6 @@ createBandFunction <- function()
     tParArray = mockTParArray,
     lag = myLag,
     lagCount = myLagCount,
-    kernel = myKernel,
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
   )

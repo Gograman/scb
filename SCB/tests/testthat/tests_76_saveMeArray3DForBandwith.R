@@ -19,7 +19,7 @@ saveMe3DForBandwidthFunction <- function()
   lag <- 1
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
-  kernel <- normalDifferenceKernel
+
   bandwidth <- seq(0.1,0.9,by = 0.1)
 
   meArray <- matrix(nrow = length(bandwidth),ncol = length(alphas))
@@ -31,14 +31,13 @@ saveMe3DForBandwidthFunction <- function()
                                 lag = lag,sampleSize = sampleSize)
       allCorHats <- computeAllCorHats(tParArray = tParArray,
                                       lagCount = lagCount,
-                                      sample = sample,
-                                      kernel = kernel)
+                                      sample = sample
+                                      )
 
       me <- computeMEbyCovHat(tParArray = tParArray,
                                               lag = lag,
                                               lagCount = myLagCount,
                                               sample = sample,
-                                              kernel = normalDifferenceKernel,
                                               nonCoverageProbability = alphas[indexCol],
                                               allCorHats = allCorHats,
                                               C_K = -1.978325,

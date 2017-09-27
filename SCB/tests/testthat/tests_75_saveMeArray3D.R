@@ -12,7 +12,7 @@ saveMe3DForAlphaFunction <- function()
   lag <- 1
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
-  kernel <- normalDifferenceKernel
+
 
 
   meArray <- matrix(nrow = length(tParArray),ncol = length(alphas))
@@ -25,14 +25,13 @@ saveMe3DForAlphaFunction <- function()
 
     allCorHats <- computeAllCorHats(tParArray = tParArray,
                                     lagCount = lagCount,
-                                    sample = sample,
-                                    kernel = kernel)
+                                    sample = sample
+                                    )
 
     meArray[,indexCol] <- computeMEbyCovHat(tParArray = tParArray,
                                             lag = lag,
                                             lagCount = myLagCount,
                                             sample = sample,
-                                            kernel = normalDifferenceKernel,
                                             nonCoverageProbability = alphas[indexCol],
                                             allCorHats = allCorHats,
                                             C_K = -1.978325,

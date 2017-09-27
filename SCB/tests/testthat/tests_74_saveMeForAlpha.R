@@ -17,7 +17,7 @@ saveMeForAlphaFunction <- function()
   errorIfNotInputCompatible(alpha = nonCoverageProbability,
                             lag = lag,sampleSize = sampleSize)
 
-  kernel <- normalDifferenceKernel
+
 
 
   sampleArray <- matrix(nrow = sampleSize,ncol = nMe)
@@ -35,14 +35,12 @@ saveMeForAlphaFunction <- function()
 
     allCorHats <- computeAllCorHats(tParArray = tParArray,
                                   lagCount = lagCount,
-                                  sample = sampleArray[,indexCol],
-                                  kernel = kernel)
+                                  sample = sampleArray[,indexCol])
 
     meArray[,indexCol] <- computeMEbyCovHat(tParArray = tParArray,
                             lag = lag,
                             lagCount = myLagCount,
                             sample = sampleArray[,indexCol],
-                            kernel = normalDifferenceKernel,
                             nonCoverageProbability = nonCoverageProbability,
                             allCorHats = allCorHats,
                             C_K = -1.978325,
