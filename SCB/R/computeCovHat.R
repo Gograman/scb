@@ -23,10 +23,9 @@
 
 computeCovHat <- function(tParArray,
                           lag,
-                          sample,
-                          kernel
-                          )
-{
+                          sample) {
+
+                       
 
   sampleSize <- length(sample)
   bandwidth=computeB(sampleSize = sampleSize)

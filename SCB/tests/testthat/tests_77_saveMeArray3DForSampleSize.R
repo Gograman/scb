@@ -15,8 +15,6 @@ saveMe3DForSampleSizeFunction <- function()
 
   lag <- 1
 
-  kernel <- normalDifferenceKernel
-
   meArray <- matrix(nrow = length(sampleSize),ncol = length(alphas))
   for(indexRow in 1:length(sampleSize))
   {
@@ -31,15 +29,12 @@ saveMe3DForSampleSizeFunction <- function()
 
       allCorHats <- computeAllCorHats(tParArray = tParArray,
                                       lagCount = lagCount,
-                                      sample = sample,
-                                      kernel = kernel)
+                                      sample = sample)
 
       me <- computeMEbyCovHat(tParArray = tParArray,
                               lag = lag,
                               lagCount = myLagCount,
                               sample = sample,
-                              kernel = normalDifferenceKernel,
-                              bandwidth = bandwidth,
                               nonCoverageProbability = alphas[indexCol],
                               allCorHats = allCorHats,
                               C_K = -1.978325,

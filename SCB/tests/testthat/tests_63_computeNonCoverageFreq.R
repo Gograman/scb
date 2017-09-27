@@ -10,7 +10,6 @@
     mySuperReplicationCount <- 10
     myLag <- 1
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-    myKernel <- normalDifferenceKernel
     trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)
 
     myKernel <- normalDifferenceKernel
@@ -18,27 +17,6 @@
 
     errorIfNotInputCompatible(alpha = myNonCoverageProbability,
                               lag = myLag,sampleSize = mySampleSize)
-  #   bandsBrick = createBandsBrick(sampleSize = mySampleSize,
-  #                                 tParArray  = mockTParArray,
-  #                                 lag        = myLag,
-  #                                 lagCount   = myLagCount,
-  #                                 bandwidth  = myBandwidth,
-  #                                 kernel     = normalDifferenceKernel,
-  #                                 nonCoverageProbability = myNonCoverageProbability,
-  #                                 replicationCount       = myReplicationCount)
-  #    isCoveredArray <- computeIsCoveredArray(bandsBrick,
-  #                                       trueCorArray)
-  #    cat("\ncompute is covered array",isCoveredArray)
-  #   zeroCount = 0
-  #   replicationCount = dim(bandsBrick)[1]
-  #   cat("\nreplication Count",replicationCount)
-  #   for (i in 1:length(isCoveredArray)) {
-  #     if (isCoveredArray[i] == 0) {
-  #       zeroCount <- zeroCount + 1
-  #     }
-  #   }
-  # cat("\nzeroCount",zeroCount)
-  #   nonCoverageFreq <- zeroCount / replicationCount
 
     Start=Sys.time()
 
@@ -48,7 +26,6 @@
                                             lag = myLag,
                                             tParArray = mockTParArray,
                                             corArray = trueCorArray,
-                                            kernel = myKernel,
                                             nonCoverageProbability = myNonCoverageProbability,
                                             superReplicationCount = mySuperReplicationCount,
                                             fileName = "tests_63_computeNonCoverageFreq")

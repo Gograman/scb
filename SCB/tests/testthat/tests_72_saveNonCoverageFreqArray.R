@@ -9,7 +9,6 @@ saveNonCoverageFreqArrayFunction <- function()
   mySampleSize <- 200
   myLag <- 0
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-  myKernel <- normalDifferenceKernel
   myNonCoverageProbability <- 0.05
 
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
@@ -26,7 +25,6 @@ Start=Sys.time()
     lag = myLag,
     lagCount = myLagCount,
     tParArray = myTParArray,
-    kernel = myKernel,
     nonCoverageProbability = myNonCoverageProbability,
     fileName = "tests_72_saveNonCoverageFreqArray"
   )

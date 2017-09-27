@@ -18,8 +18,7 @@ computeAllCorHatsTestFunction = function () {
   Start=Sys.time()
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
                                       lagCount = myLagCount,
-                                      sample = mockSample,
-                                      kernel = myKernel)
+                                      sample = mockSample)
   End=Sys.time()
   Duration=End-Start
 cat("\nAllCorHats",mockAllCorHats)

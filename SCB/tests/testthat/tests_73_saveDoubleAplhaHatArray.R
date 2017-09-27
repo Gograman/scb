@@ -8,8 +8,6 @@ saveDoubleAplhaHatArrayFunction <- function()
   sampleSize <- 100
   myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)
-
-  myKernel <- normalDifferenceKernel
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
 
   alphaHats<-createDoubleAlphaArray(superReplicationCount = mySuperReplicationCount,
@@ -18,7 +16,6 @@ saveDoubleAplhaHatArrayFunction <- function()
                          lag = myLag, lagCount = myLagCount,
                          alphaArray = nonCoverageProbabilities,
                          tParArray = myTParArray,
-                         kernel = myKernel,
                          fileName = "tests_73_SaveDoubleAlphaHatArray")
 
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,

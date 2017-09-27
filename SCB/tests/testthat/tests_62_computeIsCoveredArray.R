@@ -11,7 +11,6 @@ computeIsCoveredArrayFunction <- function()
   myLag = 1
 
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
-  myKernel = normalDifferenceKernel
   mySuperReplicationCount <- 3
   myNonCoverageProbability <- 0.05
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
@@ -20,7 +19,7 @@ computeIsCoveredArrayFunction <- function()
   bandsBrick=createBandsBrick(tParArray=mockTParArray,
                               lag=myLag,
                               lagCount=myLagCount,
-                              kernel = myKernel,
+
                               sampleSize = mySampleSize,
                               nonCoverageProbability = myNonCoverageProbability,
                               replicationCount=myReplicationCount)
