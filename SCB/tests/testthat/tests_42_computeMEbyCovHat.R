@@ -13,7 +13,7 @@ cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 4
+  myLag = 0
 
 
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,sampleSize = mySampleSize,lag = myLag)
