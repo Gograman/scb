@@ -7,7 +7,7 @@
     mySampleSize <- 100
     myLag <- 2
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-    myKernel <- normalDifferenceKernel
+
 
     nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
     Start=Sys.time()
@@ -19,7 +19,6 @@
       lag = myLag,
       lagCount = myLagCount,
       tParArray = myTParArray,
-      kernel = myKernel,
       fileName = "tests_65_createNonCoverageFreqDoubleArray")
     End=Sys.time()
     duration=End-Start

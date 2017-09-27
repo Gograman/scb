@@ -8,7 +8,7 @@ computeBetaLRVHatFunction = function () {
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 0
+  myLag = 1
   errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
   myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
@@ -16,13 +16,11 @@ computeBetaLRVHatFunction = function () {
   # first try fakes
   mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,
                                     lagCount = myLagCount,
-                                    sample = mockSample,
-                                    kernel = myKernel)
+                                    sample = mockSample)
 Start=Sys.time()
   mockBetaLRVHat <- computeBetaLRVHat(tParArray = mockTParArray,
                                       lag = myLag,
                                       sample = mockSample,
-                                      kernel = myKernel,
                                       allCorHats = mockAllCorHats)
 End=Sys.time()
 Duration=End-Start

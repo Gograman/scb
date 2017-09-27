@@ -29,7 +29,7 @@
 computeBetaLRVHat  <- function(tParArray,
                                lag,
                                sample,
-                               kernel,
+
                                allCorHats) {
 
   mySampleSize=length(sample)

@@ -8,7 +8,6 @@ saveBandFuction <- function()
   myLag = 2
   myLagCount = computeLagCount(lag = myLag,
                                sampleSize = mySampleSize)
-  myKernel = normalDifferenceKernel
   myNonCoverageProbability = 0.05
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
@@ -25,7 +24,6 @@ saveBandFuction <- function()
     tParArray = mockTParArray,
     lag = myLag,
     lagCount = myLagCount,
-    kernel = myKernel,
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
   )

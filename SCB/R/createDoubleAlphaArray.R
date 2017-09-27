@@ -51,7 +51,6 @@ createDoubleAlphaArray = function(superReplicationCount,
                                   lagCount,
                                   alphaArray,
                                   tParArray,
-                                  kernel = normalDifferenceKernel,
                                   fileName = "")
 
 {
@@ -73,7 +72,6 @@ createDoubleAlphaArray = function(superReplicationCount,
       lag = lag,
       lagCount = lagCount,
       tParArray = tParArray,
-      kernel = kernel,
       nonCoverageProbability = alphaArray[alphaIndex],
       fileName = fileName)
   }

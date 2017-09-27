@@ -46,7 +46,6 @@ computeNonCoverageFreq  <- function(replicationCount,
                                     tParArray,
                                     corArray,
                                     lagCount,
-                                    kernel = normalDifferenceKernel,
                                     nonCoverageProbability = 0.05,
                                     superReplicationCount,
                                     fileName = "") {
@@ -57,7 +56,6 @@ computeNonCoverageFreq  <- function(replicationCount,
                                 lag        = lag,
                                 lagCount   = lagCount,
                                 bandwidth  = bandwidth,
-                                kernel     = kernel,
                                 nonCoverageProbability = nonCoverageProbability,
                                 replicationCount       = replicationCount)
 

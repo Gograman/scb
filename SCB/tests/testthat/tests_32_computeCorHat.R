@@ -13,8 +13,7 @@ computeCorHatFunction = function () {
   Start=Sys.time()
   mockCorHat <- computeCorHat(tParArray = mockTParArray,
                               lag = myLag,
-                              sample = mockSample,
-                              kernel = kernel)
+                              sample = mockSample)
   End=Sys.time()
   Duration=End-Start
 

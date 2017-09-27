@@ -14,8 +14,7 @@ computeCovHatFunction = function ( tParCount=10,sampleSize=10) {
   Start=Sys.time()
   mockCovHat <- computeCovHat(tParArray = tParArray,
                               lag = myLag,
-                              sample = mockSample,
-                              kernel = myKernel)
+                              sample = mockSample)
   End=Sys.time()
   Duration=End-Start
 

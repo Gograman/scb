@@ -15,7 +15,7 @@ computeIsCoveredFunction = function()
   myLag = 2
 
   myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)
-  myKernel = normalDifferenceKernel
+
   myNonCoverageProbability = 0.05
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   fileName <- paste("ss", mySampleSize, "l", myLag, "alpha"
@@ -24,7 +24,7 @@ computeIsCoveredFunction = function()
     tParArray = mockTParArray,
     lag = myLag,
     lagCount = myLagCount,
-    kernel = myKernel,
+
     sampleSize = mySampleSize,
     nonCoverageProbability = myNonCoverageProbability
   )
