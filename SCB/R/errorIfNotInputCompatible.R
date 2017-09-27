@@ -6,6 +6,12 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
     lag = lag, sampleSize = sampleSize)
   isCompatible = isAlphaCompatible & isLagCompatible
 
+  isLagZeroCompatibl <- isLagZeroCompatible(lag = lag)
+
+  if(! isLagZeroCompatibl)
+  {
+    stop("\nStop execution","\nLag is zero")
+  }
 
   if (! isCompatible)
   {

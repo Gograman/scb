@@ -56,6 +56,7 @@ saveMe3DForSampleSizeFunction <- function()
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=sampleSize,column.values=alphas,
             xlab="sampleSize",ylab = "NonCoverageProbability",
+            scales=list(arrows=FALSE),
             screen = list(z=250,x=-75))
   graphics.off()
 }

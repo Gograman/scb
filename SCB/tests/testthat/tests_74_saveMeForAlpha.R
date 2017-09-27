@@ -54,6 +54,7 @@ saveMeForAlphaFunction <- function()
   subTitle <- paste("sampleSize = ", sampleSize,
                     ", tParCount= ", tParCount,
                     ", Alpha = ", nonCoverageProbability,
+                    ", lag = " , lag,
                     sep = "")
 
   path <- doPath()

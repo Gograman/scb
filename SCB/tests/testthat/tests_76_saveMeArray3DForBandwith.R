@@ -55,6 +55,7 @@ saveMe3DForBandwidthFunction <- function()
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=bandwidth,column.values=alphas,
             xlab="bandwidth",ylab = "NonCoverageProbability",
+            scales=list(arrows=FALSE),
             screen = list(z=250,x=-75))
   graphics.off()
 }

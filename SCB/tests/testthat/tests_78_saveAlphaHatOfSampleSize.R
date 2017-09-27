@@ -1,19 +1,19 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,100,by=50)
+  sampleSize <- seq(10,500,by=50)
 
   nonCoverageProbability <- 0.2
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
-  lag <- 0
+  lag <- 1
 
   kernel <- normalDifferenceKernel
 
-  replicationCount <- 6
-  mySuperReplicationCount <- 7
+  replicationCount <- 42
+  mySuperReplicationCount <- 1
 
   alphaHat <- matrix(0,nrow = mySuperReplicationCount,ncol = length(sampleSize))
   for(index in 1:length(sampleSize))
@@ -36,7 +36,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            fileName = "tests_78_saveAlphaHatOfSampleSize")
   }
   fileName <- "AlphaOfSampleSize"
-  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", mySuperReplicationCount, sep = "_")
 
   xLab <- "sampleSize"
@@ -48,10 +48,10 @@ saveAlphaHatOfSampleSizeFunction <- function()
   path <- doPath()
   saveJpg(fileName,path)
   #df <- data.frame(alphaHat)
-  #saveCVS(fileName,path,df)
+  #saveCVS(fileName,path,alphaHat)
   alpha <- rep(nonCoverageProbability,times = length(sampleSize))
 
-  plot(jitter(alpha)~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
+  plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
 
   title(main = "AlphaHat Of SampleSize", sub = subTitle)
 
