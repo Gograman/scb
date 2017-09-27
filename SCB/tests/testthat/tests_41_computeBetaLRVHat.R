@@ -7,9 +7,9 @@ computeBetaLRVHatFunction = function () {
   mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
-
   myLag = 1
   errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+
   myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
  # form all rho hats
