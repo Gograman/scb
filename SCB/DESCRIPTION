@@ -5,7 +5,7 @@ Authors: person("Boris Garbuzov",
                 email = "boris.garbuzov@@gmail.com", 
                 role = c("aut", "cre"))
 Description: Computing confidence bands in a simulation process using S3 approach.
-Depends: R (>= 3.3.2)
+Depends: R (>= 3.0.0)
 License: BSD
 Encoding: UTF-8
 LazyData: false
