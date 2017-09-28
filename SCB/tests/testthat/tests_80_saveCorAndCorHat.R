@@ -6,7 +6,7 @@ saveCorAndCorHatFunction <- function()
 
 
   kernel <- normalDifferenceKernel
-  lag <- 1
+  lag <- 2
 
   nCorHat <- 5
   corArray <- computeCor(lag,tParArray = tParArray)
@@ -17,9 +17,7 @@ saveCorAndCorHatFunction <- function()
     bandWidth <- computeB(sampleSize = sampleSize)
     corHatArray[,index] <- computeCorHat(tParArray = tParArray,
                                          lag = lag,
-                                         sample = sample,
-                                         kernel = kernel
-                                         )
+                                         sample = sample)
   }
   subTitle <- paste("sampleSize = ", sampleSize,
                     ", tParCount= ", tParCount,

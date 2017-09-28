@@ -13,7 +13,7 @@ saveMe3DForSampleSizeFunction <- function()
   tParArray <- createTParArray(tParCount = tParCount)
   tParArrayCenter <- round(length(tParArray)/2,0)
 
-  lag <- 1
+  lag <- 2
 
   meArray <- matrix(nrow = length(sampleSize),ncol = length(alphas))
   for(indexRow in 1:length(sampleSize))
