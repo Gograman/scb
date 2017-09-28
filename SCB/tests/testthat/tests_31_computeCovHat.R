@@ -39,6 +39,4 @@ test_that("Testing \'computeCovHat\'", {
   cat(" End of test computeCovHat","\n")
   cat("=====================")
 
-}
-
-)
+})
