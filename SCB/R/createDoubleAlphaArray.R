@@ -13,7 +13,6 @@
 #' @param lagCount how many lags we consider.
 #' @param alphaArray a alpha parametr array
 #' @param tParArray a T parameter array
-#' @param kernel the Epanechnikov kernel.
 #' @param bandwidth a bandwidth value.
 #' @return A two dimensional array representing the alpha and many alpha hat for it.
 #'
@@ -26,7 +25,6 @@
 #'mySampleSize <- 10
 #'myLag <- 1
 #'myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-#'myKernel <- normalDifferenceKernel
 #'myAlphaArray <- seq(from = 0.05,
 #'                  to   = 1 - 1 / myAlphaCount,
 #'                   by   = 1 / myAlphaCount)
@@ -41,7 +39,6 @@
 #' lag = myLag,
 #' lagCount = myLagCount,
 #' tParArray = myTParArray,
-#' kernel = myKernel,
 #'bandwidth = myBandwidth)
 #'
 createDoubleAlphaArray = function(superReplicationCount,

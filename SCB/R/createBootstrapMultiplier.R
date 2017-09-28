@@ -15,7 +15,7 @@
 #' @examples
 #' createBootstrapMultiplier(kernel, bandwidth = 1, sampleSize = 10)
 
-createBootstrapMultiplier <- function(kernel,
+createBootstrapMultiplier <- function(kernel = customKernel,
                                       bandwidth = 1,
                                       sampleSize) {
   noise = createNoise(sampleSize, 0, 1)

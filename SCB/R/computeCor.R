@@ -17,13 +17,13 @@
 #' tParArray <- createTParArray(tParCount = tParCount)
 #' tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)
 computeCor <- function(lag,tParArray) {
-  coefFunction<-myCoefFunction
   tParCount=length(tParArray)
   corArray <- array(0, dim = tParCount)
 
   if (lag == 1) {
     for(tParIndex in 1: tParCount){
-    corArray[tParIndex] <- coefFunction(tParArray[tParIndex]) / (1 + coefFunction(tParArray[tParIndex]) ^ 2)
+    corArray[tParIndex] <-
+      customCoefFunction(tParArray[tParIndex]) / (1 + customCoefFunction(tParArray[tParIndex]) ^ 2)
     }
   }
 

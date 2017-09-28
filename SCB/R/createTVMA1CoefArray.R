@@ -20,13 +20,12 @@ createTVMA1CoefArray <- function(
                                  sampleSize
                                  )
 {
-  coefFunction=sin
   ma1CoefArray <- array(0, dim = sampleSize)
 
   for (sampleIndex in 1 : sampleSize)
   {
 
-    ma1CoefArray [sampleIndex] <- coefFunction ( sampleIndex / sampleSize)
+    ma1CoefArray [sampleIndex] <- customCoefFunction( sampleIndex / sampleSize)
   }
   return(ma1CoefArray)
 }

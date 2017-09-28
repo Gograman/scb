@@ -5,7 +5,10 @@ saveCVS <- function(fileName, path, dataToSave)
     dir.create(path)
   }
 
-  myFileName <- gsub(" ","_",paste(fileName, "_", Sys.time(),".csv",sep = ""))
-  myFileName <- gsub(":","_",myFileName)
-  write.csv(dataToSave, paste(path,"/",myFileName,sep=""))
+  curTime <- Sys.time()
+  curTime <- gsub(":", "-", curTime)
+  curTime <- gsub(" ", "_", curTime)
+  fileName <- gsub(" ","_", paste0(fileName, "_", curTime,".csv"))
+  fileName <- gsub(":","_", fileName)
+  write.csv(dataToSave, paste0(path, "/", fileName))
 }
