@@ -58,8 +58,8 @@ saveMeForAlphaFunction <- function()
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = "jittered Me",xlab = "Tpar")
-  title(main = "Me of Alpha",sub = subTitle)
+  matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = " ME",xlab = "Tpar")
+  title(main = "ME vs t par, fixed alpha",sub = subTitle)
   dev.off()
 }
 
