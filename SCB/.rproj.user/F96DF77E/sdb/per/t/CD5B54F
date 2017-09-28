@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "isLagCompatibleWithSampleSizeFunction <- function(maxGraph = 100,step = 10)\n{\n\n  sampleSizes <- seq(0,maxGraph,by=step)\n  lags <- seq(0,maxGraph,by = step)\n\n  compatibles <- matrix(nrow = length(sampleSizes),ncol = length(lags))\n  cocoses <- numeric(length = length(sampleSizes))\n\n  for(i in 1:length(lags))\n  {\n    for(j in 1:length(sampleSizes))\n    {\n      compatibles[i,j] <- isLagCompatibleWithSampleSize(sampleSize = sampleSizes[j], lag = lags[i])\n\n      if(isLagCompatibleWithSampleSize(sampleSize = sampleSizes[j],lag = lags[i]))\n      {\n        cocoses[i] <- j\n        break\n      }\n    }\n  }\n\n  fileName <- \"IsinPutCompatible\"\n\n  xMaxLim <- floor(maxGraph * 0.8)\n  yMaxLim <- max(cocoses)\n\n  saveJpg(fileName = fileName, doPath())\n  saveCVS(fileName = fileName, doPath(), compatibles)\n\n  plot(cocoses ~ lags,type = \"l\",xlim=c(0,xMaxLim),ylim=c(0,yMaxLim),\n       col=\"red\",ylab = \"sampleSize\",xlab = \"lag\")\n  title(\"Is input Compatible\")\n  legend(\"bottomright\",c(\"compatibles\"),fill = c(\"red\"))\n  #lines(cocoses,lags,col=\"red\")\n\n  graphics.off()\n}\ntest_that(\"Testing \\'isLagCompatibleWithSampleSize\\'\", {\n  isLagCompatibleWithSampleSizeFunction()\n  cat(\"\\n End of test isLagCompatibleWithSampleSize\", \"\\n\")\n  cat(\"=====================\")\n})\n\n",
+    "created" : 1506518456263.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3198345938",
+    "id" : "CD5B54F",
+    "lastKnownWriteTime" : 1506425958,
+    "last_content_update" : 1506425958,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_23_isLagCompatibleWithSampleSize.R",
+    "project_path" : "tests/testthat/tests_23_isLagCompatibleWithSampleSize.R",
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

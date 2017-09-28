@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: SCB\nTitle: Computing confidence bands in a simulation process\nVersion: 0.0.0.1\nAuthors: person(\"Boris Garbuzov\",\n                email = \"boris.garbuzov@@gmail.com\", \n                role = c(\"aut\", \"cre\"))\nDescription: Computing confidence bands in a simulation process using S3 approach.\nDepends: R (>= 3.0.0)\nLicense: BSD\nEncoding: UTF-8\nLazyData: false\nRoxygenNote: 6.0.1\nImports: testthat, roxygen2, devtools, lattice\n\n\n",
+    "created" : 1506519615350.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1167808776",
+    "id" : "C85129A9",
+    "lastKnownWriteTime" : 1506519636,
+    "last_content_update" : 1506519636636,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

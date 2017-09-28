@@ -6,6 +6,7 @@ if(!require("lattice")) {
 
 computeLagCountFunction <- function()
 {
+
   cat("\n Testing \'tests_22_computeLagCount\' \n")
   maxGraph=1000
   step=100
