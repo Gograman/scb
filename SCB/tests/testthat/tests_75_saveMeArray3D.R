@@ -9,7 +9,7 @@ saveMe3DForAlphaFunction <- function()
 
   alphas <- seq(0.1,0.9,by = 0.1)
 
-  lag <- 1
+  lag <- 2
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
 
@@ -46,7 +46,7 @@ saveMe3DForAlphaFunction <- function()
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=tParArray,column.values=alphas,
             xlab="tParArray",ylab = "NonCoverageProbability",
-            screen = list(z=250,x=-75))
+            screen = list(z=200,x=-75))
   graphics.off()
 }
 test_that("testing saveMe3DForAlpha",

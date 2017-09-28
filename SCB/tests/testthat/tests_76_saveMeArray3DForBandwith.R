@@ -16,7 +16,7 @@ saveMe3DForBandwidthFunction <- function()
 
   alphas <- seq(0.1,0.9,by = 0.1)
 
-  lag <- 1
+  lag <- 2
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
 
@@ -54,6 +54,7 @@ saveMe3DForBandwidthFunction <- function()
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=bandwidth,column.values=alphas,
             xlab="bandwidth",ylab = "NonCoverageProbability",
+            scales=list(arrows=FALSE),
             screen = list(z=250,x=-75))
   graphics.off()
 }

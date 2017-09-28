@@ -6,10 +6,11 @@ if(!require("lattice")) {
 
 computeLagCountFunction <- function()
 {
+
   cat("\n Testing \'tests_22_computeLagCount\' \n")
   maxGraph=1000
   step=100
-  sampleSizes <- seq(1,10,by=1)
+  sampleSizes <- seq(1,1000,by=100)
   lags <- seq(1,10,by = 1)
   alpha <- 0.1
 
@@ -35,7 +36,7 @@ computeLagCountFunction <- function()
 
   wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
             xlab="sampleSizes",ylab="Lags",
-            screen = list(z=-200,x=-75))
+            screen = list(z=-300,x=-75))
 
   graphics.off()
 

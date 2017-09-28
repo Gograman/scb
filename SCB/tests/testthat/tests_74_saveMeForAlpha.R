@@ -8,7 +8,7 @@ saveMeForAlphaFunction <- function()
 
   nonCoverageProbability <- 0.1
 
-  lag <- 0
+  lag <- 2
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
   tParCount <- 10
@@ -52,13 +52,14 @@ saveMeForAlphaFunction <- function()
   subTitle <- paste("sampleSize = ", sampleSize,
                     ", tParCount= ", tParCount,
                     ", Alpha = ", nonCoverageProbability,
+                    ", lag = " , lag,
                     sep = "")
 
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = "jittered Me",xlab = "Tpar")
-  title(main = "Me of Alpha",sub = subTitle)
+  matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = " ME",xlab = "Tpar")
+  title(main = "ME vs t par, fixed alpha",sub = subTitle)
   dev.off()
 }
 

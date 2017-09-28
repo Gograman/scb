@@ -1,5 +1,6 @@
 isLagCompatibleWithSampleSizeFunction <- function(maxGraph = 100,step = 10)
 {
+  cat("\n Testing \'tests_23_isLagCompatibleWithSampleSize\' \n")
 
   sampleSizes <- seq(0,maxGraph,by=step)
   lags <- seq(0,maxGraph,by = step)

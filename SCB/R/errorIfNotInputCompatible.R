@@ -6,6 +6,12 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
     lag = lag, sampleSize = sampleSize)
   isCompatible = isAlphaCompatible & isLagCompatible
 
+  isLagZeroCompatibl <- isLagZeroCompatible(lag = lag)
+
+  if(! isLagZeroCompatibl)
+  {
+    warning("\nStop execution","\nLag is zero")
+  }
 
   if (! isCompatible)
   {
@@ -27,7 +33,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
             lagErrorMessage <- "\nSampleSize is not compatible with lag:\n"
             lagErrorMessage <- paste(lagErrorMessage, "lag = ",lag,maxRequiredLag,sep = "")
     }
-    stop ("\n Stop execution", lagErrorMessage,"\n",alphaErrorMessage,"\n",
+    warning ("\n Stop execution", lagErrorMessage,"\n",alphaErrorMessage,"\n",
           "sampleSize = ",sampleSize)
   }
 
