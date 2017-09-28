@@ -6,8 +6,8 @@
 \title{computeNonCoverageFreq}
 \usage{
 computeNonCoverageFreq(replicationCount, sampleSize, lag, tParArray, corArray,
-  lagCount, kernel = normalDifferenceKernel, bandwidth = 0.5,
-  nonCoverageProbability = 0.05, fileName)
+  lagCount, nonCoverageProbability = 0.05, superReplicationCount,
+  fileName = "")
 }
 \arguments{
 \item{replicationCount}{a replication count.}
@@ -20,15 +20,29 @@ computeNonCoverageFreq(replicationCount, sampleSize, lag, tParArray, corArray,
 
 \item{corArray}{a true correlation array}
 
-\item{kernel}{the Epanechnikov kernel.}
+\item{nonCoverageProbability}{probability of non-coverage.}
 
 \item{bandwidth}{a bandwidth value.}
-
-\item{nonCoverageProbability}{probability of non-coverage.}
 }
 \description{
 For each band in bandsArray it computes isCovered and ads up all those zeros and ones. Divides this sum by replicationCount = length or dim of bandsArray
 }
 \examples{
-computeNonCoverageFreqByCorBands(bandsArray, corArray)
+myTParCount  <-2
+mockTParArray  <- createTParArray(tParCount = myTParCount)
+myReplicationCount <- 20
+mySampleSize <-50
+myLag <- 2
+myLagCount <- 4
+trueCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
+myBandwidth <- 0.5
+myNonCoverageProbability <- 0.05
+bandsBrick = createBandsBrick(sampleSize = mySampleSize,
+                               tParArray  = mockTParArray,
+                               lag        = myLag,
+                               lagCount   = myLagCount,
+                               bandwidth  = myBandwidth,
+                             nonCoverageProbability = myNonCoverageProbability,
+                              replicationCount       = myReplicationCount)
+
 }

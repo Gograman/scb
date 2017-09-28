@@ -6,8 +6,7 @@
 \alias{createBands}
 \title{createBandsArray}
 \usage{
-createBandsBrick(tParArray, lag, lagCount, bandwidth,
-  kernel = normalDifferenceKernel, sampleSize,
+createBandsBrick(tParArray, lag, lagCount, bandwidth, sampleSize,
   nonCoverageProbability = 0.05, replicationCount)
 }
 \arguments{
@@ -20,5 +19,21 @@ A two dimensional vector representing the lower and the upper bound of CI.
 Create a three-dimensional array of confidence intervals bands of size c(replicationCount, sampleSize, 2).
 }
 \examples{
+mySampleSize=40
+myTParCount = 2
+mockTParArray <- createTParArray(tParCount = myTParCount)
+mockTVMA1Array <- createTVMA1CoefArray(coefFunction = sin,sampleSize = mySampleSize)
+myReplicationCount=5
+myLag = 1
+myLagCount = 4
+myBandwidth = 0.5
+myNonCoverageProbability=0.05
+bandsBrick=createBandsBrick(tParArray=mockTParArray,
+                           lag=myLag,
+                           lagCount=myLagCount,
+                          bandwidth= myBandwidth,
+                           sampleSize=mySampleSize,
+                           nonCoverageProbability = myNonCoverageProbability,
+                           replicationCount=myReplicationCount)
 
 }

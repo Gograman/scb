@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title computeMEbyCovHat\n#'\n#' @name computeMEbyCovHat\n#'\n#' @aliases\n#'\n#' @descriptionHeart Heart of the whole thesis.Call GammaHatCompute CK.Compute psiK\n#'\n#' @param\n#' tParArray,\n#' lag,\n#' lagCount,\n#' sample,\n#' kernel = normalDifferenceKernel,\n#' bandwidth,\n#' nonCoverageProbability,\n#' allCorHats,\n#' C_K = -1.978325,\n#' PHI_K_NORMAL_DIFF = 0.4065\n#' @return Margin of error\n#'\n#' @examples\n#' tParCount = 10\n#' tParArray <- createTParArray(tParCount = tParCount)\n#' noise <- createNoise(sampleSize = tParCount, mean = 0, sd = 1)\n#' tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)\n#' sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise = noise)\n#' kernel = normalDiferencekernel\n#' bandwith <- 0.5\n#' lag <- 2\n#' nonCoverageProbability <- 0.05\n#' meByCovHat <- computeMEbyCovHats(lag = lag, sample = sample, bandwith = bandwidth, nonCoverageProbability = nonCoverageProbability\n\ncomputeMEbyCovHat <- function(tParArray,\n                              lag,\n                              lagCount,\n                              sample,\n                              bandwidth,\n                              nonCoverageProbability,\n                              allCorHats,\n                              C_K = -1.978325,\n                              PHI_K_NORMAL_DIFF = 0.4065)\n  {\n  # Array rho_h(i),\n  # counter i corresponds to t_i = 0, 1/n, …., 1 - 1/n,\n  # horizontal ACF of a sleepers process\n  #lengthSleeper <- length(sleeper)\n  # do we need this?\n  # rhoHI <- rep(0, 10)\n  # mylag=2\n  # int_sq_der = 0.306951 is now hidden in C_K\n\n  mySampleSize=length(sample)\n  bandwidth = computeB(sampleSize = mySampleSize)\n  betaLRVHat = computeBetaLRVHat(tParArray = tParArray,\n                                 lag = lag,\n                                 sample = sample,\n                                 allCorHats = allCorHats)\n\n\n  logSqrt <-  sqrt(-2 * log (bandwidth))\n  cFactor <- logSqrt + (C_K - log (log (1 / sqrt (1 - nonCoverageProbability)))) / logSqrt\n\n  sampleSize=length(sample)\n  meByCovHat <- cFactor *\n                betaLRVHat *\n                sqrt(PHI_K_NORMAL_DIFF / (sampleSize * bandwidth))\n  }\n",
+    "created" : 1506519319517.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2906157246",
+    "id" : "5DCB0B44",
+    "lastKnownWriteTime" : 1506510304,
+    "last_content_update" : 1506510304,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/computeMEbyCovHat.R",
+    "project_path" : "R/computeMEbyCovHat.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

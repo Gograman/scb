@@ -5,7 +5,8 @@
 \alias{createCovarianceByKernel}
 \title{createMultiplierCovarianceByKernel}
 \usage{
-createMultiplierCovarianceByKernel(kernel, bandwidth = 1, sampleSize)
+createMultiplierCovarianceByKernel(kernel = customKernel, bandwidth = 1,
+  sampleSize)
 }
 \arguments{
 \item{kernel}{kernel.}
@@ -22,4 +23,5 @@ Generate covariance function given kernel. Is being called from within \code{cre
 }
 \examples{
 createMultiplierCovarianceByKernel(kernel, bandwidth = 1, sampleSize = 10)
+
 }

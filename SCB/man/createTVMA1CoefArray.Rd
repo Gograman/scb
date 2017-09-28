@@ -5,12 +5,12 @@
 \alias{createPsi}
 \title{createTVMA1CoefArray}
 \usage{
-createTVMA1CoefArray(coefFunction, sampleSize)
+createTVMA1CoefArray(sampleSize)
 }
 \arguments{
-\item{coefFunction}{a coeffficients function, which is an underlying function used to generate \code{ma1CoefArray} vector.}
-
 \item{tParArray}{a T parameter, a.k.a. a sleeper parameter, a sequence of numbers {0, 1}.}
+
+\item{coefFunction}{a coeffficients function, which is an underlying function used to generate \code{ma1CoefArray} vector.}
 }
 \value{
 The vector of the array of time variant coefficients values corresponding to T parameter values.
@@ -22,4 +22,5 @@ Creating \code{ma1CoefArray}, that is, the array of time variant coefficients, b
 
 createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, length.out = 10))
 createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, by = 0.1))
+
 }

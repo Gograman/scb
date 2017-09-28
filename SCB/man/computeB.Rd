@@ -5,7 +5,7 @@
 \alias{createB}
 \title{computeB}
 \usage{
-computeB(n)
+computeB(sampleSize)
 }
 \arguments{
 \item{n}{the sample size}

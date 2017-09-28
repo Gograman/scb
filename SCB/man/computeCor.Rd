@@ -5,7 +5,7 @@
 \alias{computeRho}
 \title{computeCor}
 \usage{
-computeCor(lag, coefFunction, tParArray)
+computeCor(lag, tParArray)
 }
 \arguments{
 \item{lag}{the lag}
@@ -23,4 +23,5 @@ tParCount <- 10
 lag <- 0
 tParArray <- createTParArray(tParCount = tParCount)
 tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)
+
 }

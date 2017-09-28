@@ -5,7 +5,7 @@
 \alias{computeGammaHat}
 \title{computeBetaLRVHat}
 \usage{
-computeBetaLRVHat(tParArray, lag, sample, kernel, bandwidth, allCorHats)
+computeBetaLRVHat(tParArray, lag, sample, allCorHats)
 }
 \arguments{
 \item{tParArray}{a T parameter array, a.k.a. a sleeper parameter, a sequence of numbers {0, 1}.}
@@ -13,8 +13,6 @@ computeBetaLRVHat(tParArray, lag, sample, kernel, bandwidth, allCorHats)
 \item{lag}{a lag value.}
 
 \item{sample}{a sample.}
-
-\item{kernel}{a kernel function.}
 
 \item{bandwidth}{by default, bandwidth = 1.}
 }
@@ -30,9 +28,9 @@ tParArray <- createTParArray(tParCount = tParCount)
 noise <- createNoise(sampleSize = tParCount, mean = 0, sd = 1)
 tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)
 sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise = noise)
-kernel = normalDiferencekernel
 bandwith = 1
 lag = 2
-allCorHats = computeAllCorHats(tParArray = tParArray, lagCount = tParCount - 1, sample = sample, kernel = kernel, bandwidth = bandwidth)
-betaLRVHat = computeBetaLRVHat(tParArray = tParArray, lag = lag, sample = sample, kernel = kernel, bandwidth = bandwidth, allCorHats = allCorHats)
+allCorHats = computeAllCorHats(tParArray = tParArray, lagCount = tParCount - 1, sample = sample, bandwidth = bandwidth)
+betaLRVHat = computeBetaLRVHat(tParArray = tParArray, lag = lag, sample = sample, bandwidth = bandwidth, allCorHats = allCorHats)
+
 }

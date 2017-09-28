@@ -5,18 +5,22 @@
 \alias{}
 \title{computeIsCovered}
 \usage{
-computeIsCovered(band, corArray, fileName)
+computeIsCovered(band, corArray, sampleSize, replicationCount, lag,
+  superReplicationCount, nonCoverageProbability, fileName = "")
 }
 \arguments{
 \item{band}{band}
 
 \item{corArray}{corArray}
+
+\item{fileName}{fileName}
 }
 \value{
 Vector of {0, 1 values}.
 }
 \description{
-
+For a given band it checks whether for all t or sleeper values true rho is between upper and lower values. If it is true for all t, it returns 1 or true.
+If it is not true for at least one t, it returns false or 0.
 }
 \examples{
 tParCount = 10
@@ -27,5 +31,6 @@ mockTVMA1 <- createTVMA1(sampleSize = tParCount,tvMA1CoefArray = mockTVMA1CoeffA
 corArray <- computeCor(lag = lag, tvMa1CoefArray = tvMA1CoefArray)
 lag  <- 2
 band <- createBand(X = rnorm(n = 10, mean = 0, sd = 1), alpha = 0.05)
-isCovered <- computeIsCovered(band = band, corArray = corArray)
+isCovered <- computeIsCovered(band = band, corArray = corArray,fileName=fileName)
+
 }
