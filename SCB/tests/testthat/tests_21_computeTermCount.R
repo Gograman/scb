@@ -1,5 +1,7 @@
 computeTermCountFunction <- function(maxGraph=1000,step=1)
 {
+
+
   cat("\n Testing \'tests_21_computeTermCount\' \n")
   sampleSizes <- seq(0,maxGraph,by=step)
 
