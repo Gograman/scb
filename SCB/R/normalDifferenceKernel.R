@@ -14,6 +14,8 @@
 #'
 #' @examples
 #' normalDifferenceKernel(10)
+#'
+#'@export
 
 normalDifferenceKernel  <-  function(u)  {
   #4th Gaussian

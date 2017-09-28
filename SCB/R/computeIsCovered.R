@@ -23,6 +23,8 @@
 #' lag  <- 2
 #' band <- createBand(X = rnorm(n = 10, mean = 0, sd = 1), alpha = 0.05)
 #' isCovered <- computeIsCovered(band = band, corArray = corArray,fileName=fileName)
+#'
+#'@export
 
 
 computeIsCovered <- function(band,

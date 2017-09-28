@@ -14,6 +14,8 @@
 #'
 #' @examples
 #' createMultiplierCovarianceByKernel(kernel, bandwidth = 1, sampleSize = 10)
+#'
+#'@export
 
 createMultiplierCovarianceByKernel <- function(kernel = customKernel,
                                                bandwidth = 1,

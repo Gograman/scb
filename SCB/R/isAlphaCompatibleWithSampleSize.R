@@ -1,3 +1,6 @@
+#'
+#'@export
+
 isAlphaCompatibleWithSampleSize <- function (sampleSize, alpha)
 {
   minSampleSize = computeMinSampleSizeForAlpha (alpha)

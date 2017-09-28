@@ -28,6 +28,8 @@
 #' lag <- 2
 #' nonCoverageProbability <- 0.05
 #' meByCovHat <- computeMEbyCovHats(lag = lag, sample = sample, bandwith = bandwidth, nonCoverageProbability = nonCoverageProbability
+#'
+#'@export
 
 computeMEbyCovHat <- function(tParArray,
                               lag,

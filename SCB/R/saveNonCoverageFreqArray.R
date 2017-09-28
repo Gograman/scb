@@ -1,3 +1,6 @@
+#'
+#'@export
+
 saveNonCoverageFreqArray <- function(nonCoverageProbability,
                                      alphaHatArray,
                                      sampleSize,

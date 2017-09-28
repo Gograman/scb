@@ -38,6 +38,8 @@
 #' computeIsCoveredArray(bandsBrick = bandsBrick,
 #'                        corArray = mockCorArray,
 #'                       fileName = fileName)
+#'
+#'@export
 
 computeIsCoveredArray <- function(bandsBrick,
                                   corArray,

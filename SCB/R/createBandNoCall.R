@@ -1,3 +1,6 @@
+#'
+#'@export
+
 createBandFunctionNoCall <- function()
 {
   mySampleSize=5

@@ -35,6 +35,8 @@
 #'  tParArray = myTParArray,
 #' bandwidth = myBandwidth,
 #' nonCoverageProbability = myNonCoverageProbability)
+#'
+#'@export
 
 
 

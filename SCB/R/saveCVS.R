@@ -1,3 +1,6 @@
+#'
+#'@export
+
 saveCVS <- function(fileName, path, dataToSave)
 {
   if(!dir.exists(path))

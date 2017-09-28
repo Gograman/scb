@@ -33,6 +33,8 @@
 #'                                bandwidth  = myBandwidth,
 #'                              nonCoverageProbability = myNonCoverageProbability,
 #'                               replicationCount       = myReplicationCount)
+#'
+#'@export
 
 
 
