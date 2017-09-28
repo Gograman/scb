@@ -10,7 +10,6 @@ URL: https://github.com/statistics101/scb
 Encoding: UTF-8
 LazyData: false
 RoxygenNote: 6.0.1
-Imports: testthat, devtools, lattice
-# Imports: testthat, roxygen2, devtools, lattice
+Imports: testthat, roxygen2, devtools, lattice
 
 
