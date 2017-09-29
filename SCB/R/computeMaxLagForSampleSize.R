@@ -1,3 +1,6 @@
+#'
+#'@export
+
 computeMaxLagForSampleSize <- function (sampleSize)
 {
 

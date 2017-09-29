@@ -14,8 +14,10 @@
 #'
 #' @examples
 #' createMultiplierCovarianceByKernel(kernel, bandwidth = 1, sampleSize = 10)
+#'
+#'@export
 
-createMultiplierCovarianceByKernel <- function(kernel,
+createMultiplierCovarianceByKernel <- function(kernel = customKernel,
                                                bandwidth = 1,
                                                sampleSize) {
   covar = diag(kernel(0/bandwidth)/2, sampleSize)

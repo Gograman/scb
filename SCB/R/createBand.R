@@ -30,6 +30,8 @@
 #'kernel = myKernel,
 #'sampleSize = mySampleSize,
 #'nonCoverageProbability = myNonCoverageProbability)
+#'
+#'@export
 
 createBand <- function(tParArray,
                        lag,

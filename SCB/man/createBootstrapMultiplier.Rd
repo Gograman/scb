@@ -5,7 +5,7 @@
 \alias{createBM}
 \title{createBootstrapMultiplier}
 \usage{
-createBootstrapMultiplier(kernel, bandwidth = 1, sampleSize)
+createBootstrapMultiplier(kernel = customKernel, bandwidth = 1, sampleSize)
 }
 \arguments{
 \item{kernel}{kernel.}
@@ -22,4 +22,5 @@ Create bootstrap W series using Cholesky decomposition
 }
 \examples{
 createBootstrapMultiplier(kernel, bandwidth = 1, sampleSize = 10)
+
 }

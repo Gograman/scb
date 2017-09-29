@@ -1,5 +1,11 @@
-saveDoubleAplhaHatArray <- function(nonCoverageProbabilities, alphaHats,
-                                    sampleSize, replicationCount, lag,
+#'
+#'@export
+
+saveDoubleAplhaHatArray <- function(nonCoverageProbabilities,
+                                    alphaHats,
+                                    sampleSize,
+                                    replicationCount,
+                                    lag,
                                     superReplicationCount,
                                     fileName = "")
 {

@@ -5,7 +5,7 @@
 \alias{computeRhoHat}
 \title{computeCorHat}
 \usage{
-computeCorHat(tParArray, lag, sample, kernel, bandwidth)
+computeCorHat(tParArray, lag, sample)
 }
 \arguments{
 \item{tParArray}{a T parameter, a.k.a. a sleeper parameter, a sequence of numbers {0, 1}.}
@@ -13,8 +13,6 @@ computeCorHat(tParArray, lag, sample, kernel, bandwidth)
 \item{lag}{a lag value.}
 
 \item{sample}{a sample.}
-
-\item{kernel}{a kernel function.}
 
 \item{bandwidth}{by default, bandwidth = 1.}
 }
@@ -30,7 +28,7 @@ tParArray <- createTParArray(tParCount = tParCount)
 noise <- createNoise(sampleSize = tParCount, mean = 0, sd = 1)
 tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)
 sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise = noise)
-kernel = normalDiferencekernel
 lag = 2
-corHat = computeCorHat(tParArray = tParArray, lag = lag, sample = sample, kernel = kernel, bandwidth = bandwith)
+corHat = computeCorHat(tParArray = tParArray, lag = lag, sample = sample, bandwidth = bandwith)
+
 }

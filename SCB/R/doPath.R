@@ -1,3 +1,6 @@
+#'
+#'@export
+
 doPath <- function(directory = "")
 {
   workingDirectory<-getwd()

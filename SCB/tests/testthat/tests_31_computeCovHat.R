@@ -23,7 +23,7 @@ computeCovHatFunction = function ( ) {
   cat("Duration= ",Duration,"\n")
   cat("=====================")
   cat("\nTest parameters :","\n")
-  cat("sampleSize= ",sampleSize,"\n")
+  cat("sampleSize= ",mySampleSize,"\n")
   cat("tParCount= ",tParCount,"\n")
 
   expect_that(mockCovHat, is_a("numeric"))

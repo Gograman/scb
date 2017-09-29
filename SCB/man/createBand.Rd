@@ -5,19 +5,18 @@
 \alias{createConfidenceBand}
 \title{createBand}
 \usage{
-createBand(tParArray, lag, lagCount, bandwidth,
-  kernel = normalDifferenceKernel, sampleSize, nonCoverageProbability)
+createBand(tParArray, lag, lagCount, sampleSize, nonCoverageProbability)
 }
 \arguments{
 \item{lag}{lag value.}
-
-\item{bandwidth}{a kernel bandwidth value.}
 
 \item{nonCoverageProbability}{the probability of non-covering the real values with the estimated ones. \code{alpha = 0.05} by default.}
 
 \item{sample}{a vector of \code{sample}.}
 
 \item{corArray}{a vector of \code{corArray}.}
+
+\item{bandwidth}{a kernel bandwidth value.}
 }
 \value{
 A two dimensional vector representing the lower and the upper bound of CI.
@@ -26,5 +25,20 @@ A two dimensional vector representing the lower and the upper bound of CI.
 Create a confidence intervals band.
 }
 \examples{
+ myLag = 1
+myLagCount = 4
+myKernel = normalDifferenceKernel
+myBandwidth = 0.5
+myNonCoverageProbability = 0.05
+Start=Sys.time()
+mySample <- createSample(sampleSize = mySampleSize)
+ band <- createBand(
+tParArray = mockTParArray,
+lag = myLag,
+lagCount = myLagCount,
+bandwidth = myBandwidth,
+kernel = myKernel,
+sampleSize = mySampleSize,
+nonCoverageProbability = myNonCoverageProbability)
 
 }

@@ -20,4 +20,5 @@ A manual implementation of the 4th Gaussian kernel.
 }
 \examples{
 normalDifferenceKernel(10)
+
 }

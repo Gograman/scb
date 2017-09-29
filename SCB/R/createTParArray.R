@@ -13,6 +13,8 @@
 #' @examples
 #' tParCount = 10
 #' createTParArray(tParCount = tParCount)
+#'
+#'@export
 
 createTParArray <- function(tParCount)
 {

@@ -18,4 +18,5 @@ Creating \code{sample} given \code{tvMA1CoefArray}tvMA1CoefArray.
 }
 \examples{
 createSample(tvMA1CoefArray = seq(from = 0, to = 1, length.out = 10))
+
 }

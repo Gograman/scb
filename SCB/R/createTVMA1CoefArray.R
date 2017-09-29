@@ -15,18 +15,19 @@
 #'
 #' createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, length.out = 10))
 #' createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, by = 0.1))
+#'
+#'@export
 
 createTVMA1CoefArray <- function(
                                  sampleSize
                                  )
 {
-  coefFunction=sin
   ma1CoefArray <- array(0, dim = sampleSize)
 
   for (sampleIndex in 1 : sampleSize)
   {
 
-    ma1CoefArray [sampleIndex] <- coefFunction ( sampleIndex / sampleSize)
+    ma1CoefArray [sampleIndex] <- customCoefFunction( sampleIndex / sampleSize)
   }
   return(ma1CoefArray)
 }

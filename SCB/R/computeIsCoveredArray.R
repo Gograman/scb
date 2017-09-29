@@ -38,12 +38,16 @@
 #' computeIsCoveredArray(bandsBrick = bandsBrick,
 #'                        corArray = mockCorArray,
 #'                       fileName = fileName)
+#'
+#'@export
 
 computeIsCoveredArray <- function(bandsBrick,
-                                  corArray,tParCount,
+                                  corArray,
+                                  tParCount,
                                   sampleSize, bandwidth,
                                   replicationCount,
-                                  lag, superReplicationCount,
+                                  lag,
+                                  superReplicationCount,
                                   nonCoverageProbability,
                                   fileName = "")
 {

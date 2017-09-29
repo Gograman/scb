@@ -12,7 +12,6 @@
 #' @param sampleSize a sample size.
 #' @param lag a lag value, true lag is lag - 1.
 #' @param tParArray a T parameter array
-#' @param kernel the Epanechnikov kernel.
 #' @param bandwidth a bandwidth value.
 #' @param nonCoverageProbability probability of non-coverage.
 #'
@@ -26,8 +25,6 @@
 #'mySampleSize <- 50
 #'myLag <- 1
 #'myLagCount <- 4
-#'myKernel <- normalDifferenceKernel
-#'myBandwidth <- 0.5
 #'myNonCoverageProbability <- 0.05
 #'nonCoverageFreqArray <- computeNonCoverageFreqArray(
 #'superReplicationCount = mySuperReplicationCount,
@@ -36,9 +33,10 @@
 #' lag = myLag,
 #'lagCount = myLagCount,
 #'  tParArray = myTParArray,
-#' kernel = myKernel,
 #' bandwidth = myBandwidth,
 #' nonCoverageProbability = myNonCoverageProbability)
+#'
+#'@export
 
 
 

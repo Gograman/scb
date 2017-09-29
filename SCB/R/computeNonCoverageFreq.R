@@ -11,7 +11,6 @@
 #' @param lag a lag value, true lag is lag - 1.
 #' @param tParArray a T parameter array
 #' @param corArray a true correlation array
-#' @param kernel the Epanechnikov kernel.
 #' @param bandwidth a bandwidth value.
 #' @param nonCoverageProbability probability of non-coverage.
 #'
@@ -25,7 +24,6 @@
 #'myLag <- 2
 #'myLagCount <- 4
 #'trueCorArray <- computeCor(lag = myLag,coefFunction = sin,tParArray = mockTParArray)
-#'myKernel <- normalDifferenceKernel
 #'myBandwidth <- 0.5
 #'myNonCoverageProbability <- 0.05
 #'bandsBrick = createBandsBrick(sampleSize = mySampleSize,
@@ -33,9 +31,10 @@
 #'                                lag        = myLag,
 #'                                lagCount   = myLagCount,
 #'                                bandwidth  = myBandwidth,
-#'                               kernel     = normalDifferenceKernel,
-#'                               nonCoverageProbability = myNonCoverageProbability,
+#'                              nonCoverageProbability = myNonCoverageProbability,
 #'                               replicationCount       = myReplicationCount)
+#'
+#'@export
 
 
 

@@ -7,8 +7,7 @@
 \title{computeNonCoverageFreqDist}
 \usage{
 computeNonCoverageFreqArray(superReplicationCount, replicationCount, sampleSize,
-  lag, lagCount, tParArray, kernel = normalDifferenceKernel, bandwidth,
-  nonCoverageProbability)
+  lag, lagCount, tParArray, nonCoverageProbability, fileName = "")
 }
 \arguments{
 \item{superReplicationCount}{superReplicationCount}
@@ -21,18 +20,33 @@ computeNonCoverageFreqArray(superReplicationCount, replicationCount, sampleSize,
 
 \item{tParArray}{a T parameter array}
 
-\item{kernel}{the Epanechnikov kernel.}
+\item{nonCoverageProbability}{probability of non-coverage.}
 
 \item{bandwidth}{a bandwidth value.}
-
-\item{nonCoverageProbability}{probability of non-coverage.}
 }
 \value{
-
+array of alpha hat
 }
 \description{
-
+in a cycle for each alpha in array call NonCoverageFreqArray
 }
 \examples{
+myTParCount  <-2
+myTParArray  <- createTParArray(tParCount = myTParCount)
+mySuperReplicationCount <- 4
+myReplicationCount <- 4
+mySampleSize <- 50
+myLag <- 1
+myLagCount <- 4
+myNonCoverageProbability <- 0.05
+nonCoverageFreqArray <- computeNonCoverageFreqArray(
+superReplicationCount = mySuperReplicationCount,
+replicationCount = myReplicationCount,
+ sampleSize = mySampleSize,
+lag = myLag,
+lagCount = myLagCount,
+ tParArray = myTParArray,
+bandwidth = myBandwidth,
+nonCoverageProbability = myNonCoverageProbability)
 
 }

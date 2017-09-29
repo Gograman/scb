@@ -19,17 +19,17 @@
 #'myReplicationCount=5
 #'myLag = 1
 #'myLagCount = 4
-#'myKernel = normalDifferenceKernel
 #'myBandwidth = 0.5
 #'myNonCoverageProbability=0.05
 #'bandsBrick=createBandsBrick(tParArray=mockTParArray,
 #'                            lag=myLag,
 #'                            lagCount=myLagCount,
 #'                           bandwidth= myBandwidth,
-#'                           kernel = normalDifferenceKernel,
 #'                            sampleSize=mySampleSize,
 #'                            nonCoverageProbability = myNonCoverageProbability,
 #'                            replicationCount=myReplicationCount)
+#'
+#'@export
 #'
 
 createBandsBrick <- function(tParArray,

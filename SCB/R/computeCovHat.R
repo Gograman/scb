@@ -20,11 +20,12 @@
 #' kernel  <- normalDiferencekernel
 #' bandwith <- 1
 #' lag <- 2
+#'
+#'@export
 
 computeCovHat <- function(tParArray,
                           lag,
                           sample) {
-  kernel <- normalDifferenceKernel
   sampleSize <- length(sample)
   bandwidth <- computeB(sampleSize = sampleSize)
   partialSum <- 0
@@ -34,7 +35,7 @@ computeCovHat <- function(tParArray,
     {
      term <- sample[termIndex] *
                 sample[termIndex + lag] *
-                kernel((termIndex/sampleSize - tParArray) / bandwidth)
+                customKernel((termIndex/sampleSize - tParArray) / bandwidth)
 
       partialSum <- partialSum + term
     }
