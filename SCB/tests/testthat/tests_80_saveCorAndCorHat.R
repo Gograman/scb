@@ -1,5 +1,6 @@
 saveCorAndCorHatFunction <- function()
 {
+  cat ("\n Testing \'tests_80_saveCorAndCorHat\'\n")
   sampleSize <- 10000
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)

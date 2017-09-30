@@ -1,5 +1,6 @@
 saveMeForBandwithFunction <- function()
 {
+  cat ("\n Testing \'tests_82_saveMeForBandwith\'\n")
   workingDirectory<-getwd()
   splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
   tailDirectory <- tail(splitDirectory,1)
