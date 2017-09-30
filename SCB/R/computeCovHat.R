@@ -20,6 +20,8 @@
 #' kernel  <- normalDiferencekernel
 #' bandwith <- 1
 #' lag <- 2
+#'
+#'@export
 
 computeCovHat <- function(tParArray,
                           lag,

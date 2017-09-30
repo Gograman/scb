@@ -15,6 +15,8 @@
 #' @examples
 #' createNoise(sampleSize = 10, mean = 0, sd =  1)
 #' createNoise(sampleSize = 20, mean = 5, sd =  10)
+#'
+#'@export
 
 createNoise <- function(sampleSize,
                         mean,

@@ -15,6 +15,8 @@
 #'
 #' createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, length.out = 10))
 #' createMA1CoefArray(coefFunction = sin, tParArray =  seq(from = 0, to = 1, by = 0.1))
+#'
+#'@export
 
 createTVMA1CoefArray <- function(
                                  sampleSize

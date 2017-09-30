@@ -5,20 +5,22 @@
 \alias{}
 \title{computeMEbyCovHat}
 \usage{
-computeMEbyCovHat(tParArray, lag, lagCount, sample,
-  kernel = normalDifferenceKernel, bandwidth, nonCoverageProbability,
-  allCorHats, C_K = -1.978325, PHI_K_NORMAL_DIFF = 0.4065)
+computeMEbyCovHat(tParArray, lag, lagCount, sample, bandwidth,
+  nonCoverageProbability, allCorHats, C_K = -1.978325,
+  PHI_K_NORMAL_DIFF = 0.4065)
 }
 \arguments{
-\item{sample}{sample.}
-
-\item{bootstrapReplicationCount}{bootstrapReplicationCount.}
+\item{tParArray, }{lag,
+lagCount,
+sample,
+bandwidth,
+nonCoverageProbability,
+allCorHats,
+C_K = -1.978325,
+PHI_K_NORMAL_DIFF = 0.4065}
 }
 \value{
-
-}
-\description{
-
+Margin of error
 }
 \examples{
 tParCount = 10
@@ -26,9 +28,9 @@ tParArray <- createTParArray(tParCount = tParCount)
 noise <- createNoise(sampleSize = tParCount, mean = 0, sd = 1)
 tvMA1CoefArray <- createTVMA1CoefArray(coefFunction = sin, tParArray = tParArray)
 sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise = noise)
-kernel = normalDiferencekernel
 bandwith <- 0.5
 lag <- 2
 nonCoverageProbability <- 0.05
 meByCovHat <- computeMEbyCovHats(lag = lag, sample = sample, bandwith = bandwidth, nonCoverageProbability = nonCoverageProbability
+
 }

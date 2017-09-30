@@ -1,5 +1,6 @@
 saveMeForBandwithFunction <- function()
 {
+  cat ("\n Testing \'tests_82_saveMeForBandwith\'\n")
   workingDirectory<-getwd()
   splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
   tailDirectory <- tail(splitDirectory,1)
@@ -50,9 +51,11 @@ saveMeForBandwithFunction <- function()
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  matplot(tParArray,meArray,type = "l",col = 1:length(bandwith),xlab = "")
+  matplot(tParArray,meArray,type = "l",col = 1:length(bandwith),
+          xlab = "")
   title(main = "ME vs SampleSize, fixed alpha and T",sub = subTitle)
-  legend("topright",title = "bandwith",legend = bandwith,col = 1:length(bandwith))
+  legend("topright",title = "bandwith",legend = bandwith,
+         fill = 1:length(bandwith))
   graphics.off()
 }
 test_that("testing saveMeForBandwithFunction",{

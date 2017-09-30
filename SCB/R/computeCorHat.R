@@ -21,6 +21,8 @@
 #' sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise = noise)
 #' lag = 2
 #' corHat = computeCorHat(tParArray = tParArray, lag = lag, sample = sample, bandwidth = bandwith)
+#'
+#'@export
 
 
 computeCorHat <- function(tParArray,

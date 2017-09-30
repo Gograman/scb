@@ -46,6 +46,7 @@ saveMe3DForAlphaFunction <- function()
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=tParArray,column.values=alphas,
             xlab="tParArray",ylab = "NonCoverageProbability",
+            scales=list(arrows=FALSE),
             screen = list(z=200,x=-75))
   graphics.off()
 }

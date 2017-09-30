@@ -19,4 +19,5 @@ Create \code{T parameter array}.
 \examples{
 tParCount = 10
 createTParArray(tParCount = tParCount)
+
 }

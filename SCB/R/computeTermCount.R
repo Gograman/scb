@@ -1,3 +1,5 @@
+#'
+#'@export
 computeTermCount=function(sampleSize)
 {
 

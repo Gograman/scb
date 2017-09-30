@@ -1,3 +1,6 @@
+#'
+#'@export
+
 saveDoubleAplhaHatArray <- function(nonCoverageProbabilities,
                                     alphaHats,
                                     sampleSize,

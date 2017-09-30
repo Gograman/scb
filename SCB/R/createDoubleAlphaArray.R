@@ -41,6 +41,10 @@
 #' tParArray = myTParArray,
 #'bandwidth = myBandwidth)
 #'
+#'@export
+#'
+
+
 createDoubleAlphaArray = function(superReplicationCount,
                                   replicationCount,
                                   sampleSize,

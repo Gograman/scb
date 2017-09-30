@@ -29,6 +29,8 @@
 #'                            nonCoverageProbability = myNonCoverageProbability,
 #'                            replicationCount=myReplicationCount)
 #'
+#'@export
+#'
 
 createBandsBrick <- function(tParArray,
                              lag,

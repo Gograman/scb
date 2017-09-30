@@ -12,6 +12,8 @@
 #'
 #' @examples
 #' createSample(tvMA1CoefArray = seq(from = 0, to = 1, length.out = 10))
+#'
+#'@export
 
 createSample <- function(sampleSize)
   {

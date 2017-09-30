@@ -36,7 +36,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            fileName = "tests_78_saveAlphaHatOfSampleSize")
   }
   fileName <- "AlphaOfSampleSize"
-  fileName <- paste(fileName, "ss", sampleSize, "l", lag, sep = "_")
+  fileName <- paste(fileName, "l", lag, sep = "_")
   fileName <- paste(fileName, "repC", replicationCount,"SrepC", mySuperReplicationCount, sep = "_")
 
   xLab <- "sampleSize"
@@ -47,8 +47,8 @@ saveAlphaHatOfSampleSizeFunction <- function()
 
   path <- doPath()
   saveJpg(fileName,path)
-  #df <- data.frame(alphaHat)
-  #saveCVS(fileName,path,alphaHat)
+  df <- rbind(sampleSize,alphaHat)
+  saveCVS(fileName,path,df)
   alpha <- rep(nonCoverageProbability,times = length(sampleSize))
 
   plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")

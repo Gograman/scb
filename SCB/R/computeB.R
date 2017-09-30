@@ -11,6 +11,7 @@
 #' @return A scalar value of \code{b}.
 #'
 #' @examples bandwidthValue <- computeB(n = 8)
+#'@export
 
 computeB <- function (sampleSize) {
   b <- sampleSize ^ (-0.2)

@@ -24,6 +24,7 @@
 #' lagCount = tParCount - 1
 #' kernel = normalDifferenceKernel
 #' allCorHats = computeAllCorHats(tParArray = tParArray, lagCount = lagCount, sample = sample, kernel = kernel,  bandwidth = 1)
+#'@export
 
 computeAllCorHats <- function(tParArray,
                               lagCount,

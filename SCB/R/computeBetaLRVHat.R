@@ -23,6 +23,8 @@
 #' lag = 2
 #' allCorHats = computeAllCorHats(tParArray = tParArray, lagCount = tParCount - 1, sample = sample, bandwidth = bandwidth)
 #' betaLRVHat = computeBetaLRVHat(tParArray = tParArray, lag = lag, sample = sample, bandwidth = bandwidth, allCorHats = allCorHats)
+#'
+#'@export
 
 computeBetaLRVHat  <- function(tParArray,
                                lag,

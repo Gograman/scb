@@ -1,3 +1,6 @@
+#'
+#'@export
+
 saveJpg <- function(fileName, path)
 {
   if(!dir.exists(path))

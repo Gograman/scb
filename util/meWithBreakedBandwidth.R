@@ -83,7 +83,7 @@ computeCorHatForTest <- function(tParArray,
                           sample,
                           bandwidth)
 {
-  kernel=myKernel
+  kernel=customKernel
   mySampleSize=length(sample)
   myCovariance = computeCovHatForTest(tParArray,
                                lag = lag,

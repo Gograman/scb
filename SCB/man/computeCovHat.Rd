@@ -5,7 +5,7 @@
 \alias{}
 \title{computeCovHat}
 \usage{
-computeCovHat(tParArray, lag, sample, kernel, bandwidth)
+computeCovHat(tParArray, lag, sample)
 }
 \arguments{
 \item{tParArray}{a T parameter, a.k.a. a sleeper parameter, a sequence of numbers {0, 1}.}
@@ -30,4 +30,5 @@ sample <- createSample(model = createMa1, tvMA1CoefArray = tvMA1CoefArray, noise
 kernel  <- normalDiferencekernel
 bandwith <- 1
 lag <- 2
+
 }

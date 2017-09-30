@@ -14,6 +14,8 @@
 #'
 #' @examples
 #' createBootstrapMultiplier(kernel, bandwidth = 1, sampleSize = 10)
+#'
+#'@export
 
 createBootstrapMultiplier <- function(kernel = customKernel,
                                       bandwidth = 1,

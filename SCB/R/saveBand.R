@@ -1,3 +1,6 @@
+#'
+#'@export
+
 saveBand <- function(band,
                      corArray,
                      sampleSize,

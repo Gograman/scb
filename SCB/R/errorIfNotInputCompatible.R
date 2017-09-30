@@ -1,3 +1,6 @@
+#'
+#'@export
+
 errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
 {
   isAlphaCompatible = isAlphaCompatibleWithSampleSize (
