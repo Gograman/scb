@@ -7,7 +7,7 @@ computeCorHatFunction = function () {
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
-  myLag = 0
+  myLag = 1
   myKernel = normalDifferenceKernel
   errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
   Start=Sys.time()
