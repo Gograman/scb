@@ -1,7 +1,7 @@
 saveMeForSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_81_saveMeForSampleSize\'\n")
-  sampleSize <- seq(10,1011,by=100)
+  sampleSize <- seq(10,150,by=100)
   tParCount <- 10
   tParArray <- createTParArray(tParCount)
   tParArrayCenter <- round(length(tParArray)/2,0)
