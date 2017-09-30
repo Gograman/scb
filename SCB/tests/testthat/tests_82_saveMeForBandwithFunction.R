@@ -41,7 +41,7 @@ saveMeForBandwithFunction <- function()
   fileName <- paste("MEforBandWith","Alpha",nonCoverageProbability,"SS",sampleSize,sep = "_")
   xlab <- "TparArray"
   subTitle <- paste(xlab,
-    "\tParCount= ", tParCount,
+    "\ntParCount= ", tParCount,
     ", Alpha = ", nonCoverageProbability,
     ", lag = " , lag,
     ", sampleS = ", sampleSize,
@@ -53,7 +53,7 @@ saveMeForBandwithFunction <- function()
   saveJpg(fileName = fileName,path = path)
   matplot(tParArray,meArray,type = "l",col = 1:length(bandwith),
           xlab = "")
-  title(main = "ME vs SampleSize, fixed alpha and T",sub = subTitle)
+  title(main = "ME(t) for different bandwidth",sub = subTitle)
   legend("topright",title = "bandwith",legend = bandwith,
          fill = 1:length(bandwith))
   graphics.off()
