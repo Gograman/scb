@@ -2,7 +2,7 @@ computeCorTestFunction = function () {
   cat("\n Testing \'tests_34_computeCor\' \n")
 
   myTParCount = 10
-  myLag = 0
+  myLag = 1
   mySampleSize=40
   myKernel = normalDifferenceKernel
 

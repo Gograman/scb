@@ -7,7 +7,7 @@ computeCovHatFunction = function ( ) {
   mockSample <- createSample(sampleSize = mySampleSize)
 
 
-  myLag = 0
+  myLag = 1
   errorIfNotInputCompatible(alpha = 0.1,sampleSize = mySampleSize,lag = myLag)
   myKernel = normalDifferenceKernel
 
