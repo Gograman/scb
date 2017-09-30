@@ -1,14 +1,14 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,500,by=50)
+  sampleSize <- seq(10,1000,by=100)
 
   nonCoverageProbability <- 0.2
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
-  lag <- 2
+  lag <- 1
 
   kernel <- normalDifferenceKernel
 
