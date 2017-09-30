@@ -6,6 +6,18 @@ if(!require("lattice")) {
 
 saveMe3DForBandwidthFunction <- function()
 {
+
+  workingDirectory<-getwd()
+  splitDirectory <- data.frame(strsplit(workingDirectory,"/"))
+  tailDirectory <- tail(splitDirectory,1)
+
+  myPath <- "../../../util/meWithBreakedBandwidth.R"
+
+  if(tailDirectory=="SCB")
+  {
+    myPath <-"../util/meWithBreakedBandwidth.R"
+  }
+  source(myPath)
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")
   sampleSize <- 200
   sample <- createSample(sampleSize = sampleSize)
@@ -16,7 +28,7 @@ saveMe3DForBandwidthFunction <- function()
 
   alphas <- seq(0.1,0.9,by = 0.1)
 
-  lag <- 2
+  lag <- 1
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
 
@@ -29,17 +41,19 @@ saveMe3DForBandwidthFunction <- function()
     {
       errorIfNotInputCompatible(alpha = alphas[indexCol],
                                 lag = lag,sampleSize = sampleSize)
-      allCorHats <- computeAllCorHats(tParArray = tParArray,
+      allCorHats <- computeAllCorHatsForTest(tParArray = tParArray,
                                       lagCount = lagCount,
-                                      sample = sample
+                                      sample = sample,
+                                      bandwidth = bandwidth[indexRow]
                                       )
 
-      me <- computeMEbyCovHat(tParArray = tParArray,
+      me <- computeMEForTest(tParArray = tParArray,
                                               lag = lag,
                                               lagCount = myLagCount,
                                               sample = sample,
                                               nonCoverageProbability = alphas[indexCol],
                                               allCorHats = allCorHats,
+                                              bandwidth = bandwidth[indexRow],
                                               C_K = -1.978325,
                                               # int_sq_der = 0.306951,
                                               PHI_K_NORMAL_DIFF = 0.4065)
