@@ -1,5 +1,6 @@
 isAlphaCompatibleWithSampleSizeFunction<-function()
 {
+  cat("\n Testing \'tests_25_isAlphaCompatibleWithSampleSize\' \n")
   alphaArray <- seq(0.1,0.9,by = 0.01)
   requredSampleSize <- numeric(length = length(alphaArray))
   for(alphaIndex in 1:length(alphaArray))
