@@ -9,6 +9,7 @@ createTVMA1CoefArrayFunction <- function(samplesize=5) {
   Duration=End-Start
   cat ("mockTVMA1CoefArray =", mockTVMA1CoefArray[1:sampleSize], "\n",
        "length(mockTVMA1CoefArray) =", length(mockTVMA1CoefArray), "\n")
+  SCB::
   cat("Duration= ",Duration,"\n")
   cat("=====================")
   cat("\nTest parameters :","\n")
