@@ -3,6 +3,6 @@
 
 customCoefFunction <- function (tPar)
 {
-  cos(tPar)
+  sin(tPar)
 
 }
