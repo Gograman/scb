@@ -8,7 +8,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
-  lag <- 1
+  lag <- 2
 
   kernel <- normalDifferenceKernel
 
@@ -18,6 +18,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
   alphaHat <- matrix(0,nrow = mySuperReplicationCount,ncol = length(sampleSize))
   for(index in 1:length(sampleSize))
   {
+    cat("\nsampleSize = ",sampleSize[index])
     bandwidth <- computeB(sampleSize[index])
     lagCount <- computeLagCount(sampleSize[index],lag)
 
