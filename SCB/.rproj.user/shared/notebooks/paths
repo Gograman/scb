@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/MKS/scb/SCB/R/computeAllCorHats.R="5445E263"
 C:/Users/MKS/scb/SCB/R/computeB.R="E663F9FB"
 C:/Users/MKS/scb/SCB/R/computeCor.R="DA2E7D90"
@@ -11,3 +12,6 @@ C:/Users/MKS/scb/SCB/tests/testthat/tests_78_saveAlphaHatOfSampleSize.R="75435FC
 C:/Users/MKS/scb/SCB/tests/testthat/tests_80_saveCorAndCorHat.R="D58F3CF"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_81_saveMeForSampleSizeFunction.R="B47750A4"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_82_saveMeForBandwithFunction.R="CC12F1C"
+=======
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/errorIfNotInputCompatible.R="A7B71784"
+>>>>>>> 1db74a2a5e805e7466ccf8a602a66c3e83fe7f26
