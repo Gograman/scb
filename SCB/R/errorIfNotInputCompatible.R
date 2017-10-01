@@ -13,7 +13,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
 
   if(! isLagZeroCompatibl)
   {
-    warning("\nStop execution","\nLag is zero")
+    warning("\nLag is zero","\nPlease change lag value")
   }
 
   if (! isCompatible)
