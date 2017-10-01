@@ -13,7 +13,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
 
   if(! isLagZeroCompatibl)
   {
-    warning("\nLag is zero","\nPlease change lag value")
+    warning("\nLag 0 is a special mode with correlations=1 and bands of zero width, with full coverage.")
   }
 
   if (! isCompatible)
