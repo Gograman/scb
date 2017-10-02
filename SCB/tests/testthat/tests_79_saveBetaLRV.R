@@ -3,7 +3,7 @@ saveBetaLRVFunction <- function()
   cat ("\n Testing \'tests_79_saveBetaLRV\'\n")
   tParCount <- 10
   tParArray <- createTParArray(tParCount)
-  sampleSize <- 50
+  sampleSize <- 500
   psi <- customCoefFunction(tParArray)
   betaLrv <-1 + psi^2 / (1 + psi^2)^2
   sample <- createSample(sampleSize)

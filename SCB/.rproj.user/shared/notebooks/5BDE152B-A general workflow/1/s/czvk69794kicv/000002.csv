@@ -1,0 +1,5 @@
+"0","scbList <- doAll(scbParams = scbParams)
+"
+"2","Error in computeB(n = scbParams$sampleSize) : 
+  unused argument (n = scbParams$sampleSize)
+"
