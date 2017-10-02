@@ -104,6 +104,7 @@ computeCovHatForTest <- function(tParArray,
                           bandwidth) {
   kernel <- normalDifferenceKernel
   partialSum <- 0
+  sampleSize <- length(sample)
   termCountSequence <- seq_len(sampleSize - lag)
 
   for (termIndex in termCountSequence)
