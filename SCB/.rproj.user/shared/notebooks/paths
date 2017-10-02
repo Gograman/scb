@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-C:/Users/MKS/scb/SCB/R/computeAllCorHats.R="5445E263"
-C:/Users/MKS/scb/SCB/R/computeB.R="E663F9FB"
-C:/Users/MKS/scb/SCB/R/computeCor.R="DA2E7D90"
-C:/Users/MKS/scb/SCB/R/customCoefFunction.R="63CA675"
-C:/Users/MKS/scb/SCB/tests/manualtest/manualTestForBandwith.R="F9921D13"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_34_computeCor.R="528C648D"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_71_saveBand.R="16B33997"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_73_saveDoubleAplhaHatArray.R="6EA210AE"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_76_saveMeArray3DForBandwith.R="8AC17E15"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_78_saveAlphaHatOfSampleSize.R="75435FCA"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_80_saveCorAndCorHat.R="D58F3CF"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_81_saveMeForSampleSizeFunction.R="B47750A4"
-C:/Users/MKS/scb/SCB/tests/testthat/tests_82_saveMeForBandwithFunction.R="CC12F1C"
-=======
-C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/errorIfNotInputCompatible.R="A7B71784"
->>>>>>> 1db74a2a5e805e7466ccf8a602a66c3e83fe7f26
+C:/Dropbox/Github/SCB-stat101/SCB/R/doAll.R="E8E7D65E"
+C:/Dropbox/Github/SCB-stat101/SCB/vignettes/A general workflow.Rmd="5BDE152B"
+C:/Dropbox/Github/SCB-stat101/SCB/vignettes/A_general_workflow.Rmd="87578C00"
+C:/Dropbox/Github/SCB-stat101/util/custom_testing/doAll.R="B4B33B36"
