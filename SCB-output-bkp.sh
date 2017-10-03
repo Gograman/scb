@@ -16,6 +16,7 @@ NEW_STAT=`stat -t $DIR_TO_CHECK`
 if [ "$OLD_STAT" != "$NEW_STAT" ]
 then
         cd /home/ubuntu/statistics/scb
+	git pull origin master
         git add -A
         git commit -am "Backup of `date`"
         git push https://statistics101:needajob1@github.com/statistics101/scb.git master
