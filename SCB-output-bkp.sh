@@ -18,7 +18,7 @@ then
         cd /home/ubuntu/statistics/scb
         git add -A
         git commit -am "Backup of `date`"
-        git push https://av1611:Yuihjknm,j123@github.com/statistics101/scb.git master
+        git push https://statistics101:needajob1@github.com/statistics101/scb.git master
         # update the OLD_STAT_FILE
         echo $NEW_STAT > $OLD_STAT_FILE
 fi
