@@ -16,7 +16,7 @@ doPath <- function(directory = "")
   #if(directory != "")
   #{
   #  myPath<-paste(myPath,directory,sep = "/")
-  #}\
+  #}
   myPath <- "output"
   return(myPath)
 }
