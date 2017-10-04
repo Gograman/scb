@@ -9,9 +9,8 @@ saveJpg <- function(fileName, path)
   }
 
   fileName <- gsub("\\.","", fileName)
-  curTime <- Sys.time()
-  curTime <- gsub(":", "-", curTime)
-  curTime <- gsub(" ", "_", curTime)
+  curTime <-format(Sys.time(),"%M_%S")
+
   fileName <- gsub(" ","_", paste0(fileName, "_", curTime,".jpg"))
   fileName <- gsub(":", "_", fileName)
   jpeg(paste0(path, "/", fileName))

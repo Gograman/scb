@@ -27,7 +27,7 @@ saveMeForSampleSizeFunction <- function()
       meCenterArray[indexRow,indexCol] <- me[tParArrayCenter]
     }
   }
-  fileName <- paste("MEforSampleSize","Alpha",nonCoverageProbability,sep = "_")
+  fileName <- paste("ME&SampleSize","a",nonCoverageProbability,sep = "_")
 
   subTitle <- paste(
                     "tPar= ", tParArray[tParArrayCenter],

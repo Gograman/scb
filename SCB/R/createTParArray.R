@@ -18,6 +18,12 @@
 
 createTParArray <- function(tParCount)
 {
+  if(tParCount <= 1)
+  {
+    stop("\ntParCount less or eqal than 1")
+  }
+  tParCount <- tParCount - 1
+
   tParArray <- seq(from = 0,
                    to   = 1 - 1 / tParCount,
                    by   = 1 / tParCount)

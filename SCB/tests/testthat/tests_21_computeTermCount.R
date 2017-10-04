@@ -12,7 +12,7 @@ computeTermCountFunction <- function(maxGraph=1000,step=1)
     termCounts[i] <- computeTermCount(i)
   }
 
-  fileName <- "TermCount_SampleSize"
+  fileName <- "TermCount&SS"
 
   df <- data.frame(sampleSizes,termCounts)
 

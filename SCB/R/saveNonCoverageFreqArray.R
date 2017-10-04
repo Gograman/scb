@@ -11,11 +11,10 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
                                      fileName ="")
 {
   bandwidth <- computeB(sampleSize = sampleSize)
-  # fileName <- paste(fileName,"NonCoverageFreqArray",sep = "_")
-  fileName <- paste(fileName,"NCFA",sep = "_")
+  fileName <- paste(fileName,"NonCoverage",sep = "_")
 
-  # fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
-  # fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "b",round(bandwidth,1), sep = "_")
+  fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
 
   xLab <- "NonCoverageProbability"
 
@@ -38,7 +37,7 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
   abline(a = 0 , b =1)
 
   points(x=nonCoverageProbability, y=0,col="blue")
-  points(x=arrayOfXAplphaHat,y=jitter(alphaHatArray),col="red")
+  points(x=arrayOfXAplphaHat,y=alphaHatArray,col="red")
 
   legend("topleft",c("Non Coverage Probability","Non Coverage Frequency"),fill = c("blue","red"))
 

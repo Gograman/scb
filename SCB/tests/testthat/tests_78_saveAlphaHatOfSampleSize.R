@@ -1,14 +1,14 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,100,by=10)
+  sampleSize <- seq(10,1010,by=100)
 
   nonCoverageProbability <- 0.2
 
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
-  lag <- 2
+  lag <- 1
 
   kernel <- normalDifferenceKernel
 
@@ -36,9 +36,9 @@ saveAlphaHatOfSampleSizeFunction <- function()
                            nonCoverageProbability = nonCoverageProbability,
                            fileName = "tests_78_saveAlphaHatOfSampleSize")
   }
-  fileName <- "AlphaOfSampleSize"
+  fileName <- "Alpha&SS"
   fileName <- paste(fileName, "l", lag, sep = "_")
-  fileName <- paste(fileName, "repC", replicationCount,"SrepC", mySuperReplicationCount, sep = "_")
+  fileName <- paste(fileName, "rC", replicationCount,"sC", mySuperReplicationCount, sep = "_")
 
   xLab <- "sampleSize"
 

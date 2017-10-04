@@ -24,15 +24,15 @@ saveBand <- function(band,
   yMinMargin <- globMin - 2 * globSd
   yMaxMargin <- globMax + 4 * globSd
   # forming filenames
-  fileName <- paste(fileName,"BandAndCorrelation",sep = "_")
+  fileName <- paste(fileName,"Band&Cor",sep = "_")
   fileName <- paste(fileName,
                     "ss", sampleSize,
                     "l", lag,
-                    "bandW", round(bandwidth, digits = 1 ), sep = "_")
+                    "b", round(bandwidth, digits = 1 ), sep = "_")
   fileName <- paste(fileName,
-                    "alpha",nonCoverageProbability,
-                    "repC", replicationCount,
-                    "SrepC", superReplicationCount, sep = "_")
+                    "a",nonCoverageProbability,
+                    "rC", replicationCount,
+                    "sC", superReplicationCount, sep = "_")
 
   xLab <- "tParArray"
 
@@ -60,7 +60,7 @@ saveBand <- function(band,
   saveCVS(fileName = fileName, path = path, dataToSave = consolidatedBands)
 
   tParCount <- length(corArray)
-  tParArray <- createTParArray(tParCount - 1)
+  tParArray <- createTParArray(tParCount)
 
   # opening a graphical device and saving the drawing to it
   saveJpg(fileName = fileName, path = path)

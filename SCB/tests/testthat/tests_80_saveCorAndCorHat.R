@@ -1,7 +1,7 @@
 saveCorAndCorHatFunction <- function()
 {
   cat ("\n Testing \'tests_80_saveCorAndCorHat\'\n")
-  sampleSize <- 1000000
+  sampleSize <- 10000
   tParCount <- 10
   tParArray <- createTParArray(tParCount = tParCount)
 
@@ -24,7 +24,7 @@ saveCorAndCorHatFunction <- function()
                     ", lag =", lag,
                     sep = "")
   path <- doPath()
-  fileName<-"CorAndCorHat"
+  fileName<-"Cor&CorHat"
   tempFindMax <- cbind(corHatArray,corArray)
   saveCVS(fileName = fileName,path = path,dataToSave = tempFindMax)
   max <- max(tempFindMax)

@@ -38,7 +38,7 @@ saveMeForBandwithFunction <- function()
                                 nonCoverageProbability = nonCoverageProbability,
                                 allCorHats = corArray)
   }
-  fileName <- paste("MEforBandWith","Alpha",nonCoverageProbability,"SS",sampleSize,sep = "_")
+  fileName <- paste("ME&BandWith","a",nonCoverageProbability,"SS",sampleSize,sep = "_")
   xlab <- "TparArray"
   subTitle <- paste(xlab,
     "\ntParCount= ", tParCount,

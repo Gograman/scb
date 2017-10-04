@@ -47,7 +47,7 @@ saveMeForAlphaFunction <- function()
                             # int_sq_der = 0.306951,
                             PHI_K_NORMAL_DIFF = 0.4065)
   }
-  fileName <- paste("meArray","Alpha",nonCoverageProbability,sep = "_")
+  fileName <- paste("meArray","a",nonCoverageProbability,sep = "_")
 
   subTitle <- paste("sampleSize = ", sampleSize,
                     ", tParCount= ", tParCount,

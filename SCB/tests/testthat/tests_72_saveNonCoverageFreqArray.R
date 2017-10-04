@@ -14,10 +14,6 @@ saveNonCoverageFreqArrayFunction <- function()
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
                             lag = myLag,sampleSize = mySampleSize)
 
-  isCompatible = isLagCompatibleWithSampleSize (sampleSize = mySampleSize, lag = myLag)
-  cat ("\n isCompatible = ", isCompatible)
-  if (! isCompatible) cat ("sampleSize is not compatible with lag, stop")
-Start=Sys.time()
   nonCoverageFreqArray = computeNonCoverageFreqArray(
     superReplicationCount = mySuperReplicationCount,
     replicationCount = myReplicationCount,

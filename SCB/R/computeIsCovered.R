@@ -43,6 +43,7 @@ computeIsCovered <- function(band,
 
   bandwidth = computeB(sampleSize = sampleSize)
   tParCount <- length (corArray)
+  tParArray<-createTParArray(tParCount)
   isCoveredArrayByT <- array (0, dim = tParCount)
   saveBand(corArray = corArray,
            band = band,
@@ -58,6 +59,10 @@ computeIsCovered <- function(band,
 
   for (tParIndex in 1:tParCount)
   {
+    if(tParArray[tParIndex]<bandwidth | tParArray[tParIndex]>(1-bandwidth))
+    {
+      isCoveredArrayByT[tParIndex] <- 1
+    }
     if (corArray[tParIndex] <= upperBound[tParIndex] &
         corArray[tParIndex] >= lowerBound[tParIndex])
       {

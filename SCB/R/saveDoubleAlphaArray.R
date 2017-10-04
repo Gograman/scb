@@ -11,10 +11,10 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities,
 {
 
   bandwidth = computeB(sampleSize = sampleSize)
-  fileName <- paste(fileName,"AlphasAndAlphaHats",sep = "_")
+  fileName <- paste(fileName,"Alphas&AlphaHats",sep = "_")
 
-  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "bandW", bandwidth, sep = "_")
-  fileName <- paste(fileName, "repC", replicationCount,"SrepC", superReplicationCount, sep = "_")
+  fileName <- paste(fileName, "ss", sampleSize, "l", lag, "b",round(bandwidth,1), sep = "_")
+  fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
 
   xLab <- "NonCoverageProbabilities"
 
