@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title computeB\n#'\n#' @name computeB\n#'\n#' @aliases createB\n#'\n#' @description Create \\code{b}, a.k.a. bandwidth given \\code{n} as being a sample size\n#'\n#' @param n the sample size\n#'\n#' @return A scalar value of \\code{b}.\n#'\n#' @examples bandwidthValue <- computeB(n = 8)\n#'@export\n\n\ncomputeB <- function (sampleSize)\n{\n  # -- Initial implementation --\n  scaleConstant = 0.5\n  degree = -0.4\n  # degree should be between -1/2=-0.5 and -1/9=-0.11\n  # if it undercovers or alpha hat is too big, it means ME is too small\n  # If ME is too small, so bandwidth is too big\n  # To make it smaller, we can decrease scale constant from 1 to 0.5 and on\n  # or we can decrease the degree, or farther away from -0.11 and closer to -0.5\n  # It was -0.2 before. Now we try -0.4\n  # The scaleConstant was =1, now we change it to 0.5\n  b <- scaleConstant * sampleSize ^ degree\n}\n",
+    "created" : 1507117099731.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2764208948",
+    "id" : "171CCA01",
+    "lastKnownWriteTime" : 1507117491,
+    "last_content_update" : 1507117491537,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/computeB.R",
+    "project_path" : "R/computeB.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

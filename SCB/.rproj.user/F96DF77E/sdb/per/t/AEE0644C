@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "if(!require(\"lattice\")) {\n  install.packages(\"lattice\")\n}\nlibrary(lattice)\n\nsaveMe3DForAlphaFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_75_saveMe3DForAlpha\\'\\n\")\n  sampleSize <- 200\n  sample <- createSample(sampleSize = sampleSize)\n\n  tParCount <- 8\n  tParArray <- createTParArray(tParCount = tParCount)\n\n  alphas <- seq(0.1,0.9,by = 0.1)\n\n  lag <- 2\n  lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)\n\n\n\n\n  meArray <- matrix(nrow = length(tParArray),ncol = length(alphas))\n\n  for(indexCol in 1:length(alphas))\n  {\n\n    errorIfNotInputCompatible(alpha = alphas[indexCol],\n                              lag = lag,sampleSize = sampleSize)\n\n    allCorHats <- computeAllCorHats(tParArray = tParArray,\n                                    lagCount = lagCount,\n                                    sample = sample\n                                    )\n\n    meArray[,indexCol] <- computeMEbyCovHat(tParArray = tParArray,\n                                            lag = lag,\n                                            lagCount = myLagCount,\n                                            sample = sample,\n                                            nonCoverageProbability = alphas[indexCol],\n                                            allCorHats = allCorHats,\n                                            C_K = -1.978325,\n                                            # int_sq_der = 0.306951,\n                                            PHI_K_NORMAL_DIFF = 0.4065)\n  }\n\n  fileName <- paste(\"meArray3D\",sep = \"_\")\n\n  path <- doPath()\n  saveCVS(fileName = fileName,path = path,dataToSave = meArray)\n  saveJpg(fileName = fileName,path = path)\n  lattice::wireframe(meArray,row.values=tParArray,column.values=alphas,\n            xlab=\"tParArray\",ylab = \"NonCoverageProbability\",\n            scales=list(arrows=FALSE),\n            screen = list(z=200,x=-75))\n  graphics.off()\n}\ntest_that(\"testing saveMe3DForAlpha\",\n          {\n            saveMe3DForAlphaFunction()\n            cat(\" End of test saveMe3DForAlphaFunction\", \"\\n\")\n            cat(\"=========================================\")\n          })\n",
+    "created" : 1507119480084.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1489579373",
+    "id" : "AEE0644C",
+    "lastKnownWriteTime" : 1507119520,
+    "last_content_update" : 1507119520537,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_75_saveMeArray3D.R",
+    "project_path" : "tests/testthat/tests_75_saveMeArray3D.R",
+    "properties" : {
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeNonCoverageFreqArrayFunction <- function() {\n  cat(\"\\n Testing \\'tests_64_computeNonCoverageFreqArray\\' \\n\")\n\n  myTParCount  <-5\n  myTParArray  <- createTParArray(tParCount = myTParCount)\n  mySuperReplicationCount <- 7\n  myReplicationCount <- 6\n  mySampleSize <- 13\n  myLag <- 5\n  myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)\n  myNonCoverageProbability <- 0.05\n\n  errorIfNotInputCompatible(alpha = myNonCoverageProbability,\n                            lag = myLag,sampleSize = mySampleSize)\nStart=Sys.time()\n  nonCoverageFreqArray <- computeNonCoverageFreqArray(\n    superReplicationCount = mySuperReplicationCount,\n    replicationCount = myReplicationCount,\n    sampleSize = mySampleSize,\n    lag = myLag,\n    lagCount = myLagCount,\n    tParArray = myTParArray,\n    nonCoverageProbability = myNonCoverageProbability,\n    fileName = \"tests_64_computeNonCoverageFreqArray\"\n  )\n  End=Sys.time()\n  Duration=End-Start\ncat(\"\\n NonCoverageFreqArray= \",nonCoverageFreqArray)\n\n  cat(\"\\nDuration= \",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",myTParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  cat(\"LagCount= \",myLagCount,\"\\n\")\n  cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n  cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n  cat(\"NonCoverageProbability= \",myNonCoverageProbability,\"\\n\")\n\n\n}\n\ntest_that(\"Testing \\'computeNonCoverageFreqArray\\'\", {\n  computeNonCoverageFreqArrayFunction()\n  cat(\"\\nEnd of test computeNonCoverageFreqArray\", \"\\n\")\n  cat(\"=====================\")\n})\n",
+    "created" : 1507119688299.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "801481365",
+    "id" : "5AF54FB1",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_64_computeNonCoverageFreqArray.R",
+    "project_path" : "tests/testthat/tests_64_computeNonCoverageFreqArray.R",
+    "properties" : {
+    },
+    "relative_order" : 34,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

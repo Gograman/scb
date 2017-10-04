@@ -1,8 +1,7 @@
 if(!require("lattice")) {
   install.packages("lattice")
-  library(lattice)
 }
-
+library(lattice)
 
 saveMe3DForBandwidthFunction <- function()
 {
@@ -66,7 +65,7 @@ saveMe3DForBandwidthFunction <- function()
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  wireframe(meArray,row.values=bandwidth,column.values=alphas,
+  lattice::wireframe(meArray,row.values=bandwidth,column.values=alphas,
             xlab="bandwidth",ylab = "NonCoverageProbability",
             scales=list(arrows=FALSE),
             screen = list(z=250,x=-75))

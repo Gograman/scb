@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "createBootstrapMultiplierFunction <- function () {\n  cat(\"\\n Testing \\'createBootstrapMultiplier\\' \\n\")\n\n  myKernel = normalDifferenceKernel\n\n  mySampleSize = 10\n  myBandwidth <- computeB(sampleSize = mySampleSize)\n  mockBootstrapMultiplier <- createBootstrapMultiplier(kernel = myKernel,\n                                                       bandwidth = myBandwidth,\n                                                       sampleSize = mySampleSize)\n\n  cat (\"mockBootstrapMultiplier[1:3] =\", mockBootstrapMultiplier[1:3], \"\\n\")\n  cat (\"dim(mockBootstrapMultiplier) =\", dim(mockBootstrapMultiplier), \"\\n\")\n  expect_that(mockBootstrapMultiplier, is_a(\"matrix\"))\n}\n\ntest_that(\"Testing \\'createBootstrapMultiplier\\'\", {\n  createBootstrapMultiplierFunction()\n  cat(\" End of test createBootstrapMultiplier\",\"\\n\")\n  cat(\"=====================\")\n}\n)\n",
+    "created" : 1507119610323.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3152574731",
+    "id" : "7D03DD3A",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_13_createBootstrapMultiplier.R",
+    "project_path" : "tests/testthat/tests_13_createBootstrapMultiplier.R",
+    "properties" : {
+    },
+    "relative_order" : 19,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

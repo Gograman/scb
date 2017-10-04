@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveBandwithFunction <- function()\n{\n  cat(\"\\n Testing \\'tests_24_saveBandwith\\' \\n\")\n  sampleSize <- 1:500\n\n  bandwidth <- numeric(length = length(sampleSize))\n\n  for(index in sampleSize)\n  {\n    bandwidth[index] <- computeB(sampleSize[index])\n  }\n  path <- doPath()\n\n  saveJpg(fileName = \"Bandwith\",path = path)\n  plot(bandwidth ~ sampleSize, type = \"l\", main = \"Bandwith of samplesize\")\n  graphics.off()\n}\n\ntest_that(\"Testing \\'saveBandwithFunction\\'\", {\n  saveBandwithFunction()\n  cat(\"\\n End of test saveBandwithFunction\", \"\\n\")\n  cat(\"=====================\")\n})\n",
+    "created" : 1507119621613.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1232809702",
+    "id" : "4E5CFA02",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_24_saveBandwith.R",
+    "project_path" : "tests/testthat/tests_24_saveBandwith.R",
+    "properties" : {
+    },
+    "relative_order" : 21,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveMeForBandwithFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_82_saveMeForBandwith\\'\\n\")\n  workingDirectory<-getwd()\n  splitDirectory <- data.frame(strsplit(workingDirectory,\"/\"))\n  tailDirectory <- tail(splitDirectory,1)\n\n  myPath <- \"../../../util/meWithBreakedBandwidth.R\"\n\n  if(tailDirectory==\"SCB\")\n  {\n    myPath <-\"../util/meWithBreakedBandwidth.R\"\n  }\n  source(myPath)\n  sampleSize <- 500\n  bandwith <- seq(0.1,0.9,0.2)\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount)\n\n  nonCoverageProbability <- 0.2\n  lag <- 1\n  errorIfNotInputCompatible(alpha = nonCoverageProbability,lag = lag,sampleSize = sampleSize)\n  lagCount <- computeLagCount(sampleSize = sampleSize,lag = lag)\n  sample <- createSample(sampleSize)\n  meArray <- matrix(0,nrow = length(tParArray),ncol = length(bandwith))\n  for(index in 1:length(bandwith))\n  {\n    tempBandwith <- bandwith[index]\n    corArray <- computeAllCorHatsForTest(tParArray = tParArray,\n                                         lagCount = lagCount,\n                                         sample = sample,\n                                         bandwidth = tempBandwith)\n    meArray[,index] <- computeMEForTest(tParArray = tParArray,\n                                lag = lag,\n                                lagCount = lagCount,\n                                sample = sample,\n                                bandwidth = tempBandwith,\n                                nonCoverageProbability = nonCoverageProbability,\n                                allCorHats = corArray)\n  }\n  fileName <- paste(\"MEforBandWith\",\"Alpha\",nonCoverageProbability,\"SS\",sampleSize,sep = \"_\")\n  xlab <- \"TparArray\"\n  subTitle <- paste(xlab,\n    \"\\ntParCount= \", tParCount,\n    \", Alpha = \", nonCoverageProbability,\n    \", lag = \" , lag,\n    \", sampleS = \", sampleSize,\n    \"\\nAlpha, sample,SampleSize fixed\",\n    sep = \"\")\n\n  path <- doPath()\n  saveCVS(fileName = fileName,path = path,dataToSave = meArray)\n  saveJpg(fileName = fileName,path = path)\n  matplot(tParArray,meArray,type = \"l\",col = 1:length(bandwith),\n          xlab = \"\")\n  title(main = \"ME(t) for different bandwidth\",sub = subTitle)\n  legend(\"topright\",title = \"bandwith\",legend = bandwith,\n         fill = 1:length(bandwith))\n  graphics.off()\n}\ntest_that(\"testing saveMeForBandwithFunction\",{\n\n\n  saveMeForBandwithFunction()\n  cat(\" End of test saveMeForBandwithFunction\", \"\\n\")\n  cat(\"=========================================\")\n})\n\n",
+    "created" : 1507119397165.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2269214536",
+    "id" : "6D9E2CEB",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_82_saveMeForBandwithFunction.R",
+    "project_path" : "tests/testthat/tests_82_saveMeForBandwithFunction.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeMEbyCovHatFunction = function ()\n{\n\ncat(\"\\n Testing \\'tests_42_computeMEbyCovHatFunction\\' \\n\")\n\n\n  myNonCoverageProbability = 0.05\n  mySampleSize = 300\n  myTParCount = 10\n\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  # may be different\n\n  mockSample <- createSample(sampleSize = mySampleSize)\n\n  myLag = 1\n\n\n  errorIfNotInputCompatible(alpha = myNonCoverageProbability,sampleSize = mySampleSize,lag = myLag)\n\n  myLagCount = computeLagCount(lag=myLag,sampleSize = mySampleSize)\n\n\n  myKernel = normalDifferenceKernel\n\n  # form all rho hats\n  # first try fakes\n  mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,\n                                      lagCount = myLagCount,\n                                      sample = mockSample\n                                      )\n  Start=Sys.time()\n  me <- computeMEbyCovHat(tParArray = mockTParArray,\n                          lag = myLag,\n                          lagCount = myLagCount,\n                          sample = mockSample,\n\n                          nonCoverageProbability = myNonCoverageProbability,\n                          allCorHats = mockAllCorHats,\n                          C_K = -1.978325,\n                          # int_sq_der = 0.306951,\n                          PHI_K_NORMAL_DIFF = 0.4065)\n\n  End=Sys.time()\n  Duration=End-Start\n\n  # expect_that(mockBand, is_a(\"matrix\"))\n  # expect_that(dim(mockBand)[1], equals(2))  # the number of rows\n  # expect_that(dim(mockBand)[2], equals(10)) # the number of cols\n\n  cat(\"\\nme = \", me, \"\\n\")\n  cat(\"Duration= \",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",myTParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  cat(\"NonCoverageProbability= \",myNonCoverageProbability,\"\\n\")\n\n}\n\ntest_that(\"Testing \\'computeMEbyCovHat\\'\", {\n  computeMEbyCovHatFunction()\n  cat(\" End of test computeMEbyCovHat\",\"\\n\")\n  cat(\"=====================\")\n}\n)\n\n",
+    "created" : 1507119646095.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "705114997",
+    "id" : "9956C247",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_42_computeMEbyCovHat.R",
+    "project_path" : "tests/testthat/tests_42_computeMEbyCovHat.R",
+    "properties" : {
+    },
+    "relative_order" : 28,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

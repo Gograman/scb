@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveMeForSampleSizeFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_81_saveMeForSampleSize\\'\\n\")\n  sampleSize <- seq(10,150,by=100)\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount)\n  tParArrayCenter <- round(length(tParArray)/2,0)\n  nonCoverageProbability <- 0.2\n  lag <- 2\n  nMe <- 5\n  meCenterArray <- matrix(0,nrow = length(sampleSize),ncol = nMe)\n  for(indexCol in 1:nMe)\n  {\n    for(indexRow in 1:length(sampleSize))\n    {\n      errorIfNotInputCompatible(alpha = nonCoverageProbability,lag = lag,\n                                sampleSize = sampleSize[indexRow])\n      lagCount <- computeLagCount(sampleSize = sampleSize[indexRow],lag = lag)\n      sample <- createSample(sampleSize = sampleSize[indexRow])\n      allCor <- computeAllCorHats(tParArray = tParArray,lagCount = lagCount,sample = sample)\n      me <- computeMEbyCovHat(tParArray = tParArray,\n                              lag = lag,lagCount = lagCount,\n                              sample = sample,\n                              bandwidth = 0,\n                              nonCoverageProbability = nonCoverageProbability,\n                              allCorHats = allCor)\n      meCenterArray[indexRow,indexCol] <- me[tParArrayCenter]\n    }\n  }\n  fileName <- paste(\"MEforSampleSize\",\"Alpha\",nonCoverageProbability,sep = \"_\")\n\n  subTitle <- paste(\n                    \"tPar= \", tParArray[tParArrayCenter],\n                    \", Alpha = \", nonCoverageProbability,\n                    \", lag = \" , lag,\n                    sep = \"\")\n\n  path <- doPath()\n  saveCVS(fileName = fileName,path = path,dataToSave = meCenterArray)\n  saveJpg(fileName = fileName,path = path)\n  matplot(sampleSize,meCenterArray,type = \"l\",col = 1:nMe)\n  title(main = \"ME vs SampleSize, fixed alpha and T\",sub = subTitle)\n  graphics.off()\n}\ntest_that(\"testing saveMeForSampleSizeFunction\",{\n\n\n  saveMeForSampleSizeFunction()\n  cat(\" End of test saveMeForSampleSizeFunction\", \"\\n\")\n  cat(\"=========================================\")\n})\n",
+    "created" : 1507119399075.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "60180351",
+    "id" : "AAB11572",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_81_saveMeForSampleSizeFunction.R",
+    "project_path" : "tests/testthat/tests_81_saveMeForSampleSizeFunction.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

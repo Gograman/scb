@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "  computeNonCoverageFreqFunction <- function()\n\n  {\n    cat (\"\\n Testing \\'tests_63_computeNonCoverageFreq\\' \\n\")\n\n    myTParCount  <- 10\n    mockTParArray  <- createTParArray(tParCount = myTParCount)\n    myReplicationCount <- 5\n    mySampleSize <-100\n    mySuperReplicationCount <- 10\n    myLag <- 1\n    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)\n    trueCorArray <- computeCor(lag = myLag,tParArray = mockTParArray)\n\n    myKernel <- normalDifferenceKernel\n    myNonCoverageProbability <- 0.05\n\n    errorIfNotInputCompatible(alpha = myNonCoverageProbability,\n                              lag = myLag,sampleSize = mySampleSize)\n\n    Start=Sys.time()\n\n   nonCoverageFreq <- computeNonCoverageFreq(replicationCount = myReplicationCount,\n                                            sampleSize = mySampleSize,\n                                            lagCount = myLagCount,\n                                            lag = myLag,\n                                            tParArray = mockTParArray,\n                                            corArray = trueCorArray,\n                                            nonCoverageProbability = myNonCoverageProbability,\n                                            superReplicationCount = mySuperReplicationCount,\n                                            fileName = \"tests_63_computeNonCoverageFreq\")\nEnd=Sys.time()\nDuration=End-Start\n\n   cat(\"NonCoverageFreq:\", nonCoverageFreq)\n   cat(\"\\nDuration= \",Duration,\"\\n\")\n   cat(\"=====================\")\n   cat(\"\\nTest parameters :\",\"\\n\")\n   cat(\"SampleSize= \",mySampleSize,\"\\n\")\n   cat(\"TParCount= \",myTParCount,\"\\n\")\n   cat(\"Lag= \",myLag,\"\\n\")\n   cat(\"LagCount= \",myLagCount,\"\\n\")\n   cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n   cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n   cat(\"NonCoverageProbability= \",myNonCoverageProbability,\"\\n\")\n     cat(\"\\nEnd of test of computeNonCoverageFreq\",\"\\n\")\n     cat(\"=====================\")\n  }\n\n  test_that(\"computeNonCoverageFreq\", {\n    computeNonCoverageFreqFunction()\n  })\n\n",
+    "created" : 1507119685244.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2965445009",
+    "id" : "29EBDF88",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_63_computeNonCoverageFreq.R",
+    "project_path" : "tests/testthat/tests_63_computeNonCoverageFreq.R",
+    "properties" : {
+    },
+    "relative_order" : 33,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

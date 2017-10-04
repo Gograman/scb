@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveBetaLRVFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_79_saveBetaLRV\\'\\n\")\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount)\n  sampleSize <- 500\n  psi <- customCoefFunction(tParArray)\n  betaLrv <-1 + psi^2 / (1 + psi^2)^2\n  sample <- createSample(sampleSize)\n  lag <- 2\n  lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)\n  allCorHat <- computeAllCorHats(tParArray,lagCount,sample)\n  betaLrvHat<-computeBetaLRVHat(tParArray = tParArray,lag = lag,\n                                 sample = sample,allCorHats =  allCorHat)\n  fileName <- \"bettaLRVAndBettaLRVHat\"\n  subTitle <- paste(\"sampleSize = \", sampleSize,\n                    \", tParCount= \", tParCount,\n                    \", lag =\", lag,\n                    sep = \"\")\n  df <- data.frame(betaLrv,betaLrvHat)\n  max <- max(df)\n  min <- min(df)\n  path <- doPath()\n  saveCVS(fileName = fileName,path = path,dataToSave = df)\n  saveJpg(fileName = fileName,path = path)\n  plot(betaLrv ~ tParArray, type = \"l\",col = \"red\",ylim = c(min,max))\n  lineArray <- c(\"BetaLRV\",\"BetaLRVHat\")\n  legend(\"bottomright\",\n         title = \"LRV\",\n         lineArray,\n         fill = c(\"red\",\"blue\"))\n  lines(betaLrvHat~tParArray,col=\"blue\")\n  title(\"True BetaLRV And BetaLRVHat\",sub = subTitle)\n  graphics.off()\n}\ntest_that(\"testing saveBetaLRVFunction\",\n          {\n            saveBetaLRVFunction()\n            cat(\" End of test saveBetaLRVFunction\", \"\\n\")\n            cat(\"=========================================\")\n          })\n",
+    "created" : 1507119402369.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3109976914",
+    "id" : "5BC467D3",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_79_saveBetaLRV.R",
+    "project_path" : "tests/testthat/tests_79_saveBetaLRV.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

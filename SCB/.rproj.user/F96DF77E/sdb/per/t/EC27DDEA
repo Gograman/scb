@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "  createNonCoverageFreqDoubleArrayFunction <- function () {\n    cat(\"\\n Testing \\'tests_65_createNonCoverageFreqDoubleArray\\' \\n\")\n    myTParCount  <- 10\n    myTParArray  <- createTParArray(tParCount = myTParCount)\n    mySuperReplicationCount <- 3\n    myReplicationCount <- 6\n    mySampleSize <- 100\n    myLag <- 2\n    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)\n\n\n    nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)\n    Start=Sys.time()\n    doubleAlphaArray = createDoubleAlphaArray(\n      superReplicationCount = mySuperReplicationCount,\n      replicationCount = myReplicationCount,\n      sampleSize = mySampleSize,\n      alphaArray =nonCoverageProbabilities,\n      lag = myLag,\n      lagCount = myLagCount,\n      tParArray = myTParArray,\n      fileName = \"tests_65_createNonCoverageFreqDoubleArray\")\n    End=Sys.time()\n    duration=End-Start\n    cat(\"\\nDoubleAlphaHatArray= \",doubleAlphaArray)\n    cat(\"\\nAlphaArray: \",nonCoverageProbabilities)\n    cat(\"\\n size of double array= \",length(doubleAlphaArray))\n    cat(\"\\n Duration= \",duration,\"\\n\")\n    cat(\"=====================\")\n    cat(\"\\nTest parameters :\",\"\\n\")\n    cat(\"SampleSize= \",mySampleSize,\"\\n\")\n    cat(\"TParCount= \",myTParCount,\"\\n\")\n    cat(\"Lag= \",myLag,\"\\n\")\n    cat(\"LagCount= \",myLagCount,\"\\n\")\n    cat(\"ReplicationCount= \",myReplicationCount,\"\\n\")\n    cat(\"SuperReplicationCount= \",mySuperReplicationCount,\"\\n\")\n    # expect_that(mockBand, is_a(\"matrix\"))\n    # expect_that(dim(mockBand)[1], equals(2))  # the number of rows\n    # expect_that(dim(mockBand)[2], equals(10)) # the number of cols\n\n  }\n\n  test_that(\"Testing \\' createNonCoverageFreqDoubleArray\\'\", {\n    createNonCoverageFreqDoubleArrayFunction()\n  })\n",
+    "created" : 1507119690579.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1605677885",
+    "id" : "EC27DDEA",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_65_createNonCoverageFreqDoubleArray.R",
+    "project_path" : "tests/testthat/tests_65_createNonCoverageFreqDoubleArray.R",
+    "properties" : {
+    },
+    "relative_order" : 35,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeBetaLRVHatFunction = function () {\n  cat(\"\\n Testing \\'tests_41_computeBetaLRVHat\\' \\n\")\n  mySampleSize =8\n  myTParCount = 5\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  # may be different\n  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)\n\n  mockSample <- createSample(sampleSize = mySampleSize)\n  myLag = 1\n  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)\n\n  myLagCount = computeLagCount(mySampleSize,myLag)\n  myKernel = normalDifferenceKernel\n # form all rho hats\n  # first try fakes\n  mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,\n                                    lagCount = myLagCount,\n                                    sample = mockSample)\nStart=Sys.time()\n  mockBetaLRVHat <- computeBetaLRVHat(tParArray = mockTParArray,\n                                      lag = myLag,\n                                      sample = mockSample,\n                                      allCorHats = mockAllCorHats)\nEnd=Sys.time()\nDuration=End-Start\n\n  cat(\"mockBetaLRVHat[1:5] =\", mockBetaLRVHat[1:5], \"\\n\")\n  cat(\"Duration= \",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",myTParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  cat(\"LagCount= \",myLagCount,\"\\n\")\n\n  # expect_that(betaLRVHat, is_a(\"matrix\"))\n  # expect_that(dim(betaLRVHat)[1], equals(2))  # the number of rows\n  # expect_that(dim(betaLRVHat)[2], equals(10)) # the number of cols\n\n}\n\ntest_that(\"Testing \\'computeBetaLRVHat\\'\", {\n  computeBetaLRVHatFunction()\n  cat(\"End of test computeBetaLRVHat\",\"\\n\")\n  cat(\"=====================\")\n  }\n)\n\n\n\n",
+    "created" : 1507119643261.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1469125414",
+    "id" : "4AF18631",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_41_computeBetaLRVHat.R",
+    "project_path" : "tests/testthat/tests_41_computeBetaLRVHat.R",
+    "properties" : {
+    },
+    "relative_order" : 27,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

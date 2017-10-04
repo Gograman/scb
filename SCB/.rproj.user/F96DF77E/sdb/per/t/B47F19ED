@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "createBandsBrickFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_52_createBandsBrick\\'\\n\")\n  mySampleSize = 40\n  myTParCount = 2\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  # may be different\n  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)\n  myReplicationCount = 5\n  myLag = 1\n  myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)\n  myNonCoverageProbability = 0.05\n  errorIfNotInputCompatible(alpha = myNonCoverageProbability,\n                            lag = myLag,\n                            sampleSize = mySampleSize)\n  Start = Sys.time()\n  bandsBrick = createBandsBrick(\n    tParArray = mockTParArray,\n    lag = myLag,\n    lagCount = myLagCount,\n    sampleSize = mySampleSize,\n    nonCoverageProbability = myNonCoverageProbability,\n    replicationCount = myReplicationCount\n  )\n  End = Sys.time()\n  Duration = End - Start\n  cat(\"bandsArray\", bandsBrick[1:5])\n  cat(\"\\nDuration\", Duration, \"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\", \"\\n\")\n  cat(\"SampleSize= \", mySampleSize, \"\\n\")\n  cat(\"TParCount= \", myTParCount, \"\\n\")\n  cat(\"Lag= \", myLag, \"\\n\")\n  cat(\"LagCount= \", myLagCount, \"\\n\")\n  cat(\"ReplicationCount= \", myReplicationCount, \"\\n\")\n  cat(\"NonCoverageProbability= \", myNonCoverageProbability, \"\\n\")\n}\ntest_that(\"createBandsBrick\", {\n  createBandsBrickFunction()\n  cat(\"End of test createBandsBrick\", \"\\n\")\n  cat(\"=====================\")\n})\n",
+    "created" : 1507119656217.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3730397323",
+    "id" : "B47F19ED",
+    "lastKnownWriteTime" : 1507119670,
+    "last_content_update" : 1507119670378,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_52_createBandsBrick.R",
+    "project_path" : "tests/testthat/tests_52_createBandsBrick.R",
+    "properties" : {
+    },
+    "relative_order" : 30,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

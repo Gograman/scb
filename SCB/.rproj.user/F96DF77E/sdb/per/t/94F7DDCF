@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeAllCorHatsTestFunction = function () {\n  cat(\"\\n Testing \\'tests_33_computeAllCorHats\\' \\n\")\n  mySampleSize <- 62\n  myTParCount = 10\n  mockTParArray <- createTParArray(tParCount = myTParCount)\n  # may be different\n  mockTVMA1Array <- createTVMA1CoefArray(sampleSize = mySampleSize)\n\n  mockSample <- createSample(sampleSize = mySampleSize)\n\n  myLag = 3\n  myLagCount <- computeLagCount(mySampleSize,myLag)\n  myKernel = normalDifferenceKernel\n\n  errorIfNotInputCompatible(alpha = 0.1,lag = myLag, sampleSize = mySampleSize)\n  # form all rho hats\n  # first try fakes\n  Start=Sys.time()\n  mockAllCorHats <- computeAllCorHats(tParArray = mockTParArray,\n                                      lagCount = myLagCount,\n                                      sample = mockSample)\n  End=Sys.time()\n  Duration=End-Start\ncat(\"\\nAllCorHats\",mockAllCorHats)\ncat(\"\\nDuration\",Duration,\"\\n\")\ncat(\"=====================\")\ncat(\"\\nTest parameters :\",\"\\n\")\ncat(\"SampleSize= \",mySampleSize,\"\\n\")\ncat(\"TParCount= \",myTParCount,\"\\n\")\ncat(\"Lag= \",myLag,\"\\n\")\ncat(\"LagCount= \",myLagCount,\"\\n\")\n  # # print the first 9 elements. Hope, sizes are greater than 3.\n  # lag = 1 # actual or real lag = 0\n  # # mockCorHatsSecCol <- eval(parse(text = paste0(\"mockAllCorHats$`\", lag, \"`\")))\n  # mockCorHatsFirstCol <- eval(parse(text = paste0(\"mockAllCorHats[ , \", lag, \"]\")))\n  # cat(\"The first col of mockCorHats = \", mockCorHatsFirstCol, \"\\n\")\n  #\n  # lag = 2 # actual or real lag = 1\n  # # mockCorHatsSecCol <- eval(parse(text = paste0(\"mockAllCorHats$`\", lag, \"`\")))\n  # mockCorHatsSecCol <- eval(parse(text = paste0(\"mockAllCorHats[ , \", lag, \"]\")))\n  # cat(\"The second col of mockCorHats = \", mockCorHatsSecCol, \"\\n\")\n\n\n  # same but by steps does not work\n  # colRefName = paste0(\"mockCorHats$`\", lag, \"`\")\n  # parsedColRefName = parse (text = colRefName)\n  # evaluatedColumn = eval (parsedColRefName)\n  #\n  # cat(\"colRefName = \", colRefName, \"\\n\")\n  # cat(\"parsedColRefName = \", parsedColRefName, \"\\n\")\n  # cat(\"evaluatedColumn = \", evaluatedColumn, \"\\n\")\n\n}\n\ntest_that(\"Testing \\'computeAllCorHats\\'\",{\n          computeAllCorHatsTestFunction()\n            cat(\" End of test computeAllCorHats\",\"\\n\")\n            cat(\"=====================\")\n          })\n# lagIndexToRefer <- eval(parse(text = paste0(\"allCorHats$`\", lagIndex + 1, \"`\")))\n\n\n",
+    "created" : 1507119633999.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "149147089",
+    "id" : "94F7DDCF",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_33_computeAllCorHats.R",
+    "project_path" : "tests/testthat/tests_33_computeAllCorHats.R",
+    "properties" : {
+    },
+    "relative_order" : 24,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

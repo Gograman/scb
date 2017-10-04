@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "computeCorHatFunction = function () {\n  cat(\"\\n tests_32_Testing \\'computeCorHat\\' \\n\")\n\n  tParCount = 10\n  mySampleSize=100\n  mockTParArray <- createTParArray(tParCount = tParCount)\n  mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)\n\n  mockSample <- createSample(sampleSize = mySampleSize)\n  myLag = 1\n  myKernel = normalDifferenceKernel\n  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)\n  Start=Sys.time()\n  mockCorHat <- computeCorHat(tParArray = mockTParArray,\n                              lag = myLag,\n                              sample = mockSample)\n  End=Sys.time()\n  Duration=End-Start\n\n  cat(\"mockCorHat[1:5] = \", mockCorHat[1:5], \"\\n\")\n  cat (\"length(mockCorHat) = \", length(mockCorHat), \"\\n\")\n  cat(\"Duration= \",Duration,\"\\n\")\n  cat(\"=====================\")\n  cat(\"\\nTest parameters :\",\"\\n\")\n  cat(\"SampleSize= \",mySampleSize,\"\\n\")\n  cat(\"TParCount= \",tParCount,\"\\n\")\n  cat(\"Lag= \",myLag,\"\\n\")\n  expect_that(mockCorHat, is_a(\"numeric\"))\n\n  # expect_that(mockBand, is_a(\"matrix\"))\n  # expect_that(dim(mockBand)[1], equals(2))  # the number of rows\n  # expect_that(dim(mockBand)[2], equals(10)) # the number of cols\n\n}\n\ntest_that(\"Testing \\'computeCorHat\\'\", {\n  computeCorHatFunction()\n  cat(\" End of test computeCorHat\",\"\\n\")\n  cat(\"=====================\")\n}\n\n)\n",
+    "created" : 1507119632030.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1871708018",
+    "id" : "1382EFC0",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_32_computeCorHat.R",
+    "project_path" : "tests/testthat/tests_32_computeCorHat.R",
+    "properties" : {
+    },
+    "relative_order" : 23,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,3 +1,8 @@
+if(!require("lattice")) {
+  install.packages("lattice")
+}
+library(lattice)
+
 saveMe3DForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
@@ -44,7 +49,7 @@ saveMe3DForAlphaFunction <- function()
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  wireframe(meArray,row.values=tParArray,column.values=alphas,
+  lattice::wireframe(meArray,row.values=tParArray,column.values=alphas,
             xlab="tParArray",ylab = "NonCoverageProbability",
             scales=list(arrows=FALSE),
             screen = list(z=200,x=-75))

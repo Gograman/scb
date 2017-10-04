@@ -1,7 +1,7 @@
 if(!require("lattice")) {
   install.packages("lattice")
-  library(lattice)
 }
+library(lattice)
 
 saveMe3DForSampleSizeFunction <- function()
 {
@@ -49,7 +49,7 @@ saveMe3DForSampleSizeFunction <- function()
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  wireframe(meArray,row.values=sampleSize,column.values=alphas,
+  lattice::wireframe(meArray,row.values=sampleSize,column.values=alphas,
             xlab="sampleSize",ylab = "NonCoverageProbability",
             scales=list(arrows=FALSE),
             screen = list(z=250,x=-75))

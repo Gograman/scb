@@ -60,7 +60,7 @@ saveMeForAlphaFunction <- function()
   saveJpg(fileName = fileName,path = path)
   matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = " ME",xlab = "Tpar")
   title(main = "ME vs t par, fixed alpha",sub = subTitle)
-  dev.off()
+  graphics.off()
 }
 
 

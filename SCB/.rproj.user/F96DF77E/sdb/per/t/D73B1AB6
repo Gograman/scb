@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: SCB\nTitle: Computing confidence bands in a simulation process\nVersion: 0.0.0.1\nAuthors: Boris Garbuzov, Alexis Gaevsky\nMaintainer: Alexis Gaevsky <lionet@ukr.net>\nDescription: Computing confidence bands in a simulation process using S3 approach.\nDepends: R (>= 3.3.0)\nLicense: BSD\nURL: https://github.com/statistics101/scb\nEncoding: UTF-8\nLazyData: false\nRoxygenNote: 6.0.1\nImports: testthat, roxygen2, devtools, lattice, KernSmooth\nSuggests: knitr, rmarkdown\nVignetteBuilder: knitr\n\n",
+    "created" : 1507117108535.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "397341047",
+    "id" : "D73B1AB6",
+    "lastKnownWriteTime" : 1507117125,
+    "last_content_update" : 1507117125234,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}

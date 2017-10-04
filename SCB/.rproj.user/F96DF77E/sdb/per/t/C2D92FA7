@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "isAlphaCompatibleWithSampleSizeFunction<-function()\n{\n  cat(\"\\n Testing \\'tests_25_isAlphaCompatibleWithSampleSize\\' \\n\")\n  alphaArray <- seq(0.1,0.9,by = 0.01)\n  requredSampleSize <- numeric(length = length(alphaArray))\n  for(alphaIndex in 1:length(alphaArray))\n  {\n    requredSampleSize[alphaIndex] <- computeMinSampleSizeForAlpha(alpha = alphaArray[alphaIndex])\n  }\n  df <- cbind(alphaArray,requredSampleSize)\n  fileName <- \"testIsAlphaCompatibleWithSampleSize\"\n  saveJpg(fileName = fileName,doPath())\n  saveCVS(fileName = fileName,doPath(),df)\n  plot(requredSampleSize~alphaArray,type=\"l\")\n  graphics.off()\n}\n\ntest_that(\"Testing \\'isAlphaCompatibleWithSampleSize\\'\", {\n  isAlphaCompatibleWithSampleSizeFunction()\n  cat(\"\\n End of test isAlphaCompatibleWithSampleSize\", \"\\n\")\n  cat(\"=====================\")\n})\n",
+    "created" : 1507119627546.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2882651788",
+    "id" : "C2D92FA7",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_25_isAlphaCompatibleWithSampleSiz.R",
+    "project_path" : "tests/testthat/tests_25_isAlphaCompatibleWithSampleSiz.R",
+    "properties" : {
+    },
+    "relative_order" : 22,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

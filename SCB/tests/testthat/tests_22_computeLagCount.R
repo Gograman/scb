@@ -1,7 +1,7 @@
 if(!require("lattice")) {
   install.packages("lattice")
-  library(lattice)
 }
+library(lattice)
 
 
 computeLagCountFunction <- function()
@@ -34,11 +34,10 @@ computeLagCountFunction <- function()
 
 
 
-  wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
+  lattice::wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
             xlab="sampleSizes",ylab="Lags",
             screen = list(z=-300,x=-75),
             scales=list(arrows=FALSE))
-
   graphics.off()
 
 }

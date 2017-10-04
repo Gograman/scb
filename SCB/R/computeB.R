@@ -16,6 +16,7 @@
 
 computeB <- function (sampleSize)
 {
+  # -- Initial implementation --
   scaleConstant = 0.5
   degree = -0.4
   # degree should be between -1/2=-0.5 and -1/9=-0.11

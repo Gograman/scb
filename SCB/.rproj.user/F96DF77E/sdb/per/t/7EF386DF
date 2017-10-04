@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "saveCorAndCorHatFunction <- function()\n{\n  cat (\"\\n Testing \\'tests_80_saveCorAndCorHat\\'\\n\")\n  sampleSize <- 1000000\n  tParCount <- 10\n  tParArray <- createTParArray(tParCount = tParCount)\n\n\n  lag <- 1\n\n  nCorHat <- 5\n  corArray <- computeCor(lag,tParArray = tParArray)\n  corHatArray <- matrix(0,nrow=length(tParArray),ncol = nCorHat)\n  for(index in 1:nCorHat)\n  {\n    sample <- createSample(sampleSize = sampleSize)\n    bandWidth <- computeB(sampleSize = sampleSize)\n    corHatArray[,index] <- computeCorHat(tParArray = tParArray,\n                                         lag = lag,\n                                         sample = sample)\n  }\n  subTitle <- paste(\"sampleSize = \", sampleSize,\n                    \", tParCount= \", tParCount,\n                    \", lag =\", lag,\n                    sep = \"\")\n  path <- doPath()\n  fileName<-\"CorAndCorHat\"\n  tempFindMax <- cbind(corHatArray,corArray)\n  saveCVS(fileName = fileName,path = path,dataToSave = tempFindMax)\n  max <- max(tempFindMax)\n  min <- min(tempFindMax)\n  saveJpg(fileName = fileName,path = path)\n  matplot(tParArray,corHatArray,type = \"l\",col = \"blue\",ylim = c(min,max))\n  lines(tParArray,y=corArray,col=\"red\")\n  title(\"Cor and CorHat\",sub = subTitle)\n  graphics.off()\n}\ntest_that(\"testing saveCorAndCorHatFunction\",\n          {\n            saveCorAndCorHatFunction()\n            cat(\" End of test saveCorAndCorHatFunction\", \"\\n\")\n            cat(\"=========================================\")\n          })\n\n",
+    "created" : 1507119400939.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1446057687",
+    "id" : "7EF386DF",
+    "lastKnownWriteTime" : 1507112755,
+    "last_content_update" : 1507112755,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/tests/testthat/tests_80_saveCorAndCorHat.R",
+    "project_path" : "tests/testthat/tests_80_saveCorAndCorHat.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
