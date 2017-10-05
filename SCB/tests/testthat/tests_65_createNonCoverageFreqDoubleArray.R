@@ -4,7 +4,7 @@
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
-    mySampleSize <- 100
+    mySampleSize <- 10
     myLag <- 2
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 

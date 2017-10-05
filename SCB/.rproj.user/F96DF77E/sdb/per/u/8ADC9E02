@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "## List vignettes from all *installed* packages (can take long!):\nvignette()\n\n## Not run: \n## Open the grid intro vignette\n\nvignette(\"caret\")\n\n## The same\nv1 <- vignette(\"grid\")\nprint(v1)\n\n## Now let us have a closer look at the code\nedit(v1)\n\n## An alternative way of extracting the code,\n## R file is written to current working directory\nStangle(v1$file)\n\n## A package can have more than one vignette (package grid has several):\nvignette(package=\"grid\")\nvignette(\"rotated\")\n## The same, but without searching for it:\nvignette(\"rotated\", package=\"grid\")",
+    "created" : 1507207112827.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "172445189",
+    "id" : "8ADC9E02",
+    "lastKnownWriteTime" : 7813590796663464571,
+    "last_content_update" : 1507207137953,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#'\n#'@export\n\nsaveNonCoverageFreqArray <- function(nonCoverageProbability,\n                                     alphaHatArray,\n                                     sampleSize,\n                                     bandwidth,\n                                     replicationCount,\n                                     lag,\n                                     superReplicationCount,\n                                     fileName =\"\")\n{\n  bandwidth <- computeB(sampleSize = sampleSize)\n  fileName <- paste(fileName,\"NonCoverage\",sep = \"_\")\n\n  fileName <- paste(fileName, \"ss\", sampleSize, \"l\", lag, \"b\",round(bandwidth,1), sep = \"_\")\n  fileName <- paste(fileName, \"rC\", replicationCount,\"sC\", superReplicationCount, sep = \"_\")\n\n  xLab <- \"NonCoverageProbability\"\n\n  subTitle <- paste(xLab,\"\\nsampleSize = \",sampleSize,\", lag= \",lag,\", bandwidth = \",\n                    round(bandwidth,digits = 1 ),\n                    \",\\n replicationCount= \", replicationCount, \", 'SuperRep = \",\n                    superReplicationCount,sep = \"\")\n\n  path <- doPath()\n\n  saveJpg(fileName = fileName, path = path)\n\n  arrayOfXAplphaHat <- array(nonCoverageProbability,dim = (length(alphaHatArray)))\n\n  plot(x=c(0,1),y=c(0,1),type =\"n\",\n       xlab = \"\", ylab = \"Non coverage Frequency\")\n\n  title(main=\"Non Coverage Freq Array\",sub =subTitle)\n\n  abline(a = 0 , b =1)\n\n  points(x=nonCoverageProbability, y=0,col=\"blue\")\n  points(x=arrayOfXAplphaHat,y=alphaHatArray,col=\"red\")\n\n  legend(\"topleft\",c(\"Non Coverage Probability\",\"Non Coverage Frequency\"),fill = c(\"blue\",\"red\"))\n\n  dev.off()\n\n}\n",
+    "created" : 1507205485367.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1162666005",
+    "id" : "D915525C",
+    "lastKnownWriteTime" : 1507203839,
+    "last_content_update" : 1507203839,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/saveNonCoverageFreqArray.R",
+    "project_path" : "R/saveNonCoverageFreqArray.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

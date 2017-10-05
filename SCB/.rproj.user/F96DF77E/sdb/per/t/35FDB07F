@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"A general workflow\"\nauthor: \"Alexis Gaevsky\"\ndate: \"`r Sys.Date()`\"\noutput: rmarkdown::html_vignette\nvignette: >\n  %\\VignetteIndexEntry{Vignette Title}\n  %\\VignetteEngine{knitr::rmarkdown}\n  %\\VignetteEncoding{UTF-8}\n---\n\n## Starting out\nCreating an object of parameters as as list\n```{r}\nscbParams <- list(tParCount = 10,\n                  sampleSize = 10,\n                  mean = 0,\n                  sd = 1,\n                  u = seq(-10, 10, 0.1),\n                  lag = 2,\n                  nonCoverageProbability = 0.05,\n                  c_k = -1.978325,\n                  phi_k_norm_diff = 0.4065,\n                  alphaCount = 10,\n                  replicationCount = 10,\n                  superReplicationCount = 10,\n                  bwidth = 1)\n```\n\nTake a look at parameters\n```{r}\nscbParams\n```\n\n\n\n## Calling functions\n```{r}\nscbObject <- doAll(scbParams = scbParams)\n```\n\nTake a look at scbObject\n```{r}\nscbObject\n```\n\n\n",
+    "created" : 1507205705077.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4227977039",
+    "id" : "35FDB07F",
+    "lastKnownWriteTime" : 1507206708,
+    "last_content_update" : 1507206708360,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/vignettes/A_general_workflow.Rmd",
+    "project_path" : "vignettes/A_general_workflow.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

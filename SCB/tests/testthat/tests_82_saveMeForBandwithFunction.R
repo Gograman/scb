@@ -12,7 +12,7 @@ saveMeForBandwithFunction <- function()
     myPath <-"../util/meWithBreakedBandwidth.R"
   }
   source(myPath)
-  sampleSize <- 500
+  sampleSize <- 50
   bandwith <- seq(0.1,0.9,0.2)
   tParCount <- 10
   tParArray <- createTParArray(tParCount)

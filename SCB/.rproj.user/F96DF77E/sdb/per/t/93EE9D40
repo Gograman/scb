@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(\"KernSmooth\")\ndata(geyser, package = \"MASS\")\nx <- geyser$duration\nx\ny <- geyser$waiting\ny\nplot(x, y)\nh <- dpill(x, y)\nh\nfit <- locpoly(x, y, bandwidth = h)\nfit\nlines(fit)\n\n######################\n\ndata(geyser, package=\"MASS\")\nx <- geyser$duration\nx\nh <- dpik(x)\nh\nest <- bkde(x, bandwidth=h)\nplot(est,type=\"l\")\n\n\n\n######################\ndata(geyser, package=\"MASS\")\nx <- geyser$duration\nx\nplot(x)\nest <- bkde(x, bandwidth=0.25)\nest\nplot(est, type=\"l\")\n\n######################\n\ndata(geyser, package=\"MASS\")\nx <- geyser$duration\nx\nest <- bkfe(x, drv=4, bandwidth=0.3)\nest\n######################\n\n\ndata(geyser, package=\"MASS\")\nx <- geyser$duration\nh <- dpih(x)\nh\nbins <- seq(min(x)-h, max(x)+h, by=h)\nbins\nhist(x, breaks=bins)\n\n?geyser\n",
+    "created" : 1507207493268.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3710826051",
+    "id" : "93EE9D40",
+    "lastKnownWriteTime" : 1507207975,
+    "last_content_update" : 1507207975746,
+    "path" : "C:/Dropbox/Github/SCB-stat101/lab/kernsmooth_exercises.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

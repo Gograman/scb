@@ -1,7 +1,7 @@
 saveMe3DForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
-  sampleSize <- 200
+  sampleSize <- 20
   sample <- createSample(sampleSize = sampleSize)
 
   tParCount <- 8

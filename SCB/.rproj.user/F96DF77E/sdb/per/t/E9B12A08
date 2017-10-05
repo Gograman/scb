@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#'\n#'@export\n\nsaveCVS <- function(fileName, path, dataToSave)\n{\n  if(!dir.exists(path))\n  {\n    dir.create(path)\n  }\n\n  curTime <- Sys.time()\n  curTime <- gsub(\":\", \"-\", curTime)\n  curTime <- gsub(\" \", \"_\", curTime)\n  fileName <- gsub(\" \",\"_\", paste0(fileName, \"_\", curTime,\".csv\"))\n  fileName <- gsub(\":\",\"_\", fileName)\n  write.csv(dataToSave, paste0(path, \"/\", fileName))\n}\n",
+    "created" : 1507204921058.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "671774408",
+    "id" : "E9B12A08",
+    "lastKnownWriteTime" : 1507203839,
+    "last_content_update" : 1507203839,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/saveCVS.R",
+    "project_path" : "R/saveCVS.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

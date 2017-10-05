@@ -2,7 +2,7 @@ saveBandFuction <- function()
 {
   cat ("\n Testing \'tests_71_saveBand\'\n")
 
-  mySampleSize = 100
+  mySampleSize = 10
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   myLag = 2

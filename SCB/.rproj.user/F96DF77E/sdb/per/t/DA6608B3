@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#' @title computeNonCoverageFreqDist\n#'\n#' @name computeNonCoverageProbDist\n#'\n#' @aliases\n#'\n#' @description in a cycle for each alpha in array call NonCoverageFreqArray\n#'\n#'\n#' @param superReplicationCount superReplicationCount\n#' @param replicationCount a replication count.\n#' @param sampleSize a sample size.\n#' @param lag a lag value, true lag is lag - 1.\n#' @param tParArray a T parameter array\n#' @param bandwidth a bandwidth value.\n#' @param nonCoverageProbability probability of non-coverage.\n#'\n#' @return array of alpha hat\n#'\n#' @examples\n#' myTParCount  <-2\n#' myTParArray  <- createTParArray(tParCount = myTParCount)\n#'mySuperReplicationCount <- 4\n#'myReplicationCount <- 4\n#'mySampleSize <- 50\n#'myLag <- 1\n#'myLagCount <- 4\n#'myNonCoverageProbability <- 0.05\n#'nonCoverageFreqArray <- computeNonCoverageFreqArray(\n#'superReplicationCount = mySuperReplicationCount,\n#' replicationCount = myReplicationCount,\n#'  sampleSize = mySampleSize,\n#' lag = myLag,\n#'lagCount = myLagCount,\n#'  tParArray = myTParArray,\n#' bandwidth = myBandwidth,\n#' nonCoverageProbability = myNonCoverageProbability)\n#'\n#'@export\n\n\n\ncomputeNonCoverageFreqArray  <- function(superReplicationCount,\n                                        replicationCount,\n                                        sampleSize,\n                                        lag,\n                                        lagCount,\n                                        tParArray,\n                                        nonCoverageProbability,\n                                        fileName = \"\") {\n\n  bandwidth = computeB(sampleSize = sampleSize)\n  alphaHatArray <- array(0, dim = superReplicationCount)\n\n  corArray <- computeCor(lag = lag,tParArray = tParArray)\n\n  for (superIndex in 1:superReplicationCount) {\n\n    cat(\"\\n Now super index =\",superIndex)\n\n    alphaHatArray[superIndex] <- computeNonCoverageFreq(replicationCount=replicationCount,\n                                                        sampleSize = sampleSize,\n                                                        lag = lag,\n                                                        tParArray = tParArray,\n                                                        corArray = corArray,\n                                                        lagCount = lagCount,\n                                                        nonCoverageProbability = nonCoverageProbability,\n                                                        superReplicationCount = superReplicationCount,\n                                                        fileName = fileName)\n\n  }\n\n\n\n\n\n\n   saveNonCoverageFreqArray(nonCoverageProbability = nonCoverageProbability,\n                            alphaHatArray = alphaHatArray,\n                            sampleSize = sampleSize, bandwidth = bandwidth,\n                            replicationCount = replicationCount, lag = lag,\n                            superReplicationCount = superReplicationCount,\n                            fileName = fileName)\n\n  alphaHatArray\n\n\n\n}\n\n",
+    "created" : 1507204985379.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "531788864",
+    "id" : "DA6608B3",
+    "lastKnownWriteTime" : 1507205048,
+    "last_content_update" : 1507205048739,
+    "path" : "C:/Dropbox/Github/SCB-stat101/SCB/R/computeNonCoverageFreqArray.R",
+    "project_path" : "R/computeNonCoverageFreqArray.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

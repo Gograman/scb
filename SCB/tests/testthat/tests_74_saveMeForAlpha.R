@@ -1,7 +1,7 @@
 saveMeForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_74_saveMeForAlpha\'\n")
-  sampleSize <- 100
+  sampleSize <- 10
   sample <- createSample(sampleSize = sampleSize)
 
   nMe <- 5
