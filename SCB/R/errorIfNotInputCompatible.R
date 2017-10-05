@@ -36,7 +36,8 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
             lagErrorMessage <- "\nSampleSize is not compatible with lag:\n"
             lagErrorMessage <- paste(lagErrorMessage, "lag = ",lag,maxRequiredLag,sep = "")
     }
-    warning ("\n Stop execution", lagErrorMessage,"\n",alphaErrorMessage,"\n",
+    warning (
+      lagErrorMessage,"\n",alphaErrorMessage,"\n",
           "sampleSize = ",sampleSize)
   }
 

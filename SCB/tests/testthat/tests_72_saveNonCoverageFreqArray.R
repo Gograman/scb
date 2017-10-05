@@ -27,7 +27,7 @@ saveNonCoverageFreqArrayFunction <- function()
 
   nonCoverageProbability <- myNonCoverageProbability
   alphaHatArray <- nonCoverageFreqArray
-
+Start=Sys.time()
   saveNonCoverageFreqArray(nonCoverageProbability = nonCoverageProbability,
                            alphaHatArray = alphaHatArray,
                            sampleSize = mySampleSize,
