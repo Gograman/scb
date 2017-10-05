@@ -65,9 +65,9 @@ computeIsCovered <- function(band,
     }
     if (corArray[tParIndex] <= upperBound[tParIndex] &
         corArray[tParIndex] >= lowerBound[tParIndex])
-      {
-        isCoveredArrayByT[tParIndex] <- 1
-      }
+    {
+      isCoveredArrayByT[tParIndex] <- 1
+    }
   }
 
   isCoveredArrayByT <- prod(isCoveredArrayByT)

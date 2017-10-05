@@ -4,9 +4,12 @@ x <- geyser$duration
 x
 y <- geyser$waiting
 y
+head (y)
+head (x)
 plot(x, y)
 h <- dpill(x, y)
 h
+h = 0.05
 fit <- locpoly(x, y, bandwidth = h)
 fit
 lines(fit)

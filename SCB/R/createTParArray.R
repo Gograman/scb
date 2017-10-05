@@ -20,7 +20,7 @@ createTParArray <- function(tParCount)
 {
   if(tParCount <= 1)
   {
-    stop("\ntParCount less or eqal than 1")
+    stop("\ntParCount is 1 or smaller, whereas it should be 2 or greater")
   }
   tParCount <- tParCount - 1
 
