@@ -1,4 +1,0 @@
-"0","scbObject <- doAll(scbParams = scbParams)
-"
-"2","Error in kernel(0/bandwidth) : coefficients do not add to 1
-"
