@@ -10,7 +10,7 @@ saveCorAndCorHatFunction <- function()
 
   nCorHat <- 5
 
-  saveCorAndCorHat(sampleSize = sampleSize,
+  testUtilSaveCorAndCorHat(sampleSize = sampleSize,
                    tParCount = tParCount,
                    lag = lag,
                    nCorHat = nCorHat)

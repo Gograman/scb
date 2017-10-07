@@ -1,4 +1,4 @@
-saveAlphaHatOfSampleSize <- function(sampleSize,
+testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
                                      nonCoverageProbability,
                                      tParCount,
                                      lag,

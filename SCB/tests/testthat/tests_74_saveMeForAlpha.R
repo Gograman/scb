@@ -15,7 +15,7 @@ saveMeForAlphaFunction <- function()
   errorIfNotInputCompatible(alpha = nonCoverageProbability,
                             lag = lag,sampleSize = sampleSize)
 
-  saveMeForAlpha(sampleSize = sampleSize,
+  testUtilSaveMeForAlpha(sampleSize = sampleSize,
                  sample = sample,
                  nME = nMe,
                  nonCoverageProbability = nonCoverageProbability,

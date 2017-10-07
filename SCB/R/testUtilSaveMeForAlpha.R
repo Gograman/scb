@@ -1,4 +1,4 @@
-saveMeForAlpha <- function(sampleSize,
+testUtilSaveMeForAlpha <- function(sampleSize,
                            sample,
                            nME,
                            nonCoverageProbability,

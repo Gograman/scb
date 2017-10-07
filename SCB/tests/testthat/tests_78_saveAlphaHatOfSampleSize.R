@@ -17,7 +17,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
 
   fileName = "tests_78_saveAlphaHatOfSampleSize"
 
-  saveAlphaHatOfSampleSize(sampleSize = sampleSize,
+  testUtilSaveAlphaHatOfSampleSize(sampleSize = sampleSize,
                            nonCoverageProbability = nonCoverageProbability,
                            tParCount = tParCount,
                            lag = lag,

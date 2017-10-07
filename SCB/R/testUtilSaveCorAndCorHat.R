@@ -1,4 +1,4 @@
-saveCorAndCorHat <- function(sampleSize,
+testUtilSaveCorAndCorHat <- function(sampleSize,
                              tParCount,
                              lag,
                              nCorHat)

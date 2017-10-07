@@ -1,4 +1,4 @@
-saveMeForSampleSize <- function(sampleSize,
+testUtilSaveMeForSampleSize <- function(sampleSize,
                                 tParCount,
                                 nonCoverageProbability,
                                 lag,

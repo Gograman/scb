@@ -8,11 +8,11 @@ saveMeForSampleSizeFunction <- function()
   lag <- 2
   nMe <- 5
 
-  saveMeForSampleSize(sampleSize = sampleSize,
-                      tParCount = tParCount,
-                      nonCoverageProbability = nonCoverageProbability,
-                      lag = lag,
-                      nMe = nMe)
+  testUtilSaveMeForSampleSize(sampleSize = sampleSize,
+                              tParCount = tParCount,
+                              nonCoverageProbability = nonCoverageProbability,
+                              lag = lag,
+                              nMe = nMe)
 
 }
 test_that("testing saveMeForSampleSizeFunction",{

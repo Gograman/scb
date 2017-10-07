@@ -1,4 +1,4 @@
-saveBetaLRVToLag2<-function(sampleSize,
+testUtilSaveBetaLRVToLag2<-function(sampleSize,
                             tParCount)
 {
   lag = 2
