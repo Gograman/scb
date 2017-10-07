@@ -35,7 +35,7 @@ computeBetaLRVHat  <- function(tParArray,
   tParCount = length(tParArray)
   sampleSize = length(sample)
   #cat("\nSampleSize",sampleSize)
-  termCount = floor(2 * sampleSize ^ (4/15)) # aka L
+  termCount = computeTermCount(sampleSize = sampleSize) # aka L
   #cat("\ntermCount",termCount)
   # check sizes
   # if (lag > sampleSize - 1 - termCount) {
