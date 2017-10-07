@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/MKS/scb/SCB/R/computeB.R="3B181904"
 C:/Users/MKS/scb/SCB/R/computeBetaLRVHat.R="8A194788"
 C:/Users/MKS/scb/SCB/R/computeTermCount.R="713BA212"
@@ -29,3 +30,7 @@ C:/Users/MKS/scb/SCB/tests/testthat/tests_80_saveCorAndCorHat.R="655B66FF"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_81_saveMeForSampleSizeFunction.R="DA6AC4CA"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_82_saveMeForBandwithFunction.R="3BAB07C4"
 C:/Users/MKS/scb/util/meWithBreakedBandwidth.R="96DDFA60"
+=======
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/vignettes/A_general_workflow.Rmd="6DE23756"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/vignettes/CutsomVignette.Rmd="A741E77E"
+>>>>>>> 6ada865550209f53623b29eed9d709281bca7e9f
