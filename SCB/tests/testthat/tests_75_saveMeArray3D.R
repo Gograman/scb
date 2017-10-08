@@ -9,11 +9,10 @@ saveMe3DForAlphaFunction <- function()
 
   lag <- 2
 
-  testUtilSaveMesaveMe3DForBandwidth(sampleSize = sampleSize,
+  testUtilsaveMe3DForAlpha(sampleSize = sampleSize,
                                      tParCount = tParCount,
                                      alphas = alphas,
-                                     lag = lag,
-                                     bandwidth = bandwidth)
+                                     lag = lag)
 
 
 

@@ -7,7 +7,8 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
     alpha = alpha, sampleSize = sampleSize)
   isLagCompatible = isLagCompatibleWithSampleSize (
     lag = lag, sampleSize = sampleSize)
-  isCompatible = isAlphaCompatible & isLagCompatible
+  isBandwidthCompatible = isBandwidthCompatibleWithSampleSize(sampleSize = sampleSize)
+  isCompatible = isAlphaCompatible & isLagCompatible & isBandwidthCompatible
 
   isLagZeroCompatibl <- isLagZeroCompatible(lag = lag)
 
@@ -35,6 +36,15 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
                                     sep = " ")
             lagErrorMessage <- "\nSampleSize is not compatible with lag:\n"
             lagErrorMessage <- paste(lagErrorMessage, "lag = ",lag,maxRequiredLag,sep = "")
+    }
+    if(!isBandwidthCompatible)
+    {
+            minRequiredSampleSize <- paste("\nMin sampleSize you can use with this bandwidth is =",
+                                      computeMinSampleSizeForBandwidth(),sep=" ")
+            bandwidthErrorMessage <- "\nSampleSize is not compatible with bandwidth:\n"
+            bandwidthErrorMessage <- paste(bandwidthErrorMessage, "degree = ", getDegree(),
+                                           " ,scaleConstant = ", getScaleConstant(),
+                                           minRequiredSampleSize,sep = "")
     }
     warning (
       lagErrorMessage,"\n",alphaErrorMessage,"\n",

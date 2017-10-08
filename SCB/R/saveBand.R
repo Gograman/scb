@@ -18,11 +18,13 @@ saveBand <- function(band,
                                   middle = middle,
                                   upper  = band[, 2],
                                   corArray = corArray)
-  globMin <- min(apply(consolidatedBands, 2, min))
-  globMax <- max(apply(consolidatedBands, 2, max))
-  globSd <- max(apply(consolidatedBands, 2, sd))
-  yMinMargin <- globMin - 2 * globSd
-  yMaxMargin <- globMax + 4 * globSd
+  #globMin <- min(apply(consolidatedBands, 2, min))
+  #globMax <- max(apply(consolidatedBands, 2, max))
+  #globSd <- max(apply(consolidatedBands, 2, sd))
+  #yMinMargin <- globMin - 2 * globSd
+  #yMaxMargin <- globMax + 4 * globSd
+  yMinMargin <- min(consolidatedBands)
+  yMaxMargin <- max(consolidatedBands)
   # forming filenames
   fileName <- paste(fileName,"Band&Cor",sep = "_")
   fileName <- paste(fileName,
@@ -74,6 +76,8 @@ saveBand <- function(band,
        ylab = "Correlation",
        yaxs = "i")
   title(main = "Band and Correlation", sub = subTitle)
+  abline(v=bandwidth,lty=5)
+  abline(v=(1-bandwidth),lty=5)
   lines(x = tParArray, y = consolidatedBands$middle, type = "l", col = "brown")
   lines(x = tParArray, y = consolidatedBands$upper, type = "l", col = "green")
   lines(x = tParArray, y = consolidatedBands$corArray, type = "l", col = "red")

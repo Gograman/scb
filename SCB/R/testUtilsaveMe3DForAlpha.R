@@ -1,6 +1,7 @@
 testUtilsaveMe3DForAlpha <- function(sampleSize,
                                      tParCount,
-                                     lag)
+                                     lag,
+                                     alphas)
 {
   meArray <- matrix(nrow = length(tParArray),ncol = length(alphas))
 

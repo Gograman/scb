@@ -7,7 +7,7 @@ if(!require("lattice")) {
 saveMe3DForBandwidthFunction <- function()
 {
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")
-  sampleSize <- 200
+  sampleSize <- 20
 
 
   tParCount <- 10

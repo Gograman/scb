@@ -16,8 +16,8 @@
 
 computeB <- function (sampleSize)
 {
-  scaleConstant = 1
-  degree = -0.12
+  scaleConstant = getScaleConstant()
+  degree = getDegree()
   # degree should be between -1/2=-0.5 and -1/9=-0.11
   # if it undercovers or alpha hat is too big, it means ME is too small
   # If ME is too small, so bandwidth is too big
@@ -26,9 +26,9 @@ computeB <- function (sampleSize)
   # It was -0.2 before. Now we try -0.4
   # The scaleConstant was =1, now we change it to 0.5
   b <- scaleConstant * sampleSize ^ degree
-  if(b>=0.5)
-  {
-    warning("bandwith too large. Alpha be equal to 0")
-  }
+  #if(b>=0.5)
+  #{
+  #  warning("bandwith too large. Alpha be equal to 0")
+  #}
   return(b)
 }

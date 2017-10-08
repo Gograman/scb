@@ -1,7 +1,7 @@
 saveAlphaHatOfSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_78_saveAlphaHatOfSampleSize\'\n")
-  sampleSize <- seq(10,110,by=100)
+  sampleSize <- seq(10,110,by=10)
 
   nonCoverageProbability <- 0.1
 

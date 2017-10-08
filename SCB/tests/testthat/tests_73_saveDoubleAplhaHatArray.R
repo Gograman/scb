@@ -5,7 +5,7 @@ saveDoubleAplhaHatArrayFunction <- function()
   myTParArray  <- createTParArray(tParCount = myTParCount)
   mySuperReplicationCount <- 6
   myReplicationCount <- 7
-  sampleSize <- 500
+  sampleSize <- 20
   myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
