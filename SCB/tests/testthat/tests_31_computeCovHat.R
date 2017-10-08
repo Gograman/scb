@@ -2,13 +2,14 @@ computeCovHatFunction = function ( ) {
   cat("\n Testing \'tests_31_computeCovHat\' \n")
   tParCount=10
   tParArray=createTParArray(tParCount = tParCount)
-  mySampleSize=10
+  alpha <- 0.1
+  mySampleSize=computeMinSampleSize(alpha)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
   mockSample <- createSample(sampleSize = mySampleSize)
 
 
   myLag = 1
-  errorIfNotInputCompatible(alpha = 0.1,sampleSize = mySampleSize,lag = myLag)
+  errorIfNotInputCompatible(alpha = alpha,sampleSize = mySampleSize,lag = myLag)
   myKernel = normalDifferenceKernel
 
   Start=Sys.time()

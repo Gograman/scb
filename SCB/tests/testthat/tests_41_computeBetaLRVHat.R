@@ -1,6 +1,7 @@
 computeBetaLRVHatFunction = function () {
   cat("\n Testing \'tests_41_computeBetaLRVHat\' \n")
-  mySampleSize =8
+  alpha <- 0.1
+  mySampleSize = computeMinSampleSize(alpha)
   myTParCount = 5
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -8,7 +9,7 @@ computeBetaLRVHatFunction = function () {
 
   mockSample <- createSample(sampleSize = mySampleSize)
   myLag = 1
-  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  errorIfNotInputCompatible(alpha = alpha,lag = myLag,sampleSize = mySampleSize)
 
   myLagCount = computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel

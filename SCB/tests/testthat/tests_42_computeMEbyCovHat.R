@@ -5,7 +5,7 @@ cat("\n Testing \'tests_42_computeMEbyCovHatFunction\' \n")
 
 
   myNonCoverageProbability = 0.05
-  mySampleSize = 300
+  mySampleSize = computeMinSampleSize(myNonCoverageProbability)
   myTParCount = 10
 
   mockTParArray <- createTParArray(tParCount = myTParCount)

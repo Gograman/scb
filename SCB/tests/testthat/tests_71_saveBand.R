@@ -1,14 +1,14 @@
 saveBandFuction <- function()
 {
   cat ("\n Testing \'tests_71_saveBand\'\n")
-
-  mySampleSize = 10
+  myNonCoverageProbability = 0.2
+  mySampleSize = computeMinSampleSize(alpha = myNonCoverageProbability)
   myTParCount = 20
   mockTParArray <- createTParArray(tParCount = myTParCount)
   myLag = 1
   myLagCount = computeLagCount(lag = myLag,
                                sampleSize = mySampleSize)
-  myNonCoverageProbability = 0.2
+
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
 

@@ -2,8 +2,10 @@ createBootstrapMultiplierFunction <- function () {
   cat("\n Testing \'createBootstrapMultiplier\' \n")
 
   myKernel = normalDifferenceKernel
-
-  mySampleSize = 10
+  alpha <- 0.05
+  lag <- 1
+  mySampleSize = computeMinSampleSize(alpha)
+  errorIfNotInputCompatible(alpha,lag = lag,mySampleSize)
   myBandwidth <- computeB(sampleSize = mySampleSize)
   mockBootstrapMultiplier <- createBootstrapMultiplier(kernel = myKernel,
                                                        bandwidth = myBandwidth,

@@ -1,6 +1,7 @@
 computeAllCorHatsTestFunction = function () {
   cat("\n Testing \'tests_33_computeAllCorHats\' \n")
-  mySampleSize <- 62
+  alpha <- 0.1
+  mySampleSize <- computeMinSampleSize(alpha)
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -12,7 +13,7 @@ computeAllCorHatsTestFunction = function () {
   myLagCount <- computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
 
-  errorIfNotInputCompatible(alpha = 0.1,lag = myLag, sampleSize = mySampleSize)
+  errorIfNotInputCompatible(alpha = alpha,lag = myLag, sampleSize = mySampleSize)
   # form all rho hats
   # first try fakes
   Start=Sys.time()

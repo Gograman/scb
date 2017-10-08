@@ -1,7 +1,10 @@
 createBFunction<-function(sampleSize=5)
 {
   cat("\n Testing \'tests_04_createB\' \n")
-  mySampleSize = sampleSize
+  lag <- 1
+  alpha <- 0.05
+  mySampleSize = computeMinSampleSize(alpha = alpha)
+  errorIfNotInputCompatible(alpha = alpha,lag = lag,mySampleSize)
   Start=Sys.time()
   b <- computeB(mySampleSize)
   End=Sys.time()

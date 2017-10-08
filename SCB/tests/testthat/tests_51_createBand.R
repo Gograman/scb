@@ -1,7 +1,8 @@
 createBandFunction <- function()
 {
   cat("\n Testing \'tests_51_createBand\' \n ")
-  mySampleSize = 10
+  myNonCoverageProbability = 0.05
+  mySampleSize = computeMinSampleSize(alpha = myNonCoverageProbability)
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -10,7 +11,7 @@ createBandFunction <- function()
   myLag = 5
   myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
-  myNonCoverageProbability = 0.05
+
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   Start = Sys.time()
   mySample <- createSample(sampleSize = mySampleSize)

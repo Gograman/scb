@@ -7,13 +7,15 @@ if(!require("lattice")) {
 saveMe3DForBandwidthFunction <- function()
 {
   cat ("\n Testing \'tests_76_saveMe3DForBandwidth\'\n")
-  sampleSize <- 20
+  alphas <- seq(0.1,0.9,by = 0.1)
+  maxAlpha <- max(alphas)
+  sampleSize <- computeMinSampleSize(maxAlpha)
 
 
   tParCount <- 10
 
 
-  alphas <- seq(0.1,0.9,by = 0.1)
+
 
   lag <- 1
 

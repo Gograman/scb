@@ -1,14 +1,14 @@
 computeNonCoverageFreqArrayFunction <- function() {
   cat("\n Testing \'tests_64_computeNonCoverageFreqArray\' \n")
-
+  myNonCoverageProbability <- 0.05
   myTParCount  <-5
   myTParArray  <- createTParArray(tParCount = myTParCount)
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
-  mySampleSize <- 13
+  mySampleSize <- computeMinSampleSize(myNonCoverageProbability)
   myLag <- 5
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
-  myNonCoverageProbability <- 0.05
+
 
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
                             lag = myLag,sampleSize = mySampleSize)

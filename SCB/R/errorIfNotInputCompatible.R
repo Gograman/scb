@@ -47,7 +47,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
                                            minRequiredSampleSize,sep = "")
     }
     warning (
-      lagErrorMessage,"\n",alphaErrorMessage,"\n",
+      lagErrorMessage,"\n",alphaErrorMessage,"\n",bandwidthErrorMessage,"\n",
           "sampleSize = ",sampleSize)
   }
 

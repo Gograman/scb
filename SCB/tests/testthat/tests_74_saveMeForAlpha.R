@@ -1,12 +1,13 @@
 saveMeForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_74_saveMeForAlpha\'\n")
-  sampleSize <- 10
+  nonCoverageProbability <- 0.1
+  sampleSize <- computeMinSampleSize(nonCoverageProbability)
   sample <- createSample(sampleSize = sampleSize)
 
   nMe <- 5
 
-  nonCoverageProbability <- 0.1
+
 
   lag <- 2
 

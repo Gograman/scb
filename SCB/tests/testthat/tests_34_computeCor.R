@@ -2,11 +2,12 @@ computeCorTestFunction = function () {
   cat("\n Testing \'tests_34_computeCor\' \n")
 
   myTParCount = 10
+  alpha <- 0.1
   myLag = 1
-  mySampleSize=40
+  mySampleSize <- computeMinSampleSize(alpha)
   myKernel = normalDifferenceKernel
 
-  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  errorIfNotInputCompatible(alpha = alpha,lag = myLag,sampleSize = mySampleSize)
 
   mockTParArray <- createTParArray(tParCount = myTParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)

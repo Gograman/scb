@@ -1,8 +1,10 @@
 createMultiplierCovarianceByKernelFunction <- function () {
   cat("\n Testing \'createMultiplierCovarianceByKernel\' \n")
   myKernel = normalDifferenceKernel
-
-  mySampleSize = 10
+  alpha <- 0.05
+  lag <- 1
+  mySampleSize = computeMinSampleSize(alpha)
+  errorIfNotInputCompatible(alpha,lag = lag,mySampleSize)
   myBandwidth <- computeB(sampleSize = mySampleSize)
   mockMultiplierCovarianceByKernel <- createMultiplierCovarianceByKernel(kernel = myKernel,
                                                                          bandwidth = myBandwidth,

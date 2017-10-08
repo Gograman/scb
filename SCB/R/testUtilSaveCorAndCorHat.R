@@ -3,6 +3,7 @@ testUtilSaveCorAndCorHat <- function(sampleSize,
                              lag,
                              nCorHat)
 {
+
   tParArray <- createTParArray(tParCount = tParCount)
 
   corArray <- computeCor(lag,tParArray = tParArray)

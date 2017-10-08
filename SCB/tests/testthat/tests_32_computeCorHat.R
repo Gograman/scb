@@ -2,14 +2,15 @@ computeCorHatFunction = function () {
   cat("\n tests_32_Testing \'computeCorHat\' \n")
 
   tParCount = 10
-  mySampleSize=100
+  alpha <- 0.1
+  mySampleSize <- computeMinSampleSize(alpha)
   mockTParArray <- createTParArray(tParCount = tParCount)
   mockTVMA1CoefArray <- createTVMA1CoefArray(sampleSize = mySampleSize)
 
   mockSample <- createSample(sampleSize = mySampleSize)
   myLag = 1
   myKernel = normalDifferenceKernel
-  errorIfNotInputCompatible(alpha = 0.1,lag = myLag,sampleSize = mySampleSize)
+  errorIfNotInputCompatible(alpha = alpha,lag = myLag,sampleSize = mySampleSize)
   Start=Sys.time()
   mockCorHat <- computeCorHat(tParArray = mockTParArray,
                               lag = myLag,

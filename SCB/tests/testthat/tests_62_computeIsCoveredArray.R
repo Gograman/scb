@@ -1,8 +1,8 @@
 computeIsCoveredArrayFunction <- function()
 {
   cat("\n Testing \'tests_62_computeIsCoveredArray\'\n")
-
-  mySampleSize=10
+  myNonCoverageProbability <- 0.05
+  mySampleSize=computeMinSampleSize(myNonCoverageProbability)
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -12,7 +12,7 @@ computeIsCoveredArrayFunction <- function()
 
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
   mySuperReplicationCount <- 3
-  myNonCoverageProbability <- 0.05
+
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
                             lag = myLag,sampleSize = mySampleSize)
 

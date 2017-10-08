@@ -1,10 +1,11 @@
   createNonCoverageFreqDoubleArrayFunction <- function () {
     cat("\n Testing \'tests_65_createNonCoverageFreqDoubleArray\' \n")
     myTParCount  <- 10
+    myMaxAlpha <- 0.8
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
-    mySampleSize <- 10
+    mySampleSize <- computeMinSampleSize(myMaxAlpha)
     myLag <- 2
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 

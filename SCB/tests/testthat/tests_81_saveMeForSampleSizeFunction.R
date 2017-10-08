@@ -1,10 +1,13 @@
 saveMeForSampleSizeFunction <- function()
 {
   cat ("\n Testing \'tests_81_saveMeForSampleSize\'\n")
-  sampleSize <- seq(10,150,by=100)
+
   tParCount <- 10
 
   nonCoverageProbability <- 0.2
+  minSampleSize <- computeMinSampleSize(nonCoverageProbability)
+  maxSampleSize <- minSampleSize + 150
+  sampleSize <- seq(minSampleSize,maxSampleSize,by=100)
   lag <- 2
   nMe <- 5
 

@@ -1,12 +1,14 @@
 saveCorAndCorHatFunction <- function()
 {
   cat ("\n Testing \'tests_80_saveCorAndCorHat\'\n")
-  sampleSize <- 100
+  alpha <- 0.1
+  sampleSize <- computeMinSampleSize(alpha)
   tParCount <- 10
 
 
 
   lag <- 1
+  errorIfNotInputCompatible(alpha, lag = lag,sampleSize = sampleSize)
 
   nCorHat <- 5
 

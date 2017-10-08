@@ -1,7 +1,8 @@
 createBandsBrickFunction <- function()
 {
   cat ("\n Testing \'tests_52_createBandsBrick\'\n")
-  mySampleSize=40
+  myNonCoverageProbability=0.05
+  mySampleSize=computeMinSampleSize(myNonCoverageProbability)
   myTParCount = 2
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -9,7 +10,7 @@ createBandsBrickFunction <- function()
   myReplicationCount=5
   myLag = 1
   myLagCount = computeLagCount(lag = myLag,sampleSize = mySampleSize)
-  myNonCoverageProbability=0.05
+
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
 Start=Sys.time()
 bandsBrick=createBandsBrick(tParArray=mockTParArray,

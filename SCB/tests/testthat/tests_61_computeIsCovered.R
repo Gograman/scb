@@ -1,8 +1,8 @@
 computeIsCoveredFunction = function()
 {
   cat ("\n Testing \'tests_61_computeIsCovered\'\n")
-
-  mySampleSize = 100
+  myNonCoverageProbability = 0.05
+  mySampleSize = computeMinSampleSize(myNonCoverageProbability)
   myTParCount = 10
   mockTParArray <- createTParArray(tParCount = myTParCount)
   # may be different
@@ -16,7 +16,7 @@ computeIsCoveredFunction = function()
 
   myLagCount =computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
-  myNonCoverageProbability = 0.05
+
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,lag = myLag,sampleSize = mySampleSize)
   fileName <- paste("ss", mySampleSize, "l", myLag, "alpha"
                     , myNonCoverageProbability, sep = "_")
