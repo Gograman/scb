@@ -10,7 +10,7 @@
     myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
 
-    nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
+    nonCoverageProbabilities <- c(0.01,0.05)
     Start=Sys.time()
     doubleAlphaArray = createDoubleAlphaArray(
       superReplicationCount = mySuperReplicationCount,
