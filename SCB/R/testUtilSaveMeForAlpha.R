@@ -5,21 +5,22 @@ testUtilSaveMeForAlpha <- function(sampleSize,
                            lag,
                            tParCount)
 {
+
   tParArray <- createTParArray(tParCount = tParCount)
 
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
-  sampleArray <- matrix(nrow = sampleSize,ncol = nMe)
-  meArray <- matrix(nrow = length(tParArray),ncol = nMe)
+  sampleArray <- matrix(nrow = sampleSize,ncol = nME)
+  meArray <- matrix(nrow = length(tParArray),ncol = nME)
 
 
-  for(indexCol in 1:nMe)
+  for(indexCol in 1:nME)
   {
 
     sampleArray[,indexCol] <- createSample(sampleSize)
 
   }
-  for(indexCol in 1:nMe)
+  for(indexCol in 1:nME)
   {
 
     allCorHats <- computeAllCorHats(tParArray = tParArray,
@@ -47,7 +48,7 @@ testUtilSaveMeForAlpha <- function(sampleSize,
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  matplot(tParArray,meArray,type = "l",col = 1:nMe,ylab = " ME",xlab = "Tpar")
+  matplot(tParArray,meArray,type = "l",col = 1:nME,ylab = " ME",xlab = "Tpar")
   title(main = "ME vs t par, fixed alpha",sub = subTitle)
   dev.off()
 }

@@ -5,10 +5,7 @@ saveMeForAlphaFunction <- function()
   sampleSize <- computeMinSampleSize(nonCoverageProbability)
   sample <- createSample(sampleSize = sampleSize)
 
-  nMe <- 5
-
-
-
+  myNMe <- 5
   lag <- 2
 
 
@@ -17,8 +14,8 @@ saveMeForAlphaFunction <- function()
                             lag = lag,sampleSize = sampleSize)
 
   testUtilSaveMeForAlpha(sampleSize = sampleSize,
-                 sample = sample,
-                 nME = nMe,
+                 sample = sample,nME = myNMe,
+
                  nonCoverageProbability = nonCoverageProbability,
                  lag = lag,
                  tParCount = tParCount)

@@ -30,6 +30,6 @@ saveAlphaHatOfSampleSizeFunction <- function()
 test_that("testing saveAlphaHatOfSampleSize",
           {
             saveAlphaHatOfSampleSizeFunction()
-            cat(" End of test saveAlphaHatOfSampleSize", "\n")
+            cat("\n End of test saveAlphaHatOfSampleSize", "\n")
             cat("=========================================")
           })

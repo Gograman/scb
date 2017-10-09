@@ -6,6 +6,7 @@ saveMeForBandwithFunction <- function()
   tParCount <- 10
 
   nonCoverageProbability <- 0.2
+  alpha=0.5
   sampleSize <- computeMinSampleSize(alpha)
   lag <- 1
 

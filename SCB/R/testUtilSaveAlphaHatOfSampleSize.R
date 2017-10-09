@@ -8,7 +8,7 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
 {
   tParArray <- createTParArray(tParCount = tParCount)
 
-  alphaHat <- matrix(0,nrow = mySuperReplicationCount,ncol = length(sampleSize))
+  alphaHat <- matrix(0,nrow = superReplicationCount,ncol = length(sampleSize))
   for(index in 1:length(sampleSize))
   {
     cat("\nsampleSize = ",sampleSize[index])
@@ -20,7 +20,7 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
                               sampleSize = sampleSize[index])
 
     alphaHat[,index] <- computeNonCoverageFreqArray(
-      superReplicationCount = mySuperReplicationCount,
+      superReplicationCount = superReplicationCount,
       replicationCount = replicationCount,
       sampleSize = sampleSize[index],
       lag = lag,
@@ -31,13 +31,13 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
   }
   fileName <- "Alpha&SS"
   fileName <- paste(fileName, "l", lag, sep = "_")
-  fileName <- paste(fileName, "rC", replicationCount,"sC", mySuperReplicationCount, sep = "_")
+  fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
 
   xLab <- "sampleSize"
 
   subTitle <- paste(xLab,"\nlag= ",lag, ", tParCount = " ,tParCount,
                     ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
-                    mySuperReplicationCount,sep = "")
+                    superReplicationCount,sep = "")
 
   path <- doPath()
   saveJpg(fileName,path)
@@ -51,7 +51,7 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
 
   for(index in 1:length(sampleSize))
   {
-    x <- rep(sampleSize[index],times = mySuperReplicationCount)
+    x <- rep(sampleSize[index],times = superReplicationCount)
     points(alphaHat[,index]~x,pch=20)
   }
   graphics.off()
