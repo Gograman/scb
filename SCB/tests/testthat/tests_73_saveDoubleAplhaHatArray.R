@@ -7,7 +7,7 @@ saveDoubleAplhaHatArrayFunction <- function()
   myReplicationCount <- 7
   myMaxAlpha <- 0.8
   sampleSize <- computeMinSampleSize(myMaxAlpha)
-  myLag <- 2
+  myLag <- 1
   myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
 
