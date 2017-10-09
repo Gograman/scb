@@ -2,7 +2,7 @@ saveMe3DForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
   maxAlpha <- 0.9
-  sampleSize <- computeMinSampleSize(MaxAlpha)
+  sampleSize <- computeMinSampleSize(maxAlpha)
 
   tParCount <- 8
 

@@ -3,13 +3,14 @@ testUtilsaveMe3DForAlpha <- function(sampleSize,
                                      lag,
                                      alphas)
 {
+  tParArray <- createTParArray(tParCount = tParCount)
   meArray <- matrix(nrow = length(tParArray),ncol = length(alphas))
 
   for(indexCol in 1:length(alphas))
   {
     sample <- createSample(sampleSize = sampleSize)
 
-    tParArray <- createTParArray(tParCount = tParCount)
+
 
     lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
 
