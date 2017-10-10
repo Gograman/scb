@@ -37,6 +37,7 @@ errorIfNotInputCompatible <- function (alpha, lag, sampleSize)
             lagErrorMessage <- "\nSampleSize is not compatible with lag:\n"
             lagErrorMessage <- paste(lagErrorMessage, "lag = ",lag,maxRequiredLag,sep = "")
     }
+    bandwidthErrorMessage <- ""
     if(!isBandwidthCompatible)
     {
             minRequiredSampleSize <- paste("\nMin sampleSize you can use with this bandwidth is =",

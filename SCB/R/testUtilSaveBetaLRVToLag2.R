@@ -1,26 +1,31 @@
 testUtilSaveBetaLRVToLag2<-function(sampleSize,
-                            tParCount)
+                                    tParCount,
+                                    nBetaLrvHat)
 {
   lag = 2
 
   tParArray <- createTParArray(tParCount)
 
   psi <- customCoefFunction(tParArray)
-
-  sample <- createSample(sampleSize)
-
   betaLrv <-1 + psi^2 / (1 + psi^2)^2
+  betaLrvHatArray <- matrix(0,nrow = tParCount,ncol = nBetaLrvHat)
+  for(index in 1:nBetaLrvHat)
+  {
+    cat("\nindex BetaLRVHat",index)
+    sample <- createSample(sampleSize)
+    lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
+    allCorHat <- computeAllCorHats(tParArray,lagCount,sample)
+    betaLrvHatArray[,index]<-computeBetaLRVHat(tParArray = tParArray,lag = lag,
+                                  sample = sample,allCorHats =  allCorHat)
+  }
 
-  lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
-  allCorHat <- computeAllCorHats(tParArray,lagCount,sample)
-  betaLrvHat<-computeBetaLRVHat(tParArray = tParArray,lag = lag,
-                                sample = sample,allCorHats =  allCorHat)
+
   fileName <- "bettaLRVAndBettaLRVHat"
   subTitle <- paste("sampleSize = ", sampleSize,
                     ", tParCount= ", tParCount,
                     ", lag =", lag,
                     sep = "")
-  df <- data.frame(betaLrv,betaLrvHat)
+  df <- data.frame(betaLrv,betaLrvHatArray)
   max <- max(df)
   min <- min(df)
   path <- doPath()
@@ -32,7 +37,10 @@ testUtilSaveBetaLRVToLag2<-function(sampleSize,
          title = "LRV",
          lineArray,
          fill = c("red","blue"))
-  lines(betaLrvHat~tParArray,col="blue")
+  for(index in 1:nBetaLrvHat)
+  {
+    lines( betaLrvHatArray[,index]~tParArray,col="blue")
+  }
   title("True BetaLRV And BetaLRVHat to lag=2",sub = subTitle)
   graphics.off()
 }
