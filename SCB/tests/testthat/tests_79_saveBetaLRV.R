@@ -5,9 +5,13 @@ saveBetaLRVFunction <- function()
 
 
 
-  sampleSize <- 50
+  sampleSize <- 10000
+  nBetaLrvHat <- 5
 
-  testUtilSaveBetaLRVToLag2(sampleSize = sampleSize,tParCount = tParCount)
+  testUtilSaveBetaLRVToLag2(sampleSize = sampleSize,tParCount = tParCount,nBetaLrvHat = nBetaLrvHat)
+
+
+
 
 
 }
