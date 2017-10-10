@@ -5,8 +5,8 @@ testUtilSampleSizeBenchmark<-function(sampleSizeArray,
                                       lag,
                                       nonCoverageProbability )
 {
-  fileName <- paste( "Benchmark_Samplesize","l", myLag, "alpha"
-                     , myNonCoverageProbability, sep = "_")
+  fileName <- paste( "Benchmark_Samplesize","l", lag, "alpha"
+                     , nonCoverageProbability, sep = "_")
   path <-doPath()
 
 

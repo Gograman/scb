@@ -1,5 +1,5 @@
 getDegree <- function()
 {
-  degree <- -0.30
+  degree <- -0.12
   return(degree)
 }

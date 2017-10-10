@@ -11,6 +11,7 @@ testUtilSaveBetaLRVToLag2<-function(sampleSize,
 
   betaLrv <-1 + psi^2 / (1 + psi^2)^2
 
+
   lagCount <- computeLagCount(sampleSize = sampleSize, lag = lag)
   allCorHat <- computeAllCorHats(tParArray,lagCount,sample)
   betaLrvHat<-computeBetaLRVHat(tParArray = tParArray,lag = lag,

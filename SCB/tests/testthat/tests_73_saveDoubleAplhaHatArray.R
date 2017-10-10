@@ -1,13 +1,13 @@
 saveDoubleAplhaHatArrayFunction <- function()
 {
   cat ("\n Testing \'tests_73_saveDoubleAplhaHatArray\'\n")
-  myTParCount  <- 10
+  myTParCount  <- 20
   myTParArray  <- createTParArray(tParCount = myTParCount)
   mySuperReplicationCount <- 6
   myReplicationCount <- 7
   myMaxAlpha <- 0.8
   sampleSize <- computeMinSampleSize(myMaxAlpha)
-  myLag <- 1
+  myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = sampleSize)
   nonCoverageProbabilities <- c(0.2,0.4,0.6,0.8)
 
