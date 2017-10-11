@@ -18,17 +18,27 @@ saveMe3DForBandwidthFunction <- function()
 
 
   lag <- 1
+  bandwidth <- seq(0.1,0.9,by = 0.1)
+  Start=Sys.time()
 
-
-  bandwidth <- seq(0.1,0.2)
+  bandwidth <- seq(0.1,0.9,by = 0.1)
 
   testUtilSaveMesaveMe3DForBandwidth(sampleSize = sampleSize,
                                      tParCount = tParCount,
                                      alphas = alphas,
                                      lag = lag,
                                      bandwidth = bandwidth)
-
-
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",sampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("maxAlpha= ",maxAlpha,"\n")
+  cat("bandwidth= ",bandwidth,"\n")
+  cat("alphas= ",alphas,"\n")
 }
 test_that("testing saveMe3DForBandwidth",
           {

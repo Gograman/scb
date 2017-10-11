@@ -19,13 +19,27 @@ saveAlphaHatOfSampleSizeFunction <- function()
 
   fileName = "tests_78_saveAlphaHatOfSampleSize"
 
+  Start=Sys.time()
   testUtilSaveAlphaHatOfSampleSize(sampleSize = sampleSize,
-                           nonCoverageProbability = nonCoverageProbability,
-                           tParCount = tParCount,
-                           lag = lag,
-                           replicationCount = replicationCount,
-                           superReplicationCount = mySuperReplicationCount,
-                           fileName = fileName)
+                                   nonCoverageProbability = nonCoverageProbability,
+                                   tParCount = tParCount,
+                                   lag = lag,
+                                   replicationCount = replicationCount,
+                                   superReplicationCount = mySuperReplicationCount,
+                                   fileName = fileName)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("minSamoleSize= ",minSampleSize,"\n")
+  cat("maxSampleSize= ",maxSampleSize,"\n")
+  cat("superReplicationCount= ",mySuperReplicationCount,"\n")
+  cat("replicationCount= ",replicationCount,"\n")
+  cat("NonCoverageProbability= ",nonCoverageProbability,"\n")
 }
 test_that("testing saveAlphaHatOfSampleSize",
           {

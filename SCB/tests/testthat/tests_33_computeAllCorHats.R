@@ -9,7 +9,7 @@ computeAllCorHatsTestFunction = function () {
 
   mockSample <- createSample(sampleSize = mySampleSize)
 
-  myLag = 3
+  myLag = 2
   myLagCount <- computeLagCount(mySampleSize,myLag)
   myKernel = normalDifferenceKernel
 

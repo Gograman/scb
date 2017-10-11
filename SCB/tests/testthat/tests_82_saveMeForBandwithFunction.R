@@ -11,12 +11,23 @@ saveMeForBandwithFunction <- function()
   lag <- 1
 
 
+  Start=Sys.time()
   testUtilSaveMeForBandwith(sampleSize = sampleSize,
                             tParCount = tParCount,
                             bandwith = bandwith,
                             lag = lag,
                             nonCoverageProbability = nonCoverageProbability)
-
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
+  cat("Bandwidth= ",bandwith,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("alpha= ",alpha,"\n")
+  cat("nonCoverageProbability= ",nonCoverageProbability,"\n")
 }
 test_that("testing saveMeForBandwithFunction",{
 

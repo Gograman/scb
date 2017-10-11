@@ -8,7 +8,7 @@ createBandFunction <- function()
   # may be different
   mockTVMA1Array <-
     createTVMA1CoefArray(sampleSize = mySampleSize)
-  myLag = 2
+  myLag = 1
   myLagCount = computeLagCount(lag = myLag, sampleSize = mySampleSize)
   myKernel = normalDifferenceKernel
 
