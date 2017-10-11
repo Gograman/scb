@@ -7,7 +7,7 @@ saveMeForSampleSizeFunction <- function()
   nonCoverageProbability <- 0.2
   minSampleSize <- computeMinSampleSize(nonCoverageProbability)
   maxSampleSize <- minSampleSize + 150
-  sampleSize <- seq(minSampleSize,maxSampleSize,by=10)
+  sampleSize <- seq(minSampleSize,maxSampleSize,by=100)
   lag <- 2
   nMe <- 5
 
