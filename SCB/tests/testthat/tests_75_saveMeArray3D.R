@@ -1,12 +1,12 @@
 saveMe3DForAlphaFunction <- function()
 {
   cat ("\n Testing \'tests_75_saveMe3DForAlpha\'\n")
-  maxAlpha <- 0.9
+  alphas <- seq(0.01,0.05)
+    maxAlpha <- max(alphas)
   sampleSize <- computeMinSampleSize(maxAlpha)
 
   tParCount <- 8
 
-  alphas <- seq(0.1,0.9,by = 0.1)
 
   lag <- 2
 
