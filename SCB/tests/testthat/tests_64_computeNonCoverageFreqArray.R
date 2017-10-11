@@ -6,7 +6,7 @@ computeNonCoverageFreqArrayFunction <- function() {
   mySuperReplicationCount <- 7
   myReplicationCount <- 6
   mySampleSize <- computeMinSampleSize(myNonCoverageProbability)
-  myLag <- 5
+  myLag <- 2
   myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
 

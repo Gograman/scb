@@ -18,12 +18,15 @@ saveDoubleAplhaHatArrayFunction <- function()
                          alphaArray = nonCoverageProbabilities,
                          tParArray = myTParArray,
                          fileName = "tests_73_SaveDoubleAlphaHatArray")
-
+Start=Sys.time()
    saveDoubleAplhaHatArray(nonCoverageProbabilities = nonCoverageProbabilities,
                           alphaHats = alphaHats, sampleSize = sampleSize,
                           lag = myLag, replicationCount = myReplicationCount,
                           superReplicationCount = mySuperReplicationCount,
                           fileName = "tests_73_SaveDoubleAlphaHatArray")
+   End=Sys.time()
+   Duration=End-Start
+   cat("\nDuration",Duration,"\n")
    cat("\n=====================")
    cat("\nTest parameters :","\n")
    cat("SampleSize= ",sampleSize,"\n")
