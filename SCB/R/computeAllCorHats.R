@@ -28,8 +28,7 @@
 
 computeAllCorHats <- function(tParArray,
                               lagCount,
-                              sample
-                              )
+                              sample)
 
 {
   # Double array of sizes sleeperCount and lagCount
