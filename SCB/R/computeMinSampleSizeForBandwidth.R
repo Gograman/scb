@@ -1,3 +1,4 @@
+
 computeMinSampleSizeForBandwidth<-function()
 {
   degree <- getDegree()
