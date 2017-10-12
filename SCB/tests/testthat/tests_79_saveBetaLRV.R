@@ -8,7 +8,17 @@ saveBetaLRVFunction <- function()
   sampleSize <- computeMinSampleSizeForBandwidth()
   nBetaLrvHat <- 5
 
+
+  Start=Sys.time()
   testUtilSaveBetaLRVToLag2(sampleSize = sampleSize,tParCount = tParCount,nBetaLrvHat = nBetaLrvHat)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize)
+  cat("TParCount= ",tParCount,"\n")
+  cat("nBetaLRV= ",nBetaLrvHat,"\n")
 
 
 

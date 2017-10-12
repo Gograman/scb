@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:/Users/MKS/scb/SCB/R/computeAllCorHats.R="75BA10DF"
 C:/Users/MKS/scb/SCB/R/computeBetaLRVHat.R="8C31CA3A"
 C:/Users/MKS/scb/SCB/R/computeCorHat.R="477DA444"
@@ -52,3 +53,9 @@ C:/Users/MKS/scb/SCB/tests/testthat/tests_81_saveMeForSampleSizeFunction.R="51D1
 C:/Users/MKS/scb/SCB/tests/testthat/tests_82_saveMeForBandwithFunction.R="CE4CA51"
 C:/Users/MKS/scb/SCB/tests/testthat/tests_83_testUtilSampleSizeBenchmarkFunction.R="5BD8C654"
 C:/Users/MKS/scb/util/BugsReplicationCount.R="774FC797"
+=======
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/computeCovHat.R="E15C3918"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/SCB/R/getDegree.R="738B9B3C"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/bugs/betaLRVOutOfBound.R="DC3BAB7C"
+C:/Users/Boris/OneDrive/text/toronto_u/research/zhou/r/SCB/util/betaLRVOutOfBound.R="D2BA1D21"
+>>>>>>> b9a5345d2f6c8f28de22bb1ef1db3ae7b47371f2

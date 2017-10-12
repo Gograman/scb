@@ -12,13 +12,21 @@ saveMeForAlphaFunction <- function()
   tParCount <- 10
   errorIfNotInputCompatible(alpha = nonCoverageProbability,
                             lag = lag,sampleSize = sampleSize)
-
+Start=Sys.time()
   testUtilSaveMeForAlpha(sampleSize = sampleSize,
                  sample = sample,nME = myNMe,
-
                  nonCoverageProbability = nonCoverageProbability,
                  lag = lag,
                  tParCount = tParCount)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("SampleSize= ",sampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("NonCoverageProbability= ",nonCoverageProbability,"\n")
 }
 
 

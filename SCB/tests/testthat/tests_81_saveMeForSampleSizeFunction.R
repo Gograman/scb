@@ -11,11 +11,25 @@ saveMeForSampleSizeFunction <- function()
   lag <- 2
   nMe <- 5
 
+
+  Start=Sys.time()
   testUtilSaveMeForSampleSize(sampleSize = sampleSize,
                               tParCount = tParCount,
                               nonCoverageProbability = nonCoverageProbability,
                               lag = lag,
                               nMe = nMe)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
+  cat("minSampleSize= ",minSampleSize,"\n")
+  cat("maxSampleSize= ",maxSampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("nCorHat= ",nMe,"\n")
+  cat("nonCoverageProbability= ",nonCoverageProbability,"\n")
 
 }
 test_that("testing saveMeForSampleSizeFunction",{

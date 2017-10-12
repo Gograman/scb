@@ -25,7 +25,8 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
     lagCount <- computeLagCount(replicationCountArray[i],lag)
 
     cat("\nReplicationCount = ",replicationCountArray[i],"\n")
-    time<-system.time(computeNonCoverageFreqArray(
+
+    myNonCoverageFreqArray = computeNonCoverageFreqArray(
       superReplicationCount = superReplicationCount,
       replicationCount = replicationCountArray[i],
       sampleSize = sampleSize,
@@ -34,6 +35,9 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
       tParArray = tParArray,
       nonCoverageProbability = nonCoverageProbability,
       fileName = "BenchMarkTestSampleSize")
+
+
+    time<-system.time(
     )
     unclassedTime<-unclass(time)
     userSelfArray[i] <- unclassedTime[1]

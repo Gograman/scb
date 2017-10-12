@@ -12,11 +12,23 @@ saveCorAndCorHatFunction <- function()
 
   nCorHat <- 5
 
-  testUtilSaveCorAndCorHat(sampleSize = sampleSize,
-                   tParCount = tParCount,
-                   lag = lag,
-                   nCorHat = nCorHat)
 
+
+  Start=Sys.time()
+  testUtilSaveCorAndCorHat(sampleSize = sampleSize,
+                           tParCount = tParCount,
+                           lag = lag,
+                           nCorHat = nCorHat)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSize= ",sampleSize,"\n")
+  cat("TParCount= ",tParCount,"\n")
+  cat("Lag= ",lag,"\n")
+  cat("nCorHat= ",nCorHat,"\n")
+  cat("alpha= ",alpha,"\n")
 }
 test_that("testing saveCorAndCorHatFunction",
           {
