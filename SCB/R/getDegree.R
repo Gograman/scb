@@ -7,6 +7,6 @@
 # and testthat runs fast.
 getDegree <- function()
 {
-  degree <- -0.3
+  degree <- -0.4
   return(degree)
 }

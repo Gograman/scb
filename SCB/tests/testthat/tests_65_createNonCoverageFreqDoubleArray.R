@@ -33,7 +33,6 @@
     cat("SampleSize= ",mySampleSize,"\n")
     cat("TParCount= ",myTParCount,"\n")
     cat("Lag= ",myLag,"\n")
-    cat("LagCount= ",myLagCount,"\n")
     cat("ReplicationCount= ",myReplicationCount,"\n")
     cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")
     # expect_that(mockBand, is_a("matrix"))
