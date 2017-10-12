@@ -7,7 +7,6 @@ computeNonCoverageFreqArrayFunction <- function() {
   myReplicationCount <- 6
   mySampleSize <- computeMinSampleSize(myNonCoverageProbability)
   myLag <- 2
-  myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
 
 
   errorIfNotInputCompatible(alpha = myNonCoverageProbability,
@@ -18,7 +17,6 @@ Start=Sys.time()
     replicationCount = myReplicationCount,
     sampleSize = mySampleSize,
     lag = myLag,
-    lagCount = myLagCount,
     tParArray = myTParArray,
     nonCoverageProbability = myNonCoverageProbability,
     fileName = "tests_64_computeNonCoverageFreqArray"

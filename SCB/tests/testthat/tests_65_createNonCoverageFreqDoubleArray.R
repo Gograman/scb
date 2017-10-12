@@ -13,7 +13,6 @@
     nonCoverageProbabilities <- c(0.01,0.05)
     myMaxAlpha <- max(nonCoverageProbabilities)
     mySampleSize <- computeMinSampleSize(myMaxAlpha)
-    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     Start=Sys.time()
     doubleAlphaArray = createDoubleAlphaArray(
       superReplicationCount = mySuperReplicationCount,
@@ -21,7 +20,6 @@
       sampleSize = mySampleSize,
       alphaArray =nonCoverageProbabilities,
       lag = myLag,
-      lagCount = myLagCount,
       tParArray = myTParArray,
       fileName = "tests_65_createNonCoverageFreqDoubleArray")
     End=Sys.time()
