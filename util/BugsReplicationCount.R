@@ -4,7 +4,7 @@ myNonCoverageProbability <- 0.05
 mySampleSize <- computeMinSampleSize(myNonCoverageProbability)
 myLag <- 1
 
-myReplicationCount <- 4:5
+myReplicationCount <- 4:10
 errorIfNotInputCompatible(myNonCoverageProbability,myLag,mySampleSize)
 testUtilReplicationCountBenchmark(sampleSize = mySampleSize,
                                   superReplicationCount = mySuperReplicationCount,
