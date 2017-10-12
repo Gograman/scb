@@ -6,7 +6,7 @@ saveBetaLRVFunction <- function()
 
 
   sampleSize <- computeMinSampleSizeForBandwidth()
-  sampleSize = 1000
+  # sampleSize = 10000
 
   nBetaLrvHat <- 5
 
