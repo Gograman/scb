@@ -7,7 +7,8 @@ testUtilSaveBetaLRVToLag2<-function(sampleSize,
   tParArray <- createTParArray(tParCount)
 
   psi <- customCoefFunction(tParArray)
-  betaLrv <-1 + psi^2 / (1 + psi^2)^2
+  betaLrv <- 1 + 2 * psi^2 / (1 + psi^2)^2
+
   betaLrvHatArray <- matrix(0,nrow = tParCount,ncol = nBetaLrvHat)
   for(index in 1:nBetaLrvHat)
   {
