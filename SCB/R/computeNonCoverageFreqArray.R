@@ -44,13 +44,14 @@ computeNonCoverageFreqArray  <- function(superReplicationCount,
                                         replicationCount,
                                         sampleSize,
                                         lag,
-                                        lagCount,
                                         tParArray,
                                         nonCoverageProbability,
                                         fileName = "") {
 
   bandwidth = computeB(sampleSize = sampleSize)
   alphaHatArray <- array(0, dim = superReplicationCount)
+
+  lagCount <- computeLagCount(sampleSize = sampleSize,lag = lag)
 
   corArray <- computeCor(lag = lag,tParArray = tParArray)
 
