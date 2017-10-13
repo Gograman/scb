@@ -1,16 +1,19 @@
   createNonCoverageFreqDoubleArrayFunction <- function () {
     cat("\n Testing \'tests_65_createNonCoverageFreqDoubleArray\' \n")
     myTParCount  <- 10
-    myMaxAlpha <- 0.8
+
     myTParArray  <- createTParArray(tParCount = myTParCount)
     mySuperReplicationCount <- 3
     myReplicationCount <- 6
-    mySampleSize <- computeMinSampleSize(myMaxAlpha)
+
     myLag <- 2
-    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
+
 
 
     nonCoverageProbabilities <- c(0.01,0.05)
+    myMaxAlpha <- max(nonCoverageProbabilities)
+    mySampleSize <- computeMinSampleSize(myMaxAlpha)
+    myLagCount <- computeLagCount(lag = myLag,sampleSize = mySampleSize)
     Start=Sys.time()
     doubleAlphaArray = createDoubleAlphaArray(
       superReplicationCount = mySuperReplicationCount,
