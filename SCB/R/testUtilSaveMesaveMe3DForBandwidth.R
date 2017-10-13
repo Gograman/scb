@@ -1,3 +1,5 @@
+#' @export
+
 testUtilSaveMesaveMe3DForBandwidth <- function(sampleSize,
                                                tParCount,
                                                alphas,
