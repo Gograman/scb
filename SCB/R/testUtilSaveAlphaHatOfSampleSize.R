@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
                                      nonCoverageProbability,
                                      tParCount,
@@ -24,7 +25,6 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
       replicationCount = replicationCount,
       sampleSize = sampleSize[index],
       lag = lag,
-      lagCount = lagCount,
       tParArray = tParArray,
       nonCoverageProbability = nonCoverageProbability,
       fileName = fileName)

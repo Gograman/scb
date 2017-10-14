@@ -1,3 +1,4 @@
+#'@export
 getScaleConstant <- function()
 {
   scaleConstant = 1

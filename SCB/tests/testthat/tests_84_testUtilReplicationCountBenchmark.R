@@ -22,6 +22,6 @@ test_that("testing testUtilReplicationCountBenchmarkFunction",{
 
 
   testUtilReplicationCountBenchmarkFunction()
-  cat(" End of test testUtilReplicationCountBenchmarkFunction", "\n")
+  cat("\n End of test testUtilReplicationCountBenchmarkFunction", "\n")
   cat("=========================================")
 })

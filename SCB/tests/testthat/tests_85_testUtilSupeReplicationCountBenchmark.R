@@ -21,6 +21,6 @@ test_that("testing testUtilSupereplicationCountBenchmarkFunction",{
 
 
   testUtilSupereplicationCountBenchmarkFunction()
-  cat(" End of test testUtilSupereplicationCountBenchmarkFunction", "\n")
+  cat("\n End of test testUtilSupereplicationCountBenchmarkFunction", "\n")
   cat("=========================================")
 })

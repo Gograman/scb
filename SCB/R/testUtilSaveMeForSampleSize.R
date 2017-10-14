@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveMeForSampleSize <- function(sampleSize,
                                 tParCount,
                                 nonCoverageProbability,
