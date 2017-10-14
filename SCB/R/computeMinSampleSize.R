@@ -1,3 +1,4 @@
+#'@export
 computeMinSampleSize <- function(alpha)
 {
   minSampleSizeBandwidth <- computeMinSampleSizeForBandwidth()
