@@ -20,6 +20,6 @@ test_that("testing testUtilTParCountBenchmarkFunction",{
 
 
   testUtilTParCountBenchmarkFunction()
-  cat(" End of test testUtilTParCountBenchmarkFunction", "\n")
+  cat("\n End of test testUtilTParCountBenchmarkFunction", "\n")
   cat("=========================================")
 })

@@ -1,3 +1,4 @@
+#'@export
 isBandwidthCompatibleWithSampleSize <- function(sampleSize)
 {
   minSampleSize <- computeMinSampleSizeForBandwidth()

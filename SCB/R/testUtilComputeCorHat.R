@@ -1,3 +1,4 @@
+#'@export
 testUtilComputeCorHat<- function(tParArray,
                                  lag,
                                  sample,

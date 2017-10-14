@@ -1,3 +1,4 @@
+#'@export
 testUtilReplicationCountBenchmark<-function(sampleSize,
                                             superReplicationCount,
                                             replicationCountArray,
@@ -20,11 +21,11 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
 
   elapsedArray<-numeric(length = length(replicationCountArray))
 
-  lagCount <- computeLagCount(sampleSize,lag)
+
 
   for(i in 1: length(replicationCountArray))
   {
-    lagCount <- computeLagCount(sampleSize,lag)
+
 
     cat("\nReplicationCount = ",replicationCountArray[i],"\n")
 
@@ -36,7 +37,6 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
       replicationCount = replicationCountArray[i],
       sampleSize = sampleSize,
       lag = lag,
-      lagCount = lagCount,
       tParArray = tParArray,
       nonCoverageProbability = nonCoverageProbability,
       fileName = "BenchMarkTestReplicationCount")

@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveBetaLRVToLag2<-function(sampleSize,
                                     tParCount,
                                     nBetaLrvHat)
