@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
                                      nonCoverageProbability,
                                      tParCount,

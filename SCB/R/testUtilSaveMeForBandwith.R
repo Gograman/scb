@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveMeForBandwith <- function(sampleSize,
                                      tParCount,
                                      bandwith,

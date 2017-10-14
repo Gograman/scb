@@ -17,7 +17,7 @@ saveDoubleAplhaHatArrayFunction <- function()
   alphaHats<-createDoubleAlphaArray(superReplicationCount = mySuperReplicationCount,
                          replicationCount = myReplicationCount,
                          sampleSize = sampleSize,
-                         lag = myLag, lagCount = myLagCount,
+                         lag = myLag,
                          alphaArray = nonCoverageProbabilities,
                          tParArray = myTParArray,
                          fileName = "tests_73_SaveDoubleAlphaHatArray")
@@ -35,7 +35,6 @@ Start=Sys.time()
    cat("SampleSize= ",sampleSize,"\n")
    cat("TParCount= ",myTParCount,"\n")
    cat("Lag= ",myLag,"\n")
-   cat("LagCount= ",myLagCount,"\n")
    cat("NonCoverageProbabilities= ",nonCoverageProbabilities,"\n")
    cat("ReplicationCount= ",myReplicationCount,"\n")
    cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")

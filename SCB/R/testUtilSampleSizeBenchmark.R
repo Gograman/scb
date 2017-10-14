@@ -1,3 +1,4 @@
+#'@export
 testUtilSampleSizeBenchmark<-function(sampleSizeArray,
                                       tParCount,
                                       superReplicationCount,
@@ -30,7 +31,6 @@ for(i in 1: length(sampleSizeArray))
     replicationCount = replicationCount,
     sampleSize = sampleSizeArray[i],
     lag = lag,
-    lagCount = lagCount,
     tParArray = tParArray,
     nonCoverageProbability = nonCoverageProbability,
     fileName = "BenchMarkTestSampleSize")

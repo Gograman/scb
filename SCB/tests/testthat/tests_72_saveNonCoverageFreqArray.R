@@ -19,7 +19,6 @@ saveNonCoverageFreqArrayFunction <- function()
     replicationCount = myReplicationCount,
     sampleSize = mySampleSize,
     lag = myLag,
-    lagCount = myLagCount,
     tParArray = myTParArray,
     nonCoverageProbability = myNonCoverageProbability,
     fileName = "tests_72_saveNonCoverageFreqArray"
@@ -45,7 +44,6 @@ Start=Sys.time()
   cat("SampleSize= ",mySampleSize,"\n")
   cat("TParCount= ",myTParCount,"\n")
   cat("Lag= ",myLag,"\n")
-  cat("LagCount= ",myLagCount,"\n")
   cat("NonCoverageProbability= ",myNonCoverageProbability,"\n")
   cat("ReplicationCount= ",myReplicationCount,"\n")
   cat("SuperReplicationCount= ",mySuperReplicationCount,"\n")

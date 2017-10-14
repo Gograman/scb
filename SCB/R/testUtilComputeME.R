@@ -1,3 +1,4 @@
+#'@export
 testUtilComputeME <- function(tParArray,
                               lag,
                               lagCount,

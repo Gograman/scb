@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveMeForAlpha <- function(sampleSize,
                            sample,
                            nME,

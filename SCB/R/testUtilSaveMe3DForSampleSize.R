@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveMe3DForSampleSize <-function(sampleSize,
                                          alphas,
                                          tParCount,

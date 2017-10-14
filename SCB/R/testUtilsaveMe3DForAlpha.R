@@ -1,3 +1,4 @@
+#'@export
 testUtilsaveMe3DForAlpha <- function(sampleSize,
                                      tParCount,
                                      lag,

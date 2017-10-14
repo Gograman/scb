@@ -1,3 +1,4 @@
+#'@export
 saveMe3DForAlpha <- function(sampleSize,
                              sample,
                              tParCount,

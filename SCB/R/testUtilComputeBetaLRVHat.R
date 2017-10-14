@@ -1,3 +1,4 @@
+#'@export
 testUtilComputeBetaLRVHat  <- function(tParArray,
                                        lag,
                                        sample,

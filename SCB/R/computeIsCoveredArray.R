@@ -44,7 +44,7 @@
 computeIsCoveredArray <- function(bandsBrick,
                                   corArray,
                                   tParCount,
-                                  sampleSize, bandwidth,
+                                  sampleSize,
                                   replicationCount,
                                   lag,
                                   superReplicationCount,

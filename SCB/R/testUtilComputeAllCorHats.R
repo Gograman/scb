@@ -1,3 +1,4 @@
+#'@export
 testUtilComputeAllCorHats <- function(tParArray,
                                       lagCount,
                                       sample,

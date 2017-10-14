@@ -1,3 +1,4 @@
+#'@export
 testUtilSaveCorAndCorHat <- function(sampleSize,
                              tParCount,
                              lag,

@@ -1,3 +1,4 @@
+#'@export
 testUtilTParCountBenchmark<-function(sampleSize,
                                      superReplicationCount,
                                      replicationCount,
@@ -18,7 +19,7 @@ testUtilTParCountBenchmark<-function(sampleSize,
 
   elapsedArray<-numeric(length = length(tParCountArray))
 
-  lagCount <- computeLagCount(sampleSize,lag)
+
 
   for(i in 1: length(tParCountArray))
   {
@@ -31,7 +32,6 @@ testUtilTParCountBenchmark<-function(sampleSize,
       replicationCount = replicationCount,
       sampleSize = sampleSize,
       lag = lag,
-      lagCount = lagCount,
       tParArray = tParArray,
       nonCoverageProbability = nonCoverageProbability,
       fileName = "BenchMarkTesttParCount")
