@@ -7,7 +7,7 @@
 \title{computeNonCoverageFreqDist}
 \usage{
 computeNonCoverageFreqArray(superReplicationCount, replicationCount, sampleSize,
-  lag, lagCount, tParArray, nonCoverageProbability, fileName = "")
+  lag, tParArray, nonCoverageProbability, fileName = "")
 }
 \arguments{
 \item{superReplicationCount}{superReplicationCount}

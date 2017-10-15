@@ -5,7 +5,7 @@
 \alias{}
 \title{computeIsCoveredArray}
 \usage{
-computeIsCoveredArray(bandsBrick, corArray, tParCount, sampleSize, bandwidth,
+computeIsCoveredArray(bandsBrick, corArray, tParCount, sampleSize,
   replicationCount, lag, superReplicationCount, nonCoverageProbability,
   fileName = "")
 }
