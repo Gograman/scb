@@ -1,3 +1,22 @@
+#' @title saveBand
+#'
+#' @name saveBand
+#'
+#' @aliases saveBand
+#'
+#' @description Save created bands to jpg file as graphic
+#'
+#' @param band
+#' @param corArray
+#' @param sampleSize
+#' @param replicationCount
+#' @param lag
+#' @param superReplicationCount
+#' @param nonCoverageProbability
+#'
+#' @return
+#'
+#' @examples
 #'
 #'@export
 
