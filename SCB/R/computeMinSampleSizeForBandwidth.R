@@ -1,4 +1,17 @@
-
+#' @title ComputeMinSampleSizeForBandwidth
+#'
+#' @name ComputeMinSampleSizeForBandwidth
+#'
+#' @aliases ComputeMinSampleSizeForBandwidth
+#'
+#' @description ComputeMinSampleSizeForBandwidth
+#'
+#' @param
+#'
+#' @return
+#'
+#' @examples
+#' @export
 computeMinSampleSizeForBandwidth<-function()
 {
   degree <- getDegree()

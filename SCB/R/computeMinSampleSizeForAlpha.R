@@ -1,3 +1,16 @@
+#' @title ComputeMinSampleSizeForAlpha
+#'
+#' @name ComputeMinSampleSizeForAlpha
+#'
+#' @aliases ComputeMinSampleSizeForAlpha
+#'
+#' @description ComputeMinSampleSizeAlpha
+#'
+#' @param alpha
+#'
+#' @return
+#'
+#' @examples
 #'
 #'@export
 
