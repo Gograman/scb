@@ -9,12 +9,24 @@ testUtilReplicationCountBenchmarkFunction <- function()
 
   myReplicationCount <- 4:5
   errorIfNotInputCompatible(myNonCoverageProbability,myLag,mySampleSize)
+  Start=Sys.time()
   testUtilReplicationCountBenchmark(sampleSize = mySampleSize,
                                     superReplicationCount = mySuperReplicationCount,
                                     tParCount = myTParCount,
                                     nonCoverageProbability = myNonCoverageProbability,
                                     replicationCountArray = myReplicationCount,
                                     lag = myLag)
+  End=Sys.time()
+  Duration=End-Start
+  cat("\nDuration",Duration,"\n")
+  cat("\n=====================")
+  cat("\nTest parameters :","\n")
+  cat("sampleSiz= ",mySampleSize,"\n")
+  cat("TParCount= ",myTParCount,"\n")
+  cat("Lag= ",myLag,"\n")
+  cat("replicationCount= ",myReplicationCount,"\n")
+  cat("superReplicationCount= ",mySuperReplicationCount,"\n")
+  cat("nonCoverageProbability= ",myNonCoverageProbability,"\n")
 
 
 }
@@ -22,6 +34,6 @@ test_that("testing testUtilReplicationCountBenchmarkFunction",{
 
 
   testUtilReplicationCountBenchmarkFunction()
-  cat("\n End of test testUtilReplicationCountBenchmarkFunction", "\n")
+  cat("\nEnd of test testUtilReplicationCountBenchmarkFunction", "\n")
   cat("=========================================")
 })

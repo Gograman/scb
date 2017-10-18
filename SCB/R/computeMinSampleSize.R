@@ -1,3 +1,17 @@
+#' @title ComputeMinSampleSize
+#'
+#' @name ComputeMinSampleSize
+#'
+#' @aliases ComputeMinSampleSize
+#'
+#' @description ComputeMinSampleSize
+#'
+#' @param alpha
+#'
+#' @return
+#'
+#' @examples
+#'
 #'@export
 computeMinSampleSize <- function(alpha)
 {

@@ -1,3 +1,16 @@
+#' @title computeTermCount
+#'
+#' @name computeTermCount
+#'
+#' @aliases computeTermCount
+#'
+#' @description computeTermCount
+#'
+#' @param sampleSize
+#'
+#' @return termCount
+#'
+#' @examples
 #'
 #'@export
 computeTermCount=function(sampleSize)

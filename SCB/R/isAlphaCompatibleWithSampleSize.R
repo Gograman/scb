@@ -1,3 +1,17 @@
+#' @title isAlphaCompatibleWithSampleSize
+#'
+#' @name isAlphaCompatibleWithSampleSize
+#'
+#' @aliases isAlphaCompatibleWithSampleSize
+#'
+#' @description isAlphaCompatibleWithSampleSize
+#'
+#' @param sampleSize
+#' @param alpha
+#'
+#' @return
+#'
+#' @examples
 #'
 #'@export
 

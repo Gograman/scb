@@ -5,7 +5,7 @@
 \title{createDoubleAlphaArray}
 \usage{
 createDoubleAlphaArray(superReplicationCount, replicationCount, sampleSize, lag,
-  lagCount, alphaArray, tParArray, fileName = "")
+  alphaArray, tParArray, fileName = "")
 }
 \arguments{
 \item{superReplicationCount}{how many times we produced alpha hat.}
@@ -16,11 +16,11 @@ createDoubleAlphaArray(superReplicationCount, replicationCount, sampleSize, lag,
 
 \item{lag}{lag value.}
 
-\item{lagCount}{how many lags we consider.}
-
 \item{alphaArray}{a alpha parametr array}
 
 \item{tParArray}{a T parameter array}
+
+\item{lagCount}{how many lags we consider.}
 
 \item{bandwidth}{a bandwidth value.}
 }
