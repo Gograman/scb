@@ -41,9 +41,9 @@ testUtilSaveMe3DForSampleSize <-function(sampleSize,
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  wireframe(meArray,row.values=sampleSize,column.values=alphas,
+  print(wireframe(meArray,row.values=sampleSize,column.values=alphas,
             xlab="sampleSize",ylab = "NonCoverageProbability",
             scales=list(arrows=FALSE),
-            screen = list(z=250,x=-75))
+            screen = list(z=250,x=-75)))
   graphics.off()
 }
