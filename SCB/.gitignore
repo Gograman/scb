@@ -4,3 +4,5 @@
 packrat/lib*/
 inst/doc
 output/*
+*.jpeg
+*.csv
