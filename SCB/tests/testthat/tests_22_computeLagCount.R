@@ -34,10 +34,10 @@ computeLagCountFunction <- function()
 
 
 
-  wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
+  print(wireframe(lagCounts,row.values = sampleSizes,column.values = lags,
             xlab="sampleSizes",ylab="Lags",
             screen = list(z=-300,x=-75),
-            scales=list(arrows=FALSE))
+            scales=list(arrows=FALSE)))
 
   graphics.off()
 
