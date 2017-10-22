@@ -1,6 +1,6 @@
 # History files
-.Rhistory
-.Rapp.history
+SCB/.Rhistory
+SCB/.Rapp.history
 
 # Session Data files
 .RData
@@ -16,7 +16,7 @@
 /*.Rcheck/
 
 # RStudio files
-.Rproj.user/
+SCB/.Rproj.user/
 
 # produced vignettes
 vignettes/*.html
@@ -37,4 +37,3 @@ SCB/tests/testthat/Rplots.pdf
 SCB/tests/testthat/tests_17_computeMEbyCovHat.R
 SCB/tests/testthat/tests_17_computeMEbyCovHat.R
 # Generated plots
-/lab/graphics/out*.jpg
