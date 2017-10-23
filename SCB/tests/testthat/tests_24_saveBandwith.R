@@ -10,6 +10,8 @@ saveBandwithFunction <- function()
     bandwidth[index] <- computeB(sampleSize[index])
   }
   path <- doPath()
+  fileName <- "Bandwith"
+  fileName <-  timestampGenerator(fileName = fileName)
 
   saveJpg(fileName = "Bandwith",path = path)
   plot(bandwidth ~ sampleSize, type = "l", main = "Bandwith of samplesize")

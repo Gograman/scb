@@ -9,9 +9,11 @@ isAlphaCompatibleWithSampleSizeFunction<-function()
   }
   df <- cbind(alphaArray,requredSampleSize)
   fileName <- "testIsAlphaCompatibleWithSampleSize"
+  fileName <- timestampGenerator(fileName = fileName)
   saveJpg(fileName = fileName,doPath())
   saveCVS(fileName = fileName,doPath(),df)
   plot(requredSampleSize~alphaArray,type="l")
+  title("Alpha is Compatible")
   graphics.off()
 }
 

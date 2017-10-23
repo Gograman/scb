@@ -50,9 +50,9 @@ testUtilSaveMesaveMe3DForBandwidth <- function(sampleSize,
 
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
-  wireframe(meArray,row.values=bandwidth,column.values=alphas,
+  print(wireframe(meArray,row.values=bandwidth,column.values=alphas,
             xlab="bandwidth",ylab = "NonCoverageProbability",
             scales=list(arrows=FALSE),
-            screen = list(z=250,x=-75))
+            screen = list(z=250,x=-75)))
   graphics.off()
 }

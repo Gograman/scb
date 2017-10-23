@@ -13,6 +13,7 @@ computeTermCountFunction <- function(maxGraph=1000,step=1)
   }
 
   fileName <- "TermCount&SS"
+  fileName <- timestampGenerator(fileName = fileName)
 
   df <- data.frame(sampleSizes,termCounts)
 

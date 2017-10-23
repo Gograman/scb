@@ -23,6 +23,7 @@ isLagCompatibleWithSampleSizeFunction <- function(maxGraph = 100,step = 10)
   }
 
   fileName <- "IsinPutCompatible"
+  fileName <- timestampGenerator(fileName = fileName)
 
   xMaxLim <- floor(maxGraph * 0.8)
   yMaxLim <- max(cocoses)

@@ -25,6 +25,7 @@ computeLagCountFunction <- function()
   }
 
   fileName <- "LagCount"
+  fileName <- timestampGenerator(fileName = fileName)
 
   df <- data.frame(lagCounts)
 
