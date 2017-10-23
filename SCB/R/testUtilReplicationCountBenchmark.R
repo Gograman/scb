@@ -8,18 +8,17 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
 {
   fileName <- paste( "Benchmark_replicationCount","l", lag, "alpha"
                      , nonCoverageProbability, sep = "_")
+  fileName <- timestampGenerator(fileName)
   path <-doPath()
 
 
   tParArray <- createTParArray(tParCount)
 
-  duration <- numeric(length = length(replicationCountArray))
+  userSelfArray<-rep(NA,length = length(replicationCountArray))
 
-  userSelfArray<-numeric(length = length(replicationCountArray))
+  sysSelfArray<-rep(NA,length = length(replicationCountArray))
 
-  sysSelfArray<-numeric(length = length(replicationCountArray))
-
-  elapsedArray<-numeric(length = length(replicationCountArray))
+  elapsedArray<-rep(NA,length = length(replicationCountArray))
 
 
 
@@ -46,18 +45,20 @@ testUtilReplicationCountBenchmark<-function(sampleSize,
     sysSelfArray[i] <- unclassedTime[2]
     elapsedArray[i] <- unclassedTime[3]
 
-  }
-  maxElapsed <- max(elapsedArray)
-  saveJpg(fileName = fileName,path = path)
-  plot(x=replicationCountArray,y=elapsedArray,main = "Benchmark for replicationCount"
-       ,ylim = c(0,maxElapsed), type = "l")
-  lines(x=replicationCountArray,y=sysSelfArray,col="red")
-  lines(x=replicationCountArray,y=userSelfArray,col="blue")
-  legend(x="topleft",legend = c("Elapsed time","user time","sys time"),
-         fill = c("black","blue","red"))
-  graphics.off()
-  myDF <- data.frame(replicationCountArray,userSelfArray,sysSelfArray,
-                     elapsedArray)
+    maxElapsed <- max(elapsedArray,na.rm = T)
+    saveJpg(fileName = fileName,path = path)
+    plot(x=replicationCountArray,y=elapsedArray,main = "Benchmark for replicationCount"
+         ,ylim = c(0,maxElapsed), type = "l")
+    lines(x=replicationCountArray,y=sysSelfArray,col="red")
+    lines(x=replicationCountArray,y=userSelfArray,col="blue")
+    legend(x="topleft",legend = c("Elapsed time","user time","sys time"),
+           fill = c("black","blue","red"))
+    graphics.off()
+    myDF <- data.frame(replicationCountArray,userSelfArray,sysSelfArray,
+                       elapsedArray)
 
-  saveCVS(fileName,path,dataToSave = myDF)
+    saveCVS(fileName,path,dataToSave = myDF)
+
+  }
+
 }

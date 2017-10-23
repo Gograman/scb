@@ -5,7 +5,7 @@ saveAlphaHatOfSampleSizeFunction <- function()
 
   nonCoverageProbability <- 0.1
   minSampleSize <- computeMinSampleSize(nonCoverageProbability)
-  maxSampleSize <- minSampleSize + 100
+  maxSampleSize <- minSampleSize + 1000
   sampleSize <- seq(minSampleSize,maxSampleSize,by=100)
   tParCount <- 10
 

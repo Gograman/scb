@@ -16,7 +16,7 @@ SCB/.Rapp.history
 /*.Rcheck/
 
 # RStudio files
-SCB/.Rproj.user/
+SCB/.Rproj.user/*
 
 # produced vignettes
 vignettes/*.html

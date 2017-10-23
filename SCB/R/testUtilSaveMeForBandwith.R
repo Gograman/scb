@@ -5,12 +5,25 @@ testUtilSaveMeForBandwith <- function(sampleSize,
                                      nonCoverageProbability,
                                      lag)
 {
+  fileName <- paste("ME&BandWith","a",nonCoverageProbability,"SS",sampleSize,sep = "_")
+  fileName <- timestampGenerator(fileName)
+  xlab <- "TparArray"
+  subTitle <- paste(xlab,
+                    "\ntParCount= ", tParCount,
+                    ", Alpha = ", nonCoverageProbability,
+                    ", lag = " , lag,
+                    ", sampleS = ", sampleSize,
+                    "\nAlpha, sample,SampleSize fixed",
+                    sep = "")
+
+  path <- doPath()
+
   tParArray <- createTParArray(tParCount)
 
   errorIfNotInputCompatible(alpha = nonCoverageProbability,lag = lag,sampleSize = sampleSize)
   lagCount <- computeLagCount(sampleSize = sampleSize,lag = lag)
   sample <- createSample(sampleSize)
-  meArray <- matrix(0,nrow = length(tParArray),ncol = length(bandwith))
+  meArray <- matrix(NA,nrow = length(tParArray),ncol = length(bandwith))
   for(index in 1:length(bandwith))
   {
     tempBandwith <- bandwith[index]
@@ -25,24 +38,18 @@ testUtilSaveMeForBandwith <- function(sampleSize,
                                          bandwidth = tempBandwith,
                                          nonCoverageProbability = nonCoverageProbability,
                                          allCorHats = corArray)
-  }
-  fileName <- paste("ME&BandWith","a",nonCoverageProbability,"SS",sampleSize,sep = "_")
-  xlab <- "TparArray"
-  subTitle <- paste(xlab,
-                    "\ntParCount= ", tParCount,
-                    ", Alpha = ", nonCoverageProbability,
-                    ", lag = " , lag,
-                    ", sampleS = ", sampleSize,
-                    "\nAlpha, sample,SampleSize fixed",
-                    sep = "")
 
-  path <- doPath()
-  saveCVS(fileName = fileName,path = path,dataToSave = meArray)
-  saveJpg(fileName = fileName,path = path)
-  matplot(tParArray,meArray,type = "l",col = 1:length(bandwith),
-          xlab = "")
-  title(main = "ME(t) for different bandwidth",sub = subTitle)
-  legend("topright",title = "bandwith",legend = bandwith,
-         fill = 1:length(bandwith))
-  graphics.off()
+    saveCVS(fileName = fileName,path = path,dataToSave = meArray)
+    saveJpg(fileName = fileName,path = path)
+    matplot(tParArray,meArray,type = "l",col = 1:length(bandwith),
+            xlab = "")
+    title(main = "ME(t) for different bandwidth",sub = subTitle)
+    legend("topright",title = "bandwith",legend = bandwith,
+           fill = 1:length(bandwith))
+    graphics.off()
+  }
+
+
+
+
 }

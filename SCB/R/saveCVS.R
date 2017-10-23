@@ -8,10 +8,10 @@ saveCVS <- function(fileName, path, dataToSave)
     dir.create(path)
   }
 
-  curTime <- Sys.time()
-  curTime <- gsub(":", "-", curTime)
-  curTime <- gsub(" ", "_", curTime)
-  fileName <- gsub(" ","_", paste0(fileName, "_", curTime,".csv"))
+ # curTime <- Sys.time()
+  #curTime <- gsub(":", "-", curTime)
+  #curTime <- gsub(" ", "_", curTime)
+  fileName <- gsub(" ","_", paste0(fileName, "_",".csv"))
   fileName <- gsub(":","_", fileName)
   write.csv(dataToSave, paste0(path, "/", fileName))
 }

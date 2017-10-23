@@ -35,6 +35,7 @@ testUtilsaveMe3DForAlpha <- function(sampleSize,
   }
 
   fileName <- paste("meArray3D",sep = "_")
+  fileName <- timestampGenerator(fileName)
 
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)

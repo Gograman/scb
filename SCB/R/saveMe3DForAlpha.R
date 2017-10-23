@@ -31,16 +31,19 @@ saveMe3DForAlpha <- function(sampleSize,
                                             C_K = -1.978325,
                                             # int_sq_der = 0.306951,
                                             PHI_K_NORMAL_DIFF = 0.4065)
-  }
 
+  }
   fileName <- paste("meArray3D",sep = "_")
+  fileName <- timestampGenerator(fileName = fileName)
 
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
   print(wireframe(meArray,row.values=tParArray,column.values=alphas,
-            xlab="tParArray",ylab = "NonCoverageProbability",
-            scales=list(arrows=FALSE),
-            screen = list(z=200,x=-75)))
+                  xlab="tParArray",ylab = "NonCoverageProbability",
+                  scales=list(arrows=FALSE),
+                  screen = list(z=200,x=-75)))
   graphics.off()
+
+
 }

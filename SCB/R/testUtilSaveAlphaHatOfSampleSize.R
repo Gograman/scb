@@ -9,7 +9,20 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
 {
   tParArray <- createTParArray(tParCount = tParCount)
 
-  alphaHat <- matrix(0,nrow = superReplicationCount,ncol = length(sampleSize))
+  fileName <- "Alpha&SS"
+  fileName <- paste(fileName, "l", lag, sep = "_")
+  fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
+  fileName <- timestampGenerator(fileName)
+
+  xLab <- "sampleSize"
+
+  subTitle <- paste(xLab,"\nlag= ",lag, ", tParCount = " ,tParCount,
+                    ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
+                    superReplicationCount,sep = "")
+
+  path <- doPath()
+
+  alphaHat <- matrix(NA,nrow = superReplicationCount,ncol = length(sampleSize))
   for(index in 1:length(sampleSize))
   {
     cat("\nsampleSize = ",sampleSize[index])
@@ -28,31 +41,23 @@ testUtilSaveAlphaHatOfSampleSize <- function(sampleSize,
       tParArray = tParArray,
       nonCoverageProbability = nonCoverageProbability,
       fileName = fileName)
+
+    saveJpg(fileName,path)
+    df <- rbind(sampleSize,alphaHat)
+    saveCVS(fileName,path,df)
+    alpha <- rep(nonCoverageProbability,times = length(sampleSize))
+
+    plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
+
+    title(main = "AlphaHat Of SampleSize", sub = subTitle)
+
+    for(index in 1:length(sampleSize))
+    {
+      x <- rep(sampleSize[index],times = superReplicationCount)
+      points(alphaHat[,index]~x,pch=20)
+    }
+    graphics.off()
   }
-  fileName <- "Alpha&SS"
-  fileName <- paste(fileName, "l", lag, sep = "_")
-  fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
 
-  xLab <- "sampleSize"
 
-  subTitle <- paste(xLab,"\nlag= ",lag, ", tParCount = " ,tParCount,
-                    ",\n replicationCount= ", replicationCount, ", 'SuperRep = ",
-                    superReplicationCount,sep = "")
-
-  path <- doPath()
-  saveJpg(fileName,path)
-  df <- rbind(sampleSize,alphaHat)
-  saveCVS(fileName,path,df)
-  alpha <- rep(nonCoverageProbability,times = length(sampleSize))
-
-  plot(alpha~sampleSize,type="c",ylim = c(0,1),col="blue",xlab="",ylab = "alphaHat")
-
-  title(main = "AlphaHat Of SampleSize", sub = subTitle)
-
-  for(index in 1:length(sampleSize))
-  {
-    x <- rep(sampleSize[index],times = superReplicationCount)
-    points(alphaHat[,index]~x,pch=20)
-  }
-  graphics.off()
 }

@@ -7,7 +7,7 @@ testUtilReplicationCountBenchmarkFunction <- function()
   mySampleSize <- computeMinSampleSize(myNonCoverageProbability)
   myLag <- 1
 
-  myReplicationCount <- 4:5
+  myReplicationCount <- 4:50
   errorIfNotInputCompatible(myNonCoverageProbability,myLag,mySampleSize)
   Start=Sys.time()
   testUtilReplicationCountBenchmark(sampleSize = mySampleSize,

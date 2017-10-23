@@ -8,16 +8,17 @@ testUtilSupereplicationCountBenchmark<-function(sampleSize,
 {
   fileName <- paste( "Benchmark_SuperReplicationCount","l", lag, "alpha"
                      , nonCoverageProbability, sep = "_")
+  fileName <- timestampGenerator(fileName = fileName)
   path <-doPath()
 
 
   tParArray <- createTParArray(tParCount)
 
-  userSelfArray<-numeric(length = length(superReplicationCountArray))
+  userSelfArray <- rep(NA, length = length(superReplicationCountArray))
 
-  sysSelfArray<-numeric(length = length(superReplicationCountArray))
+  sysSelfArray <- rep(NA, length = length(superReplicationCountArray))
 
-  elapsedArray<-numeric(length = length(superReplicationCountArray))
+  elapsedArray <- rep(NA, length = length(superReplicationCountArray))
 
 
 
@@ -43,18 +44,20 @@ testUtilSupereplicationCountBenchmark<-function(sampleSize,
     sysSelfArray[i] <- unclassedTime[2]
     elapsedArray[i] <- unclassedTime[3]
 
-  }
-  maxElapsed <- max(elapsedArray)
-  saveJpg(fileName = fileName,path = path)
-  plot(x=superReplicationCountArray,y=elapsedArray,main = "Benchmark for SuperReplicationCount"
-       ,ylim = c(0,maxElapsed), type = "l")
-  lines(x=superReplicationCountArray,y=sysSelfArray,col="red")
-  lines(x=superReplicationCountArray,y=userSelfArray,col="blue")
-  legend(x="topleft",legend = c("Elapsed time","user time","sys time"),
-         fill = c("black","blue","red"))
-  graphics.off()
-  myDF <- data.frame(superReplicationCountArray,userSelfArray,sysSelfArray,
-                     elapsedArray)
+    maxElapsed <- max(elapsedArray,na.rm = T)
+    saveJpg(fileName = fileName,path = path)
+    plot(x=superReplicationCountArray,y=elapsedArray,main = "Benchmark for SuperReplicationCount"
+         ,ylim = c(0,maxElapsed), type = "l")
+    lines(x=superReplicationCountArray,y=sysSelfArray,col="red")
+    lines(x=superReplicationCountArray,y=userSelfArray,col="blue")
+    legend(x="topleft",legend = c("Elapsed time","user time","sys time"),
+           fill = c("black","blue","red"))
+    graphics.off()
+    myDF <- data.frame(superReplicationCountArray,userSelfArray,sysSelfArray,
+                       elapsedArray)
 
-  saveCVS(fileName,path,dataToSave = myDF)
+    saveCVS(fileName,path,dataToSave = myDF)
+
+  }
+
 }

@@ -15,6 +15,7 @@ saveNonCoverageFreqArray <- function(nonCoverageProbability,
 
   fileName <- paste(fileName, "ss", sampleSize, "l", lag, "b",round(bandwidth,1), sep = "_")
   fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
+  fileName <- timestampGenerator(fileName)
 
   xLab <- "NonCoverageProbability"
 

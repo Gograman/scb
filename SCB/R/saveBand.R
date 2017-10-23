@@ -56,6 +56,7 @@ saveBand <- function(band,
                     "a",nonCoverageProbability,
                     "rC", replicationCount,
                     "sC", superReplicationCount, sep = "_")
+  fileName <- timestampGenerator(fileName)
 
   xLab <- "tParArray"
 

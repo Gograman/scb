@@ -37,6 +37,7 @@ testUtilSaveMe3DForSampleSize <-function(sampleSize,
     }
   }
   fileName <- paste("meArray3DOfSampleSize",sep = "_")
+  fileName <- timestampGenerator(fileName)
 
   path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)

@@ -6,6 +6,11 @@ testUtilSaveMesaveMe3DForBandwidth <- function(sampleSize,
                                                lag,
                                                bandwidth)
 {
+  fileName <- paste("meArray3DOfBandwidth",sep = "_")
+  fileName <- timestampGenerator(fileName = fileName)
+
+  path <- doPath()
+
   sample <- createSample(sampleSize = sampleSize)
 
   tParArray <- createTParArray(tParCount = tParCount)
@@ -42,9 +47,7 @@ testUtilSaveMesaveMe3DForBandwidth <- function(sampleSize,
 
     }
   }
-  fileName <- paste("meArray3DOfBandwidth",sep = "_")
 
-  path <- doPath()
   saveCVS(fileName = fileName,path = path,dataToSave = meArray)
   saveJpg(fileName = fileName,path = path)
   wireframe(meArray,row.values=bandwidth,column.values=alphas,

@@ -15,7 +15,7 @@ saveDoubleAplhaHatArray <- function(nonCoverageProbabilities,
 
   fileName <- paste(fileName, "ss", sampleSize, "l", lag, "b",round(bandwidth,1), sep = "_")
   fileName <- paste(fileName, "rC", replicationCount,"sC", superReplicationCount, sep = "_")
-
+  fileName <- timestampGenerator(fileName)
   xLab <- "NonCoverageProbabilities"
 
   subTitle <- paste(xLab,"\nsampleSize = ",sampleSize,", lag= ",lag,", bandwidth = ",

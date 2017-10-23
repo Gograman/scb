@@ -5,10 +5,21 @@ testUtilSaveMeForSampleSize <- function(sampleSize,
                                 lag,
                                 nMe)
 {
+  fileName <- paste("ME&SampleSize","a",nonCoverageProbability,sep = "_")
+  fileName <- timestampGenerator(fileName = fileName)
+
+  subTitle <- paste(
+    "tPar= ", tParArray[tParArrayCenter],
+    ", Alpha = ", nonCoverageProbability,
+    ", lag = " , lag,
+    sep = "")
+
+  path <- doPath()
+
   tParArray <- createTParArray(tParCount)
   tParArrayCenter <- round(length(tParArray)/2,0)
 
-  meCenterArray <- matrix(0,nrow = length(sampleSize),ncol = nMe)
+  meCenterArray <- matrix(NA,nrow = length(sampleSize),ncol = nMe)
   for(indexCol in 1:nMe)
   {
     for(indexRow in 1:length(sampleSize))
@@ -25,20 +36,14 @@ testUtilSaveMeForSampleSize <- function(sampleSize,
                               nonCoverageProbability = nonCoverageProbability,
                               allCorHats = allCor)
       meCenterArray[indexRow,indexCol] <- me[tParArrayCenter]
+
+      saveCVS(fileName = fileName,path = path,dataToSave = meCenterArray)
+      saveJpg(fileName = fileName,path = path)
+      matplot(sampleSize,meCenterArray,type = "l",col = 1:nMe)
+      title(main = "ME vs SampleSize, fixed alpha and T",sub = subTitle)
+      graphics.off()
     }
   }
-  fileName <- paste("ME&SampleSize","a",nonCoverageProbability,sep = "_")
 
-  subTitle <- paste(
-    "tPar= ", tParArray[tParArrayCenter],
-    ", Alpha = ", nonCoverageProbability,
-    ", lag = " , lag,
-    sep = "")
 
-  path <- doPath()
-  saveCVS(fileName = fileName,path = path,dataToSave = meCenterArray)
-  saveJpg(fileName = fileName,path = path)
-  matplot(sampleSize,meCenterArray,type = "l",col = 1:nMe)
-  title(main = "ME vs SampleSize, fixed alpha and T",sub = subTitle)
-  graphics.off()
 }
